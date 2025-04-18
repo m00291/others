@@ -45,11 +45,15 @@ git config --global user.email "user@example.com"
    ```sieve
    git commit --amend --author="User <user@example.com>"
    ```
-4. Continue the rebase:
+   or
+   ```sieve
+   git commit --amend --author=" "
+   ```
+5. Continue the rebase:
    ```sieve
    git rebase --continue
    ```
-5. Force Push to rewrite history:
+6. Force Push to rewrite history:
    ```sieve
    git push origin --force
    ```
