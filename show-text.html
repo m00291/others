@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Text Display</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
+  <script src="1.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      word-break: break-all;
+      margin: 5rem;
+      background-color: #f4f4f4;
+    }
+    .input-container {
+      margin-bottom: 20px;
+    }
+    input[type="text"] {
+      padding: 10px;
+      border: 2px solid #007bff;
+      border-radius: 5px;
+      width: 300px;
+      font-size: 16px;
+      transition: border-color 0.3s;
+    }
+    input[type="text"]:focus {
+      border-color: #0056b3;
+      outline: none;
+    }
+    .output {
+      font-size: 18px;
+      color: #333;
+    }
+    #demo1, #demo2, #demo3 {
+      margin: 0.5rem;
+      padding: 0.5rem;
+      width: 50%;
+      min-height: 5rem;
+      border: 1px solid;
+      border-radius: 10px;
+      background-color: white;
+    }
+  </style>
+</head>
+<body>
+  <p id="displayText"></p>
+
+  <script>
+    document.getElementById('displayText').textContent = key;
+  </script>
+
+  <div class="input-container">
+    <input type="text" id="inputBox" placeholder="Type something...">
+  </div>
+
+  <script>
+    var encrypted, decrypted;
+    
+    const inputBox = document.getElementById('inputBox');
+
+    inputBox.addEventListener('input', function() {
+      
+      encrypted = CryptoJS.AES.encrypt(key, inputBox.value);
+      decrypted = CryptoJS.AES.decrypt(key, inputBox.value);
+
+      document.getElementById("demo1").innerHTML = '';
+      document.getElementById("demo1").innerHTML = encrypted;
+      document.getElementById("demo2").innerHTML = '';
+      document.getElementById("demo2").innerHTML = decrypted;
+      document.getElementById("demo3").innerHTML = '';
+      document.getElementById("demo3").innerHTML = decrypted.toString(CryptoJS.enc.Utf8);
+    });
+  </script>
+  <br>
+  <br>
+  <label>encrypted</label>
+  <div id="demo1"></div>
+  <br>
+  <label>decrypted</label>
+  <div id="demo2"></div>
+  <br>
+  <label>Actual Message</label>
+  <div id="demo3"></div>
+</body>
+</html>
