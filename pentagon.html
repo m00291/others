@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root {
+  --border-radius-\%: calc( 100% * var(--border-radius-cal) / 100);
+  --rotatewidth: calc(var(--size) / sqrt(2) + var(--size) * (1 / (SQRT(2) - 2 * max(0, min(var(--border-radius-cal), 50)) / 100 * (SQRT(2) - 1)) - 1 / SQRT(2)));
+}
+
+.controls {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 15px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.control-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.control-group label {
+  width: 150px;
+  font-weight: bold;
+}
+
+.control-group input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+.control-group input#radius-input {
+  padding-left: 0px;
+  padding-right: 0px;
+  border: 0px;
+}
+
+.pentagon {
+  position: relative;
+  margin-top: 50px;
+  width: var(--size);
+  height: var(--size);
+  background: var(--color);
+  border-radius: var(--border-radius-\%);
+  border-radius: 0 var(--border-radius-\%) var(--border-radius-\%) 0;
+}
+
+.pentagon_after {
+  content: '';
+  position: absolute;
+  transform: rotate(45deg);
+  top: calc(var(--size)/2 - var(--rotatewidth)/2);
+  right: calc(var(--size) - var(--rotatewidth)/2);
+  width: var(--rotatewidth);
+  aspect-ratio: 1;
+  background: var(--color);
+  border-radius: var(--border-radius-\%);
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-left: calc(var(--size) / 4);
+}
+
+.e_vertical {
+  position: absolute;
+  //top: 100%;
+  //left: 0;
+  //width: 100%;
+  height: 100%;
+  margin-left: calc(var(--size) + 10px);
+  //border-left: 2px dotted #FF0000;
+  z-index: 2;
+}
+.r_horizontal {
+  position: absolute;
+  top: calc(var(--size) * var(--border-radius-cal) / 100);
+  left: calc(var(--size) * (1 - var(--border-radius-cal) / 100));
+  width: calc(var(--size) * var(--border-radius-cal) / 100);
+  //height: 100%;
+  //border-bottom: 2px dotted #FF0000;
+  z-index: 2;
+}
+.r_vertical {
+  position: absolute;
+  //top: 100%;
+  left: calc(var(--size) * (1 - var(--border-radius-cal) / 100) - 11px);
+  //width: 100%;
+  height: calc(var(--size) * var(--border-radius-cal) / 100);
+  //margin-left: calc(var(--size) + 10px);
+  //border-left: 2px dotted #FF0000;
+  z-index: 2;
+}
+.e_horizontal {
+  position: absolute;
+  top: -46px;
+  //left: 0;
+  width: 100%;
+  //height: 100%;
+  //border-bottom: 2px dotted #FF0000;
+  z-index: 2;
+}
+.p_horizontal {
+  position: absolute;
+  //top: -40px;
+  //left: 0;
+  width: 100%;
+  //height: 100%;
+  margin-top: calc(var(--size) / sqrt(2) + var(--size) * (1 / (SQRT(2) - 2 * max(0, min(var(--border-radius-cal), 50)) / 100 * (SQRT(2) - 1)) - 1 / SQRT(2)) + 10px);
+  //border-bottom: 2px dotted #FF0000;
+  z-index: 2;
+}
+.p_d {
+  position: absolute;
+  top: -15px;
+  margin: 0 40%;
+}
+.p_d_line {
+  position: absolute;
+  top: calc(var(--size) / sqrt(2) + var(--size) * (1 / (SQRT(2) - 2 * max(0, min(var(--border-radius-cal), 50)) / 100 * (SQRT(2) - 1)) - 1 / SQRT(2)));
+  transform: rotate(-45deg);
+  transform-origin: 0% 0%;
+}
+.e_r_v {
+  width: 0%;
+  position: absolute;
+  margin-left: -24px;
+}
+.e_r_font {
+  font-size: small;
+}
+.svg_line {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  pointer-events: none;
+}
+.svg_line_h {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  //height: 27px;
+  pointer-events: none;
+}
+.svg_line_d {
+  display: flex;
+  align-items: center;
+  //height: var(--size);
+  width: calc(var(--size) / sqrt(2) * (1 / (SQRT(2) - 2 * max(0, min(var(--border-radius-cal), 50)) / 100 * (SQRT(2) - 1)) - 1 / SQRT(2)));
+  pointer-events: none;
+}
+
+.svg_line svg {
+  //width: 100%;
+  width: 20px;
+  height: 100%;
+}
+.svg_line_h svg {
+  width: 100%;
+  //height: 100%;
+  height: 20px;
+}
+.svg_line_d svg {
+  width: 100%;
+  //height: 100%;
+  height: 20px;
+}
+</style>
+</head>
+<body>
+  <div class="controls">
+    <div class="control-group">
+      <label for="size-input">Edge (e):</label>
+      <input type="number" id="size-input" value="500" min="100" max="2000" step="50">
+      <span id="size-value">500px</span>
+    </div>
+    
+    <div class="control-group">
+      <label for="radius-input">Border Radius (R):</label>
+      <input type="range" id="radius-input" value="25" min="0" max="50" step="1">
+      <span id="radius-value">25%</span>
+    </div>
+    
+    <div class="control-group">
+      <label for="color-input">Color:</label>
+      <input type="color" id="color-input" value="#d3e3fd">
+      <span id="color-value">#d3e3fd</span>
+    </div>
+  </div>
+
+  <p style="text-align: center;">
+    $$ d = e\left(\frac{1}{\sqrt{2} - 2R(\sqrt{2} - 1)} - \frac{1}{\sqrt{2}}\right) $$
+  </p>
+  
+  <div class="container">
+    <div class="pentagon">
+      <div class="e_horizontal">
+        <div class="svg_line_h">
+          <div>e</div>
+          <svg viewBox="0 0 500 20" preserveAspectRatio="none">
+            <defs>
+              <marker
+                id="arrow"
+                viewBox="0 0 10 10"
+                refX="7"
+                refY="5"
+                markerWidth="8"
+                markerHeight="8"
+                orient="auto-start-reverse">
+                <path d="M 0 0 L 7 5 L 0 10 L 3 5 z"  fill="black" stroke="black" stroke-width="0" />
+              </marker>
+            </defs>
+            <!-- Stop line (Top) -->
+            <line x1="0" y1="0" x2="0" y2="20" stroke="black" stroke-width="1" />
+            <line 
+              x1="0" y1="10" 
+              x2="500" y2="10" 
+              stroke="black" 
+              stroke-width="1" 
+              stroke-dasharray="4,4"
+              marker-start="url(#arrow)"
+              marker-end="url(#arrow)"
+            />
+            <!-- Stop line (Bottom) -->
+            <line x1="500" y1="0" x2="500" y2="20" stroke="black" stroke-width="1" />
+          </svg>
+        </div>
+      </div>
+      <div class="e_vertical">
+        <div class="svg_line">
+          <svg viewBox="0 0 20 500" preserveAspectRatio="none">
+            <!-- Stop line (Top) -->
+            <line x1="0" y1="0" x2="20" y2="0" stroke="black" stroke-width="1" />
+            <line 
+              x1="10" y1="0" 
+              x2="10" y2="500" 
+              stroke="black" 
+              stroke-width="1" 
+              stroke-dasharray="4,4"
+              marker-start="url(#arrow)"
+              marker-end="url(#arrow)"
+            />
+            <!-- Stop line (Bottom) -->
+            <line x1="0" y1="500" x2="20" y2="500" stroke="black" stroke-width="1" />
+          </svg>
+          <div>e</div>
+        </div>
+      </div>
+      <div class="r_horizontal">
+        <div class="svg_line_h">
+          <svg viewBox="0 0 250 20" preserveAspectRatio="none">
+            <!-- Stop line (Top) -->
+            <line x1="0" y1="0" x2="0" y2="12" stroke="black" stroke-width="1" />
+            <line 
+              x1="0" y1="6" 
+              x2="250" y2="6" 
+              stroke="black" 
+              stroke-width="1" 
+              stroke-dasharray="4,4"
+              marker-start="url(#arrow)"
+              marker-end="url(#arrow)"
+            />
+            <!-- Stop line (Bottom) -->
+            <line x1="250" y1="0" x2="250" y2="12" stroke="black" stroke-width="1" />
+          </svg>
+          <div class="e_r_font">R%</div>
+        </div>
+      </div>
+      <div class="r_vertical">
+        <div class="svg_line">
+          <div class="e_r_v e_r_font">R%</div>
+          <svg viewBox="0 0 20 250" preserveAspectRatio="none">
+            <!-- Stop line (Top) -->
+            <line x1="0" y1="0" x2="12" y2="0" stroke="black" stroke-width="1" />
+            <line 
+              x1="6" y1="0" 
+              x2="6" y2="250" 
+              stroke="black" 
+              stroke-width="1" 
+              stroke-dasharray="4,4"
+              marker-start="url(#arrow)"
+              marker-end="url(#arrow)"
+            />
+            <!-- Stop line (Bottom) -->
+            <line x1="0" y1="250" x2="12" y2="250" stroke="black" stroke-width="1" />
+          </svg>
+        </div>
+      </div>
+      <div class="pentagon_after">
+        <div class="p_d_line">
+          <div class="svg_line_d">
+            <div id="p_d" class="p_d">d</div>
+            <svg viewBox="0 0 50 20" preserveAspectRatio="none">
+              <!-- Stop line (Top) -->
+              <line x1="0" y1="0" x2="0" y2="12" stroke="black" stroke-width="0.6" />
+              <line 
+                x1="0" y1="6" 
+                x2="50" y2="6" 
+                stroke="black" 
+                stroke-width="0.6" 
+                stroke-dasharray="2,2"
+                marker-start="url(#arrow)"
+                marker-end="url(#arrow)"
+              />
+              <!-- Stop line (Bottom) -->
+              <line x1="50" y1="0" x2="50" y2="12" stroke="black" stroke-width="0.6" />
+            </svg>
+          </div>
+        </div>
+        <div class="p_horizontal">
+          <div class="svg_line_h">
+            <svg viewBox="0 0 500 20" preserveAspectRatio="none">
+              <!-- Stop line (Top) -->
+              <line x1="0" y1="0" x2="0" y2="20" stroke="black" stroke-width="1" />
+              <line 
+                x1="0" y1="10" 
+                x2="500" y2="10" 
+                stroke="black" 
+                stroke-width="1" 
+                stroke-dasharray="4,4"
+                marker-start="url(#arrow)"
+                marker-end="url(#arrow)"
+              />
+              <!-- Stop line (Bottom) -->
+              <line x1="500" y1="0" x2="500" y2="20" stroke="black" stroke-width="1" />
+            </svg>
+            <div id="eq_r" style="display: none;">$$ \frac{e}{\sqrt{2}} $$</div>
+            <div id="eq_r_d">$$ \frac{e}{\sqrt{2}} + d $$</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Get references to the input elements
+    const sizeInput = document.getElementById('size-input');
+    const radiusInput = document.getElementById('radius-input');
+    const colorInput = document.getElementById('color-input');
+
+    // Get references to the value display elements
+    const sizeValue = document.getElementById('size-value');
+    const radiusValue = document.getElementById('radius-value');
+    const colorValue = document.getElementById('color-value');
+    
+    // Function to update CSS variables
+    function updatePentagon() {
+      // Update the CSS variables
+      document.documentElement.style.setProperty('--size', `${sizeInput.value}px`);
+      document.documentElement.style.setProperty('--border-radius-cal', radiusInput.value);
+      document.documentElement.style.setProperty('--color', colorInput.value);
+      
+      // Update the display values
+      sizeValue.textContent = `${sizeInput.value}px`;
+      radiusValue.textContent = `${radiusInput.value}%`;
+      colorValue.textContent = colorInput.value;
+    }
+    
+    // Add event listeners to the input elements
+    colorInput.addEventListener('input', updatePentagon);
+    
+    sizeInput.addEventListener('input', function(event) {
+      let newValue = parseInt(this.value < 1 ? 1 : this.value);
+      // Clamp the new value between min and max
+      const minValue = 1;
+      const maxValue = 2000;
+      newValue = Math.max(minValue, Math.min(newValue, maxValue));
+
+      this.value = newValue; // Update the input value
+      updatePentagon();
+    });
+    sizeInput.addEventListener('wheel', function(event) {
+      event.preventDefault(); // Prevent the default scroll behavior
+      const delta = Math.sign(event.deltaY) * 50; // Determine the direction of the wheel scroll
+      let newValue = parseInt(this.value) - delta; // Update the input value
+      
+      // Clamp the new value between min and max
+      const minValue = parseInt(this.min);
+      const maxValue = parseInt(this.max);
+      newValue = Math.max(minValue, Math.min(newValue, maxValue));
+
+      this.value = newValue; // Update the input value
+      updatePentagon();
+    });
+    radiusInput.addEventListener('input', function(event) {
+      const p_d_id = document.getElementById('p_d');
+      const eq_r_id = document.getElementById('eq_r');
+      const eq_r_d_id = document.getElementById('eq_r_d');
+      if (this.value == 0) {
+        p_d_id.style.display = "none";
+        eq_r_id.style.display = "block";
+        eq_r_d_id.style.display = "none";
+        document.querySelectorAll('.e_r_font').forEach(el => {
+            el.style.display = 'none';
+        });
+      } else {
+        p_d_id.style.display = "block";
+        eq_r_id.style.display = "none";
+        eq_r_d_id.style.display = "block";
+        document.querySelectorAll('.e_r_font').forEach(el => {
+            el.style.display = 'block';
+        });
+      }
+
+      updatePentagon();
+    });
+    radiusInput.addEventListener('wheel', function(event) {
+      event.preventDefault(); // Prevent the default scroll behavior
+      const delta = Math.sign(event.deltaY); // Determine the direction of the wheel scroll
+      let newValue = parseInt(this.value) - delta; // Update the input value
+      
+      // Clamp the new value between min and max
+      const minValue = parseInt(this.min);
+      const maxValue = parseInt(this.max);
+      newValue = Math.max(minValue, Math.min(newValue, maxValue));
+
+      const p_d_id = document.getElementById('p_d');
+      const eq_r_id = document.getElementById('eq_r');
+      const eq_r_d_id = document.getElementById('eq_r_d');
+      if (newValue == 0) {
+        p_d_id.style.display = "none";
+        eq_r_id.style.display = "block";
+        eq_r_d_id.style.display = "none";
+        document.getElementsByClassName('e_r_font')[0].style.display = 'none';
+        document.getElementsByClassName('e_r_font')[1].style.display = 'none';
+      } else {
+        p_d_id.style.display = "block";
+        eq_r_id.style.display = "none";
+        eq_r_d_id.style.display = "block";
+        document.getElementsByClassName('e_r_font')[0].style.display = 'block';
+        document.getElementsByClassName('e_r_font')[1].style.display = 'block';
+      }
+
+      this.value = newValue; // Update the input value
+      updatePentagon();
+    });
+    
+    // Initialize with default values
+    updatePentagon();
+  </script>
+</body>
+</html>
