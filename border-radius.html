@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .container {
+            position: relative;
+            width: 1000px;
+            height: 1000px;
+            margin: 20px;
+            background: #f0f0f0;
+        }
+
+        .square {
+            width: 100%;
+            height: 100%;
+            background: #07f;
+            transition: border-radius 0.3s;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        input {
+            margin: 20px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <span>radiusInput: </span><input type="number" id="radiusPercent" value="10" min="0" max="50" step="1">%
+    <div id="distanceDisplay"></div>
+    <div class="container">
+        <div class="square"></div>
+        <svg class="overlay">
+            <line id="tangentLine" x1="0" y1="0" x2="0" y2="0" stroke="red" stroke-width="2"/>
+        </svg>
+    </div>
+
+    <script>
+        const radiusInput = document.getElementById('radiusPercent');
+        const square = document.querySelector('.square');
+        const tangentLine = document.getElementById('tangentLine');
+        const distanceDisplay = document.getElementById('distanceDisplay');
+        const size = 1000; // px
+
+        function update() {
+            const percent = Math.min(radiusInput.value, 50);
+            const r = (percent / 100) * size;
+            
+            // Update border-radius
+            square.style.borderRadius = `${percent}%`;
+            
+            // Calculate tangent line coordinates
+            const c = r * (2 - Math.sqrt(2));
+            const distance = r * (Math.sqrt(2) - 1);
+            
+            // Update tangent line
+            tangentLine.setAttribute('x1', '0');
+            tangentLine.setAttribute('y1', c);
+            tangentLine.setAttribute('x2', c);
+            tangentLine.setAttribute('y2', '0');
+            
+            // Update distance display
+            distanceDisplay.textContent = 
+                `Distance from corner to tangent line: ${distance.toFixed(6)}px`;
+        }
+
+        radiusInput.addEventListener('input', update);
+        update();
+    </script>
+</body>
+</html>
