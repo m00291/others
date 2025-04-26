@@ -98,6 +98,17 @@
   //border-bottom: 2px dotted #FF0000;
   z-index: 2;
 }
+.p_d {
+  position: absolute;
+  top: -15px;
+  margin: 0 40%;
+}
+.p_d_line {
+  position: absolute;
+  top: calc(var(--size) / sqrt(2) + var(--size) * (1 / (SQRT(2) - 2 * max(0, min(var(--border-radius-cal), 50)) / 100 * (SQRT(2) - 1)) - 1 / SQRT(2)));
+  transform: rotate(-45deg);
+  transform-origin: 0% 0%;
+}
 .svg_line {
   display: flex;
   align-items: center;
@@ -111,6 +122,13 @@
   //height: 27px;
   pointer-events: none;
 }
+.svg_line_d {
+  display: flex;
+  align-items: center;
+  //height: var(--size);
+  width: calc(var(--size) / sqrt(2) * (1 / (SQRT(2) - 2 * max(0, min(var(--border-radius-cal), 50)) / 100 * (SQRT(2) - 1)) - 1 / SQRT(2)));
+  pointer-events: none;
+}
 
 .svg_line svg {
   //width: 100%;
@@ -118,6 +136,11 @@
   height: 100%;
 }
 .svg_line_h svg {
+  width: 100%;
+  //height: 100%;
+  height: 20px;
+}
+.svg_line_d svg {
   width: 100%;
   //height: 100%;
   height: 20px;
@@ -204,6 +227,26 @@
         </div>
       </div>
       <div class="pentagon_after">
+        <div class="p_d_line">
+          <div class="svg_line_d">
+            <div id="p_d" class="p_d">d</div>
+            <svg viewBox="0 0 50 20" preserveAspectRatio="none">
+              <!-- Stop line (Top) -->
+              <line x1="0" y1="0" x2="0" y2="12" stroke="black" stroke-width="0.6" />
+              <line 
+                x1="0" y1="6" 
+                x2="50" y2="6" 
+                stroke="black" 
+                stroke-width="0.6" 
+                stroke-dasharray="2,2"
+                marker-start="url(#arrow)"
+                marker-end="url(#arrow)"
+              />
+              <!-- Stop line (Bottom) -->
+              <line x1="50" y1="0" x2="50" y2="12" stroke="black" stroke-width="0.6" />
+            </svg>
+          </div>
+        </div>
         <div class="p_horizontal">
           <div class="svg_line_h">
             <svg viewBox="0 0 500 20" preserveAspectRatio="none">
@@ -290,6 +333,13 @@
       const minValue = parseInt(this.min);
       const maxValue = parseInt(this.max);
       newValue = Math.max(minValue, Math.min(newValue, maxValue));
+
+      const p_d_id = document.getElementById('p_d');
+      if (this.value == 0) {
+        p_d_id.style.display = "none";
+      } else {
+        p_d_id.style.display = "block";
+      }
 
       this.value = newValue; // Update the input value
       updatePentagon();
