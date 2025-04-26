@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <style>
 :root {
   --size: 1000px;
-  --size: calc( 1000px * sqrt(2));
   --border-radius-cal: 25;
-  --border-radius-\%: calc( 100% * var(--border-radius-cal) / 100);
   --color: #2196F3;
-  --rotatewidth-compensate: var(--border-radius-\%)/100;
+  --border-radius-\%: calc( 100% * var(--border-radius-cal) / 100);
   --rotatewidth: calc(var(--size)/sqrt(2) + var(--size)*(1/(SQRT(2) - 2*max(0,min(var(--border-radius-cal),50))/100*(SQRT(2) - 1)) - 1/SQRT(2)));
 }
 .pentagon {
-  margin: 50em;
+  margin: auto;
   position: relative;
   width: var(--size);
   height: var(--size);
@@ -36,6 +36,9 @@
 </style>
 </head>
 <body>
+  <p>
+    $$ d = e\left(\frac{1}{\sqrt{2} - 2R(\sqrt{2} - 1)} - \frac{1}{\sqrt{2}}\right) $$
+  </p>
 <div class="container">
   <div class="pentagon"></div>
 </div>
