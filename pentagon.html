@@ -140,8 +140,8 @@
     
     <div class="control-group">
       <label for="color-input">Color:</label>
-      <input type="color" id="color-input" value="#2196F3">
-      <span id="color-value">#2196F3</span>
+      <input type="color" id="color-input" value="#d3e3fd">
+      <span id="color-value">#d3e3fd</span>
     </div>
   </div>
 
@@ -255,10 +255,19 @@
     }
     
     // Add event listeners to the input elements
-    sizeInput.addEventListener('input', updatePentagon);
     radiusInput.addEventListener('input', updatePentagon);
     colorInput.addEventListener('input', updatePentagon);
     
+    sizeInput.addEventListener('input', function(event) {
+      let newValue = parseInt(this.value < 1 ? 1 : this.value);
+      // Clamp the new value between min and max
+      const minValue = 1;
+      const maxValue = 2000;
+      newValue = Math.max(minValue, Math.min(newValue, maxValue));
+
+      this.value = newValue; // Update the input value
+      updatePentagon();
+    });
     sizeInput.addEventListener('wheel', function(event) {
       event.preventDefault(); // Prevent the default scroll behavior
       const delta = Math.sign(event.deltaY) * 50; // Determine the direction of the wheel scroll
