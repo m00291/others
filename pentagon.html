@@ -264,9 +264,8 @@
               <!-- Stop line (Bottom) -->
               <line x1="500" y1="0" x2="500" y2="20" stroke="black" stroke-width="1" />
             </svg>
-            <div>
-              $$ \frac{e}{\sqrt{2}} + d $$
-            </div>
+            <div id="eq_r" style="display: none;">$$ \frac{e}{\sqrt{2}} $$</div>
+            <div id="eq_r_d">$$ \frac{e}{\sqrt{2}} + d $$</div>
           </div>
         </div>
       </div>
@@ -335,10 +334,16 @@
       newValue = Math.max(minValue, Math.min(newValue, maxValue));
 
       const p_d_id = document.getElementById('p_d');
-      if (this.value == 0) {
+      const eq_r_id = document.getElementById('eq_r');
+      const eq_r_d_id = document.getElementById('eq_r_d');
+      if (newValue == 0) {
         p_d_id.style.display = "none";
+        eq_r_id.style.display = "block";
+        eq_r_d_id.style.display = "none";
       } else {
         p_d_id.style.display = "block";
+        eq_r_id.style.display = "none";
+        eq_r_d_id.style.display = "block";
       }
 
       this.value = newValue; // Update the input value
