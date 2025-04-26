@@ -3,15 +3,13 @@
 <head>
 <style>
 :root {
-  /* √2 ≈ 1.4142 */
   --size: 1000px;
   --size: calc( 1000px * sqrt(2));
   --border-radius-cal: 25;
   --border-radius-\%: calc( 100% * var(--border-radius-cal) / 100);
   --color: #2196F3;
   --rotatewidth-compensate: var(--border-radius-\%)/100;
-  --rotatewidth: calc(var(--size)/sqrt(2) + var(--border-radius-\%)/2);
-  --rotatewidth: calc(var(--size)/sqrt(2) + var(--size)*(sqrt(2) - 1) * (1 - var(--border-radius-cal)/50));
+  --rotatewidth: calc(var(--size)/sqrt(2) + var(--size)*(1/(SQRT(2) - 2*max(0,min(var(--border-radius-cal),50))/100*(SQRT(2) - 1)) - 1/SQRT(2)));
 }
 .pentagon {
   margin: 50em;
@@ -23,7 +21,7 @@
   border-radius: 0  var(--border-radius-\%) var(--border-radius-\%) 0;
 }
 
-.pentagon::before {
+.pentagon::after {
   content: '';
   position: absolute;
   transform: rotate(45deg);
