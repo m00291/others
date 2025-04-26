@@ -45,7 +45,7 @@
   border-radius: 0 var(--border-radius-\%) var(--border-radius-\%) 0;
 }
 
-.pentagon::after {
+.pentagon_after {
   content: '';
   position: absolute;
   transform: rotate(45deg);
@@ -63,47 +63,58 @@
   justify-content: center;
 }
 
-.e-vertical {
+.e_vertical {
   position: absolute;
   //top: 100%;
   //left: 0;
   //width: 100%;
   height: 100%;
-  margin-left: calc(var(--size) + 20px);
+  margin-left: calc(var(--size) + 10px);
   //border-left: 2px dotted #FF0000;
   z-index: 2;
 }
-.e-horizontal {
+.e_horizontal {
   position: absolute;
-  top: -40px;
+  top: -46px;
   //left: 0;
   width: 100%;
   //height: 100%;
   //border-bottom: 2px dotted #FF0000;
   z-index: 2;
 }
-.svg-line {
+.p_horizontal {
+  position: absolute;
+  //top: -40px;
+  //left: 0;
+  width: 100%;
+  //height: 100%;
+  margin-top: calc(var(--size) / sqrt(2) + var(--size) * (1 / (SQRT(2) - 2 * max(0, min(var(--border-radius-cal), 50)) / 100 * (SQRT(2) - 1)) - 1 / SQRT(2)) + 10px);
+  //border-bottom: 2px dotted #FF0000;
+  z-index: 2;
+}
+.svg_line {
   display: flex;
   align-items: center;
   height: var(--size);
-  width: 20px;
   pointer-events: none;
 }
-.svg-line-h {
+.svg_line_h {
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 27px;
+  //height: 27px;
   pointer-events: none;
 }
 
-.svg-line svg {
-  width: 100%;
+.svg_line svg {
+  //width: 100%;
+  width: 20px;
   height: 100%;
 }
-.svg-line-h svg {
+.svg_line_h svg {
   width: 100%;
-  height: 100%;
+  //height: 100%;
+  height: 20px;
 }
 </style>
 </head>
@@ -134,8 +145,8 @@
   
   <div class="container">
     <div class="pentagon">
-      <div class="e-horizontal">
-        <div class="svg-line-h">
+      <div class="e_horizontal">
+        <div class="svg_line_h">
           <div>e</div>
           <svg viewBox="0 0 500 20" preserveAspectRatio="none">
             <defs>
@@ -166,8 +177,8 @@
           </svg>
         </div>
       </div>
-      <div class="e-vertical">
-        <div class="svg-line">
+      <div class="e_vertical">
+        <div class="svg_line">
           <svg viewBox="0 0 20 500" preserveAspectRatio="none">
             <defs>
               <marker
@@ -195,8 +206,44 @@
             <!-- Stop line (Bottom) -->
             <line x1="0" y1="500" x2="20" y2="500" stroke="black" stroke-width="2" />
           </svg>
-          <span>e</span>
+          <div>e</div>
         </div>
+      </div>
+      <div class="pentagon_after">
+      <div class="p_horizontal">
+        <div class="svg_line_h">
+          <svg viewBox="0 0 500 20" preserveAspectRatio="none">
+            <defs>
+              <marker
+                id="arrow"
+                viewBox="0 0 10 10"
+                refX="7"
+                refY="5"
+                markerWidth="8"
+                markerHeight="8"
+                orient="auto-start-reverse">
+                <path d="M 0 0 L 6 5 L 0 10"  fill="none" stroke="black" stroke-width="1" />
+              </marker>
+            </defs>
+            <!-- Stop line (Top) -->
+            <line x1="0" y1="0" x2="0" y2="20" stroke="black" stroke-width="2" />
+            <line 
+              x1="0" y1="10" 
+              x2="500" y2="10" 
+              stroke="black" 
+              stroke-width="2" 
+              stroke-dasharray="4,4"
+              marker-start="url(#arrow)"
+              marker-end="url(#arrow)"
+            />
+            <!-- Stop line (Bottom) -->
+            <line x1="500" y1="0" x2="500" y2="20" stroke="black" stroke-width="2" />
+          </svg>
+          <div>
+            $$ \frac{e}{\sqrt{2}} $$
+          </div>
+        </div>
+      </div>
       </div>
     </div>
   </div>
