@@ -297,7 +297,6 @@
     }
     
     // Add event listeners to the input elements
-    radiusInput.addEventListener('input', updatePentagon);
     colorInput.addEventListener('input', updatePentagon);
     
     sizeInput.addEventListener('input', function(event) {
@@ -321,6 +320,22 @@
       newValue = Math.max(minValue, Math.min(newValue, maxValue));
 
       this.value = newValue; // Update the input value
+      updatePentagon();
+    });
+    radiusInput.addEventListener('input', function(event) {
+      const p_d_id = document.getElementById('p_d');
+      const eq_r_id = document.getElementById('eq_r');
+      const eq_r_d_id = document.getElementById('eq_r_d');
+      if (this.value == 0) {
+        p_d_id.style.display = "none";
+        eq_r_id.style.display = "block";
+        eq_r_d_id.style.display = "none";
+      } else {
+        p_d_id.style.display = "block";
+        eq_r_id.style.display = "none";
+        eq_r_d_id.style.display = "block";
+      }
+
       updatePentagon();
     });
     radiusInput.addEventListener('wheel', function(event) {
