@@ -428,16 +428,14 @@
         p_d_id.style.display = "none";
         eq_r_id.style.display = "block";
         eq_r_d_id.style.display = "none";
-        document.querySelectorAll('.e_r_font').forEach(el => {
-            el.style.display = 'none';
-        });
+        document.getElementsByClassName('e_r_font')[0].style.display = 'none';
+        document.getElementsByClassName('e_r_font')[1].style.display = 'none';
       } else {
         p_d_id.style.display = "block";
         eq_r_id.style.display = "none";
         eq_r_d_id.style.display = "block";
-        document.querySelectorAll('.e_r_font').forEach(el => {
-            el.style.display = 'block';
-        });
+        document.getElementsByClassName('e_r_font')[0].style.display = 'block';
+        document.getElementsByClassName('e_r_font')[1].style.display = 'block';
       }
 
       this.value = newValue; // Update the input value
