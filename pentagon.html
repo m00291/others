@@ -79,6 +79,25 @@
   //border-left: 2px dotted #FF0000;
   z-index: 2;
 }
+.r_horizontal {
+  position: absolute;
+  top: calc(var(--size) * var(--border-radius-cal) / 100);
+  left: calc(var(--size) * (1 - var(--border-radius-cal) / 100));
+  width: calc(var(--size) * var(--border-radius-cal) / 100);
+  //height: 100%;
+  //border-bottom: 2px dotted #FF0000;
+  z-index: 2;
+}
+.r_vertical {
+  position: absolute;
+  //top: 100%;
+  left: calc(var(--size) * (1 - var(--border-radius-cal) / 100) - 11px);
+  //width: 100%;
+  height: calc(var(--size) * var(--border-radius-cal) / 100);
+  //margin-left: calc(var(--size) + 10px);
+  //border-left: 2px dotted #FF0000;
+  z-index: 2;
+}
 .e_horizontal {
   position: absolute;
   top: -46px;
@@ -109,10 +128,18 @@
   transform: rotate(-45deg);
   transform-origin: 0% 0%;
 }
+.e_r_v {
+  width: 0%;
+  position: absolute;
+  margin-left: -24px;
+}
+.e_r_font {
+  font-size: small;
+}
 .svg_line {
   display: flex;
   align-items: center;
-  height: var(--size);
+  height: 100%;
   pointer-events: none;
 }
 .svg_line_h {
@@ -226,6 +253,46 @@
           <div>e</div>
         </div>
       </div>
+      <div class="r_horizontal">
+        <div class="svg_line_h">
+          <svg viewBox="0 0 250 20" preserveAspectRatio="none">
+            <!-- Stop line (Top) -->
+            <line x1="0" y1="0" x2="0" y2="12" stroke="black" stroke-width="1" />
+            <line 
+              x1="0" y1="6" 
+              x2="250" y2="6" 
+              stroke="black" 
+              stroke-width="1" 
+              stroke-dasharray="4,4"
+              marker-start="url(#arrow)"
+              marker-end="url(#arrow)"
+            />
+            <!-- Stop line (Bottom) -->
+            <line x1="250" y1="0" x2="250" y2="12" stroke="black" stroke-width="1" />
+          </svg>
+          <div class="e_r_font">R%</div>
+        </div>
+      </div>
+      <div class="r_vertical">
+        <div class="svg_line">
+          <div class="e_r_v e_r_font">R%</div>
+          <svg viewBox="0 0 20 250" preserveAspectRatio="none">
+            <!-- Stop line (Top) -->
+            <line x1="0" y1="0" x2="12" y2="0" stroke="black" stroke-width="1" />
+            <line 
+              x1="6" y1="0" 
+              x2="6" y2="250" 
+              stroke="black" 
+              stroke-width="1" 
+              stroke-dasharray="4,4"
+              marker-start="url(#arrow)"
+              marker-end="url(#arrow)"
+            />
+            <!-- Stop line (Bottom) -->
+            <line x1="0" y1="250" x2="12" y2="250" stroke="black" stroke-width="1" />
+          </svg>
+        </div>
+      </div>
       <div class="pentagon_after">
         <div class="p_d_line">
           <div class="svg_line_d">
@@ -330,10 +397,16 @@
         p_d_id.style.display = "none";
         eq_r_id.style.display = "block";
         eq_r_d_id.style.display = "none";
+        document.querySelectorAll('.e_r_font').forEach(el => {
+            el.style.display = 'none';
+        });
       } else {
         p_d_id.style.display = "block";
         eq_r_id.style.display = "none";
         eq_r_d_id.style.display = "block";
+        document.querySelectorAll('.e_r_font').forEach(el => {
+            el.style.display = 'block';
+        });
       }
 
       updatePentagon();
@@ -355,10 +428,16 @@
         p_d_id.style.display = "none";
         eq_r_id.style.display = "block";
         eq_r_d_id.style.display = "none";
+        document.querySelectorAll('.e_r_font').forEach(el => {
+            el.style.display = 'none';
+        });
       } else {
         p_d_id.style.display = "block";
         eq_r_id.style.display = "none";
         eq_r_d_id.style.display = "block";
+        document.querySelectorAll('.e_r_font').forEach(el => {
+            el.style.display = 'block';
+        });
       }
 
       this.value = newValue; // Update the input value
