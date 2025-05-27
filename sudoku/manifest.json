@@ -1,0 +1,16 @@
+{
+  "name": "數獨",
+  "short_name": "數獨",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "ico.png",
+      "sizes": "250x250",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
