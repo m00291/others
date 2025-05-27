@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>數獨遊戲</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        button {
+            padding: 8px 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px 0;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #sudoku-board {
+            border: 2px solid #333;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+        .cell {
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            font-size: 20px;
+            border: 1px solid #999;
+            background-color: #fff;
+            cursor: pointer;
+        }
+        .cell:focus {
+            outline: none;
+            background-color: #e0f7fa;
+        }
+        .preset {
+            font-weight: bold;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        .highlight {
+            background-color: #e0f7fa;
+        }
+        .error {
+            color: red;
+        }
+        .same-value {
+            background-color: #e3f2fd;
+        }
+        .border-right {
+            border-right: 2px solid #333;
+        }
+        .border-bottom {
+            border-bottom: 2px solid #333;
+        }
+        #message {
+            text-align: center;
+            margin: 10px 0;
+            min-height: 20px;
+            color: #d32f2f;
+        }
+        .number-pad {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+            margin: 15px auto;
+            max-width: 180px;
+        }
+        .number-btn {
+            padding: 10px;
+            font-size: 18px;
+            text-align: center;
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .number-btn:hover {
+            background-color: #0b7dda;
+        }
+        .custom-input {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        textarea {
+            width: 100%;
+            height: 120px;
+            margin-bottom: 10px;
+            font-family: monospace;
+            padding: 5px;
+            resize: vertical;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 5px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover {
+            color: #000;
+        }
+        @media (max-width: 480px) {
+            .cell {
+                width: 30px;
+                height: 30px;
+                font-size: 16px;
+            }
+            .controls {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>數獨遊戲</h1>
+    
+    <div class="controls">
+        <button id="new-game">新遊戲</button>
+        <button id="custom-puzzle">自訂題目</button>
+        <button id="check-solution">檢查答案</button>
+        <button id="solve">解答</button>
+        <button id="clear">清除輸入</button>
+    </div>
+
+    <div id="message"></div>
+    
+    <table id="sudoku-board"></table>
+    
+    <div class="number-pad">
+        <button class="number-btn">1</button>
+        <button class="number-btn">2</button>
+        <button class="number-btn">3</button>
+        <button class="number-btn">4</button>
+        <button class="number-btn">5</button>
+        <button class="number-btn">6</button>
+        <button class="number-btn">7</button>
+        <button class="number-btn">8</button>
+        <button class="number-btn">9</button>
+        <button class="number-btn delete">刪除</button>
+    </div>
+
+    <div id="customModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>自訂數獨題目</h2>
+            <p>請在下方輸入您的數獨題目（0表示空格）：</p>
+            <textarea id="custom-input" placeholder="例如：
+530070000
+600195000
+098000060
+800060003
+400803001
+700020006
+060000280
+000419005
+000080079"></textarea>
+            <button id="submit-custom">提交</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const board = document.getElementById('sudoku-board');
+            const message = document.getElementById('message');
+            const newGameBtn = document.getElementById('new-game');
+            const checkSolutionBtn = document.getElementById('check-solution');
+            const solveBtn = document.getElementById('solve');
+            const clearBtn = document.getElementById('clear');
+            const customPuzzleBtn = document.getElementById('custom-puzzle');
+            const submitCustomBtn = document.getElementById('submit-custom');
+            const customModal = document.getElementById('customModal');
+            const closeModal = document.querySelector('.close');
+            const numberButtons = document.querySelectorAll('.number-btn');
+            
+            let puzzle = Array(9).fill().map(() => Array(9).fill(0));
+            let solution = Array(9).fill().map(() => Array(9).fill(0));
+            let userInput = Array(9).fill().map(() => Array(9).fill(0));
+            let selectedCell = null;
+            let originalPuzzle = null;
+            
+            // 簡單數獨題目示例
+            const easySudokuPuzzle = [
+                [5, 3, 0, 0, 7, 0, 0, 0, 0],
+                [6, 0, 0, 1, 9, 5, 0, 0, 0],
+                [0, 9, 8, 0, 0, 0, 0, 6, 0],
+                [8, 0, 0, 0, 6, 0, 0, 0, 3],
+                [4, 0, 0, 8, 0, 3, 0, 0, 1],
+                [7, 0, 0, 0, 2, 0, 0, 0, 6],
+                [0, 6, 0, 0, 0, 0, 2, 8, 0],
+                [0, 0, 0, 4, 1, 9, 0, 0, 5],
+                [0, 0, 0, 0, 8, 0, 0, 7, 9]
+            ];
+            
+            // 創建數獨表格
+            function createBoard() {
+                board.innerHTML = '';
+                for (let i = 0; i < 9; i++) {
+                    const row = document.createElement('tr');
+                    for (let j = 0; j < 9; j++) {
+                        const cell = document.createElement('td');
+                        cell.classList.add('cell');
+                        cell.dataset.row = i;
+                        cell.dataset.col = j;
+                        
+                        // 添加邊界線
+                        if ((j + 1) % 3 === 0 && j < 8) {
+                            cell.classList.add('border-right');
+                        }
+                        if ((i + 1) % 3 === 0 && i < 8) {
+                            cell.classList.add('border-bottom');
+                        }
+                        
+                        cell.addEventListener('click', function() {
+                            if (!cell.classList.contains('preset')) {
+                                selectCell(cell);
+                            }
+                        });
+                        
+                        row.appendChild(cell);
+                    }
+                    board.appendChild(row);
+                }
+            }
+            
+            // 將數獨題目加載到表格
+            function loadPuzzle(puzzleData) {
+                puzzle = JSON.parse(JSON.stringify(puzzleData));
+                originalPuzzle = JSON.parse(JSON.stringify(puzzleData));
+                userInput = Array(9).fill().map(() => Array(9).fill(0));
+                
+                const cells = document.querySelectorAll('.cell');
+                cells.forEach(cell => {
+                    const i = parseInt(cell.dataset.row);
+                    const j = parseInt(cell.dataset.col);
+                    
+                    cell.classList.remove('preset', 'error');
+                    cell.textContent = '';
+                    
+                    if (puzzle[i][j] !== 0) {
+                        cell.textContent = puzzle[i][j];
+                        cell.classList.add('preset');
+                    }
+                });
+                
+                // 解答題目
+                solution = JSON.parse(JSON.stringify(puzzle));
+                solveSudoku(solution);
+                
+                message.textContent = '';
+            }
+            
+            // 選擇單元格
+            function selectCell(cell) {
+                // 移除之前選擇的單元格高亮
+                if (selectedCell) {
+                    selectedCell.classList.remove('highlight');
+                }
+                
+                // 移除所有同值高亮
+                document.querySelectorAll('.same-value').forEach(cell => {
+                    cell.classList.remove('same-value');
+                });
+                
+                // 高亮選擇的單元格
+                cell.classList.add('highlight');
+                selectedCell = cell;
+                
+                // 高亮所有具有相同值的單元格
+                const value = cell.textContent;
+                if (value) {
+                    document.querySelectorAll('.cell').forEach(c => {
+                        if (c.textContent === value && !c.classList.contains('highlight')) {
+                            c.classList.add('same-value');
+                        }
+                    });
+                }
+            }
+            
+            // 數字按鈕點擊處理
+            numberButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    if (!selectedCell || selectedCell.classList.contains('preset')) {
+                        return;
+                    }
+                    
+                    const row = parseInt(selectedCell.dataset.row);
+                    const col = parseInt(selectedCell.dataset.col);
+                    
+                    if (button.classList.contains('delete')) {
+                        selectedCell.textContent = '';
+                        userInput[row][col] = 0;
+                        selectedCell.classList.remove('error');
+                    } else {
+                        const num = parseInt(button.textContent);
+                        selectedCell.textContent = num;
+                        userInput[row][col] = num;
+                        
+                        // 檢查當前輸入是否違反數獨規則
+                        if (!isValidPlacement(originalPuzzle, row, col, num)) {
+                            selectedCell.classList.add('error');
+                            message.textContent = '數字 ' + num + ' 在此位置違反數獨規則';
+                        } else {
+                            selectedCell.classList.remove('error');
+                            message.textContent = '';
+                        }
+                    }
+                    
+                    // 重新高亮相同值
+                    document.querySelectorAll('.same-value').forEach(cell => {
+                        cell.classList.remove('same-value');
+                    });
+                    
+                    const value = selectedCell.textContent;
+                    if (value) {
+                        document.querySelectorAll('.cell').forEach(c => {
+                            if (c.textContent === value && !c.classList.contains('highlight')) {
+                                c.classList.add('same-value');
+                            }
+                        });
+                    }
+                    
+                    // 檢查是否完成遊戲
+                    if (isBoardFilled() && !document.querySelector('.error')) {
+                        checkSolution();
+                    }
+                });
+            });
+            
+            // 檢查數獨是否已填滿
+            function isBoardFilled() {
+                const cells = document.querySelectorAll('.cell');
+                for (let cell of cells) {
+                    if (!cell.textContent) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+            
+            // 檢查數字放置是否有效
+            function isValidPlacement(board, row, col, num) {
+                // 檢查行
+                for (let j = 0; j < 9; j++) {
+                    if (j !== col && (board[row][j] === num || userInput[row][j] === num)) {
+                        return false;
+                    }
+                }
+                
+                // 檢查列
+                for (let i = 0; i < 9; i++) {
+                    if (i !== row && (board[i][col] === num || userInput[i][col] === num)) {
+                        return false;
+                    }
+                }
+                
+                // 檢查3x3宮格
+                const boxRow = Math.floor(row / 3) * 3;
+                const boxCol = Math.floor(col / 3) * 3;
+                
+                for (let i = boxRow; i < boxRow + 3; i++) {
+                    for (let j = boxCol; j < boxCol + 3; j++) {
+                        if ((i !== row || j !== col) && (board[i][j] === num || userInput[i][j] === num)) {
+                            return false;
+                        }
+                    }
+                }
+                
+                return true;
+            }
+            
+            // 解數獨
+            function solveSudoku(board) {
+                const emptyCell = findEmptyCell(board);
+                if (!emptyCell) {
+                    return true; // 解答完成
+                }
+                
+                const [row, col] = emptyCell;
+                
+                for (let num = 1; num <= 9; num++) {
+                    if (isValidPlacement(board, row, col, num)) {
+                        board[row][col] = num;
+                        
+                        if (solveSudoku(board)) {
+                            return true;
+                        }
+                        
+                        board[row][col] = 0; // 回溯
+                    }
+                }
+                
+                return false; // 無解
+            }
+            
+            // 尋找空的單元格
+            function findEmptyCell(board) {
+                for (let i = 0; i < 9; i++) {
+                    for (let j = 0; j < 9; j++) {
+                        if (board[i][j] === 0) {
+                            return [i, j];
+                        }
+                    }
+                }
+                return null; // 沒有空單元格
+            }
+            
+            // 檢查解答
+            function checkSolution() {
+                let isCorrect = true;
+                const cells = document.querySelectorAll('.cell');
+                
+                cells.forEach(cell => {
+                    const i = parseInt(cell.dataset.row);
+                    const j = parseInt(cell.dataset.col);
+                    
+                    if (!cell.classList.contains('preset')) {
+                        const userValue = cell.textContent ? parseInt(cell.textContent) : 0;
+                        if (userValue !== solution[i][j]) {
+                            cell.classList.add('error');
+                            isCorrect = false;
+                        } else {
+                            cell.classList.remove('error');
+                        }
+                    }
+                });
+                
+                if (isCorrect && isBoardFilled()) {
+                    message.textContent = '恭喜！您成功解決了這個數獨題目！';
+                    message.style.color = '#4CAF50';
+                } else {
+                    message.textContent = '答案不正確，請繼續嘗試';
+                    message.style.color = '#d32f2f';
+                }
+            }
+            
+            // 顯示解答
+            function showSolution() {
+                const cells = document.querySelectorAll('.cell');
+                
+                cells.forEach(cell => {
+                    const i = parseInt(cell.dataset.row);
+                    const j = parseInt(cell.dataset.col);
+                    
+                    if (!cell.classList.contains('preset')) {
+                        cell.textContent = solution[i][j];
+                        cell.classList.remove('error');
+                    }
+                });
+                
+                message.textContent = '已顯示解答';
+                message.style.color = '#4CAF50';
+            }
+            
+            // 清除用戶輸入
+            function clearUserInput() {
+                const cells = document.querySelectorAll('.cell');
+                
+                cells.forEach(cell => {
+                    if (!cell.classList.contains('preset')) {
+                        cell.textContent = '';
+                        cell.classList.remove('error', 'highlight', 'same-value');
+                    }
+                });
+                
+                userInput = Array(9).fill().map(() => Array(9).fill(0));
+                message.textContent = '';
+                selectedCell = null;
+            }
+            
+            // 解析自訂題目
+            function parseCustomPuzzle(text) {
+                const customPuzzle = Array(9).fill().map(() => Array(9).fill(0));
+                const lines = text.trim().split('\n');
+                
+                if (lines.length !== 9) {
+                    return { valid: false, message: '必須有9行' };
+                }
+                
+                for (let i = 0; i < 9; i++) {
+                    const line = lines[i].trim();
+                    if (line.length !== 9) {
+                        return { valid: false, message: `第 ${i+1} 行必須有9個字符` };
+                    }
+                    
+                    for (let j = 0; j < 9; j++) {
+                        const char = line[j];
+                        if (char >= '1' && char <= '9') {
+                            customPuzzle[i][j] = parseInt(char);
+                        } else if (char === '0' || char === '.') {
+                            customPuzzle[i][j] = 0;
+                        } else {
+                            return { valid: false, message: `無效字符 "${char}" 在行 ${i+1}, 列 ${j+1}` };
+                        }
+                    }
+                }
+                
+                // 檢查題目是否有效
+                const tempPuzzle = JSON.parse(JSON.stringify(customPuzzle));
+                if (!isValidPuzzle(customPuzzle) || !solveSudoku(tempPuzzle)) {
+                    return { valid: false, message: '無效的數獨題目，無解或有矛盾' };
+                }
+                
+                return { valid: true, puzzle: customPuzzle };
+            }
+            
+            // 檢查題目初始狀態是否有效
+            function isValidPuzzle(board) {
+                // 檢查每一行
+                for (let i = 0; i < 9; i++) {
+                    const rowSet = new Set();
+                    for (let j = 0; j < 9; j++) {
+                        if (board[i][j] !== 0) {
+                            if (rowSet.has(board[i][j])) {
+                                return false;
+                            }
+                            rowSet.add(board[i][j]);
+                        }
+                    }
+                }
+                
+                // 檢查每一列
+                for (let j = 0; j < 9; j++) {
+                    const colSet = new Set();
+                    for (let i = 0; i < 9; i++) {
+                        if (board[i][j] !== 0) {
+                            if (colSet.has(board[i][j])) {
+                                return false;
+                            }
+                            colSet.add(board[i][j]);
+                        }
+                    }
+                }
+                
+                // 檢查每個3x3宮格
+                for (let boxRow = 0; boxRow < 3; boxRow++) {
+                    for (let boxCol = 0; boxCol < 3; boxCol++) {
+                        const boxSet = new Set();
+                        for (let i = boxRow * 3; i < boxRow * 3 + 3; i++) {
+                            for (let j = boxCol * 3; j < boxCol * 3 + 3; j++) {
+                                if (board[i][j] !== 0) {
+                                    if (boxSet.has(board[i][j])) {
+                                        return false;
+                                    }
+                                    boxSet.add(board[i][j]);
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                return true;
+            }
+            
+            // 按鈕事件處理
+            newGameBtn.addEventListener('click', function() {
+                loadPuzzle(easySudokuPuzzle);
+            });
+            
+            checkSolutionBtn.addEventListener('click', checkSolution);
+            
+            solveBtn.addEventListener('click', showSolution);
+            
+            clearBtn.addEventListener('click', clearUserInput);
+            
+            customPuzzleBtn.addEventListener('click', function() {
+                customModal.style.display = 'block';
+                document.getElementById('custom-input').focus();
+            });
+            
+            submitCustomBtn.addEventListener('click', function() {
+                const customInput = document.getElementById('custom-input').value;
+                const result = parseCustomPuzzle(customInput);
+                
+                if (result.valid) {
+                    loadPuzzle(result.puzzle);
+                    customModal.style.display = 'none';
+                } else {
+                    alert(`無效的題目: ${result.message}`);
+                }
+            });
+            
+            closeModal.addEventListener('click', function() {
+                customModal.style.display = 'none';
+            });
+            
+            window.addEventListener('click', function(event) {
+                if (event.target === customModal) {
+                    customModal.style.display = 'none';
+                }
+            });
+            
+            // 初始化遊戲
+            createBoard();
+            loadPuzzle(easySudokuPuzzle);
+        });
+    </script>
+</body>
+</html>
