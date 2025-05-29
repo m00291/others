@@ -1310,47 +1310,49 @@
         };
     </script>
 
-<script>
-    const sudokumodal = document.getElementById("sudokuInputmodal");
+    <script>
+        const sudokumodal = document.getElementById("sudokuInputmodal");
 
-    // Open modal
-    document.getElementById("batch").onclick = function() {
-        sudokumodal.style.display = "block";
-    }
+        // Open modal
+        document.getElementById("batch").onclick = function() {
+            sudokumodal.style.display = "block";
+        }
 
-    // Close modal
-    sudokumodal.querySelector(".close").onclick = function() {
-        sudokumodal.style.display = "none";
-    }
-
-    window.onclick = function(event) {
-        if (event.target === sudokumodal) {
+        // Close modal
+        sudokumodal.querySelector(".close").onclick = function() {
             sudokumodal.style.display = "none";
         }
-    }
 
-    // Handle Sudoku input submission
-    document.getElementById("submitInput").onclick = function() {
-        const input = document.getElementById("sudokuInput").value.trim();
-        const rows = input.split('\n');
-        if (rows.length !== 9) {
-            alert('不足 9 行');
-            return;
+        window.onclick = function(event) {
+            if (event.target === sudokumodal) {
+                sudokumodal.style.display = "none";
+            }
         }
-        
-        for (let i = 0; i < 9; i++) {
-            const values = rows[i].split('').map(Number);
-            if (values.length !== 9) {
-                alert('不足 9 列');
+
+        // Handle Sudoku input submission
+        document.getElementById("submitInput").onclick = function() {
+            const input = document.getElementById("sudokuInput").value.trim().replace(/0/g, ' ');
+            const rows = input.split('\n');
+            if (rows.length !== 9) {
+                alert('不足 9 行');
                 return;
             }
-            for (let j = 0; j < 9; j++) {
-                setCellValue(elements.createGrid.querySelector(`.cell[data-row="${i}"][data-col="${j}"]`), values[j], 'play');
+            
+            for (let i = 0; i < 9; i++) {
+                const values = rows[i].split('').map(String);
+                if (values.length !== 9) {
+                    alert('不足 9 列');
+                    return;
+                }
+                for (let j = 0; j < 9; j++) {
+                    let cell = elements.createGrid.querySelector(`.cell[data-row="${i}"][data-col="${j}"]`);
+                    setCellValue(cell, values[j].trim(), 'play');
+                    cell.classList.remove('error');
+                }
             }
+            sudokumodal.style.display = "none";
         }
-        sudokumodal.style.display = "none";
-    }
-</script>
+    </script>
     <script>
         let lastTouchTime = 0;
         let lastTouchX = 0;
