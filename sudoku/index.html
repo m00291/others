@@ -1319,7 +1319,7 @@
         document.getElementById('example').onclick = function() {
             // skip the first line
             const lines = this.innerText.trim().split('\n').slice(1);
-            document.getElementById('sudokuInput').value = lines.join('\n');
+            document.getElementById('sudokuInput').value = lines.map(line => line.trim()).join('\n');
         };
     </script>
     <script>
