@@ -64,13 +64,19 @@
             max-width: 500px;
         }
         .sudokuInputmodal-content > #sudokuInput {
-        width: 40%; height: 180px; display: inline-block;
+            width: 50%;
+            height: 180px;
+            display: inline-block;
         }
         .sudokuInputmodal-content > div {
-        width: 40%; height: 180px; display: inline-block;
+            width: 33%;
+            margin-left: 10%;
+            border-top: 1px dashed;
+            height: 180px;
+            display: inline-block;
         }
         .sudokuInputmodal-content > button {
-        display: block;
+            display: block;
         }
         .sudokuInputmodal-content > .close {
             color: #aaa;
@@ -318,8 +324,8 @@
             <span class="close">&times;</span>
             <h2>Enter Sudoku Map</h2>
             <textarea id="sudokuInput" rows="10"></textarea>
-            <div>
-                例子：<br>
+            <div id="example">
+                複製例子<br>
                 530070000<br>
                 600195000<br>
                 098000060<br>
@@ -1309,7 +1315,13 @@
             }
         };
     </script>
-
+    <script>
+        document.getElementById('example').onclick = function() {
+            // skip the first line
+            const lines = this.innerText.trim().split('\n').slice(1);
+            document.getElementById('sudokuInput').value = lines.join('\n');
+        };
+    </script>
     <script>
         const sudokumodal = document.getElementById("sudokuInputmodal");
 
