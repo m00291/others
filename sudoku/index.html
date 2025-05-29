@@ -83,6 +83,12 @@
         .sudokuInputmodal-content > button {
             display: block;
         }
+        .sudokuInputmodal-content > #submiterror {
+            color: red;
+            font-weight: bold;
+            margin-top: 10px;
+            display: none;
+        }
         .sudokuInputmodal-content > .close {
             color: #aaa;
             float: right;
@@ -342,11 +348,12 @@
                 000080079
             </div>
             <button id="submitInput">提交</button>
+            <div id="submiterror">error</div>
         </div>
     </div>
     <div class="tabs">
         <div class="tab active" data-tab="play">遊玩</div>
-        <div class="tab" data-tab="create">創建</div>
+        <div class="tab" data-tab="create">自訂</div>
     </div>
     
     <div id="play-tab" class="tab-content active">
@@ -1349,18 +1356,29 @@
 
         // Handle Sudoku input submission
         document.getElementById("submitInput").onclick = function() {
-            const input = document.getElementById("sudokuInput").value.trim().replace(/0/g, ' ');
+            const input = document.getElementById("sudokuInput").value.replace(/0/g, ' ');
             const rows = input.split('\n');
+            let errormsg = document.getElementById("submiterror");
+            errormsg.style.display = "none";
             if (rows.length !== 9) {
-                alert('不足 9 行');
+                errormsg.innerText = "需要9行數字";
+                errormsg.style.display = "block";
                 return;
             }
             
             for (let i = 0; i < 9; i++) {
                 const values = rows[i].split('').map(String);
                 if (values.length !== 9) {
-                    alert('不足 9 列');
+                    errormsg.innerText = `第 ${i + 1} 行需要9個數字`;
+                    errormsg.style.display = "block";
                     return;
+                }
+                for (let val of values) {
+                    if (!/^[1-9 ]$/.test(val)) {
+                        errormsg.innerText = `第 ${i + 1} 行有非數字`;
+                        errormsg.style.display = "block";
+                        return;
+                    }
                 }
                 for (let j = 0; j < 9; j++) {
                     let cell = elements.createGrid.querySelector(`.cell[data-row="${i}"][data-col="${j}"]`);
