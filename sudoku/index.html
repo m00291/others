@@ -1316,7 +1316,8 @@
         };
     </script>
     <script>
-        document.getElementById('example').onclick = function() {
+        document.getElementById('example').onclick = function(e) {
+            e.preventDefault();
             // skip the first line
             const lines = this.innerText.trim().split('\n').slice(1);
             document.getElementById('sudokuInput').value = lines.map(line => line.trim()).join('\n');
