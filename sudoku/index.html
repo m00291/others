@@ -1382,7 +1382,7 @@
                 }
                 for (let j = 0; j < 9; j++) {
                     let cell = elements.createGrid.querySelector(`.cell[data-row="${i}"][data-col="${j}"]`);
-                    setCellValue(cell, values[j].trim(), 'play');
+                    setCellValue(cell, values[j].trim(), 'create');
                     cell.classList.remove('error');
                 }
             }
