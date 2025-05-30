@@ -6,7 +6,9 @@
     <meta name="format-detection" content="telephone=no">
     <meta version="v2">
     <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Sudoku_Puzzle_by_L2G-20050714_standardized_layout.svg/128px-Sudoku_Puzzle_by_L2G-20050714_standardized_layout.svg.png">
-    <script type="application/javascript" src="confetti.min.js"></script>
+    <script src="confetti.min.js"></script>
+    <script src="sudoku.js"></script>
+
     <title>數獨</title>
     <style>
         * {
@@ -337,6 +339,18 @@
             <textarea id="sudokuInput" rows="10"></textarea>
             <div id="example">
                 複製例子<br>
+                685103079<br>
+                719605038<br>
+                432798561<br>
+                148962753<br>
+                567431982<br>
+                923587614<br>
+                394856127<br>
+                251374896<br>
+                876219345
+            </div>
+            <div id="example2" style="display:none;">
+                複製例子<br>
                 530070000<br>
                 600195000<br>
                 098000060<br>
@@ -362,7 +376,10 @@
             <select id="difficulty">
                 <option value="easy">簡單</option>
                 <option value="medium">中等</option>
-                <option value="hard">困難</option>
+                <option value="hard" selected="selected">困難</option>
+                <option value="very-hard">非常困難</option>
+                <option value="insane">地獄</option>
+                <option value="inhuman">上限(17提示)</option>
             </select>
             <button id="new-game">新遊戲</button>
         </div>
@@ -456,7 +473,7 @@
             createSudokuGrid(elements.playGrid, 'play');
             createSudokuGrid(elements.createGrid, 'create');
             attachEventListeners();
-            generateNewPuzzle('easy');
+            generateNewPuzzle('hard');
         }
 
         // 創建數獨格子
@@ -666,6 +683,9 @@
             const cellValue = cell.querySelector('.cell-value');
             const notes = cell.querySelector('.notes');
             
+            elements.playMessage.textContent = '';
+            elements.playMessage.className = 'status-message';
+            
             if (mode === 'play') {
                 gameState.currentGrid[row][col] = parseInt(value);
                 
@@ -748,6 +768,8 @@
                     clearCellValue(cell);
                 }
             });
+            elements.playMessage.textContent = '';
+            elements.playMessage.className = 'status-message';
         }
 
         // 突出顯示相同數字
@@ -774,49 +796,14 @@
                 return;
             }
             
-            // 生成解決方案
-            generateSolvedGrid();
-            
-            // 根據難度移除數字
-            let cellsToRemove;
-            switch (difficulty) {
-                case 'easy':
-                    cellsToRemove = 40; // 留下41個提示
-                    break;
-                case 'medium':
-                    cellsToRemove = 50; // 留下31個提示
-                    break;
-                case 'hard':
-                    cellsToRemove = 60; // 留下21個提示
-                    break;
-                default:
-                    cellsToRemove = 40;
-            }
-            
-            // 複製解決方案到當前網格
-            gameState.currentGrid = gameState.solvedGrid.map(row => [...row]);
-            
-            // 移除數字
-            gameState.givenCells = new Set();
-            const positions = [];
-            for (let i = 0; i < 9; i++) {
-                for (let j = 0; j < 9; j++) {
-                    positions.push([i, j]);
-                }
-            }
-            
-            // 隨機打亂位置
-            shuffleArray(positions);
-            
-            for (let i = 0; i < cellsToRemove; i++) {
-                const [row, col] = positions[i];
-                gameState.currentGrid[row][col] = 0;
-            }
-            
+            // 生成題目
+            generatePuzzle(difficulty);
+
             // 更新界面
             updateGameUI();
             
             // 儲存給定的單元格
+            gameState.givenCells = new Set();
             for (let row = 0; row < 9; row++) {
                 for (let col = 0; col < 9; col++) {
                     if (gameState.currentGrid[row][col] !== 0) {
@@ -836,9 +823,7 @@
             
             // 計算解決方案
             const solutionCopy = gameState.customPuzzle.map(row => [...row]);
-            if (solveSudoku(solutionCopy)) {
-                gameState.solvedGrid = solutionCopy.map(row => [...row]);
-            }
+            solveSudoku(solutionCopy);
             
             // 更新界面
             updateGameUI();
@@ -882,66 +867,28 @@
             });
         }
 
-        // 生成解決方案
-        function generateSolvedGrid() {
-            // 創建空白網格
-            const grid = Array(9).fill().map(() => Array(9).fill(0));
-            
-            // 填入一些隨機數字
-            fillDiagonalBoxes(grid);
-            
-            // 解決整個數獨
-            solveSudoku(grid);
-            
-            gameState.solvedGrid = grid;
-        }
+        // 生成題目
+        function generatePuzzle(difficulty) {
+            const grid_string = sudoku.board_string_to_grid(sudoku.generate(difficulty).replace(/\./g,'0'));
+            const grid = grid_string.map(r => r.map(Number));
+            gameState.currentGrid = grid;
 
-        // 填入對角線上的 3x3 方格
-        function fillDiagonalBoxes(grid) {
-            for (let box = 0; box < 3; box++) {
-                const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-                shuffleArray(numbers);
-                
-                for (let i = 0; i < 3; i++) {
-                    for (let j = 0; j < 3; j++) {
-                        grid[box * 3 + i][box * 3 + j] = numbers.pop();
-                    }
-                }
-            }
+            // 解決整個數獨
+            const grid_solve = grid_string.map(r => r.map(Number));
+            solveSudoku(grid_solve);
         }
 
         // 解決數獨
         function solveSudoku(grid) {
-            const emptyCell = findEmptyCell(grid);
-            if (!emptyCell) return true; // 完成
-            
-            const [row, col] = emptyCell;
-            
-            for (let num = 1; num <= 9; num++) {
-                if (isValidMove(row, col, num, grid)) {
-                    grid[row][col] = num;
-                    
-                    if (solveSudoku(grid)) {
-                        return true;
-                    }
-                    
-                    grid[row][col] = 0; // 回溯
-                }
+            const grid_string = sudoku.board_grid_to_string(grid).replace(/0/g,'.');
+            if (sudoku.solve(grid_string)) {
+                let grid_solve_string = sudoku.solve(grid_string);
+                grid = sudoku.board_string_to_grid(grid_solve_string).map(r => r.map(Number));
+                gameState.solvedGrid = grid;
+                return true;
+            } else {
+                return false;
             }
-            
-            return false;
-        }
-
-        // 查找空白單元格
-        function findEmptyCell(grid) {
-            for (let row = 0; row < 9; row++) {
-                for (let col = 0; col < 9; col++) {
-                    if (grid[row][col] === 0) {
-                        return [row, col];
-                    }
-                }
-            }
-            return null;
         }
 
         // 檢查是否是有效的移動
@@ -1007,7 +954,7 @@
                         const value = grid[row][col];
                         grid[row][col] = 0;
                         if (!isValidMove(row, col, value, grid)) {
-                            elements.createMessage.textContent = `位置 (${row+1},${col+1}) 的數字 ${value} 無效`;
+                            elements.createMessage.textContent = `${row+1}行${col+1}列 的數字 ${value} 無效`;
                             elements.createMessage.className = 'status-message error';
                             return;
                         }
@@ -1017,8 +964,8 @@
             }
             
             // 檢查是否有解
-            const gridCopy = grid.map(row => [...row]);
-            if (solveSudoku(gridCopy)) {
+            let grid_string = sudoku.board_grid_to_string(grid).replace(/0/g,'.');
+            if (sudoku.solve(grid_string)) {
                 elements.createMessage.textContent = '有效的數獨謎題！';
                 elements.createMessage.className = 'status-message success';
             } else {
@@ -1057,7 +1004,7 @@
                         const value = grid[row][col];
                         grid[row][col] = 0;
                         if (!isValidMove(row, col, value, grid)) {
-                            elements.createMessage.textContent = `位置 (${row+1},${col+1}) 的數字 ${value} 無效`;
+                            elements.createMessage.textContent = `${row+1}行${col+1}列 的數字 ${value} 無效`;
                             elements.createMessage.className = 'status-message error';
                             return;
                         }
@@ -1067,8 +1014,8 @@
             }
             
             // 檢查是否有解
-            const gridCopy = grid.map(row => [...row]);
-            if (solveSudoku(gridCopy)) {
+            let grid_string = sudoku.board_grid_to_string(grid).replace(/0/g,'.');
+            if (sudoku.solve(grid_string)) {
                 gameState.customPuzzle = grid;
                 elements.createMessage.textContent = '已保存！切換到遊玩標籤開始遊戲';
                 elements.createMessage.className = 'status-message success';
@@ -1080,6 +1027,7 @@
 
         // 檢查解答
         function checkSolution() {
+            const grid = Array(9).fill().map(() => Array(9).fill(0));
             let isComplete = true;
             let hasErrors = false;
             confetti.setCount(0);
@@ -1088,15 +1036,18 @@
                 const row = parseInt(cell.dataset.row);
                 const col = parseInt(cell.dataset.col);
                 const value = cell.querySelector('.cell-value').textContent;
-                
-                if (!value) {
-                    isComplete = false;
-                } else {
-                    const num = parseInt(value);
-                    if (num !== gameState.solvedGrid[row][col]) {
-                        cell.classList.add('error');
-                        hasErrors = true;
+
+                // 檢查錯誤
+                if (!cell.classList.contains('given')) {
+                    if (value) {
+                        if (isValidMove(row, col, parseInt(value), gameState.currentGrid)) {
+                            cell.classList.remove('error');
+                        } else {
+                            hasErrors = true;
+                            cell.classList.add('error');
+                        }
                     } else {
+                        isComplete = false;
                         cell.classList.remove('error');
                     }
                 }
@@ -1105,9 +1056,11 @@
             if (!isComplete) {
                 elements.playMessage.textContent = '數獨尚未完成';
                 elements.playMessage.className = 'status-message';
+                return false;
             } else if (hasErrors) {
                 elements.playMessage.textContent = '有錯誤的數字';
                 elements.playMessage.className = 'status-message error';
+                return false;
             } else {
                 elements.playMessage.textContent = '太棒了！你已經完成了數獨！';
                 elements.playMessage.className = 'status-message success';
@@ -1116,6 +1069,7 @@
                 setTimeout(() => {firework.click();}, 500);
                 setTimeout(() => {firework.click();}, 1000);
                 setTimeout(() => {firework.click();}, 1500);
+                return true;
             }
         }
 
@@ -1137,10 +1091,10 @@
             }
             
             const correctValue = gameState.solvedGrid[row][col];
-            elements.playMessage.textContent = `在 (${row+1},${col+1}) 處填入 ${correctValue}`;
-            elements.playMessage.className = 'status-message';
-            
             setCellValue(gameState.selectedCell, correctValue);
+            
+            elements.playMessage.textContent = `在 ${row+1}行${col+1}列 填入 ${correctValue}`;
+            elements.playMessage.className = 'status-message';
         }
 
         // 顯示解答
@@ -1173,7 +1127,7 @@
             
             for (let row = 0; row < 9; row++) {
                 for (let col = 0; col < 9; col++) {
-                    if (gameState.currentGrid[row][col] !== gameState.solvedGrid[row][col]) {
+                    if (!gameState.currentGrid[row][col]) {
                         isComplete = false;
                         break;
                     }
@@ -1181,14 +1135,10 @@
                 if (!isComplete) break;
             }
             
-            if (isComplete) {
+            if (isComplete && checkSolution()) {
                 elements.playMessage.textContent = '恭喜！你已經完成了數獨！';
                 elements.playMessage.className = 'status-message success';
                 stopTimer();
-                confetti.setCount(75);
-                setTimeout(() => {firework.click();}, 500);
-                setTimeout(() => {firework.click();}, 1000);
-                setTimeout(() => {firework.click();}, 1500);
             }
         }
 
