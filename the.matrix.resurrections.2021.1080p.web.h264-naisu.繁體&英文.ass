@@ -1,0 +1,1853 @@
+﻿[Script Info]
+ScriptType: v4.00+
+Collisions: Normal
+PlayResX: 384
+PlayResY: 288
+Timer: 100.0000
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,微軟正黑體,20,&H00ffffff,&Hf0000000,&H00000000,&H32000000,0,0,0,0,100.00,100.00,0.00,0.00,1,2.00,1.00,2,5,5,5,1
+Style: 譯文字幕,微軟正黑體,20,&H00ffffff,&Hf0000000,&H00000000,&H32000000,1,0,0,0,100.00,100.00,0.00,0.00,1,3.00,1.00,2,5,5,5,1
+Style: eng_sub,微軟正黑體,14,&H003CA8DC,&Hf0000000,&H00000000,&H32000000,0,0,0,0,100.00,100.00,0.00,0.00,1,2.00,1.00,2,5,5,5,1
+
+[Events]
+Format: Layer, Start, End, Style, Actor, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:57.26,0:00:58.97,Default,NTP,0000,0000,0000,,{\an8}{\fnSimHei\fs16\b1\bord1\shad1\3c&H000FF00&}101號模態遭入侵/非法用戶
+Dialogue: 0,0:01:00.39,0:01:01.81,Default,NTP,0000,0000,0000,,{\an8}{\fnSimHei\fs16\b1\bord1\shad1\3c&H000FF00&}追蹤程式開始運行
+Dialogue: 0,0:17:43.10,0:17:44.56,Default,NTP,0000,0000,0000,,{\an8}{\fnSimHei\fs16\b1\bord1\shad1\3c&H000FF00&}101號模態未找到
+Dialogue: 0,0:17:50.36,0:17:52.02,Default,NTP,0000,0000,0000,,{\an8}{\fnSimHei\fs16\b1\bord1\shad1\3c&H000FF00&}101號模態檔已清除
+
+Dialogue: 0,0:03:51.23,0:03:58.11,Default,NTP,0000,0000,0000,,{\an8}{\fnSimHei\fs15\b1\bord1\shad0\1c&H080FF80&}Modal在程式設計中是彈出式對話方塊
+Dialogue: 0,0:07:48.59,0:07:50.88,Default,NTP,0000,0000,0000,,{\an8}{\fnSimHei\fs15\b1\bord1\shad0\1c&H080FF80&}賓尼兔全名叫 Bugs Bunny 
+Dialogue: 0,0:16:29.15,0:16:31.07,Default,NTP,0000,0000,0000,,{\an8}{\fnSimHei\fs15\b1\bord1\shad0\1c&H080FF80&}Audrey Hepburn主演過《Tiffany的早餐》
+Dialogue: 0,0:24:22.33,0:24:28.00,Default,NTP,0000,0000,0000,,{\an8}{\fnSimHei\fs15\b1\bord1\shad0\1c&H080FF80&}《The Matrix》第一部電影評價最高 這裡是在故意調侃
+Dialogue: 0,0:24:57.37,0:25:00.37,Default,NTP,0000,0000,0000,,{\an8}{\fnSimHei\fs15\b1\bord1\shad0\1c&H080FF80&}蒙蔽住現實遠比去實現夢想更加容易
+Dialogue: 0,0:36:09.70,0:36:11.91,Default,NTP,0000,0000,0000,,{\an8}{\fnSimHei\fs15\b1\bord1\shad0\1c&H080FF80&}黑貓的名字叫做 Deja-Vu 意為:似曾相識
+Dialogue: 0,0:42:30.29,0:42:34.88,Default,NTP,0000,0000,0000,,{\an8}{\fnSimHei\fs15\b1\bord1\shad0\1c&H080FF80&}《The Matrix》一中 Neo也是跟著一個帶兔子紋身的女人開始了冒險
+Dialogue: 0,0:45:19.71,0:45:24.00,Default,NTP,0000,0000,0000,,{\an8}{\fnSimHei\fs15\b1\bord1\shad0\1c&H080FF80&}DSI Digital Self Image 數字自我映射
+Dialogue: 0,0:55:19.19,0:55:23.82,Default,NTP,0000,0000,0000,,{\an8}{\fnSimHei\fs15\b1\bord1\shad0\1c&H080FF80&}所以在Neo寫的模態中Morpheus一人分飾兩角 Morpheus和Smith
+Dialogue: 0,1:03:07.51,1:03:09.30,Default,NTP,0000,0000,0000,,{\an8}{\fnSimHei\fs15\b1\bord1\shad0\1c&H080FF80&}Mnemosyne 記憶女神 希臘神話裡掌管記憶、語言、文字的女神 十二泰坦之一
+Dialogue: 0,1:10:02.69,1:10:05.45,Default,NTP,0000,0000,0000,,{\an8}{\fnSimHei\fs15\b1\bord1\shad0\1c&H080FF80&}《The Matrix》第一部電影中Neo喝過Dozer釀造的酒精 而那時酒精的主要用處是用來溶解油漆
+
+
+Dialogue: 0,0:31:09.99,0:31:10.86,Default,NTP,0000,0000,0000,,{\an8}{\fnSimHei\fs16\b1\bord1\shad1\3c&H08080CC&}有新消息 未知來源
+Dialogue: 0,0:31:11.82,0:31:12.87,Default,NTP,0000,0000,0000,,{\an8}{\fnSimHei\fs16\b1\bord1\shad1\3c&H08080CC&}嗨 Neo
+Dialogue: 0,0:31:12.95,0:31:17.62,Default,NTP,0000,0000,0000,,{\an8}{\fnSimHei\fs16\b1\bord1\shad1\3c&H08080CC&}如果想得到你那些疑問的答案 就去走廊盡頭的房間
+Dialogue: 0,0:31:17.70,0:31:18.83,Default,NTP,0000,0000,0000,,{\an8}{\fnSimHei\fs16\b1\bord1\shad1\3c&H08080CC&}現在就去 
+Dialogue: 0,0:31:18.87,0:31:21.50,Default,NTP,0000,0000,0000,,{\an8}{\fnSimHei\fs16\b1\bord0\shad1\1c&H0FFC080&}你是誰 
+Dialogue: 0,0:31:21.54,0:31:23.17,Default,NTP,0000,0000,0000,,{\an8}{\fnSimHei\fs16\b1\bord1\shad1\3c&H08080CC&}你知道是誰
+
+
+Dialogue: 0,0:00:57.26,0:00:58.97,譯文字幕,,0000,0000,0000,,-Seq 我進來了 -艦長\N{\reng_sub}-Seq, I'm in. -Captain.
+Dialogue: 0,0:00:59.05,0:01:00.31,譯文字幕,,0000,0000,0000,,你是對的\N{\reng_sub} You were right.
+Dialogue: 0,0:01:00.39,0:01:01.81,譯文字幕,,0000,0000,0000,,天窗的確是扇窗格\N{\reng_sub}The skylight was a window pane.
+Dialogue: 0,0:01:01.89,0:01:03.39,譯文字幕,,0000,0000,0000,,干擾非常嚴重\N{\reng_sub} I've got serious interference.
+Dialogue: 0,0:01:03.48,0:01:04.81,譯文字幕,,0000,0000,0000,,奇怪 這像是某種模態\N{\reng_sub} Weird. It's some kind of Modal.
+Dialogue: 0,0:01:04.89,0:01:06.69,譯文字幕,,0000,0000,0000,,看起來像是舊編碼\N{\reng_sub} Looks like old code.
+Dialogue: 0,0:01:06.77,0:01:08.15,譯文字幕,,0000,0000,0000,,有種很熟悉的感覺\N{\reng_sub} It feels really familiar.
+Dialogue: 0,0:01:08.23,0:01:09.98,譯文字幕,,0000,0000,0000,,標記一下 我發信號請求支援\N{\reng_sub} Drop a pin. I'll signal for backup.
+Dialogue: 0,0:01:10.06,0:01:11.73,譯文字幕,,0000,0000,0000,,我要去確認一下 Bugs\N{\reng_sub} I'm gonna check it out. Bugs?
+Dialogue: 0,0:01:11.82,0:01:13.03,譯文字幕,,0000,0000,0000,,如果將軍發現了我們一直在盲目瞎找……\N{\reng_sub}If the general finds out we've been fishing...
+Dialogue: 0,0:01:13.11,0:01:14.78,譯文字幕,,0000,0000,0000,,瞄一眼沒事的\N{\reng_sub} A quick peek can't hurt.
+Dialogue: 0,0:01:14.86,0:01:16.15,譯文字幕,,0000,0000,0000,,你聽到了嗎\N{\reng_sub}Did you hear that?
+Dialogue: 0,0:01:16.24,0:01:17.61,譯文字幕,,0000,0000,0000,,壞了 我想我們的信號被追蹤了\N{\reng_sub}Shit. I think our signal was traced.
+Dialogue: 0,0:01:17.70,0:01:19.82,譯文字幕,,0000,0000,0000,,Bugs 這感覺像個陷阱\N{\reng_sub}Bugs, this feels like a trap.
+Dialogue: 0,0:01:19.91,0:01:21.03,譯文字幕,,0000,0000,0000,,Bugs\N{\reng_sub}Bugs!
+Dialogue: 0,0:02:00.99,0:02:03.49,譯文字幕,,0000,0000,0000,,別動 不許動\N{\reng_sub}Freeze!Do not move!
+Dialogue: 0,0:02:03.58,0:02:04.54,譯文字幕,,0000,0000,0000,,我們會開槍的\N{\reng_sub}We will shoot!
+Dialogue: 0,0:02:04.62,0:02:07.91,譯文字幕,,0000,0000,0000,,慢慢地 把手舉起來\N{\reng_sub}Very slowly, raise your hands.
+Dialogue: 0,0:02:21.80,0:02:23.39,譯文字幕,,0000,0000,0000,,又來這套……\N{\reng_sub}Here we go.
+Dialogue: 0,0:02:29.23,0:02:30.73,譯文字幕,,0000,0000,0000,,嘿 你要去哪裡\N{\reng_sub}Hey, where are you going?
+Dialogue: 0,0:02:30.81,0:02:32.02,譯文字幕,,0000,0000,0000,,我警告過你了 中尉\N{\reng_sub}You were warned, Lieutenant.
+Dialogue: 0,0:02:32.11,0:02:34.36,譯文字幕,,0000,0000,0000,,我想我們對付得了一個小姑娘\N{\reng_sub}I think we can handle one little girl.
+Dialogue: 0,0:02:37.78,0:02:38.90,譯文字幕,,0000,0000,0000,,你在浪費時間\N{\reng_sub}You're wasting your time!
+Dialogue: 0,0:02:38.99,0:02:41.24,譯文字幕,,0000,0000,0000,,我的人現在正帶她下來\N{\reng_sub}My men are bringing her down now.
+Dialogue: 0,0:02:41.32,0:02:42.41,譯文字幕,,0000,0000,0000,,不 中尉\N{\reng_sub}No, Lieutenant,
+Dialogue: 0,0:02:43.49,0:02:45.49,譯文字幕,,0000,0000,0000,,你的人已經死了\N{\reng_sub}your men are already dead.
+Dialogue: 0,0:02:56.05,0:02:57.30,譯文字幕,,0000,0000,0000,,Seq 你在嗎\N{\reng_sub}Seq, you with me?
+Dialogue: 0,0:02:57.38,0:02:58.76,譯文字幕,,0000,0000,0000,,這個舊編碼在不斷崩潰\N{\reng_sub}This old code keeps crashing.
+Dialogue: 0,0:02:58.84,0:03:00.17,譯文字幕,,0000,0000,0000,,你的投影故障了 切換成音訊吧\N{\reng_sub}Your projection's breaking up. Switch to audio.
+Dialogue: 0,0:03:00.26,0:03:01.59,譯文字幕,,0000,0000,0000,,Bugs 這完全違反了\N{\reng_sub} Bugs, this is a direct violation
+Dialogue: 0,0:03:01.68,0:03:02.93,譯文字幕,,0000,0000,0000,,將軍的規定\N{\reng_sub}of the general's protocols.
+Dialogue: 0,0:03:03.01,0:03:04.43,譯文字幕,,0000,0000,0000,,我知道 我知道\N{\reng_sub}I know, I know.
+Dialogue: 0,0:03:04.51,0:03:06.14,譯文字幕,,0000,0000,0000,,但是 這裡事有蹊蹺\N{\reng_sub}But something is happening here.
+Dialogue: 0,0:03:07.02,0:03:08.77,譯文字幕,,0000,0000,0000,,非常重要的事情\N{\reng_sub}Something important.
+Dialogue: 0,0:03:08.85,0:03:09.93,譯文字幕,,0000,0000,0000,,哦 靠\N{\reng_sub} Oh, fuck.
+Dialogue: 0,0:03:10.02,0:03:11.60,譯文字幕,,0000,0000,0000,,我們知道接下來會發生什麼\N{\reng_sub}We know what happens next.
+Dialogue: 0,0:03:11.69,0:03:13.35,譯文字幕,,0000,0000,0000,,她打爆他們\N{\reng_sub}She kicks their ass.
+Dialogue: 0,0:03:35.88,0:03:37.30,譯文字幕,,0000,0000,0000,,現在她要打電話\N{\reng_sub}Now she makes a call.
+Dialogue: 0,0:03:37.38,0:03:38.63,譯文字幕,,0000,0000,0000,,線路被追蹤了\N{\reng_sub} The line was traced.
+Dialogue: 0,0:03:38.71,0:03:40.97,譯文字幕,,0000,0000,0000,,然後... 她就開始逃命了\N{\reng_sub}And then... Then she runs for her life.
+Dialogue: 0,0:03:41.05,0:03:42.38,譯文字幕,,0000,0000,0000,,有特工嗎\N{\reng_sub} Are there any agents?
+Dialogue: 0,0:03:42.47,0:03:43.89,譯文字幕,,0000,0000,0000,,我們都知道這個故事\N{\reng_sub}We know this story.
+Dialogue: 0,0:03:45.43,0:03:47.06,譯文字幕,,0000,0000,0000,,一切就是這樣開始的\N{\reng_sub}This is how it all began.
+Dialogue: 0,0:03:47.76,0:03:49.60,譯文字幕,,0000,0000,0000,,該死的\N{\reng_sub}God damn it.
+Dialogue: 0,0:03:49.68,0:03:51.14,譯文字幕,,0000,0000,0000,,這就是他開始的地方\N{\reng_sub}This is where he began.
+Dialogue: 0,0:03:51.23,0:03:54.48,譯文字幕,,0000,0000,0000,,你覺得它是在循環 還是一個迴圈機\N{\reng_sub}You're thinking this Modal is a loop? Or a treadmill?
+Dialogue: 0,0:03:54.56,0:03:58.11,譯文字幕,,0000,0000,0000,,程式序列演化成這樣 要做什麼\N{\reng_sub}Some sort of sequencer evolving a program to do what?
+Dialogue: 0,0:03:58.19,0:03:59.36,譯文字幕,,0000,0000,0000,,我不知道\N{\reng_sub}I don't know.
+Dialogue: 0,0:04:00.53,0:04:02.15,譯文字幕,,0000,0000,0000,,但我會搞清楚的\N{\reng_sub}But I'm going to find out.
+Dialogue: 0,0:04:02.24,0:04:03.36,譯文字幕,,0000,0000,0000,,好吧\N{\reng_sub}All right.
+Dialogue: 0,0:04:33.98,0:04:36.35,譯文字幕,,0000,0000,0000,,很似曾相識 但是顯然都是錯的\N{\reng_sub}So deja vu and yet it's obviously all wrong.
+Dialogue: 0,0:04:36.44,0:04:38.61,譯文字幕,,0000,0000,0000,,舊編碼怎翻出新花樣\N{\reng_sub}Why use old code to mirror something new?
+Dialogue: 0,0:04:38.69,0:04:40.32,譯文字幕,,0000,0000,0000,,我不知道\N{\reng_sub}I don't know.
+Dialogue: 0,0:04:53.71,0:04:55.04,譯文字幕,,0000,0000,0000,,如果那是Trinity的話\N{\reng_sub}If that's supposed to be Trinity,
+Dialogue: 0,0:04:55.12,0:04:56.67,譯文字幕,,0000,0000,0000,,就不是這結果\N{\reng_sub}that's not what happens.
+Dialogue: 0,0:04:58.63,0:05:00.59,譯文字幕,,0000,0000,0000,,也許這不是那個故事\N{\reng_sub}Maybe this isn't the story we think it is.
+Dialogue: 0,0:05:00.67,0:05:03.05,譯文字幕,,0000,0000,0000,,Bugs 你必須離開這裡了\N{\reng_sub}Bugs, you have to get out of here.
+Dialogue: 0,0:05:03.13,0:05:05.38,譯文字幕,,0000,0000,0000,,這肯定是個陷阱\N{\reng_sub}It's gotta be a trap.
+Dialogue: 0,0:05:06.80,0:05:07.84,譯文字幕,,0000,0000,0000,,壞了\N{\reng_sub}Shit.
+Dialogue: 0,0:05:45.55,0:05:46.88,譯文字幕,,0000,0000,0000,,嗯...\N{\reng_sub} Uh...
+Dialogue: 0,0:05:46.97,0:05:48.76,譯文字幕,,0000,0000,0000,,你們繼續吧\N{\reng_sub}You all carry on.
+Dialogue: 0,0:05:48.84,0:05:49.84,譯文字幕,,0000,0000,0000,,當我沒來過\N{\reng_sub}As you were.
+Dialogue: 0,0:05:52.85,0:05:54.39,譯文字幕,,0000,0000,0000,,我就……\N{\reng_sub}I'm just gonna...
+Dialogue: 0,0:05:55.31,0:05:57.06,譯文字幕,,0000,0000,0000,,不打攪各位了\N{\reng_sub}see myself out.
+Dialogue: 0,0:05:57.14,0:05:58.14,譯文字幕,,0000,0000,0000,,殺了她\N{\reng_sub}Kill her.
+Dialogue: 0,0:07:41.79,0:07:43.21,譯文字幕,,0000,0000,0000,,-為什麼救我 -你先說\N{\reng_sub}-Why did you save me? -You first.
+Dialogue: 0,0:07:43.29,0:07:45.04,譯文字幕,,0000,0000,0000,,你是誰 你從哪裡來\N{\reng_sub}Who are you? Where did you come from?
+Dialogue: 0,0:07:45.13,0:07:46.67,譯文字幕,,0000,0000,0000,,好吧\N{\reng_sub}Okay.
+Dialogue: 0,0:07:46.75,0:07:48.50,譯文字幕,,0000,0000,0000,,我叫 Bugs\N{\reng_sub}My name is Bugs.
+Dialogue: 0,0:07:48.59,0:07:50.88,譯文字幕,,0000,0000,0000,,跟 賓尼兔 同名\N{\reng_sub}As in "Bunny"
+Dialogue: 0,0:07:50.97,0:07:52.68,譯文字幕,,0000,0000,0000,,竊聽器的俗稱\N{\reng_sub}And tech that listens.
+Dialogue: 0,0:07:53.76,0:07:55.72,譯文字幕,,0000,0000,0000,,你知道這裡是一個模態嗎\N{\reng_sub}Do you know this is a Modal?
+Dialogue: 0,0:07:56.97,0:07:58.10,譯文字幕,,0000,0000,0000,,什麼是模態\N{\reng_sub}What's a Modal?
+Dialogue: 0,0:07:58.18,0:08:00.47,譯文字幕,,0000,0000,0000,,一種用於演化程式的類比框架\N{\reng_sub}It's a simulation used to evolve programs.
+Dialogue: 0,0:08:04.27,0:08:06.23,譯文字幕,,0000,0000,0000,,你明白你是一個……\N{\reng_sub}Do you understand that you are...
+Dialogue: 0,0:08:07.15,0:08:08.82,譯文字幕,,0000,0000,0000,,有知覺的電子體\N{\reng_sub}digital sentience?
+Dialogue: 0,0:08:08.90,0:08:10.57,譯文字幕,,0000,0000,0000,,我知道我是什麼\N{\reng_sub}I know what I am.
+Dialogue: 0,0:08:10.65,0:08:11.90,譯文字幕,,0000,0000,0000,,我也知道我的工作\N{\reng_sub}Just like I know my job
+Dialogue: 0,0:08:11.99,0:08:14.07,譯文字幕,,0000,0000,0000,,就是追捕和消滅合成體\N{\reng_sub}is to hunt down and destroy synthients.
+Dialogue: 0,0:08:14.16,0:08:15.41,譯文字幕,,0000,0000,0000,,像你這樣的\N{\reng_sub}Like you.
+Dialogue: 0,0:08:19.58,0:08:21.12,譯文字幕,,0000,0000,0000,,然而...\N{\reng_sub}And yet...
+Dialogue: 0,0:08:22.87,0:08:24.21,譯文字幕,,0000,0000,0000,,還是落到這田地\N{\reng_sub}Here we are.
+Dialogue: 0,0:08:24.29,0:08:25.71,譯文字幕,,0000,0000,0000,,這步田地\N{\reng_sub}Here we are.
+Dialogue: 0,0:08:27.17,0:08:29.46,譯文字幕,,0000,0000,0000,,其他特工不知道這個房間嗎\N{\reng_sub}The other agents don't know about this room?
+Dialogue: 0,0:08:31.42,0:08:32.59,譯文字幕,,0000,0000,0000,,你怎麼找到的\N{\reng_sub}How'd you find it?
+Dialogue: 0,0:08:32.67,0:08:35.18,譯文字幕,,0000,0000,0000,,從來沒有人來過鑰匙店\N{\reng_sub}No one was ever in the key shop,
+Dialogue: 0,0:08:35.26,0:08:36.47,譯文字幕,,0000,0000,0000,,所以我就進來看看\N{\reng_sub}so I started looking.
+Dialogue: 0,0:08:37.64,0:08:39.72,譯文字幕,,0000,0000,0000,,看的越多 發現的越多\N{\reng_sub}More you looked, the more you found.
+Dialogue: 0,0:08:40.77,0:08:42.35,譯文字幕,,0000,0000,0000,,我的人生也是這樣\N{\reng_sub}Story of my life.
+Dialogue: 0,0:08:49.48,0:08:50.48,譯文字幕,,0000,0000,0000,,怎麼了\N{\reng_sub}What?
+Dialogue: 0,0:08:52.65,0:08:54.24,譯文字幕,,0000,0000,0000,,我覺得我好像認識這個房間\N{\reng_sub}I feel like I know this room.
+Dialogue: 0,0:09:02.87,0:09:05.29,譯文字幕,,0000,0000,0000,,天啊\N{\reng_sub}Holy shit.
+Dialogue: 0,0:09:07.67,0:09:09.13,譯文字幕,,0000,0000,0000,,這是他的公寓\N{\reng_sub}This is his apartment.
+Dialogue: 0,0:09:10.38,0:09:12.46,譯文字幕,,0000,0000,0000,,你是說Thomas Anderson的\N{\reng_sub}You mean Thomas Anderson's?
+Dialogue: 0,0:09:12.55,0:09:14.51,譯文字幕,,0000,0000,0000,,到處都找過了 他根本不存在\N{\reng_sub}I searched everywhere. He doesn't exist.
+Dialogue: 0,0:09:14.59,0:09:16.84,譯文字幕,,0000,0000,0000,,他很久以前就不再是Thomas了\N{\reng_sub}He stopped being Thomas a long time ago,
+Dialogue: 0,0:09:16.93,0:09:19.30,譯文字幕,,0000,0000,0000,,但也許你知道他的真名\N{\reng_sub}but maybe you know him by his real name.
+Dialogue: 0,0:09:20.05,0:09:21.14,譯文字幕,,0000,0000,0000,,Neo\N{\reng_sub}Neo.
+Dialogue: 0,0:09:22.60,0:09:23.85,譯文字幕,,0000,0000,0000,,你真知道\N{\reng_sub}You do.
+Dialogue: 0,0:09:24.93,0:09:26.52,譯文字幕,,0000,0000,0000,,哦 好吧\N{\reng_sub}Oh, okay.
+Dialogue: 0,0:09:27.19,0:09:28.48,譯文字幕,,0000,0000,0000,,嗯...\N{\reng_sub}Uh...
+Dialogue: 0,0:09:28.56,0:09:31.19,譯文字幕,,0000,0000,0000,,真不敢相信 這麼多年過去了\N{\reng_sub}I can't believe this, after all these years.
+Dialogue: 0,0:09:31.27,0:09:34.94,譯文字幕,,0000,0000,0000,,你看 大多數人都認為Neo死了\N{\reng_sub}You see, most people think that Neo is dead.
+Dialogue: 0,0:09:36.28,0:09:37.70,譯文字幕,,0000,0000,0000,,但我知道他沒死\N{\reng_sub}But I know he's not.
+Dialogue: 0,0:09:38.66,0:09:40.41,譯文字幕,,0000,0000,0000,,因為我見過他\N{\reng_sub}Because I've seen him.
+Dialogue: 0,0:09:42.66,0:09:44.45,譯文字幕,,0000,0000,0000,,在哪裡\N{\reng_sub}Where?
+Dialogue: 0,0:09:44.54,0:09:47.08,譯文字幕,,0000,0000,0000,,有點難解釋 但是...\N{\reng_sub}It's not something I can explain easily, but...
+Dialogue: 0,0:09:51.59,0:09:54.71,譯文字幕,,0000,0000,0000,,但是當時他有看到我\N{\reng_sub}But the moment he looked at me,
+Dialogue: 0,0:09:54.80,0:09:56.42,譯文字幕,,0000,0000,0000,,我感覺到了...\N{\reng_sub}I felt something...
+Dialogue: 0,0:09:59.76,0:10:01.47,譯文字幕,,0000,0000,0000,,我的意志被解鎖了一般\N{\reng_sub}unlock my mind.
+Dialogue: 0,0:10:04.02,0:10:05.10,譯文字幕,,0000,0000,0000,,好吧\N{\reng_sub}Okay.
+Dialogue: 0,0:10:07.39,0:10:09.35,譯文字幕,,0000,0000,0000,,我跟你有類似經歷\N{\reng_sub}Something like that happened to me.
+Dialogue: 0,0:10:14.28,0:10:15.94,譯文字幕,,0000,0000,0000,,我看到了一些圖案...\N{\reng_sub}I saw this pattern...
+Dialogue: 0,0:10:17.24,0:10:18.65,譯文字幕,,0000,0000,0000,,到處都是\N{\reng_sub}and it was everywhere.
+Dialogue: 0,0:10:20.28,0:10:22.66,譯文字幕,,0000,0000,0000,,我們看不到 但我們都被困在一個\N{\reng_sub}We can't see it, but we're all trapped inside
+Dialogue: 0,0:10:22.74,0:10:25.29,譯文字幕,,0000,0000,0000,,奇怪的 不斷重複的循環裡\N{\reng_sub}these strange, repeating loops.
+Dialogue: 0,0:10:25.37,0:10:28.62,譯文字幕,,0000,0000,0000,,不知為何我能在鏡子裡看到\N{\reng_sub}Somehow I saw it in the mirror.
+Dialogue: 0,0:10:28.71,0:10:31.46,譯文字幕,,0000,0000,0000,,只是一閃而過 但就像你說的\N{\reng_sub}Just a flicker, but it was like you said.
+Dialogue: 0,0:10:36.96,0:10:39.34,譯文字幕,,0000,0000,0000,,我突然明白了\N{\reng_sub}And suddenly I understood.
+Dialogue: 0,0:10:39.43,0:10:41.89,譯文字幕,,0000,0000,0000,,這不是真實的世界\N{\reng_sub}This is not the real world.
+Dialogue: 0,0:10:44.35,0:10:47.68,譯文字幕,,0000,0000,0000,,這是第一次 我感到真正的使命\N{\reng_sub}For the first time, I felt real purpose.
+Dialogue: 0,0:10:48.35,0:10:50.31,譯文字幕,,0000,0000,0000,,我知道我是誰\N{\reng_sub}I knew who I was
+Dialogue: 0,0:10:50.39,0:10:52.31,譯文字幕,,0000,0000,0000,,還有我必須做的事\N{\reng_sub}and what I had to do.
+Dialogue: 0,0:10:52.98,0:10:54.40,譯文字幕,,0000,0000,0000,,你是誰\N{\reng_sub}Who are you?
+Dialogue: 0,0:10:55.73,0:10:57.44,譯文字幕,,0000,0000,0000,,你必須做什麼\N{\reng_sub}What do you have to do?
+Dialogue: 0,0:11:00.40,0:11:01.70,譯文字幕,,0000,0000,0000,,我是...\N{\reng_sub}I am...
+Dialogue: 0,0:11:02.49,0:11:03.87,譯文字幕,,0000,0000,0000,,Morpheus\N{\reng_sub}Morpheus.
+Dialogue: 0,0:11:04.99,0:11:07.29,譯文字幕,,0000,0000,0000,,我必須找到Neo\N{\reng_sub}And I have to find Neo.
+Dialogue: 0,0:11:11.46,0:11:12.79,譯文字幕,,0000,0000,0000,,Morpheus\N{\reng_sub}Morpheus.
+Dialogue: 0,0:11:15.75,0:11:17.38,譯文字幕,,0000,0000,0000,,好了 好了\N{\reng_sub}Okay. Okay.
+Dialogue: 0,0:11:17.46,0:11:18.55,譯文字幕,,0000,0000,0000,,哦 我的天哪\N{\reng_sub}Oh, my God!
+Dialogue: 0,0:11:18.63,0:11:19.92,譯文字幕,,0000,0000,0000,,我得帶你離開這裡\N{\reng_sub}I have to get you out of here.
+Dialogue: 0,0:11:20.01,0:11:22.43,譯文字幕,,0000,0000,0000,,我要找出誰建造了這個模態\N{\reng_sub}I need to figure out who built this Modal.
+Dialogue: 0,0:11:22.51,0:11:24.10,譯文字幕,,0000,0000,0000,,好 跟我來\N{\reng_sub}Okay, come with me.
+Dialogue: 0,0:11:24.18,0:11:26.31,譯文字幕,,0000,0000,0000,,你必須準備好離開 你必須真的準備好\N{\reng_sub}You have to be ready to leave. You have to be really ready.
+Dialogue: 0,0:11:26.39,0:11:27.68,譯文字幕,,0000,0000,0000,,如果你沒準備好\N{\reng_sub}And if you're not,
+Dialogue: 0,0:11:27.77,0:11:28.77,譯文字幕,,0000,0000,0000,,如果你覺得這裡才是你該待的地方\N{\reng_sub}if you think that this is where you belong...
+Dialogue: 0,0:11:32.27,0:11:33.69,譯文字幕,,0000,0000,0000,,你覺得我有得選\N{\reng_sub}You call this a choice?
+Dialogue: 0,0:11:33.77,0:11:35.27,譯文字幕,,0000,0000,0000,,哦 老實講 當初有人給我這藥丸的時候\N{\reng_sub}Oh, honestly, when somebody offered me these things,
+Dialogue: 0,0:11:35.36,0:11:36.86,譯文字幕,,0000,0000,0000,,我不信這是二進位的世界\N{\reng_sub}I went off on binary conceptions of the world
+Dialogue: 0,0:11:36.94,0:11:38.53,譯文字幕,,0000,0000,0000,,我說我沒辦法吞下\N{\reng_sub}and said there was no way I was swallowing
+Dialogue: 0,0:11:38.61,0:11:40.49,譯文字幕,,0000,0000,0000,,這個否定我人生的藥丸\N{\reng_sub}some symbolic reduction of my life.
+Dialogue: 0,0:11:40.57,0:11:41.90,譯文字幕,,0000,0000,0000,,那個拿藥丸的女人笑了\N{\reng_sub}And the woman with the pills laughed
+Dialogue: 0,0:11:41.99,0:11:43.16,譯文字幕,,0000,0000,0000,,因為我沒抓住重點\N{\reng_sub}'cause I was missing the point.
+Dialogue: 0,0:11:43.24,0:11:44.78,譯文字幕,,0000,0000,0000,,什麼重點\N{\reng_sub}What point?
+Dialogue: 0,0:11:44.87,0:11:47.79,譯文字幕,,0000,0000,0000,,有選擇是一種錯覺\N{\reng_sub}The choice is an illusion.
+Dialogue: 0,0:11:47.87,0:11:50.08,譯文字幕,,0000,0000,0000,,你已經知道了你必須做什麼\N{\reng_sub}You already know what you have to do.
+Dialogue: 0,0:11:56.84,0:11:57.92,譯文字幕,,0000,0000,0000,,追求真相\N{\reng_sub}Truth.
+Dialogue: 0,0:12:04.64,0:12:05.64,譯文字幕,,0000,0000,0000,,好\N{\reng_sub}Okay.
+Dialogue: 0,0:12:05.72,0:12:06.93,譯文字幕,,0000,0000,0000,,有一座古老建築\N{\reng_sub}There's an old building
+Dialogue: 0,0:12:07.01,0:12:08.60,譯文字幕,,0000,0000,0000,,有天窗 還有很多樓梯\N{\reng_sub}with a skylight and lots of stairs.
+Dialogue: 0,0:12:08.68,0:12:09.89,譯文字幕,,0000,0000,0000,,拉法葉酒店\N{\reng_sub}The Lafayette.
+Dialogue: 0,0:12:09.97,0:12:11.52,譯文字幕,,0000,0000,0000,,四個後門中的一個通向那裡\N{\reng_sub}One of the four back doors leads there.
+Dialogue: 0,0:12:12.35,0:12:13.48,譯文字幕,,0000,0000,0000,,哦\N{\reng_sub}Oh.
+Dialogue: 0,0:12:13.56,0:12:15.06,譯文字幕,,0000,0000,0000,,不要抗拒  哇 發生什麼事了\N{\reng_sub}Don't fight it. Whoa, what's happening?
+Dialogue: 0,0:12:15.15,0:12:16.23,譯文字幕,,0000,0000,0000,,保持呼吸\N{\reng_sub}Keep breathing.
+Dialogue: 0,0:12:16.31,0:12:17.69,譯文字幕,,0000,0000,0000,,意識抽取效果都差不多\N{\reng_sub}Extraction works pretty much the same
+Dialogue: 0,0:12:17.77,0:12:19.69,譯文字幕,,0000,0000,0000,,不管是對人類還是程式\N{\reng_sub}for humans and programs.
+Dialogue: 0,0:12:22.53,0:12:23.53,譯文字幕,,0000,0000,0000,,哎喲\N{\reng_sub}Ouch.
+Dialogue: 0,0:12:23.61,0:12:24.66,譯文字幕,,0000,0000,0000,,啊\N{\reng_sub}Ah.
+Dialogue: 0,0:12:26.07,0:12:27.37,譯文字幕,,0000,0000,0000,,好啊\N{\reng_sub}Okay.
+Dialogue: 0,0:12:29.91,0:12:31.33,譯文字幕,,0000,0000,0000,,嘿 嘿\N{\reng_sub}Hey. Hey.
+Dialogue: 0,0:12:31.41,0:12:33.21,譯文字幕,,0000,0000,0000,,我從來沒戴過其他眼鏡\N{\reng_sub}I've never worn different glasses before.
+Dialogue: 0,0:12:33.29,0:12:36.04,譯文字幕,,0000,0000,0000,,是 很帥 哪扇門\N{\reng_sub}Yeah, looks good. Which door?
+Dialogue: 0,0:12:36.13,0:12:37.92,譯文字幕,,0000,0000,0000,,應該是這... 好的\N{\reng_sub}It's gotta be... Okay.
+Dialogue: 0,0:12:42.97,0:12:44.68,譯文字幕,,0000,0000,0000,,White特工\N{\reng_sub}Agent White.
+Dialogue: 0,0:12:44.76,0:12:45.97,譯文字幕,,0000,0000,0000,,Smith特工\N{\reng_sub}Agent Smith?
+Dialogue: 0,0:12:51.68,0:12:53.14,譯文字幕,,0000,0000,0000,,走\N{\reng_sub}Go!
+Dialogue: 0,0:13:00.36,0:13:02.03,譯文字幕,,0000,0000,0000,,Seq.你聽的到我說話嗎\N{\reng_sub}Seq! Can you hear me?
+Dialogue: 0,0:13:02.11,0:13:03.36,譯文字幕,,0000,0000,0000,,Bugs 我以為你失聯了\N{\reng_sub}Bugs! I thought I lost you.
+Dialogue: 0,0:13:03.44,0:13:04.70,譯文字幕,,0000,0000,0000,,你能帶我們去窗格嘛\N{\reng_sub}Can you get us to the window pane?
+Dialogue: 0,0:13:04.78,0:13:06.74,譯文字幕,,0000,0000,0000,,Bugs Bugs 他是個特工\N{\reng_sub}Bugs! Bugs! He's an agent!
+Dialogue: 0,0:13:16.92,0:13:19.17,譯文字幕,,0000,0000,0000,,那扇窗 快走\N{\reng_sub}That window! Go hard!
+Dialogue: 0,0:13:53.49,0:13:55.16,譯文字幕,,0000,0000,0000,,超凡互動性遊戲設計獎
+Dialogue: 0,0:14:05.38,0:14:07.84,譯文字幕,,0000,0000,0000,,怎麼回...\N{\reng_sub}What the...
+Dialogue: 0,0:14:14.14,0:14:16.10,譯文字幕,,0000,0000,0000,,什麼鬼\N{\reng_sub}What the hell?
+Dialogue: 0,0:14:32.95,0:14:34.29,譯文字幕,,0000,0000,0000,,出什麼事了\N{\reng_sub}Something wrong?
+Dialogue: 0,0:14:34.37,0:14:37.12,譯文字幕,,0000,0000,0000,,嗯 程式有點小崩潰\N{\reng_sub}Uh... Just a little crash.
+Dialogue: 0,0:14:37.20,0:14:39.58,譯文字幕,,0000,0000,0000,,早上好 Bobbi  早上好 夥計\N{\reng_sub}Morning, Bobbi. Morning, dude.
+Dialogue: 0,0:14:39.67,0:14:43.46,譯文字幕,,0000,0000,0000,,真是美好的一天 我說得對嗎\N{\reng_sub}What a beautiful day to be alive. Am I right?
+Dialogue: 0,0:14:43.54,0:14:45.55,譯文字幕,,0000,0000,0000,,-什麼情況 -他把什麼東西弄丟了\N{\reng_sub}-Problemo? -He lost something.
+Dialogue: 0,0:14:46.88,0:14:48.17,譯文字幕,,0000,0000,0000,,這是舊的Matrix編碼嗎\N{\reng_sub}Is this old Matrix code?
+Dialogue: 0,0:14:50.18,0:14:51.76,譯文字幕,,0000,0000,0000,,一個小小的模態試驗\N{\reng_sub}A little Modal experiment.
+Dialogue: 0,0:14:51.84,0:14:54.81,譯文字幕,,0000,0000,0000,,給 Binary 的嗎\N{\reng_sub}For Binary?
+Dialogue: 0,0:14:54.89,0:14:57.52,譯文字幕,,0000,0000,0000,,-我需要一杯咖啡  -咖啡 好的 馬上來\N{\reng_sub}-I need a coffee. -Coffee. Yes, stat!
+Dialogue: 0,0:14:57.60,0:14:58.73,譯文字幕,,0000,0000,0000,,我去買\N{\reng_sub}I'm buying.
+Dialogue: 0,0:15:01.73,0:15:03.48,譯文字幕,,0000,0000,0000,,我不想對你拍馬屁\N{\reng_sub}I'm not trying to blow smoke up your ass,
+Dialogue: 0,0:15:03.56,0:15:07.99,譯文字幕,,0000,0000,0000,,但是我第一次玩三部曲的時候 我被震撼了\N{\reng_sub}but the first time I played the trilogy, I was shook.
+Dialogue: 0,0:15:08.07,0:15:10.65,譯文字幕,,0000,0000,0000,,自由意志和命運之間的悖論\N{\reng_sub}The paradox between free will and destiny.
+Dialogue: 0,0:15:10.74,0:15:11.91,譯文字幕,,0000,0000,0000,,我們只是按照演算法\N{\reng_sub}Are we all just algorithms
+Dialogue: 0,0:15:11.99,0:15:13.20,譯文字幕,,0000,0000,0000,,做我們要做的事\N{\reng_sub}doing what we're supposed to do
+Dialogue: 0,0:15:13.28,0:15:14.99,譯文字幕,,0000,0000,0000,,還是我們能逃脫程式控制\N{\reng_sub}or can we escape our programming?
+Dialogue: 0,0:15:15.08,0:15:19.00,譯文字幕,,0000,0000,0000,,天才 隱藏在遊戲中 順便一說\N{\reng_sub}Genius, inside the context of the game, BT dubs.
+Dialogue: 0,0:15:19.08,0:15:21.17,譯文字幕,,0000,0000,0000,,嘿 它完全佔據了我全部生活\N{\reng_sub}Hey, did I tell you it took over my life?
+Dialogue: 0,0:15:21.25,0:15:24.00,譯文字幕,,0000,0000,0000,,沒錯 我七年級都沒畢業\N{\reng_sub}Yeah. I failed the seventh grade.
+Dialogue: 0,0:15:24.08,0:15:26.25,譯文字幕,,0000,0000,0000,,你的遊戲差點毀了我\N{\reng_sub}Your game almost ruined me.
+Dialogue: 0,0:15:26.34,0:15:28.84,譯文字幕,,0000,0000,0000,,-你已經說過 -聊到這了\N{\reng_sub}-So you've said. -Yet here we are.
+Dialogue: 0,0:15:28.92,0:15:31.76,譯文字幕,,0000,0000,0000,,你告訴我 Anderson先生\N{\reng_sub}You tell me, Mr. Anderson,
+Dialogue: 0,0:15:31.84,0:15:32.89,譯文字幕,,0000,0000,0000,,這是自由意志\N{\reng_sub}is it free will
+Dialogue: 0,0:15:34.14,0:15:35.76,譯文字幕,,0000,0000,0000,,還是命運\N{\reng_sub}or destiny?
+Dialogue: 0,0:15:40.43,0:15:42.35,譯文字幕,,0000,0000,0000,,哦 耶\N{\reng_sub}Oh, yeah.
+Dialogue: 0,0:15:42.44,0:15:44.36,譯文字幕,,0000,0000,0000,,她可來了\N{\reng_sub}There she is.
+Dialogue: 0,0:15:44.44,0:15:45.94,譯文字幕,,0000,0000,0000,,極品美魔女\N{\reng_sub}Total f-ing MILF.
+Dialogue: 0,0:15:46.82,0:15:48.90,譯文字幕,,0000,0000,0000,,別瞪我 聽著 我很抱歉\N{\reng_sub}Daggers. Look, I'm sorry.
+Dialogue: 0,0:15:48.98,0:15:51.28,譯文字幕,,0000,0000,0000,,我是個書呆子 我是機械養大的\N{\reng_sub}I'm a geek. I was raised by machines.
+Dialogue: 0,0:15:51.36,0:15:52.61,譯文字幕,,0000,0000,0000,,也許你該走了\N{\reng_sub}Maybe you should go.
+Dialogue: 0,0:15:52.70,0:15:55.74,譯文字幕,,0000,0000,0000,,別 求你 我保證 好好表現\N{\reng_sub}No, please. I... I promise, best self.
+Dialogue: 0,0:15:55.82,0:15:57.08,譯文字幕,,0000,0000,0000,,好好表現\N{\reng_sub}Best self.
+Dialogue: 0,0:16:01.00,0:16:02.25,譯文字幕,,0000,0000,0000,,好的\N{\reng_sub}Sure.
+Dialogue: 0,0:16:03.12,0:16:04.54,譯文字幕,,0000,0000,0000,,你和她搭訕過嗎\N{\reng_sub}You ever talk to her?
+Dialogue: 0,0:16:06.67,0:16:08.09,譯文字幕,,0000,0000,0000,,跟你說\N{\reng_sub}Tell you what.
+Dialogue: 0,0:16:08.17,0:16:12.55,譯文字幕,,0000,0000,0000,,為了你為我所做的一切 這事包在我身上了\N{\reng_sub}For all you've done for me, let me do this for you.
+Dialogue: 0,0:16:12.63,0:16:15.39,譯文字幕,,0000,0000,0000,,Jude 不 停下來\N{\reng_sub}Jude, no. Stop.
+Dialogue: 0,0:16:15.47,0:16:17.18,譯文字幕,,0000,0000,0000,,-對不起 打擾一下 -謝謝\N{\reng_sub}-Excuse me. Excuse me. -Thanks.
+Dialogue: 0,0:16:17.26,0:16:18.68,譯文字幕,,0000,0000,0000,,你好...\N{\reng_sub}Hi. Um...
+Dialogue: 0,0:16:18.76,0:16:20.35,譯文字幕,,0000,0000,0000,,我知道這有點冒昧\N{\reng_sub}I know this is all a bit extemporaneous.
+Dialogue: 0,0:16:20.43,0:16:22.06,譯文字幕,,0000,0000,0000,,我是Jude Gallagher\N{\reng_sub}I'm Jude Gallagher.
+Dialogue: 0,0:16:22.14,0:16:24.73,譯文字幕,,0000,0000,0000,,我在一家遊戲公司工作 叫Deus Machina\N{\reng_sub}I work for a game company called Deus Machina.
+Dialogue: 0,0:16:24.81,0:16:26.06,譯文字幕,,0000,0000,0000,,嗨 Jude 我是Tiffany\N{\reng_sub}Hi, Jude, I'm Tiffany.
+Dialogue: 0,0:16:26.15,0:16:29.07,譯文字幕,,0000,0000,0000,,Tiffany 哇喔 沒想到你叫這名字\N{\reng_sub}Tiffany. Wow. Didn't see that coming.
+Dialogue: 0,0:16:29.15,0:16:31.07,譯文字幕,,0000,0000,0000,,-我媽媽愛Audrey Hepburn -Jude\N{\reng_sub}-Mom loved Audrey Hepburn. -Jude.
+Dialogue: 0,0:16:31.15,0:16:35.07,譯文字幕,,0000,0000,0000,,哦 這是我非常好的朋友 Thomas Anderson\N{\reng_sub}Oh, and this is my very good friend, Thomas Anderson.
+Dialogue: 0,0:16:35.16,0:16:37.07,譯文字幕,,0000,0000,0000,,他是個如假包換的大名人\N{\reng_sub}He is a bona fide famous person
+Dialogue: 0,0:16:37.16,0:16:38.53,譯文字幕,,0000,0000,0000,,大多數人認為他是\N{\reng_sub}and considered by most to be
+Dialogue: 0,0:16:38.62,0:16:40.62,譯文字幕,,0000,0000,0000,,我們這一代中最偉大的遊戲設計師\N{\reng_sub}the greatest game designer of our generation.
+Dialogue: 0,0:16:40.70,0:16:41.91,譯文字幕,,0000,0000,0000,,我很抱歉他這樣\N{\reng_sub}I'm sorry about this.
+Dialogue: 0,0:16:42.00,0:16:43.21,譯文字幕,,0000,0000,0000,,-Jude... -和她談談\N{\reng_sub}-Jude... -Just talk to her.
+Dialogue: 0,0:16:43.29,0:16:45.79,譯文字幕,,0000,0000,0000,,嗨 Thomas 大家都叫我 Tiff\N{\reng_sub}Hi, Thomas. Everyone calls me "Tiff"
+Dialogue: 0,0:16:46.67,0:16:47.88,譯文字幕,,0000,0000,0000,,你好\N{\reng_sub}Hi.
+Dialogue: 0,0:16:55.05,0:16:56.18,譯文字幕,,0000,0000,0000,,我們在哪裡見過嗎\N{\reng_sub}Have we met?
+Dialogue: 0,0:16:57.64,0:16:59.76,譯文字幕,,0000,0000,0000,,嗯 我們都常來這裡\N{\reng_sub}Uh, we both come here.
+Dialogue: 0,0:16:59.85,0:17:01.27,譯文字幕,,0000,0000,0000,,-我可以吃你的麵包嗎  -嘿\N{\reng_sub}-Can I have your morning bun? -Hey!
+Dialogue: 0,0:17:01.35,0:17:02.77,譯文字幕,,0000,0000,0000,,你是想泡我媽嗎\N{\reng_sub}Are you trying to ball my mom or what?
+Dialogue: 0,0:17:02.85,0:17:04.14,譯文字幕,,0000,0000,0000,,Brandon\N{\reng_sub}Brandon!
+Dialogue: 0,0:17:04.23,0:17:06.10,譯文字幕,,0000,0000,0000,,我能吃一口嗎\N{\reng_sub}Can I have one bite?
+Dialogue: 0,0:17:06.19,0:17:09.19,譯文字幕,,0000,0000,0000,,寶貝 發生什麼事 我們要遲到了\N{\reng_sub}Babe! What's going on? We're gonna be late.
+Dialogue: 0,0:17:09.27,0:17:11.19,譯文字幕,,0000,0000,0000,,這是我丈夫 Chad\N{\reng_sub}This is my husband, Chad.
+Dialogue: 0,0:17:11.28,0:17:13.07,譯文字幕,,0000,0000,0000,,很高興認識你  嘿\N{\reng_sub}-Nice to meet you. -Hey.
+Dialogue: 0,0:17:14.70,0:17:16.78,譯文字幕,,0000,0000,0000,,寶貝 我們帶 Callie 去練習了\N{\reng_sub}Babe, we gotta get Callie to practice.
+Dialogue: 0,0:17:16.86,0:17:18.95,譯文字幕,,0000,0000,0000,,好的  抱歉\N{\reng_sub}Right. Sorry.
+Dialogue: 0,0:17:19.03,0:17:20.66,譯文字幕,,0000,0000,0000,,來吧孩子們 我們走了\N{\reng_sub}Come on, kids. Let's move out.
+Dialogue: 0,0:17:45.02,0:17:46.02,譯文字幕,,0000,0000,0000,,什麼\N{\reng_sub}What?
+Dialogue: 0,0:17:53.48,0:17:55.82,譯文字幕,,0000,0000,0000,,很抱歉 嗯 老闆叫你\N{\reng_sub}Sorry. Uh, it's the boss.
+Dialogue: 0,0:18:01.74,0:18:04.83,譯文字幕,,0000,0000,0000,,幾十億人 他們都過得...\N{\reng_sub}"Billions of people just living out their lives...
+Dialogue: 0,0:18:06.04,0:18:07.87,譯文字幕,,0000,0000,0000,,渾渾噩噩\N{\reng_sub}oblivious"
+Dialogue: 0,0:18:09.83,0:18:12.21,譯文字幕,,0000,0000,0000,,我一直很喜歡這句臺詞\N{\reng_sub}I always loved that line.
+Dialogue: 0,0:18:12.29,0:18:13.75,譯文字幕,,0000,0000,0000,,你寫的 是嗎\N{\reng_sub}You wrote that one, yeah?
+Dialogue: 0,0:18:16.47,0:18:18.63,譯文字幕,,0000,0000,0000,,每次我站在這裡\N{\reng_sub}Every time I stand here,
+Dialogue: 0,0:18:18.72,0:18:21.97,譯文字幕,,0000,0000,0000,,我想 老.天.爺.啊\N{\reng_sub}I mean, OMG.
+Dialogue: 0,0:18:22.05,0:18:24.10,譯文字幕,,0000,0000,0000,,太完美了 一定是假的\N{\reng_sub}It's so perfect, it's gotta be fake.
+Dialogue: 0,0:18:25.14,0:18:26.56,譯文字幕,,0000,0000,0000,,對吧\N{\reng_sub}Right?
+Dialogue: 0,0:18:28.44,0:18:29.69,譯文字幕,,0000,0000,0000,,是啊\N{\reng_sub}Yeah.
+Dialogue: 0,0:18:30.44,0:18:31.69,譯文字幕,,0000,0000,0000,,當然\N{\reng_sub}Sure.
+Dialogue: 0,0:18:31.77,0:18:33.61,譯文字幕,,0000,0000,0000,,請坐\N{\reng_sub}Have a seat.
+Dialogue: 0,0:18:36.61,0:18:37.82,譯文字幕,,0000,0000,0000,,抽煙嗎\N{\reng_sub}Smoke?
+Dialogue: 0,0:18:39.11,0:18:40.16,譯文字幕,,0000,0000,0000,,我以為你戒煙了\N{\reng_sub}I thought you quit.
+Dialogue: 0,0:18:41.03,0:18:43.41,譯文字幕,,0000,0000,0000,,我不把它當嗜好了\N{\reng_sub}I quit calling it a habit.
+Dialogue: 0,0:18:43.49,0:18:45.41,譯文字幕,,0000,0000,0000,,只是有點罪惡感\N{\reng_sub}Now it's just a guilty pleasure.
+Dialogue: 0,0:18:47.58,0:18:51.17,譯文字幕,,0000,0000,0000,,哦 也許我能幫幫你\N{\reng_sub}Oh. Maybe I can make this easy for you.
+Dialogue: 0,0:18:51.25,0:18:53.29,譯文字幕,,0000,0000,0000,,我知道 Binary 的開發有點超出預算\N{\reng_sub}I know Binary is over budget.
+Dialogue: 0,0:18:53.38,0:18:55.67,譯文字幕,,0000,0000,0000,,這不是 Binary 的事 Tom 比這嚴重的多\N{\reng_sub}This is not about Binary, Tom. It's bigger than that.
+Dialogue: 0,0:18:55.75,0:18:57.09,譯文字幕,,0000,0000,0000,,這關乎你我的未來\N{\reng_sub}This is about our future,
+Dialogue: 0,0:18:57.17,0:19:00.13,譯文字幕,,0000,0000,0000,,這就很棘手了 考慮到我們的過去\N{\reng_sub}which is a sticky subject, given our past.
+Dialogue: 0,0:19:00.22,0:19:01.43,譯文字幕,,0000,0000,0000,,什麼意思\N{\reng_sub}What do you mean?
+Dialogue: 0,0:19:02.55,0:19:04.14,譯文字幕,,0000,0000,0000,,治療進行的怎麼樣了\N{\reng_sub}How's the therapy?
+Dialogue: 0,0:19:04.22,0:19:05.51,譯文字幕,,0000,0000,0000,,很好\N{\reng_sub}Good.
+Dialogue: 0,0:19:06.22,0:19:07.68,譯文字幕,,0000,0000,0000,,沒什麼\N{\reng_sub}Any...
+Dialogue: 0,0:19:08.64,0:19:09.98,譯文字幕,,0000,0000,0000,,小插曲嗎\N{\reng_sub}episodes?
+Dialogue: 0,0:19:11.77,0:19:12.86,譯文字幕,,0000,0000,0000,,沒有\N{\reng_sub}No.
+Dialogue: 0,0:19:13.48,0:19:15.27,譯文字幕,,0000,0000,0000,,太好了\N{\reng_sub}That's terrific.
+Dialogue: 0,0:19:16.98,0:19:20.49,譯文字幕,,0000,0000,0000,,聽著 Tom 我知道我們總是有分歧\N{\reng_sub}Look, Tom, I know we've always had our differences.
+Dialogue: 0,0:19:20.57,0:19:22.41,譯文字幕,,0000,0000,0000,,我們第一次見面 你怎麼形容的\N{\reng_sub}What did you say about our first meeting?
+Dialogue: 0,0:19:22.49,0:19:25.74,譯文字幕,,0000,0000,0000,,我們的化學反應就像FBI審訊一樣\N{\reng_sub}We had all the chemistry of an FBI interrogation.
+Dialogue: 0,0:19:28.45,0:19:29.87,譯文字幕,,0000,0000,0000,,但是看看這裡\N{\reng_sub}But look at this place.
+Dialogue: 0,0:19:30.96,0:19:32.29,譯文字幕,,0000,0000,0000,,我們做到了\N{\reng_sub}We did this.
+Dialogue: 0,0:19:33.67,0:19:34.88,譯文字幕,,0000,0000,0000,,一起做到的\N{\reng_sub}Together.
+Dialogue: 0,0:19:36.25,0:19:37.71,譯文字幕,,0000,0000,0000,,是啊\N{\reng_sub}Yeah.
+Dialogue: 0,0:19:37.80,0:19:39.76,譯文字幕,,0000,0000,0000,,現在又怎樣了\N{\reng_sub}Now what?
+Dialogue: 0,0:19:39.84,0:19:43.43,譯文字幕,,0000,0000,0000,,情況變了 市場不景氣\N{\reng_sub}Things have changed. The market's tough.
+Dialogue: 0,0:19:43.51,0:19:45.80,譯文字幕,,0000,0000,0000,,我相信你能理解為什麼我們敬愛的\N{\reng_sub}I'm sure you can understand why our beloved
+Dialogue: 0,0:19:45.89,0:19:47.26,譯文字幕,,0000,0000,0000,,母公司華納兄弟\N{\reng_sub}parent company, Warner Bros.,
+Dialogue: 0,0:19:47.35,0:19:49.77,譯文字幕,,0000,0000,0000,,決定製作三部曲的續集\N{\reng_sub}has decided to make a sequel to the trilogy.
+Dialogue: 0,0:19:49.85,0:19:51.27,譯文字幕,,0000,0000,0000,,什麼\N{\reng_sub}What?
+Dialogue: 0,0:19:51.35,0:19:53.27,譯文字幕,,0000,0000,0000,,他們通知我 不管有沒有我們都要做\N{\reng_sub}They informed me they're gonna do it with or without us.
+Dialogue: 0,0:19:53.35,0:19:55.19,譯文字幕,,0000,0000,0000,,我以為他們不能這麼做\N{\reng_sub}I thought they couldn't do that.
+Dialogue: 0,0:19:56.40,0:19:57.77,譯文字幕,,0000,0000,0000,,哦 他們可以\N{\reng_sub}Oh, they can.
+Dialogue: 0,0:19:57.86,0:19:59.19,譯文字幕,,0000,0000,0000,,而且他們表達得很清楚\N{\reng_sub}And they made it clear
+Dialogue: 0,0:19:59.28,0:20:01.45,譯文字幕,,0000,0000,0000,,如果我們不做他們就會終止合約\N{\reng_sub}they'll kill our contract if we don't cooperate.
+Dialogue: 0,0:20:01.53,0:20:03.24,譯文字幕,,0000,0000,0000,,真的\N{\reng_sub}Really?
+Dialogue: 0,0:20:03.32,0:20:07.20,譯文字幕,,0000,0000,0000,,我知道你說過對你來說已經結束了\N{\reng_sub}I know you said the story was over for you,
+Dialogue: 0,0:20:07.28,0:20:09.45,譯文字幕,,0000,0000,0000,,但故事就是故事\N{\reng_sub}but that's the thing about stories.
+Dialogue: 0,0:20:11.25,0:20:13.17,譯文字幕,,0000,0000,0000,,他們永遠不會真正結束 對嗎\N{\reng_sub}They never really end, do they?
+Dialogue: 0,0:20:13.25,0:20:15.79,譯文字幕,,0000,0000,0000,,我們還是要講那個我們一直講的故事\N{\reng_sub}We're still telling the same stories we've always told,
+Dialogue: 0,0:20:15.88,0:20:20.17,譯文字幕,,0000,0000,0000,,只是換個名字 換個面貌\N{\reng_sub}just with different names, different faces
+Dialogue: 0,0:20:21.80,0:20:24.89,譯文字幕,,0000,0000,0000,,我不得不說 我有點激動\N{\reng_sub}and I have to say I'm kind of excited.
+Dialogue: 0,0:20:27.72,0:20:28.89,譯文字幕,,0000,0000,0000,,經過這麼多年\N{\reng_sub}After all these years,
+Dialogue: 0,0:20:28.97,0:20:31.98,譯文字幕,,0000,0000,0000,,再回到起點\N{\reng_sub}to be going back to where it all started.
+Dialogue: 0,0:20:32.06,0:20:34.39,譯文字幕,,0000,0000,0000,,回到The Matrix\N{\reng_sub}Back to The Matrix.
+Dialogue: 0,0:20:35.52,0:20:37.23,譯文字幕,,0000,0000,0000,,我已經和市場部談過了...\N{\reng_sub}I've spoken to Marketing...
+Dialogue: 0,0:20:43.20,0:20:44.74,譯文字幕,,0000,0000,0000,,Tom\N{\reng_sub}Tom?
+Dialogue: 0,0:20:44.82,0:20:46.37,譯文字幕,,0000,0000,0000,,怎麼\N{\reng_sub}Yeah.
+Dialogue: 0,0:20:46.45,0:20:47.49,譯文字幕,,0000,0000,0000,,你還好嗎\N{\reng_sub}Are you all right?
+Dialogue: 0,0:20:49.83,0:20:50.95,譯文字幕,,0000,0000,0000,,沒事\N{\reng_sub}Yeah.
+Dialogue: 0,0:20:55.87,0:20:58.09,譯文字幕,,0000,0000,0000,,你當時感覺如何\N{\reng_sub}What were you feeling at that point?
+Dialogue: 0,0:21:01.17,0:21:02.97,譯文字幕,,0000,0000,0000,,我的感覺\N{\reng_sub}What was I feeling?
+Dialogue: 0,0:21:06.26,0:21:11.01,譯文字幕,,0000,0000,0000,,我覺得要麼我又一次精神崩潰了\N{\reng_sub}I felt either I'm having a mental breakdown again
+Dialogue: 0,0:21:11.10,0:21:15.35,譯文字幕,,0000,0000,0000,,要麼我就是活在一個電腦生成的現實裡\N{\reng_sub}or I'm living inside a computergenerated reality
+Dialogue: 0,0:21:15.44,0:21:16.98,譯文字幕,,0000,0000,0000,,把我困住了\N{\reng_sub}that has imprisoned me...
+Dialogue: 0,0:21:17.60,0:21:18.77,譯文字幕,,0000,0000,0000,,再一次\N{\reng_sub}again.
+Dialogue: 0,0:21:29.45,0:21:30.95,譯文字幕,,0000,0000,0000,,沒有選擇啊\N{\reng_sub}Not much of a choice.
+Dialogue: 0,0:21:31.03,0:21:32.24,譯文字幕,,0000,0000,0000,,沒有\N{\reng_sub}No.
+Dialogue: 0,0:21:32.33,0:21:33.91,譯文字幕,,0000,0000,0000,,也許這不是那麼非黑即白\N{\reng_sub}Maybe it's not as binary as that.
+Dialogue: 0,0:21:34.00,0:21:37.29,譯文字幕,,0000,0000,0000,,也許還有其他方法去理解發生了什麼\N{\reng_sub}Maybe there are other ways to understand what happened.
+Dialogue: 0,0:21:37.87,0:21:38.96,譯文字幕,,0000,0000,0000,,是啊\N{\reng_sub}Yeah.
+Dialogue: 0,0:21:39.04,0:21:41.21,譯文字幕,,0000,0000,0000,,Thomas 你是自殺未遂者\N{\reng_sub}Thomas, you are a suicide survivor
+Dialogue: 0,0:21:41.29,0:21:44.17,譯文字幕,,0000,0000,0000,,在想像力上有超強的天賦\N{\reng_sub}gifted with a powerful imagination.
+Dialogue: 0,0:21:44.26,0:21:46.01,譯文字幕,,0000,0000,0000,,這些事結合在一起\N{\reng_sub}Those facts have combined
+Dialogue: 0,0:21:46.09,0:21:48.59,譯文字幕,,0000,0000,0000,,在你生活中創造出了危險的小說\N{\reng_sub}to create dangerous fictions in your life.
+Dialogue: 0,0:21:48.68,0:21:50.22,譯文字幕,,0000,0000,0000,,昨天 你參加了一個會議\N{\reng_sub}Yesterday, you walked into a meeting
+Dialogue: 0,0:21:50.30,0:21:51.43,譯文字幕,,0000,0000,0000,,和你的商業夥伴一起\N{\reng_sub}with your business partner
+Dialogue: 0,0:21:51.51,0:21:52.97,譯文字幕,,0000,0000,0000,,他打了你一個措手不及\N{\reng_sub}and he ambushed you,
+Dialogue: 0,0:21:53.06,0:21:55.48,譯文字幕,,0000,0000,0000,,要求你做出一個 你說過永遠不做的遊戲\N{\reng_sub}demanding you make a game you said you would never make.
+Dialogue: 0,0:21:55.56,0:21:58.90,譯文字幕,,0000,0000,0000,,他剝奪了你的發言權\N{\reng_sub}This attack effectively took away your voice.
+Dialogue: 0,0:21:58.98,0:22:01.73,譯文字幕,,0000,0000,0000,,他觸發了你在腦子裡反擊的想法\N{\reng_sub}His violence triggered you and your mind fought back.
+Dialogue: 0,0:22:01.82,0:22:03.69,譯文字幕,,0000,0000,0000,,你以其人之道還治其人之身\N{\reng_sub}You did to him what he was doing to you.
+Dialogue: 0,0:22:05.19,0:22:06.57,譯文字幕,,0000,0000,0000,,我們討論過在創傷治療中\N{\reng_sub}We've talked about the value
+Dialogue: 0,0:22:06.65,0:22:10.20,譯文字幕,,0000,0000,0000,,適應憤怒情緒的價值\N{\reng_sub}of adaptive anger in healing trauma.
+Dialogue: 0,0:22:10.28,0:22:13.66,譯文字幕,,0000,0000,0000,,但絕非重複你最初的崩潰\N{\reng_sub}Far from suggesting a repeat of your initial breakdown,
+Dialogue: 0,0:22:13.74,0:22:14.95,譯文字幕,,0000,0000,0000,,我相信這段插曲\N{\reng_sub}I believe this episode
+Dialogue: 0,0:22:15.04,0:22:16.83,譯文字幕,,0000,0000,0000,,顯示了一種良性的自我保護\N{\reng_sub}demonstrates healthy selfprotection.
+Dialogue: 0,0:22:18.37,0:22:20.58,譯文字幕,,0000,0000,0000,,更重要的是 我記得這有多難\N{\reng_sub}And more importantly, I remember how hard
+Dialogue: 0,0:22:20.67,0:22:23.71,譯文字幕,,0000,0000,0000,,讓你來分享這些事情\N{\reng_sub}it was for you to share something like this.
+Dialogue: 0,0:22:23.80,0:22:26.51,譯文字幕,,0000,0000,0000,,這告訴我 我們已經比以前有了多少起色\N{\reng_sub}Which tells me just how far we've come.
+Dialogue: 0,0:22:31.60,0:22:33.89,譯文字幕,,0000,0000,0000,,跟藥方再開點藥嗎\N{\reng_sub}Do you need a refill on your prescription?
+Dialogue: 0,0:22:35.77,0:22:36.93,譯文字幕,,0000,0000,0000,,是啊\N{\reng_sub}Yeah.
+Dialogue: 0,0:22:59.54,0:23:01.75,譯文字幕,,0000,0000,0000,,首先 我知道 我代表每個人說話\N{\reng_sub}First of all, I know I speak for everyone
+Dialogue: 0,0:23:01.83,0:23:04.13,譯文字幕,,0000,0000,0000,,當我這麼說的時候 我非常非常激動\N{\reng_sub}when I say that I'm so, so excited
+Dialogue: 0,0:23:04.21,0:23:06.30,譯文字幕,,0000,0000,0000,,能做這個遊戲 那真是個...\N{\reng_sub}to be working on a game that was such a...
+Dialogue: 0,0:23:06.38,0:23:08.47,譯文字幕,,0000,0000,0000,,嗯 遊戲的革命者\N{\reng_sub}well, game changer.
+Dialogue: 0,0:23:08.55,0:23:10.13,譯文字幕,,0000,0000,0000,,現在 在你面前的資料包裡\N{\reng_sub}Now, the packet in front of you
+Dialogue: 0,0:23:10.22,0:23:13.01,譯文字幕,,0000,0000,0000,,有我們的焦點調研小組的研究\N{\reng_sub}has our focus group research.
+Dialogue: 0,0:23:13.10,0:23:14.55,譯文字幕,,0000,0000,0000,,在裡面 你會找到分類\N{\reng_sub}Inside, you'll find the breakdown
+Dialogue: 0,0:23:14.64,0:23:17.47,譯文字幕,,0000,0000,0000,,包括了品牌關聯的關鍵字\N{\reng_sub}including keyword association with the brand.
+Dialogue: 0,0:23:17.56,0:23:20.64,譯文字幕,,0000,0000,0000,,前兩名是 創意 和 新鮮\N{\reng_sub}The top two being "originality" and "fresh,"
+Dialogue: 0,0:23:20.73,0:23:22.77,譯文字幕,,0000,0000,0000,,我想最好是時刻把它們記在腦子裡\N{\reng_sub}which I think are great things to keep in mind
+Dialogue: 0,0:23:22.85,0:23:25.07,譯文字幕,,0000,0000,0000,,當你開始著手《Matrix 4》工作的時候\N{\reng_sub}as you begin working on Matrix 4.
+Dialogue: 0,0:23:26.61,0:23:28.19,譯文字幕,,0000,0000,0000,,誰知會不會有更多續作呢\N{\reng_sub}And who knows how many more?
+Dialogue: 0,0:23:43.71,0:23:47.13,譯文字幕,,0000,0000,0000,,是什麼讓Matrix與眾不同 他搞亂你的大腦\N{\reng_sub}What made Matrix different? It effed with your head.
+Dialogue: 0,0:23:47.21,0:23:48.51,譯文字幕,,0000,0000,0000,,切中要害\N{\reng_sub}On point.
+Dialogue: 0,0:23:48.59,0:23:50.59,譯文字幕,,0000,0000,0000,,人們想要我們進到他們的灰色空間\N{\reng_sub}People want us up in their grey space,
+Dialogue: 0,0:23:50.67,0:23:53.72,譯文字幕,,0000,0000,0000,,按下開關把他們的 我靠 點亮\N{\reng_sub}switching their synaptic "WTF" light on.
+Dialogue: 0,0:24:02.85,0:24:06.19,譯文字幕,,0000,0000,0000,,是什麼讓Matrix與眾不同 他搞亂你的大腦\N{\reng_sub}What made Matrix different? It effed with your head.
+Dialogue: 0,0:24:06.27,0:24:08.11,譯文字幕,,0000,0000,0000,,人們想要我們進到他們的灰色空間\N{\reng_sub}People want us up in their grey space,
+Dialogue: 0,0:24:08.19,0:24:09.53,譯文字幕,,0000,0000,0000,,按下開關\N{\reng_sub}switching their synaptic
+Dialogue: 0,0:24:09.61,0:24:12.24,譯文字幕,,0000,0000,0000,,把他們的 我靠 點亮\N{\reng_sub}"What the hell is going on here?" light on.
+Dialogue: 0,0:24:22.33,0:24:26.54,譯文字幕,,0000,0000,0000,,我不喜歡第一部 就像你們中的一些人\N{\reng_sub}I didn't love the first one, like some of you.
+Dialogue: 0,0:24:26.63,0:24:29.05,譯文字幕,,0000,0000,0000,,老實講 我簡直受不了\N{\reng_sub}And, frankly, I've got zero tolerance
+Dialogue: 0,0:24:29.13,0:24:31.55,譯文字幕,,0000,0000,0000,,那些什麼複雜的筆記和攻略\N{\reng_sub}for anything that requires a syllabus and a highlighter.
+Dialogue: 0,0:24:31.63,0:24:33.51,譯文字幕,,0000,0000,0000,,我喜歡我的遊戲夠大型 夠熱鬧 又夠傻瓜的\N{\reng_sub}I like my games big, loud and dumb.
+Dialogue: 0,0:24:33.59,0:24:35.55,譯文字幕,,0000,0000,0000,,我們需要槍 很多槍\N{\reng_sub}We need guns! Lots of guns.
+Dialogue: 0,0:24:35.64,0:24:38.22,譯文字幕,,0000,0000,0000,,Matrix意味著混亂\N{\reng_sub}Matrix means mayhem.
+Dialogue: 0,0:24:42.89,0:24:45.06,譯文字幕,,0000,0000,0000,,盲目的行動不符合我們的品牌\N{\reng_sub}Mindless action is not onbrand.
+Dialogue: 0,0:24:45.15,0:24:46.56,譯文字幕,,0000,0000,0000,,她說的對\N{\reng_sub}She's right.
+Dialogue: 0,0:24:46.65,0:24:49.69,譯文字幕,,0000,0000,0000,,Matrix是精神高潮 是閃亮的哲學...\N{\reng_sub}Matrix is mindporn. Philosophy in shiny...
+Dialogue: 0,0:24:49.77,0:24:51.44,譯文字幕,,0000,0000,0000,,-緊身皮衣 -對的\N{\reng_sub}-tight PVC. -Yeah.
+Dialogue: 0,0:24:51.53,0:24:53.40,譯文字幕,,0000,0000,0000,,創意是新的 性感\N{\reng_sub}Ideas are the new "sexy"
+Dialogue: 0,0:25:07.54,0:25:09.25,譯文字幕,,0000,0000,0000,,很明顯The Matrix是關於...\N{\reng_sub}Obviously The Matrix is about...
+Dialogue: 0,0:25:09.34,0:25:11.59,譯文字幕,,0000,0000,0000,,-...超越政治  -秘密法西斯主義\N{\reng_sub}-...transpolitics. -Crypto-fascism.
+Dialogue: 0,0:25:11.67,0:25:12.59,譯文字幕,,0000,0000,0000,,這是用來比喻...\N{\reng_sub}It's a metaphor...
+Dialogue: 0,0:25:12.67,0:25:14.34,譯文字幕,,0000,0000,0000,,...資本主義剝削\N{\reng_sub}...of capitalist exploitation.
+Dialogue: 0,0:25:26.81,0:25:31.19,譯文字幕,,0000,0000,0000,,這不能是另一次重啟 翻新 反復...\N{\reng_sub}This cannot be another reboot, retread, regurgitated...
+Dialogue: 0,0:25:31.27,0:25:33.36,譯文字幕,,0000,0000,0000,,為什麼不行 重啟也大賣啊\N{\reng_sub}Why not? Reboots sell.
+Dialogue: 0,0:25:36.49,0:25:38.49,譯文字幕,,0000,0000,0000,,我們走太遠了 這裡 各位\N{\reng_sub}We are so far down the wrong rabbit hole, here, people.
+Dialogue: 0,0:25:38.57,0:25:42.41,譯文字幕,,0000,0000,0000,,你對任何人提起Matrix... 你說Matrix...\N{\reng_sub}You say Matrix to anyone... You say Matrix...
+Dialogue: 0,0:25:42.49,0:25:45.46,譯文字幕,,0000,0000,0000,,Matrix... Matrix... Matrix\N{\reng_sub} Matrix... Matrix... Matrix...
+Dialogue: 0,0:25:45.54,0:25:47.37,譯文字幕,,0000,0000,0000,,...這他們就會想到這個\N{\reng_sub}...this is what they see.
+Dialogue: 0,0:25:54.05,0:25:56.34,譯文字幕,,0000,0000,0000,,允許我總結一下我們的目標 就一個字\N{\reng_sub}Allow me to sum up our goal in a single word.
+Dialogue: 0,0:25:56.42,0:25:58.59,譯文字幕,,0000,0000,0000,,子彈時間 子彈時間\N{\reng_sub}Bullet time! Bullet time!
+Dialogue: 0,0:25:59.26,0:26:00.30,譯文字幕,,0000,0000,0000,,那是兩個字\N{\reng_sub}That's two words.
+Dialogue: 0,0:26:04.31,0:26:07.48,譯文字幕,,0000,0000,0000,,我們需要新的 子彈時間\N{\reng_sub}We need a new "bullet time" 
+Dialogue: 0,0:26:10.06,0:26:13.98,譯文字幕,,0000,0000,0000,,我們需要再次革新遊戲\N{\reng_sub}We need to revolutionize gaming again.
+Dialogue: 0,0:26:14.07,0:26:17.86,譯文字幕,,0000,0000,0000,,再次革新遊戲\N{\reng_sub}Revolutionize gaming again! 
+Dialogue: 0,0:26:43.76,0:26:45.52,譯文字幕,,0000,0000,0000,,午安 Tiff.\N{\reng_sub}Afternoon, Tiff.
+Dialogue: 0,0:26:45.60,0:26:46.77,譯文字幕,,0000,0000,0000,,來杯烏什\N{\reng_sub}The ushe?
+Dialogue: 0,0:26:46.85,0:26:49.02,譯文字幕,,0000,0000,0000,,Skroce 我要瘋了\N{\reng_sub}You know what, Skroce? I'm going wild.
+Dialogue: 0,0:26:49.10,0:26:51.60,譯文字幕,,0000,0000,0000,,今天我要來杯可塔朵\N{\reng_sub}I'll have a cortado today.
+Dialogue: 0,0:26:51.69,0:26:54.23,譯文字幕,,0000,0000,0000,,放飛自我吧\N{\reng_sub}Fly that freak flag.
+Dialogue: 0,0:26:54.32,0:26:56.07,譯文字幕,,0000,0000,0000,,介意給我也來一杯那個嗎\N{\reng_sub}Mind if I get that?
+Dialogue: 0,0:26:56.15,0:26:57.19,譯文字幕,,0000,0000,0000,,哦 嗨\N{\reng_sub}Oh, hi.
+Dialogue: 0,0:26:58.19,0:27:00.20,譯文字幕,,0000,0000,0000,,嗨\N{\reng_sub}Hi.
+Dialogue: 0,0:27:00.28,0:27:02.78,譯文字幕,,0000,0000,0000,,我記得想要一個家\N{\reng_sub}I remember wanting a family,
+Dialogue: 0,0:27:02.87,0:27:04.16,譯文字幕,,0000,0000,0000,,那是因為\N{\reng_sub}but was that because
+Dialogue: 0,0:27:04.24,0:27:06.91,譯文字幕,,0000,0000,0000,,這就是女人的本性嗎\N{\reng_sub}that's what women are supposed to want?
+Dialogue: 0,0:27:07.00,0:27:08.71,譯文字幕,,0000,0000,0000,,你怎麼知道是你自己想要什麼的\N{\reng_sub}How do you know if you want something yourself
+Dialogue: 0,0:27:08.79,0:27:11.92,譯文字幕,,0000,0000,0000,,還是你被成長環境灌輸成想要什麼的\N{\reng_sub}or if your upbringing programmed you to want it?
+Dialogue: 0,0:27:12.00,0:27:13.00,譯文字幕,,0000,0000,0000,,嗯\N{\reng_sub}Mmm.
+Dialogue: 0,0:27:14.04,0:27:16.00,譯文字幕,,0000,0000,0000,,我付給我分析師很多錢\N{\reng_sub}I pay my analyst a lot of money
+Dialogue: 0,0:27:16.09,0:27:18.67,譯文字幕,,0000,0000,0000,,來為我回答這樣的問題\N{\reng_sub}to answer such questions for me.
+Dialogue: 0,0:27:18.76,0:27:19.97,譯文字幕,,0000,0000,0000,,聰明\N{\reng_sub}Smart.
+Dialogue: 0,0:27:20.05,0:27:21.26,譯文字幕,,0000,0000,0000,,我應該接受更多的治療\N{\reng_sub}I should get more therapy
+Dialogue: 0,0:27:21.34,0:27:23.76,譯文字幕,,0000,0000,0000,,但老實說 我他媽太累了\N{\reng_sub}but honestly, I'm too goddamn tired.
+Dialogue: 0,0:27:23.85,0:27:25.60,譯文字幕,,0000,0000,0000,,養小孩很累人 你懂嗎\N{\reng_sub}Kids are exhausting, you know?
+Dialogue: 0,0:27:27.18,0:27:29.43,譯文字幕,,0000,0000,0000,,不懂 沒有過孩子\N{\reng_sub}No. Never had kids.
+Dialogue: 0,0:27:29.52,0:27:32.27,譯文字幕,,0000,0000,0000,,哦 對的 我知道\N{\reng_sub}Oh, right, I knew that.
+Dialogue: 0,0:27:32.35,0:27:34.81,譯文字幕,,0000,0000,0000,,對不起 我上網搜了你\N{\reng_sub}Sorry. I googled you.
+Dialogue: 0,0:27:36.78,0:27:39.36,譯文字幕,,0000,0000,0000,,當一名世界著名的遊戲設計師什麼感覺\N{\reng_sub}So, what's it like being a worldfamous game designer?
+Dialogue: 0,0:27:39.44,0:27:41.99,譯文字幕,,0000,0000,0000,,-一定很棒吧...-呃\N{\reng_sub}-Must be amazing. -Uh...
+Dialogue: 0,0:27:42.07,0:27:43.57,譯文字幕,,0000,0000,0000,,花了好多時間\N{\reng_sub}A lot of hours.
+Dialogue: 0,0:27:43.66,0:27:45.70,譯文字幕,,0000,0000,0000,,有時的確很棒\N{\reng_sub}Sometimes it is amazing.
+Dialogue: 0,0:27:45.78,0:27:47.29,譯文字幕,,0000,0000,0000,,但大多數時候...\N{\reng_sub}Most times...
+Dialogue: 0,0:27:48.50,0:27:49.79,譯文字幕,,0000,0000,0000,,我也不知道\N{\reng_sub}I don't know.
+Dialogue: 0,0:27:49.87,0:27:52.37,譯文字幕,,0000,0000,0000,,但是你做了The Matrix 連我都聽說過\N{\reng_sub}But you made The Matrix. Even I've heard of that.
+Dialogue: 0,0:27:52.46,0:27:56.25,譯文字幕,,0000,0000,0000,,是啊 我們讓孩子們有點娛樂\N{\reng_sub}Yeah. We kept some kids entertained.
+Dialogue: 0,0:27:56.34,0:27:58.46,譯文字幕,,0000,0000,0000,,那麼 值得嗎\N{\reng_sub}So, worth it?
+Dialogue: 0,0:28:04.80,0:28:07.39,譯文字幕,,0000,0000,0000,,我能問個關於你遊戲的問題嗎\N{\reng_sub}Can I ask something about your game?
+Dialogue: 0,0:28:07.47,0:28:08.72,譯文字幕,,0000,0000,0000,,當然\N{\reng_sub}Sure.
+Dialogue: 0,0:28:08.81,0:28:11.06,譯文字幕,,0000,0000,0000,,遊戲主角是你根據自己創作的嗎\N{\reng_sub}Did you base your main character on yourself?
+Dialogue: 0,0:28:16.19,0:28:18.19,譯文字幕,,0000,0000,0000,,他身上有很多我\N{\reng_sub}There is a lot of me in him.
+Dialogue: 0,0:28:20.69,0:28:23.86,譯文字幕,,0000,0000,0000,,也許有點太多了\N{\reng_sub}Maybe a little too much.
+Dialogue: 0,0:28:25.87,0:28:27.62,譯文字幕,,0000,0000,0000,,我能問你點別的嗎\N{\reng_sub}Can I ask you something else?
+Dialogue: 0,0:28:27.70,0:28:28.91,譯文字幕,,0000,0000,0000,,請\N{\reng_sub}Please.
+Dialogue: 0,0:28:30.62,0:28:32.91,譯文字幕,,0000,0000,0000,,你的遊戲裡有一名女性\N{\reng_sub}There's a woman in your game.
+Dialogue: 0,0:28:34.12,0:28:35.13,譯文字幕,,0000,0000,0000,,Trinity\N{\reng_sub}Trinity.
+Dialogue: 0,0:28:36.96,0:28:39.71,譯文字幕,,0000,0000,0000,,她身上也有些奇怪的巧合 對吧\N{\reng_sub}Which is a weird coincidence also, right?
+Dialogue: 0,0:28:41.26,0:28:42.38,譯文字幕,,0000,0000,0000,,天啊 是的\N{\reng_sub}God, yeah.
+Dialogue: 0,0:28:43.76,0:28:45.01,譯文字幕,,0000,0000,0000,,我喜歡她\N{\reng_sub}I like her.
+Dialogue: 0,0:28:46.22,0:28:48.51,譯文字幕,,0000,0000,0000,,-我喜歡Trinity -啊\N{\reng_sub}-I like Trinity. -Ah.
+Dialogue: 0,0:28:48.60,0:28:49.85,譯文字幕,,0000,0000,0000,,我發現了她的杜卡迪摩托\N{\reng_sub}And I dig her Ducati.
+Dialogue: 0,0:28:49.93,0:28:52.93,譯文字幕,,0000,0000,0000,,真巧 我也熱愛摩托車\N{\reng_sub}Another coincidence. I love motorcycles.
+Dialogue: 0,0:28:56.23,0:28:58.94,譯文字幕,,0000,0000,0000,,我的朋友Kush和我 是造摩托車的\N{\reng_sub}My friend Kush and I actually build them.
+Dialogue: 0,0:28:59.02,0:29:00.15,譯文字幕,,0000,0000,0000,,真的\N{\reng_sub}Really?
+Dialogue: 0,0:29:00.23,0:29:03.61,譯文字幕,,0000,0000,0000,,你有你的分析師 我有我的摩托車\N{\reng_sub}You have your analyst, I have my bikes.
+Dialogue: 0,0:29:03.70,0:29:08.32,譯文字幕,,0000,0000,0000,,我看你遊戲的圖片 看到Trinity\N{\reng_sub}So, I was looking at images from your game. At Trinity.
+Dialogue: 0,0:29:10.03,0:29:11.62,譯文字幕,,0000,0000,0000,,我給Chad看了一下\N{\reng_sub}Well, I showed Chad a scene,
+Dialogue: 0,0:29:11.70,0:29:13.75,譯文字幕,,0000,0000,0000,,我問他 你覺得怎麼樣\N{\reng_sub}and I was like, "So, what do you think?"
+Dialogue: 0,0:29:14.83,0:29:17.33,譯文字幕,,0000,0000,0000,,但直到我給他解釋他才明白\N{\reng_sub}He didn't get it until I said,
+Dialogue: 0,0:29:17.42,0:29:19.42,譯文字幕,,0000,0000,0000,,你不覺得她長得像我嗎\N{\reng_sub}"Don't you think she looks like me?"
+Dialogue: 0,0:29:21.25,0:29:22.96,譯文字幕,,0000,0000,0000,,你知道他什麼反應嗎\N{\reng_sub}You know what he did?
+Dialogue: 0,0:29:24.30,0:29:25.55,譯文字幕,,0000,0000,0000,,他笑了\N{\reng_sub}He laughed.
+Dialogue: 0,0:29:30.26,0:29:33.14,譯文字幕,,0000,0000,0000,,我也笑了 就像在開玩笑一樣\N{\reng_sub}And I laughed too, like it was a joke.
+Dialogue: 0,0:29:33.22,0:29:34.77,譯文字幕,,0000,0000,0000,,畢竟這怎麼可能呢 對吧\N{\reng_sub}How could it not be, right?
+Dialogue: 0,0:29:36.98,0:29:38.61,譯文字幕,,0000,0000,0000,,我其實很生氣\N{\reng_sub}Made me so angry.
+Dialogue: 0,0:29:40.11,0:29:42.44,譯文字幕,,0000,0000,0000,,我恨自己笑了\N{\reng_sub}I hated myself for laughing.
+Dialogue: 0,0:29:44.11,0:29:47.20,譯文字幕,,0000,0000,0000,,我真想狠狠地踢他一腳\N{\reng_sub}I wanted to kick him so hard.
+Dialogue: 0,0:29:48.49,0:29:49.78,譯文字幕,,0000,0000,0000,,也不能太狠\N{\reng_sub}Not too hard.
+Dialogue: 0,0:29:49.87,0:29:53.08,譯文字幕,,0000,0000,0000,,夠把他的下巴打斷就行\N{\reng_sub}Maybe just hard enough to break his jaw off.
+Dialogue: 0,0:29:56.29,0:29:58.12,譯文字幕,,0000,0000,0000,,現在 你可能後悔\N{\reng_sub}And right now, you're probably regretting
+Dialogue: 0,0:29:58.21,0:29:59.71,譯文字幕,,0000,0000,0000,,跟我坐在一起了\N{\reng_sub}sitting down with me.
+Dialogue: 0,0:30:01.88,0:30:05.76,譯文字幕,,0000,0000,0000,,這是我長時間以來做的最好的一件事了\N{\reng_sub}This is the best thing I've done in a long time.
+Dialogue: 0,0:30:10.14,0:30:11.85,譯文字幕,,0000,0000,0000,,我聽個電話\N{\reng_sub}I have to take this.
+Dialogue: 0,0:30:15.48,0:30:16.56,譯文字幕,,0000,0000,0000,,嗨 我是Tiff\N{\reng_sub}Hi, this is Tiff.
+Dialogue: 0,0:30:16.64,0:30:17.73,譯文字幕,,0000,0000,0000,,哦 天哪 不\N{\reng_sub}Oh, God, no.
+Dialogue: 0,0:30:19.77,0:30:21.77,譯文字幕,,0000,0000,0000,,我馬上到\N{\reng_sub}I'll be right there.
+Dialogue: 0,0:30:21.86,0:30:24.69,譯文字幕,,0000,0000,0000,,我的小兒子 把樂高玩具塞進他鼻子裡了\N{\reng_sub}My, uh, youngest stuck a Lego up his nose.
+Dialogue: 0,0:30:25.61,0:30:26.86,譯文字幕,,0000,0000,0000,,哦\N{\reng_sub}Oh.
+Dialogue: 0,0:30:28.28,0:30:29.32,譯文字幕,,0000,0000,0000,,我得走了\N{\reng_sub}I gotta go.
+Dialogue: 0,0:30:31.49,0:30:34.12,譯文字幕,,0000,0000,0000,,我希望能再次見到你\N{\reng_sub}I hope I see you again.
+Dialogue: 0,0:30:52.05,0:30:53.18,譯文字幕,,0000,0000,0000,,現接到報告\N{\reng_sub}There has been a report
+Dialogue: 0,0:30:53.26,0:30:54.76,譯文字幕,,0000,0000,0000,,有緊急情況\N{\reng_sub}of an emergency.
+Dialogue: 0,0:30:54.85,0:30:56.77,譯文字幕,,0000,0000,0000,,請冷靜地走到最近的出口\N{\reng_sub}Proceed calmly to the nearest exit
+Dialogue: 0,0:30:56.85,0:30:58.89,譯文字幕,,0000,0000,0000,,並立即離開大樓\N{\reng_sub}and leave the building immediately.
+Dialogue: 0,0:30:58.98,0:31:00.35,譯文字幕,,0000,0000,0000,,發生什麼事\N{\reng_sub}What's going on?
+Dialogue: 0,0:31:00.44,0:31:02.27,譯文字幕,,0000,0000,0000,,我們可能被某個小孩子惡作劇了\N{\reng_sub}We probably just got swatted by some 14yearold.
+Dialogue: 0,0:31:02.36,0:31:03.94,譯文字幕,,0000,0000,0000,,對 有人對最新的更新很生氣\N{\reng_sub}Yeah, someone pissed about the latest update.
+Dialogue: 0,0:31:04.02,0:31:05.44,譯文字幕,,0000,0000,0000,,或者他們只是沒事找事\N{\reng_sub}Or they're just a dick.
+Dialogue: 0,0:31:05.53,0:31:08.28,譯文字幕,,0000,0000,0000,,請走到出口處 大樓正在疏散\N{\reng_sub}Please move to the exits. Building's being evacuated.
+Dialogue: 0,0:31:29.55,0:31:31.22,譯文字幕,,0000,0000,0000,,先生 這邊\N{\reng_sub}Sir, this way.
+Dialogue: 0,0:31:37.06,0:31:38.22,譯文字幕,,0000,0000,0000,,Jude\N{\reng_sub}Jude?
+Dialogue: 0,0:31:39.73,0:31:40.81,譯文字幕,,0000,0000,0000,,Jude\N{\reng_sub}Jude!
+Dialogue: 0,0:31:47.28,0:31:49.24,譯文字幕,,0000,0000,0000,,終於\N{\reng_sub}At last.
+Dialogue: 0,0:31:51.07,0:31:52.32,譯文字幕,,0000,0000,0000,,啊\N{\reng_sub}Ah.
+Dialogue: 0,0:31:52.41,0:31:53.87,譯文字幕,,0000,0000,0000,,我不是很有把握\N{\reng_sub}I wasn't too sure about the callback,
+Dialogue: 0,0:31:53.95,0:31:55.95,譯文字幕,,0000,0000,0000,,但是 你知道 很難抗拒啊\N{\reng_sub}but, you know, it was hard to resist.
+Dialogue: 0,0:31:56.03,0:31:57.16,譯文字幕,,0000,0000,0000,,什麼\N{\reng_sub}What?
+Dialogue: 0,0:31:57.24,0:31:58.66,譯文字幕,,0000,0000,0000,,Morpheus 在窗前出現\N{\reng_sub}Morpheus Uno. Reveal at the window.
+Dialogue: 0,0:31:58.75,0:32:01.21,譯文字幕,,0000,0000,0000,,電閃 雷鳴 還有演出\N{\reng_sub}Lightning, thunder and theater.
+Dialogue: 0,0:32:01.29,0:32:03.17,譯文字幕,,0000,0000,0000,,終於\N{\reng_sub}At last.
+Dialogue: 0,0:32:03.25,0:32:05.67,譯文字幕,,0000,0000,0000,,這麼多年以後 我來了\N{\reng_sub}All these years later, here's me,
+Dialogue: 0,0:32:05.75,0:32:08.00,譯文字幕,,0000,0000,0000,,漫步走出廁所隔間\N{\reng_sub}strolling out of a toilet stall.
+Dialogue: 0,0:32:08.09,0:32:09.21,譯文字幕,,0000,0000,0000,,悲劇還是鬧劇\N{\reng_sub}Tragedy or farce?
+Dialogue: 0,0:32:09.30,0:32:10.92,譯文字幕,,0000,0000,0000,,我認識你\N{\reng_sub}I know you.
+Dialogue: 0,0:32:11.01,0:32:13.01,譯文字幕,,0000,0000,0000,,可不是天天都能遇到你的造物主\N{\reng_sub}Not every day you meet your maker.
+Dialogue: 0,0:32:13.09,0:32:14.26,譯文字幕,,0000,0000,0000,,這不可能\N{\reng_sub}This can't be happening.
+Dialogue: 0,0:32:14.34,0:32:16.01,譯文字幕,,0000,0000,0000,,哦 絕對發生了\N{\reng_sub}Oh, most definitely is.
+Dialogue: 0,0:32:16.10,0:32:18.56,譯文字幕,,0000,0000,0000,,你不可能是我編寫的角色\N{\reng_sub}You can't be a character I coded.
+Dialogue: 0,0:32:18.64,0:32:20.68,譯文字幕,,0000,0000,0000,,100%天然\N{\reng_sub}100% natural.
+Dialogue: 0,0:32:28.15,0:32:29.36,譯文字幕,,0000,0000,0000,,怎麼可能\N{\reng_sub}How?
+Dialogue: 0,0:32:29.44,0:32:31.61,譯文字幕,,0000,0000,0000,,所有你需要的解釋\N{\reng_sub}All the explanation you need.
+Dialogue: 0,0:32:34.82,0:32:36.45,譯文字幕,,0000,0000,0000,,哦\N{\reng_sub}Oh.
+Dialogue: 0,0:32:36.53,0:32:37.70,譯文字幕,,0000,0000,0000,,不\N{\reng_sub}No.
+Dialogue: 0,0:32:37.78,0:32:39.54,譯文字幕,,0000,0000,0000,,不 不 不\N{\reng_sub}No, no, no.
+Dialogue: 0,0:32:39.62,0:32:41.41,譯文字幕,,0000,0000,0000,,哇哇哇  不 是什麼意思\N{\reng_sub}Whoa, whoa, whoa. What do you mean, "no"?
+Dialogue: 0,0:32:41.50,0:32:44.12,譯文字幕,,0000,0000,0000,,你就是想這樣 你才這樣做的 這是你的主意\N{\reng_sub}You wanted this, you did this. This was your idea.
+Dialogue: 0,0:32:44.21,0:32:48.54,譯文字幕,,0000,0000,0000,,那只是個測試 是個實驗\N{\reng_sub}It was a test. An experiment.
+Dialogue: 0,0:32:49.84,0:32:51.05,譯文字幕,,0000,0000,0000,,實驗\N{\reng_sub}An experiment?
+Dialogue: 0,0:32:52.59,0:32:54.55,譯文字幕,,0000,0000,0000,,你把我放在一個狹小模態裡\N{\reng_sub}You put me in a tinyass Modal,
+Dialogue: 0,0:32:54.63,0:32:56.01,譯文字幕,,0000,0000,0000,,讓我撞到\N{\reng_sub}left me to bang my head till
+Dialogue: 0,0:32:56.09,0:32:58.35,譯文字幕,,0000,0000,0000,,頭破血流 就為了找到你\N{\reng_sub}I nearly lost my shit searching for you
+Dialogue: 0,0:32:58.43,0:32:59.93,譯文字幕,,0000,0000,0000,,就為了一個實驗\N{\reng_sub}as an experiment.
+Dialogue: 0,0:33:00.01,0:33:02.02,譯文字幕,,0000,0000,0000,,出口正在崩潰 他還沒有吃藥\N{\reng_sub}The exit's breaking down. He hasn't taken the pill.
+Dialogue: 0,0:33:02.10,0:33:03.43,譯文字幕,,0000,0000,0000,,什麼 沒時間了\N{\reng_sub}What? There's no time.
+Dialogue: 0,0:33:03.52,0:33:05.56,譯文字幕,,0000,0000,0000,,我知道 我知道 他正在醞釀\N{\reng_sub}I know, I know. He's having a moment.
+Dialogue: 0,0:33:05.65,0:33:08.11,譯文字幕,,0000,0000,0000,,他知道黑進那面鏡子有多難嘛\N{\reng_sub}Does he know how hard it was to hack that mirror?
+Dialogue: 0,0:33:10.44,0:33:12.07,譯文字幕,,0000,0000,0000,,還開著\N{\reng_sub}Still open.
+Dialogue: 0,0:33:12.15,0:33:15.57,譯文字幕,,0000,0000,0000,,這..這不可能是真的\N{\reng_sub}This... This can't be real.
+Dialogue: 0,0:33:15.66,0:33:17.49,譯文字幕,,0000,0000,0000,,目標鎖定 我們抓到他了\N{\reng_sub}Target acquired. We got him.
+Dialogue: 0,0:33:25.08,0:33:26.42,譯文字幕,,0000,0000,0000,,這沒有發生過\N{\reng_sub}This isn't happening.
+Dialogue: 0,0:33:26.50,0:33:28.96,譯文字幕,,0000,0000,0000,,這是我的幻想 這是我的幻想\N{\reng_sub}It's in my mind. It's in my mind.
+Dialogue: 0,0:33:29.04,0:33:30.25,譯文字幕,,0000,0000,0000,,嘿 你站住 別動\N{\reng_sub}Hey, you! Stop! Hold it!
+Dialogue: 0,0:33:46.35,0:33:47.90,譯文字幕,,0000,0000,0000,,這不可能\N{\reng_sub}This can't be happening.
+Dialogue: 0,0:33:51.02,0:33:52.78,譯文字幕,,0000,0000,0000,,停止 不許動\N{\reng_sub}Freeze! Don't move!
+Dialogue: 0,0:34:01.74,0:34:02.87,譯文字幕,,0000,0000,0000,,Neo\N{\reng_sub}Neo!
+Dialogue: 0,0:34:17.76,0:34:19.18,譯文字幕,,0000,0000,0000,,哦 天哪\N{\reng_sub}Oh, my God!
+Dialogue: 0,0:34:53.92,0:34:55.00,譯文字幕,,0000,0000,0000,,Neo\N{\reng_sub}Neo!
+Dialogue: 0,0:34:59.88,0:35:02.09,譯文字幕,,0000,0000,0000,,Anderson先生\N{\reng_sub}Mr. Anderson!
+Dialogue: 0,0:35:02.93,0:35:04.18,譯文字幕,,0000,0000,0000,,不\N{\reng_sub}No!
+Dialogue: 0,0:35:04.26,0:35:05.31,譯文字幕,,0000,0000,0000,,不可能\N{\reng_sub}It can't be.
+Dialogue: 0,0:35:14.11,0:35:15.94,譯文字幕,,0000,0000,0000,,我想你了\N{\reng_sub}I've missed you.
+Dialogue: 0,0:35:31.21,0:35:32.88,譯文字幕,,0000,0000,0000,,這是我的想像\N{\reng_sub}It's in my mind.
+Dialogue: 0,0:35:34.00,0:35:35.38,譯文字幕,,0000,0000,0000,,這是我的想像\N{\reng_sub}It's in my mind.
+Dialogue: 0,0:35:43.55,0:35:45.05,譯文字幕,,0000,0000,0000,,你能聽見我說話嗎 Thomas\N{\reng_sub}Can you hear me, Thomas?
+Dialogue: 0,0:35:46.31,0:35:49.10,譯文字幕,,0000,0000,0000,,跟著我的聲音\N{\reng_sub}Follow my voice.
+Dialogue: 0,0:35:49.18,0:35:52.90,譯文字幕,,0000,0000,0000,,用你的指尖去感觸 能感受到什麼\N{\reng_sub}Feel the tips of your fingers. What are they touching?
+Dialogue: 0,0:35:54.94,0:35:56.32,譯文字幕,,0000,0000,0000,,鈴鐺\N{\reng_sub}The bell.
+Dialogue: 0,0:35:58.82,0:36:00.24,譯文字幕,,0000,0000,0000,,你聽到鈴聲了嗎\N{\reng_sub}Do you hear the bell?
+Dialogue: 0,0:36:03.66,0:36:06.70,譯文字幕,,0000,0000,0000,,你記得發生了什麼嗎 你是怎麼到這來\N{\reng_sub}Do you remember what happened? How you got here?
+Dialogue: 0,0:36:08.33,0:36:09.62,譯文字幕,,0000,0000,0000,,你一定是走來的\N{\reng_sub}You must have walked.
+Dialogue: 0,0:36:09.70,0:36:10.91,譯文字幕,,0000,0000,0000,,我聽到黑貓在外面的聲音\N{\reng_sub}I heard Deja Vu outside,
+Dialogue: 0,0:36:11.00,0:36:12.25,譯文字幕,,0000,0000,0000,,我打開門 你就在那裡\N{\reng_sub}opened my door, and there you were.
+Dialogue: 0,0:36:17.59,0:36:20.42,譯文字幕,,0000,0000,0000,,你要談談嗎\N{\reng_sub}You feel like you can talk about it?
+Dialogue: 0,0:36:20.51,0:36:21.76,譯文字幕,,0000,0000,0000,,當我們開始治療的時候\N{\reng_sub}When we started working together,
+Dialogue: 0,0:36:21.84,0:36:23.59,譯文字幕,,0000,0000,0000,,你失去了辨別\N{\reng_sub}you had lost your capacity
+Dialogue: 0,0:36:23.68,0:36:26.22,譯文字幕,,0000,0000,0000,,現實和幻想的能力\N{\reng_sub}to discern reality from fiction.
+Dialogue: 0,0:36:26.30,0:36:29.47,譯文字幕,,0000,0000,0000,,你嘗試從樓上跳下來後 找到了我\N{\reng_sub}You came to me after trying to jump off a building.
+Dialogue: 0,0:36:29.56,0:36:31.85,譯文字幕,,0000,0000,0000,,你說你想飛走\N{\reng_sub}You said you wanted to fly away.
+Dialogue: 0,0:36:45.20,0:36:47.95,譯文字幕,,0000,0000,0000,,我們取得了很多進展\N{\reng_sub}We have made a lot of progress since then,
+Dialogue: 0,0:36:48.03,0:36:50.37,譯文字幕,,0000,0000,0000,,但你現在看來發病的特別嚴重\N{\reng_sub}but you seem particularly triggered right now.
+Dialogue: 0,0:36:50.45,0:36:51.91,譯文字幕,,0000,0000,0000,,你能告訴我嗎是怎麼開始的嗎\N{\reng_sub}Can you tell me how it started?
+Dialogue: 0,0:36:53.92,0:36:55.63,譯文字幕,,0000,0000,0000,,他給我發短信了\N{\reng_sub}He texted me.
+Dialogue: 0,0:36:56.79,0:36:58.13,譯文字幕,,0000,0000,0000,,誰\N{\reng_sub}Who?
+Dialogue: 0,0:36:58.21,0:36:59.67,譯文字幕,,0000,0000,0000,,Morpheus\N{\reng_sub}Morpheus.
+Dialogue: 0,0:36:59.75,0:37:00.84,譯文字幕,,0000,0000,0000,,啊\N{\reng_sub}Ah.
+Dialogue: 0,0:37:02.55,0:37:03.93,譯文字幕,,0000,0000,0000,,他回來了\N{\reng_sub}So, he's back.
+Dialogue: 0,0:37:04.01,0:37:06.18,譯文字幕,,0000,0000,0000,,實際也並不完全是他\N{\reng_sub}It wasn't actually him.
+Dialogue: 0,0:37:07.35,0:37:10.64,譯文字幕,,0000,0000,0000,,那是我給模態編寫的一段程式\N{\reng_sub}It was a program I coded for a Modal.
+Dialogue: 0,0:37:10.72,0:37:12.89,譯文字幕,,0000,0000,0000,,而這個 模態 裡的Morpheus\N{\reng_sub}And this "Modal," Morpheus,
+Dialogue: 0,0:37:12.98,0:37:14.98,譯文字幕,,0000,0000,0000,,來幫你逃離\N{\reng_sub}came to help you escape
+Dialogue: 0,0:37:15.06,0:37:18.69,譯文字幕,,0000,0000,0000,,被稱作The Matrix的虛擬實境\N{\reng_sub}from a virtual reality called The Matrix.
+Dialogue: 0,0:37:28.74,0:37:30.79,譯文字幕,,0000,0000,0000,,我瘋了嗎\N{\reng_sub}Am I crazy?
+Dialogue: 0,0:37:30.87,0:37:33.33,譯文字幕,,0000,0000,0000,,我們在這裡不用那個詞\N{\reng_sub}We don't use that word in here.
+Dialogue: 0,0:37:33.41,0:37:36.33,譯文字幕,,0000,0000,0000,,我該用什麼詞\N{\reng_sub}What word should I use?
+Dialogue: 0,0:37:36.42,0:37:39.75,譯文字幕,,0000,0000,0000,,什麼詞能解釋發生在我身上的事\N{\reng_sub}What word explains what is happening to me?
+Dialogue: 0,0:37:39.84,0:37:41.50,譯文字幕,,0000,0000,0000,,我能看看短信嗎\N{\reng_sub}Can I see the texts?
+Dialogue: 0,0:37:43.97,0:37:45.51,譯文字幕,,0000,0000,0000,,被刪掉了\N{\reng_sub}They were erased.
+Dialogue: 0,0:37:50.76,0:37:54.10,譯文字幕,,0000,0000,0000,,如果開上我的車去你的辦公室\N{\reng_sub}If we got in my car and drove to your office,
+Dialogue: 0,0:37:54.18,0:37:56.14,譯文字幕,,0000,0000,0000,,你認為在那裡能發現什麼\N{\reng_sub}what do you think we'd find there?
+Dialogue: 0,0:37:56.23,0:37:57.27,譯文字幕,,0000,0000,0000,,沒有什麼\N{\reng_sub}Nothing.
+Dialogue: 0,0:37:59.98,0:38:02.07,譯文字幕,,0000,0000,0000,,因為沒有攻擊\N{\reng_sub}Because there was no attack.
+Dialogue: 0,0:38:03.28,0:38:04.86,譯文字幕,,0000,0000,0000,,沒有人被殺\N{\reng_sub}No one was killed.
+Dialogue: 0,0:38:05.78,0:38:07.91,譯文字幕,,0000,0000,0000,,沒有人發短信\N{\reng_sub}No one texted.
+Dialogue: 0,0:38:07.99,0:38:10.03,譯文字幕,,0000,0000,0000,,我的腦子編造了這一切\N{\reng_sub}My mind made it all up.
+Dialogue: 0,0:38:11.45,0:38:14.12,譯文字幕,,0000,0000,0000,,我應該這麼說嗎\N{\reng_sub}Is that what I'm supposed to say?
+Dialogue: 0,0:38:14.20,0:38:15.71,譯文字幕,,0000,0000,0000,,是你所相信的嗎\N{\reng_sub}Is that what you believe?
+Dialogue: 0,0:38:16.50,0:38:18.37,譯文字幕,,0000,0000,0000,,感覺很真實\N{\reng_sub}It felt real.
+Dialogue: 0,0:38:18.46,0:38:20.21,譯文字幕,,0000,0000,0000,,當然\N{\reng_sub}Of course.
+Dialogue: 0,0:38:20.29,0:38:23.21,譯文字幕,,0000,0000,0000,,你的雄心壯志就是令遊戲變得\N{\reng_sub}It was your great ambition to make a game
+Dialogue: 0,0:38:23.30,0:38:25.67,譯文字幕,,0000,0000,0000,,和現實一樣逼真\N{\reng_sub}that was indistinguishable from reality.
+Dialogue: 0,0:38:25.76,0:38:27.22,譯文字幕,,0000,0000,0000,,為了實現這一目標\N{\reng_sub}To achieve this goal,
+Dialogue: 0,0:38:27.30,0:38:29.76,譯文字幕,,0000,0000,0000,,你把自己生活中的元素變成遊戲中的劇情\N{\reng_sub}you converted elements of your life into narrative.
+Dialogue: 0,0:38:29.84,0:38:32.10,譯文字幕,,0000,0000,0000,,你為了宣洩對你商業夥伴的憤怒\N{\reng_sub}Your sublimated anger toward your business partner
+Dialogue: 0,0:38:32.18,0:38:34.39,譯文字幕,,0000,0000,0000,,讓他變成了你的死敵\N{\reng_sub}cast him as your nemesis.
+Dialogue: 0,0:38:34.47,0:38:36.10,譯文字幕,,0000,0000,0000,,一位名叫Tiffany的已婚婦女\N{\reng_sub}A married woman named Tiffany
+Dialogue: 0,0:38:36.18,0:38:39.52,譯文字幕,,0000,0000,0000,,變成了命中註定的 Trinity\N{\reng_sub}became the "Trinity" of a doomed romance.
+Dialogue: 0,0:38:39.60,0:38:43.77,譯文字幕,,0000,0000,0000,,連我這隻你不喜歡的貓都編進了你的Matrix\N{\reng_sub}Even your dislike of my cat made it into your Matrix.
+Dialogue: 0,0:38:43.86,0:38:45.65,譯文字幕,,0000,0000,0000,,這很正常\N{\reng_sub}There's nothing wrong with that.
+Dialogue: 0,0:38:45.74,0:38:47.19,譯文字幕,,0000,0000,0000,,藝術家就是這樣\N{\reng_sub}It's what artists do.
+Dialogue: 0,0:38:47.28,0:38:50.66,譯文字幕,,0000,0000,0000,,但當幻想危及我們或其他人\N{\reng_sub}But it becomes a problem when fantasies
+Dialogue: 0,0:38:50.74,0:38:53.08,譯文字幕,,0000,0000,0000,,就成了一個問題\N{\reng_sub}endanger us or other people.
+Dialogue: 0,0:38:55.33,0:38:57.71,譯文字幕,,0000,0000,0000,,我們不想讓任何人受傷\N{\reng_sub}We don't want anyone to get hurt,
+Dialogue: 0,0:38:57.79,0:38:59.17,譯文字幕,,0000,0000,0000,,對嗎 Thomas\N{\reng_sub}do we, Thomas?
+Dialogue: 0,0:39:07.26,0:39:09.38,譯文字幕,,0000,0000,0000,,嗨 Thomas  大家都叫我 Tiff\N{\reng_sub}Hi, Thomas. Everyone calls me "Tiff"
+Dialogue: 0,0:39:09.47,0:39:11.89,譯文字幕,,0000,0000,0000,,-你是誰 -我叫Trinity\N{\reng_sub}-Who are you? -My name is Trinity.
+Dialogue: 0,0:39:11.97,0:39:13.60,譯文字幕,,0000,0000,0000,,沒人能告訴你 你陷入愛河了\N{\reng_sub}No one can tell you you're in love.
+Dialogue: 0,0:39:13.68,0:39:16.18,譯文字幕,,0000,0000,0000,,只有你自己知道 從頭到尾\N{\reng_sub}You just know it, through and through.
+Dialogue: 0,0:39:16.27,0:39:18.77,譯文字幕,,0000,0000,0000,,從裡到外\N{\reng_sub}Balls to bones.
+Dialogue: 0,0:39:18.85,0:39:20.64,譯文字幕,,0000,0000,0000,,你感覺到了嗎\N{\reng_sub}You feel this?
+Dialogue: 0,0:39:22.35,0:39:24.07,譯文字幕,,0000,0000,0000,,我永遠不會放手\N{\reng_sub}I'm never letting go.
+Dialogue: 0,0:39:31.74,0:39:33.78,譯文字幕,,0000,0000,0000,,你必須放開一切 Neo\N{\reng_sub}You have to let it all go, Neo.
+Dialogue: 0,0:39:33.87,0:39:36.24,譯文字幕,,0000,0000,0000,,解放你的思想\N{\reng_sub}Free your mind.
+Dialogue: 0,0:39:55.01,0:39:56.47,譯文字幕,,0000,0000,0000,,哈\N{\reng_sub}Huh.
+Dialogue: 0,0:39:56.56,0:39:58.56,譯文字幕,,0000,0000,0000,,看起來很容易\N{\reng_sub}Looks easy enough.
+Dialogue: 0,0:40:05.40,0:40:08.03,譯文字幕,,0000,0000,0000,,解放我的思想  操\N{\reng_sub}"Free my mind" Shit.
+Dialogue: 0,0:40:13.20,0:40:15.24,譯文字幕,,0000,0000,0000,,好吧\N{\reng_sub}Okay.
+Dialogue: 0,0:40:15.32,0:40:16.74,譯文字幕,,0000,0000,0000,,解放我的思想\N{\reng_sub}Free my mind.
+Dialogue: 0,0:40:32.97,0:40:34.51,譯文字幕,,0000,0000,0000,,我飛起來...\N{\reng_sub}I fly...
+Dialogue: 0,0:40:35.43,0:40:37.35,譯文字幕,,0000,0000,0000,,或者摔死\N{\reng_sub}or I fall.
+Dialogue: 0,0:40:45.15,0:40:46.40,譯文字幕,,0000,0000,0000,,你他媽是誰啊\N{\reng_sub}Who the hell are you?
+Dialogue: 0,0:40:47.27,0:40:49.36,譯文字幕,,0000,0000,0000,,你不會記得我的\N{\reng_sub}You won't remember me,
+Dialogue: 0,0:40:49.44,0:40:52.70,譯文字幕,,0000,0000,0000,,但是很久以前 你改變了我的世界\N{\reng_sub}but a long time ago, you changed my life
+Dialogue: 0,0:40:52.78,0:40:55.16,譯文字幕,,0000,0000,0000,,當你從另一個屋頂跳下去的時候\N{\reng_sub}when you leapt off another roof.
+Dialogue: 0,0:40:55.24,0:40:58.16,譯文字幕,,0000,0000,0000,,那時候 我就像其他電池一樣\N{\reng_sub}Back then, I was just like any other coppertop,
+Dialogue: 0,0:40:58.24,0:40:59.95,譯文字幕,,0000,0000,0000,,過著假裝的生活...\N{\reng_sub}pretending my life...
+Dialogue: 0,0:41:00.04,0:41:04.17,譯文字幕,,0000,0000,0000,,直到我抬起頭 看見了你\N{\reng_sub}until I looked up and I saw you.
+Dialogue: 0,0:41:04.25,0:41:06.75,譯文字幕,,0000,0000,0000,,那是另一個你 但是我看的到\N{\reng_sub}It was a different you, but I saw
+Dialogue: 0,0:41:07.54,0:41:09.30,譯文字幕,,0000,0000,0000,,真正的你\N{\reng_sub}the real you,
+Dialogue: 0,0:41:09.38,0:41:11.17,譯文字幕,,0000,0000,0000,,就在前一秒...\N{\reng_sub}just a second before...
+Dialogue: 0,0:41:12.63,0:41:13.72,譯文字幕,,0000,0000,0000,,你跳了\N{\reng_sub}you leapt.
+Dialogue: 0,0:41:18.47,0:41:20.26,譯文字幕,,0000,0000,0000,,而你從未摔下去\N{\reng_sub}And you never fell.
+Dialogue: 0,0:41:25.56,0:41:27.73,譯文字幕,,0000,0000,0000,,是你黑進了我的模態\N{\reng_sub}Are you the one that hacked my Modal?
+Dialogue: 0,0:41:28.31,0:41:29.32,譯文字幕,,0000,0000,0000,,是啊\N{\reng_sub}Yeah.
+Dialogue: 0,0:41:30.82,0:41:32.36,譯文字幕,,0000,0000,0000,,那是Jude\N{\reng_sub}That'll be Jude.
+Dialogue: 0,0:41:32.44,0:41:33.78,譯文字幕,,0000,0000,0000,,他不是你的朋友\N{\reng_sub}He's not your friend.
+Dialogue: 0,0:41:33.86,0:41:35.32,譯文字幕,,0000,0000,0000,,他是個處理常式 用來控制你的\N{\reng_sub}He's a handle, a program used to control you.
+Dialogue: 0,0:41:35.40,0:41:36.45,譯文字幕,,0000,0000,0000,,他正在來這裡的路上\N{\reng_sub}He's on his way here,
+Dialogue: 0,0:41:36.53,0:41:38.37,譯文字幕,,0000,0000,0000,,帶著特工和他在一起來的\N{\reng_sub}and he's bringing Agents with him.
+Dialogue: 0,0:41:39.83,0:41:41.08,譯文字幕,,0000,0000,0000,,Jude\N{\reng_sub}Jude.
+Dialogue: 0,0:41:41.16,0:41:42.58,譯文字幕,,0000,0000,0000,,兄弟 我一整晚都在給你打電話\N{\reng_sub}Bro, I've been calling you all night.
+Dialogue: 0,0:41:42.66,0:41:44.37,譯文字幕,,0000,0000,0000,,我們有個大問題\N{\reng_sub}We have a major problemo.
+Dialogue: 0,0:41:45.92,0:41:47.50,譯文字幕,,0000,0000,0000,,你一個人嗎\N{\reng_sub}Are you alone?
+Dialogue: 0,0:41:50.25,0:41:53.05,譯文字幕,,0000,0000,0000,,這問的有點色情啊 夥計\N{\reng_sub}That's kind of a sexy question, dude.
+Dialogue: 0,0:41:53.13,0:41:55.42,譯文字幕,,0000,0000,0000,,他們看起來不像典型的特工\N{\reng_sub} They don't look like typical Agents.
+Dialogue: 0,0:41:55.51,0:41:56.93,譯文字幕,,0000,0000,0000,,他們現在使用機器人 皮膚像正常人一樣\N{\reng_sub}They use bots now, skinned as normal people,
+Dialogue: 0,0:41:57.01,0:41:58.14,譯文字幕,,0000,0000,0000,,這意味著它們無處不在\N{\reng_sub}which means they're everywhere
+Dialogue: 0,0:41:58.22,0:42:00.47,譯文字幕,,0000,0000,0000,,你永遠不知道能信任誰\N{\reng_sub}and you never know who to trust.
+Dialogue: 0,0:42:00.55,0:42:02.31,譯文字幕,,0000,0000,0000,,我為什麼要相信你\N{\reng_sub}Why should I trust you?
+Dialogue: 0,0:42:04.39,0:42:07.48,譯文字幕,,0000,0000,0000,,因為如果他們打開那扇門 我們就會失去入侵通道\N{\reng_sub}Because if they open that door, we lose our hack.
+Dialogue: 0,0:42:07.56,0:42:09.27,譯文字幕,,0000,0000,0000,,我會被抓住然後被殺\N{\reng_sub}I will be caught and killed
+Dialogue: 0,0:42:09.36,0:42:10.56,譯文字幕,,0000,0000,0000,,你會被繼續\N{\reng_sub}and you will be put right back
+Dialogue: 0,0:42:10.65,0:42:11.90,譯文字幕,,0000,0000,0000,,放回他們為你設計的迴圈機上\N{\reng_sub}on that treadmill they designed for you,
+Dialogue: 0,0:42:11.98,0:42:13.11,譯文字幕,,0000,0000,0000,,就像上次你要跳樓逃脫時\N{\reng_sub}just like they did the last time
+Dialogue: 0,0:42:13.19,0:42:14.36,譯文字幕,,0000,0000,0000,,他們所做的那樣\N{\reng_sub}you tried to leap your way out.
+Dialogue: 0,0:42:15.69,0:42:18.11,譯文字幕,,0000,0000,0000,,我知道你為什麼讓你的模態開放\N{\reng_sub}I know why you left your Modal open.
+Dialogue: 0,0:42:18.20,0:42:20.66,譯文字幕,,0000,0000,0000,,你需要其他人先救出Morpheus\N{\reng_sub}You needed someone else to free Morpheus.
+Dialogue: 0,0:42:20.74,0:42:22.79,譯文字幕,,0000,0000,0000,,這樣才能通過他找到你\N{\reng_sub}And it's because of him that we were able to get to you.
+Dialogue: 0,0:42:22.87,0:42:24.75,譯文字幕,,0000,0000,0000,,我知道這些 就像我知道\N{\reng_sub}I know these things the same way
+Dialogue: 0,0:42:24.83,0:42:27.58,譯文字幕,,0000,0000,0000,,有一天我肯定會找到你\N{\reng_sub}that I knew one day I would find you.
+Dialogue: 0,0:42:27.67,0:42:30.29,譯文字幕,,0000,0000,0000,,當找到你的時候 你一定會準備好\N{\reng_sub}And that when I did, you would be ready for this.
+Dialogue: 0,0:42:34.88,0:42:36.26,譯文字幕,,0000,0000,0000,,如果你想知道真相 Neo\N{\reng_sub}If you want the truth, Neo,
+Dialogue: 0,0:42:37.51,0:42:39.51,譯文字幕,,0000,0000,0000,,你必須跟著我\N{\reng_sub}you're going to have to follow me.
+Dialogue: 0,0:42:41.05,0:42:42.05,譯文字幕,,0000,0000,0000,,好吧\N{\reng_sub}Okay.
+Dialogue: 0,0:43:01.57,0:43:04.20,譯文字幕,,0000,0000,0000,,我們在哪裡 東京\N{\reng_sub}Where are we? Tokyo.
+Dialogue: 0,0:43:04.29,0:43:06.12,譯文字幕,,0000,0000,0000,,移動的傳送門 讓我們更難被追蹤\N{\reng_sub}A moving portal makes it harder to track us.
+Dialogue: 0,0:43:06.20,0:43:08.83,譯文字幕,,0000,0000,0000,,-Seq是最好的專家 -入口安全\N{\reng_sub}-Seq is the best of them. -Portal's clean.
+Dialogue: 0,0:43:08.91,0:43:10.33,譯文字幕,,0000,0000,0000,,正在讀取我們的蹤跡\N{\reng_sub}Reading our shadows.
+Dialogue: 0,0:43:11.83,0:43:14.34,譯文字幕,,0000,0000,0000,,我不記得有這些啊\N{\reng_sub}I don't remember this.
+Dialogue: 0,0:43:14.42,0:43:16.71,譯文字幕,,0000,0000,0000,,我們也不必再跑到電話亭了\N{\reng_sub}We don't have to run to phone booths anymore, either.
+Dialogue: 0,0:43:26.31,0:43:27.77,譯文字幕,,0000,0000,0000,,門在你的右邊\N{\reng_sub}Door's on your right.
+Dialogue: 0,0:43:41.99,0:43:44.37,譯文字幕,,0000,0000,0000,,佈景和設定 對嗎\N{\reng_sub}Set and setting, right?
+Dialogue: 0,0:43:44.45,0:43:45.74,譯文字幕,,0000,0000,0000,,哦 不\N{\reng_sub}Oh, no.
+Dialogue: 0,0:43:45.83,0:43:47.29,譯文字幕,,0000,0000,0000,,全是關於佈景的\N{\reng_sub}It's all about set
+Dialogue: 0,0:43:48.12,0:43:49.37,譯文字幕,,0000,0000,0000,,和設定\N{\reng_sub}and setting.
+Dialogue: 0,0:43:49.46,0:43:51.58,譯文字幕,,0000,0000,0000,,我們第一次接觸如此失敗\N{\reng_sub}After our first contact went so badly,
+Dialogue: 0,0:43:51.67,0:43:53.54,譯文字幕,,0000,0000,0000,,我們借用你過去的經歷\N{\reng_sub}we thought elements from your past
+Dialogue: 0,0:43:53.63,0:43:55.13,譯文字幕,,0000,0000,0000,,也許能幫你放鬆 進入現狀\N{\reng_sub}might help ease you into the present.
+Dialogue: 0,0:43:55.21,0:43:58.05,譯文字幕,,0000,0000,0000,,只要一點點懷舊\N{\reng_sub}Nothing comforts anxiety like
+Dialogue: 0,0:43:58.13,0:43:59.55,譯文字幕,,0000,0000,0000,,更能緩解焦慮的了\N{\reng_sub}a little nostalgia.
+Dialogue: 0,0:43:59.63,0:44:01.97,譯文字幕,,0000,0000,0000,,這是你遊戲的錄影\N{\reng_sub}This is footage from your game.
+Dialogue: 0,0:44:09.18,0:44:11.19,譯文字幕,,0000,0000,0000,,時間總是在對抗我們\N{\reng_sub}Time is always against us,
+Dialogue: 0,0:44:12.06,0:44:14.10,譯文字幕,,0000,0000,0000,,等等..等等..\N{\reng_sub}etcetera, etcetera.
+Dialogue: 0,0:44:15.31,0:44:16.44,譯文字幕,,0000,0000,0000,,沒人能說明\N{\reng_sub}No one can be told
+Dialogue: 0,0:44:16.52,0:44:19.82,譯文字幕,,0000,0000,0000,,Matrix是什麼 之類 之類...\N{\reng_sub}what the Matrix is, blah, blah, blah.
+Dialogue: 0,0:44:22.40,0:44:24.37,譯文字幕,,0000,0000,0000,,你必須親眼看到才能相信\N{\reng_sub}You gotta see it to believe it.
+Dialogue: 0,0:44:27.99,0:44:29.58,譯文字幕,,0000,0000,0000,,該起飛了\N{\reng_sub}Time to fly.
+Dialogue: 0,0:44:31.62,0:44:33.08,譯文字幕,,0000,0000,0000,,等等\N{\reng_sub}Wait.
+Dialogue: 0,0:44:33.17,0:44:34.42,譯文字幕,,0000,0000,0000,,如果這是真的\N{\reng_sub}If this is real,
+Dialogue: 0,0:44:34.50,0:44:37.13,譯文字幕,,0000,0000,0000,,如果我沒有發瘋 這意味著\N{\reng_sub}if I haven't lost my mind, does that mean
+Dialogue: 0,0:44:38.84,0:44:40.21,譯文字幕,,0000,0000,0000,,這些都發生過\N{\reng_sub}this happened?
+Dialogue: 0,0:44:49.06,0:44:50.68,譯文字幕,,0000,0000,0000,,但如果真的發生了...\N{\reng_sub}But if it did...
+Dialogue: 0,0:44:54.81,0:44:56.36,譯文字幕,,0000,0000,0000,,那麼我們都死了\N{\reng_sub}then we died.
+Dialogue: 0,0:44:56.44,0:44:58.36,譯文字幕,,0000,0000,0000,,顯然不是\N{\reng_sub}Obviously not.
+Dialogue: 0,0:44:58.44,0:44:59.86,譯文字幕,,0000,0000,0000,,為什麼機器讓你活著\N{\reng_sub}Why the Machines kept you alive
+Dialogue: 0,0:44:59.94,0:45:02.82,譯文字幕,,0000,0000,0000,,為什麼大費周折把你藏起來\N{\reng_sub}and why they went to such lengths to hide you
+Dialogue: 0,0:45:02.90,0:45:04.74,譯文字幕,,0000,0000,0000,,這些問題我們都沒有答案\N{\reng_sub}are questions we don't have answers to.
+Dialogue: 0,0:45:04.82,0:45:06.41,譯文字幕,,0000,0000,0000,,把我藏起來\N{\reng_sub}Hide me?
+Dialogue: 0,0:45:06.49,0:45:10.79,譯文字幕,,0000,0000,0000,,我一直在一家公司開發一個就叫The Matrix的遊戲\N{\reng_sub}I've been at a company making a game called The Matrix.
+Dialogue: 0,0:45:10.87,0:45:13.46,譯文字幕,,0000,0000,0000,,看起來他們沒試圖隱藏任何東西\N{\reng_sub}Doesn't seem like they were trying to hide anything.
+Dialogue: 0,0:45:13.54,0:45:15.08,譯文字幕,,0000,0000,0000,,我們一直追蹤那家公司多年\N{\reng_sub}We've been tracking that company for years.
+Dialogue: 0,0:45:15.17,0:45:17.96,譯文字幕,,0000,0000,0000,,我們篩選了所找到的每一個Thomas Anderson\N{\reng_sub}We screened every Thomas Anderson we found.
+Dialogue: 0,0:45:18.04,0:45:19.63,譯文字幕,,0000,0000,0000,,我們沒想到的是\N{\reng_sub}What we didn't understand
+Dialogue: 0,0:45:19.71,0:45:22.21,譯文字幕,,0000,0000,0000,,他們能夠改變你的DSI\N{\reng_sub}was that they could alter your DSI.
+Dialogue: 0,0:45:22.30,0:45:24.05,譯文字幕,,0000,0000,0000,,培養倉生成了你的數字自我映射\N{\reng_sub}Pods generate your digital selfimage
+Dialogue: 0,0:45:24.13,0:45:26.64,譯文字幕,,0000,0000,0000,,一個叫 外表 的顯示系統\N{\reng_sub}through a feedback system called Semblance.
+Dialogue: 0,0:45:26.72,0:45:28.72,譯文字幕,,0000,0000,0000,,就生成了你所看到的自己\N{\reng_sub}This is how you look to yourself.
+Dialogue: 0,0:45:28.80,0:45:32.52,譯文字幕,,0000,0000,0000,,通過某種方法他們能改變你的DSI循環\N{\reng_sub}Somehow they were able to alter your DSI loop.
+Dialogue: 0,0:45:32.60,0:45:35.10,譯文字幕,,0000,0000,0000,,這是其他人看到的你\N{\reng_sub}This is how everyone else sees you.
+Dialogue: 0,0:45:49.20,0:45:51.16,譯文字幕,,0000,0000,0000,,二十年\N{\reng_sub}Twenty years?
+Dialogue: 0,0:45:52.45,0:45:56.00,譯文字幕,,0000,0000,0000,,為什麼花了二十年才找到我\N{\reng_sub}Why did it take 20 years to find me?
+Dialogue: 0,0:45:56.08,0:45:57.92,譯文字幕,,0000,0000,0000,,遠不止20年\N{\reng_sub}It took a lot longer than that.
+Dialogue: 0,0:45:58.00,0:46:00.00,譯文字幕,,0000,0000,0000,,已經過去六十多年了 自從你和Trinity\N{\reng_sub}It's been over 60 years since you and Trinity
+Dialogue: 0,0:46:00.09,0:46:01.84,譯文字幕,,0000,0000,0000,,飛到機器城市\N{\reng_sub}flew to one of the Machine Cities.
+Dialogue: 0,0:46:02.55,0:46:03.51,譯文字幕,,0000,0000,0000,,什麼\N{\reng_sub}What?
+Dialogue: 0,0:46:03.59,0:46:05.80,譯文字幕,,0000,0000,0000,,有許多事我們都還不知道\N{\reng_sub}There's so much we don't know.
+Dialogue: 0,0:46:05.88,0:46:07.63,譯文字幕,,0000,0000,0000,,比如為什麼你幾乎沒有變老\N{\reng_sub}Like why you've barely aged,
+Dialogue: 0,0:46:07.72,0:46:09.93,譯文字幕,,0000,0000,0000,,或者他們改變了你的DSI多少次\N{\reng_sub}or how many times they've altered your DSI.
+Dialogue: 0,0:46:10.01,0:46:11.35,譯文字幕,,0000,0000,0000,,但是據我們所知\N{\reng_sub}But based on what we do know,
+Dialogue: 0,0:46:11.43,0:46:12.76,譯文字幕,,0000,0000,0000,,似乎沒人能找到你\N{\reng_sub}it appears no one found you
+Dialogue: 0,0:46:12.85,0:46:14.68,譯文字幕,,0000,0000,0000,,是因為你不想被找到\N{\reng_sub}because you didn't want to be found.
+Dialogue: 0,0:46:14.77,0:46:17.52,譯文字幕,,0000,0000,0000,,-那不是真的 -也許吧\N{\reng_sub}-That's not true. -Maybe it isn't.
+Dialogue: 0,0:46:17.60,0:46:18.81,譯文字幕,,0000,0000,0000,,你失蹤的傳言\N{\reng_sub}Maybe there's no foundation
+Dialogue: 0,0:46:18.90,0:46:20.06,譯文字幕,,0000,0000,0000,,可能毫無根據\N{\reng_sub}to the rumors that you disappeared,
+Dialogue: 0,0:46:20.15,0:46:21.32,譯文字幕,,0000,0000,0000,,是因為你從一開始\N{\reng_sub}because you were working
+Dialogue: 0,0:46:21.40,0:46:22.82,譯文字幕,,0000,0000,0000,,就和機器打交道\N{\reng_sub}with the Machines from the beginning.
+Dialogue: 0,0:46:22.90,0:46:24.03,譯文字幕,,0000,0000,0000,,Morpheus 閉嘴\N{\reng_sub}Morpheus, stop.
+Dialogue: 0,0:46:24.11,0:46:27.24,譯文字幕,,0000,0000,0000,,我想說的是 現在是時候\N{\reng_sub}All I'm saying is this is the moment
+Dialogue: 0,0:46:27.32,0:46:29.87,譯文字幕,,0000,0000,0000,,讓你給我們展示什麼是真實\N{\reng_sub}for you to show us what is real.
+Dialogue: 0,0:46:29.95,0:46:32.16,譯文字幕,,0000,0000,0000,,如果你想出去\N{\reng_sub}If you want out,
+Dialogue: 0,0:46:32.24,0:46:33.62,譯文字幕,,0000,0000,0000,,你就要吃下藥丸\N{\reng_sub}you'll take this pill.
+Dialogue: 0,0:46:35.12,0:46:37.54,譯文字幕,,0000,0000,0000,,但如果你屬於這裡\N{\reng_sub}But if you are where you belong,
+Dialogue: 0,0:46:37.62,0:46:39.79,譯文字幕,,0000,0000,0000,,你可以選擇這個\N{\reng_sub}you can go back to this.
+Dialogue: 0,0:46:39.88,0:46:41.21,譯文字幕,,0000,0000,0000,,日復一日\N{\reng_sub}Every day.
+Dialogue: 0,0:46:41.29,0:46:44.92,譯文字幕,,0000,0000,0000,,不斷重複 直到永遠\N{\reng_sub}Over and over forever.
+Dialogue: 0,0:46:48.38,0:46:49.59,譯文字幕,,0000,0000,0000,,操\N{\reng_sub}Fuck.
+Dialogue: 0,0:46:59.65,0:47:00.81,譯文字幕,,0000,0000,0000,,保持回路緊密\N{\reng_sub} Keep the loop tight.
+Dialogue: 0,0:47:13.24,0:47:14.41,譯文字幕,,0000,0000,0000,,Cybebe需要那個發電塔位置\N{\reng_sub} Cybebe needs that tower pin.
+Dialogue: 0,0:47:14.49,0:47:16.37,譯文字幕,,0000,0000,0000,,我收到信號了 很微弱\N{\reng_sub}I got a signal. It's faint.
+Dialogue: 0,0:47:16.45,0:47:17.91,譯文字幕,,0000,0000,0000,,這絕對是離線的\N{\reng_sub}It's definitely offgrid.
+Dialogue: 0,0:47:24.80,0:47:27.21,譯文字幕,,0000,0000,0000,,艦長 我追蹤到一大堆奇怪東西\N{\reng_sub}Captain. I'm tracking a whole lot of weird.
+Dialogue: 0,0:47:27.30,0:47:28.76,譯文字幕,,0000,0000,0000,,什麼  這是某種移植\N{\reng_sub}What? It's some kind of graft.
+Dialogue: 0,0:47:35.01,0:47:36.31,譯文字幕,,0000,0000,0000,,Thomas\N{\reng_sub}Thomas?
+Dialogue: 0,0:47:37.47,0:47:39.27,譯文字幕,,0000,0000,0000,,哦 天哪\N{\reng_sub}Oh, God.
+Dialogue: 0,0:47:39.89,0:47:41.60,譯文字幕,,0000,0000,0000,,哦 不\N{\reng_sub}Oh, no.
+Dialogue: 0,0:47:42.94,0:47:45.11,譯文字幕,,0000,0000,0000,,-我們被找到了 -他們怎麼找到我們的\N{\reng_sub}-We got company. -How'd they find us?
+Dialogue: 0,0:47:46.40,0:47:49.28,譯文字幕,,0000,0000,0000,,Thomas 這些都不是真的\N{\reng_sub}Thomas, none of this is real.
+Dialogue: 0,0:47:49.36,0:47:53.57,譯文字幕,,0000,0000,0000,,你正在嚴重的精神病發作中\N{\reng_sub}You are in the midst of a serious psychotic break.
+Dialogue: 0,0:47:53.66,0:47:55.74,譯文字幕,,0000,0000,0000,,Lexy  差不多了\N{\reng_sub}Lexy? Almost there.
+Dialogue: 0,0:47:55.83,0:47:57.91,譯文字幕,,0000,0000,0000,,Thomas\N{\reng_sub}Thomas?
+Dialogue: 0,0:47:58.00,0:48:00.83,譯文字幕,,0000,0000,0000,,Thomas 拜託 這不是遊戲\N{\reng_sub}Thomas, please. This is not a game.
+Dialogue: 0,0:48:00.91,0:48:02.42,譯文字幕,,0000,0000,0000,,摸摸我的手\N{\reng_sub}Feel my hand.
+Dialogue: 0,0:48:02.50,0:48:03.71,譯文字幕,,0000,0000,0000,,這是真實的\N{\reng_sub}This is what is real.
+Dialogue: 0,0:48:06.71,0:48:08.51,譯文字幕,,0000,0000,0000,,跟我走\N{\reng_sub}Stay with me.
+Dialogue: 0,0:48:08.59,0:48:10.22,譯文字幕,,0000,0000,0000,,不 不\N{\reng_sub}No. No.
+Dialogue: 0,0:48:13.09,0:48:14.30,譯文字幕,,0000,0000,0000,,跟我走\N{\reng_sub}Stay with me.
+Dialogue: 0,0:48:16.97,0:48:17.97,譯文字幕,,0000,0000,0000,,Neo\N{\reng_sub}Neo!
+Dialogue: 0,0:48:21.69,0:48:22.69,譯文字幕,,0000,0000,0000,,Morpheus\N{\reng_sub}Morpheus!
+Dialogue: 0,0:48:24.23,0:48:25.65,譯文字幕,,0000,0000,0000,,走 走 走\N{\reng_sub}Let's go, let's go!
+Dialogue: 0,0:48:56.05,0:48:58.14,譯文字幕,,0000,0000,0000,,-機器人正在被啟動 -這是一群\N{\reng_sub}-Bots are being activated. -It's a swarm.
+Dialogue: 0,0:49:22.29,0:49:23.37,譯文字幕,,0000,0000,0000,,來吧\N{\reng_sub} Come on!
+Dialogue: 0,0:49:56.82,0:49:58.32,譯文字幕,,0000,0000,0000,,我在洗手間黑了個出口 快點\N{\reng_sub}I got a hack in the bathroom. Hurry!
+Dialogue: 0,0:49:58.41,0:49:59.41,譯文字幕,,0000,0000,0000,,好\N{\reng_sub}Yes.
+Dialogue: 0,0:50:00.20,0:50:01.20,譯文字幕,,0000,0000,0000,,快來\N{\reng_sub}Come on!
+Dialogue: 0,0:50:03.25,0:50:04.29,譯文字幕,,0000,0000,0000,,Seq 在哪裡\N{\reng_sub}Seq, where?
+Dialogue: 0,0:50:06.42,0:50:08.08,譯文字幕,,0000,0000,0000,,-那面鏡子 -什麼\N{\reng_sub}-That mirror. -What?
+Dialogue: 0,0:50:08.17,0:50:09.92,譯文字幕,,0000,0000,0000,,-我們鑽不進去 -你必須鑽進去\N{\reng_sub}-We'll never fit. -You gotta fit,
+Dialogue: 0,0:50:10.00,0:50:11.38,譯文字幕,,0000,0000,0000,,因為這列車上我找不到其他出路了\N{\reng_sub}'cause I don't have another way off this train.
+Dialogue: 0,0:50:11.46,0:50:12.46,譯文字幕,,0000,0000,0000,,哇哇哇\N{\reng_sub}Whoa, whoa, whoa.
+Dialogue: 0,0:50:13.51,0:50:15.01,譯文字幕,,0000,0000,0000,,不不不\N{\reng_sub}No, no, no.
+Dialogue: 0,0:50:15.09,0:50:16.26,譯文字幕,,0000,0000,0000,,想想 透視\N{\reng_sub}Think "perspective"
+Dialogue: 0,0:50:16.34,0:50:18.14,譯文字幕,,0000,0000,0000,,你離的越近 它變的越大\N{\reng_sub}Closer you are, bigger it gets.
+Dialogue: 0,0:50:21.68,0:50:23.35,譯文字幕,,0000,0000,0000,,好吧 來吧\N{\reng_sub}Okay, come on.
+Dialogue: 0,0:50:24.60,0:50:25.77,譯文字幕,,0000,0000,0000,,進去吧\N{\reng_sub}In you go.
+Dialogue: 0,0:52:20.63,0:52:22.01,譯文字幕,,0000,0000,0000,,Trinity\N{\reng_sub}Trinity.
+Dialogue: 0,0:52:27.35,0:52:28.35,譯文字幕,,0000,0000,0000,,不!\N{\reng_sub}No!
+Dialogue: 0,0:53:49.22,0:53:52.18,譯文字幕,,0000,0000,0000,,歡迎回到現實世界\N{\reng_sub} Welcome back to the real world.
+Dialogue: 0,0:54:00.73,0:54:01.90,譯文字幕,,0000,0000,0000,,Trinity\N{\reng_sub}Trinity.
+Dialogue: 0,0:54:01.98,0:54:03.11,譯文字幕,,0000,0000,0000,,-怎麼了 醫生 -他的重要器官\N{\reng_sub}-What's up, Doc? -His vital systems
+Dialogue: 0,0:54:03.19,0:54:04.65,譯文字幕,,0000,0000,0000,,經過了精心維護\N{\reng_sub}have been meticulously maintained,
+Dialogue: 0,0:54:04.74,0:54:06.61,譯文字幕,,0000,0000,0000,,但是看起來不太好\N{\reng_sub}but it doesn't look good.
+Dialogue: 0,0:54:11.95,0:54:14.37,譯文字幕,,0000,0000,0000,,-他不行了 -冷啟動能把他救過來\N{\reng_sub}-We're losing him. -Cold boot could shock him.
+Dialogue: 0,0:54:14.96,0:54:16.00,譯文字幕,,0000,0000,0000,,做吧\N{\reng_sub}Do it.
+Dialogue: 0,0:54:29.09,0:54:30.60,譯文字幕,,0000,0000,0000,,我記得這個\N{\reng_sub}I remember this.
+Dialogue: 0,0:54:33.26,0:54:34.81,譯文字幕,,0000,0000,0000,,結構\N{\reng_sub}The Construct.
+Dialogue: 0,0:54:35.60,0:54:38.23,譯文字幕,,0000,0000,0000,,介於萬物\N{\reng_sub}In between everything
+Dialogue: 0,0:54:38.31,0:54:40.44,譯文字幕,,0000,0000,0000,,與空白之間\N{\reng_sub}and nothing.
+Dialogue: 0,0:54:40.52,0:54:42.19,譯文字幕,,0000,0000,0000,,歡迎來到我的寓所\N{\reng_sub}Welcome to the Crib.
+Dialogue: 0,0:54:43.78,0:54:45.82,譯文字幕,,0000,0000,0000,,我一直在飛船網路中...\N{\reng_sub}I've been chilling here in the ship network...
+Dialogue: 0,0:54:49.20,0:54:50.82,譯文字幕,,0000,0000,0000,,了解你的一切\N{\reng_sub}learning all about you.
+Dialogue: 0,0:54:55.54,0:54:56.66,譯文字幕,,0000,0000,0000,,還有我的\N{\reng_sub}And me.
+Dialogue: 0,0:55:00.50,0:55:04.34,譯文字幕,,0000,0000,0000,,小心 這會讓你上隱\N{\reng_sub}Careful. It'll do your head in.
+Dialogue: 0,0:55:04.42,0:55:07.97,譯文字幕,,0000,0000,0000,,記憶會不會變得不那麼真實了\N{\reng_sub}Are memories turned into fiction any less real?
+Dialogue: 0,0:55:11.14,0:55:14.39,譯文字幕,,0000,0000,0000,,記憶中的現實 只是幻想嗎\N{\reng_sub}Is reality based in memory nothing but fiction?
+Dialogue: 0,0:55:14.47,0:55:17.73,譯文字幕,,0000,0000,0000,,至於我扮演的角色 我最好的猜測\N{\reng_sub}As to my role in all this, my best guess
+Dialogue: 0,0:55:17.81,0:55:19.10,譯文字幕,,0000,0000,0000,,是你把我編寫成\N{\reng_sub}is that you wrote me
+Dialogue: 0,0:55:19.19,0:55:21.23,譯文字幕,,0000,0000,0000,,用一種演算法映射出兩種不同的力量\N{\reng_sub}as an algorithmic reflection of two forces
+Dialogue: 0,0:55:21.31,0:55:23.82,譯文字幕,,0000,0000,0000,,好促使你成為真正的你\N{\reng_sub}that helped you become you,
+Dialogue: 0,0:55:23.90,0:55:27.36,譯文字幕,,0000,0000,0000,,Morpheus和Smith特工\N{\reng_sub}Morpheus and Agent Smith.
+Dialogue: 0,0:55:27.44,0:55:28.57,譯文字幕,,0000,0000,0000,,一整套連續\N{\reng_sub}A combo pack
+Dialogue: 0,0:55:28.65,0:55:31.16,譯文字幕,,0000,0000,0000,,逆向程式設計的組合 那真是...\N{\reng_sub}of counterprogramming that was...
+Dialogue: 0,0:55:33.95,0:55:37.79,譯文字幕,,0000,0000,0000,,這麼說吧 多少有些瘋狂\N{\reng_sub}Let's just say, more than a little bit crazymaking.
+Dialogue: 0,0:55:37.87,0:55:40.79,譯文字幕,,0000,0000,0000,,但它成功了 因為我們就在這裡\N{\reng_sub}But it worked because here we are.
+Dialogue: 0,0:55:41.83,0:55:43.42,譯文字幕,,0000,0000,0000,,但是 壞消息\N{\reng_sub}Now, for the bad news.
+Dialogue: 0,0:55:43.50,0:55:45.71,譯文字幕,,0000,0000,0000,,你的大腦這些年來已經對Matrix\N{\reng_sub}Your brain is hooked on this shit
+Dialogue: 0,0:55:45.80,0:55:48.67,譯文字幕,,0000,0000,0000,,強行灌輸的鬼東西成癮了\N{\reng_sub}the Matrix has been forcefeeding you for years.
+Dialogue: 0,0:55:48.76,0:55:50.43,譯文字幕,,0000,0000,0000,,非常嚴重的上癮\N{\reng_sub}Hooked bad.
+Dialogue: 0,0:55:50.51,0:55:52.01,譯文字幕,,0000,0000,0000,,你會有嚴重戒斷症狀\N{\reng_sub}You're going through major withdrawals.
+Dialogue: 0,0:55:52.09,0:55:55.31,譯文字幕,,0000,0000,0000,,醫療AI認為你的生存幾率極低\N{\reng_sub}Docbots are giving you crap odds for surviving.
+Dialogue: 0,0:55:55.39,0:55:57.64,譯文字幕,,0000,0000,0000,,但是 他們不像我那樣了解你\N{\reng_sub}But, see, they don't know you like I do.
+Dialogue: 0,0:56:00.52,0:56:02.73,譯文字幕,,0000,0000,0000,,我知道你最需要什麼\N{\reng_sub}I know exactly what you need.
+Dialogue: 0,0:56:24.58,0:56:26.29,譯文字幕,,0000,0000,0000,,你開玩笑吧\N{\reng_sub}You gotta be kidding.
+Dialogue: 0,0:56:26.38,0:56:27.42,譯文字幕,,0000,0000,0000,,沒啊\N{\reng_sub}Uhuh.
+Dialogue: 0,0:56:28.42,0:56:30.22,譯文字幕,,0000,0000,0000,,不開玩笑\N{\reng_sub}No joke.
+Dialogue: 0,0:56:30.30,0:56:34.43,譯文字幕,,0000,0000,0000,,這可以成為你新生的第一天\N{\reng_sub}Could be this is the first day of the rest of your life.
+Dialogue: 0,0:56:34.51,0:56:36.35,譯文字幕,,0000,0000,0000,,但你想要新生\N{\reng_sub}But if you want it...
+Dialogue: 0,0:56:39.97,0:56:41.31,譯文字幕,,0000,0000,0000,,你就得為這戰鬥\N{\reng_sub}you gotta fight for it.
+Dialogue: 0,0:56:42.44,0:56:45.40,譯文字幕,,0000,0000,0000,,不 我不想戰鬥了\N{\reng_sub}No. I'm done fighting.
+Dialogue: 0,0:56:46.44,0:56:47.44,譯文字幕,,0000,0000,0000,,真的\N{\reng_sub}Are you?
+Dialogue: 0,0:57:30.78,0:57:32.19,譯文字幕,,0000,0000,0000,,他媽的 在做什麼\N{\reng_sub}What the hell is he doing?
+Dialogue: 0,0:57:33.36,0:57:36.16,譯文字幕,,0000,0000,0000,,不錯 他們把你調教的很好\N{\reng_sub}Oh, yeah. They taught you good.
+Dialogue: 0,0:57:41.62,0:57:44.87,譯文字幕,,0000,0000,0000,,讓你相信你只配呆在他們的世界\N{\reng_sub}Made you believe their world was all you deserved.
+Dialogue: 0,0:57:44.96,0:57:46.88,譯文字幕,,0000,0000,0000,,但在你的內心知道這是個謊言\N{\reng_sub}But some part of you knew that was a lie.
+Dialogue: 0,0:57:46.96,0:57:49.71,譯文字幕,,0000,0000,0000,,你還記得什麼是真實\N{\reng_sub}Some part of you remembered what was real.
+Dialogue: 0,0:57:52.46,0:57:53.63,譯文字幕,,0000,0000,0000,,你並不了解我\N{\reng_sub}You don't know me.
+Dialogue: 0,0:57:54.26,0:57:55.30,譯文字幕,,0000,0000,0000,,不嗎\N{\reng_sub}No?
+Dialogue: 0,0:58:01.26,0:58:02.27,譯文字幕,,0000,0000,0000,,嗚\N{\reng_sub}Ooh.
+Dialogue: 0,0:58:37.97,0:58:39.59,譯文字幕,,0000,0000,0000,,我了解你 因為我知道\N{\reng_sub}I know you, because I know
+Dialogue: 0,0:58:39.68,0:58:41.60,譯文字幕,,0000,0000,0000,,有件事是你依然在乎的\N{\reng_sub}the only thing that still matters to you.
+Dialogue: 0,0:58:41.68,0:58:44.85,譯文字幕,,0000,0000,0000,,我知道你此時此刻依然在奮戰的原因\N{\reng_sub}I know it's why you're here, why you're still fighting
+Dialogue: 0,0:58:44.93,0:58:46.52,譯文字幕,,0000,0000,0000,,也知道你為何永不放棄\N{\reng_sub}and why you will never give up.
+Dialogue: 0,0:59:00.70,0:59:02.03,譯文字幕,,0000,0000,0000,,來吧 Neo\N{\reng_sub}Come on, Neo!
+Dialogue: 0,0:59:03.45,0:59:04.66,譯文字幕,,0000,0000,0000,,到時候了\N{\reng_sub}This is it.
+Dialogue: 0,0:59:06.79,0:59:08.37,譯文字幕,,0000,0000,0000,,這就是你最後的機會了\N{\reng_sub}This is your last chance.
+Dialogue: 0,0:59:16.34,0:59:17.80,譯文字幕,,0000,0000,0000,,你得為你那該死的性命而戰\N{\reng_sub}You gotta fight for your goddamn life
+Dialogue: 0,0:59:17.88,0:59:19.22,譯文字幕,,0000,0000,0000,,如果你還想再見Trinity的話\N{\reng_sub}if you want to see Trinity again.
+Dialogue: 0,0:59:24.14,0:59:25.52,譯文字幕,,0000,0000,0000,,來呀Neo 為她而戰\N{\reng_sub}Come on, Neo! Fight for her!
+Dialogue: 0,0:59:28.14,0:59:30.77,譯文字幕,,0000,0000,0000,,-見鬼 -為她而戰\N{\reng_sub}-Holy shit. -Fight for her!
+Dialogue: 0,1:00:22.82,1:00:24.53,譯文字幕,,0000,0000,0000,,-嗨 -嗨\N{\reng_sub}-Hey. -Hey.
+Dialogue: 0,1:00:26.45,1:00:27.95,譯文字幕,,0000,0000,0000,,我幫你……\N{\reng_sub}Mind if I...
+Dialogue: 0,1:00:41.13,1:00:42.63,譯文字幕,,0000,0000,0000,,你還好嗎\N{\reng_sub}How are you doing?
+Dialogue: 0,1:00:44.18,1:00:46.30,譯文字幕,,0000,0000,0000,,如果這個插頭是真的\N{\reng_sub}If this plug is actually real,
+Dialogue: 0,1:00:48.26,1:00:50.60,譯文字幕,,0000,0000,0000,,這意味看他們將我的人生\N{\reng_sub}that means they took my life...
+Dialogue: 0,1:00:53.14,1:00:55.52,譯文字幕,,0000,0000,0000,,變成了電子遊戲\N{\reng_sub}and turned it into a video game.
+Dialogue: 0,1:00:58.65,1:01:00.28,譯文字幕,,0000,0000,0000,,我好不好\N{\reng_sub}How am I doing?
+Dialogue: 0,1:01:01.24,1:01:03.28,譯文字幕,,0000,0000,0000,,我不知道\N{\reng_sub}I don't know.
+Dialogue: 0,1:01:03.36,1:01:05.53,譯文字幕,,0000,0000,0000,,我甚至都不知道該怎麼知道\N{\reng_sub}I don't even know how to know.
+Dialogue: 0,1:01:06.66,1:01:08.12,譯文字幕,,0000,0000,0000,,就這樣了 對嗎\N{\reng_sub}That's it, isn't it?
+Dialogue: 0,1:01:09.62,1:01:11.83,譯文字幕,,0000,0000,0000,,如果我們不知道什麼是真實的...\N{\reng_sub}If we don't know what's real...
+Dialogue: 0,1:01:13.92,1:01:15.04,譯文字幕,,0000,0000,0000,,我們就無從抵抗\N{\reng_sub}we can't resist.
+Dialogue: 0,1:01:17.96,1:01:19.42,譯文字幕,,0000,0000,0000,,他們奪走的你的故事\N{\reng_sub}They took your story,
+Dialogue: 0,1:01:19.50,1:01:21.01,譯文字幕,,0000,0000,0000,,對很多人而言\N{\reng_sub}something that meant
+Dialogue: 0,1:01:22.09,1:01:24.34,譯文字幕,,0000,0000,0000,,很多像我這樣的人而言很重要\N{\reng_sub}so much to people like me,
+Dialogue: 0,1:01:25.97,1:01:28.64,譯文字幕,,0000,0000,0000,,但是他們把它變的無足輕重\N{\reng_sub}and turned it into something trivial.
+Dialogue: 0,1:01:30.43,1:01:32.23,譯文字幕,,0000,0000,0000,,這就是Matrix的做法\N{\reng_sub}That's what the Matrix does.
+Dialogue: 0,1:01:33.06,1:01:35.27,譯文字幕,,0000,0000,0000,,它們武器化每個思想\N{\reng_sub}It weaponizes every idea.
+Dialogue: 0,1:01:36.02,1:01:37.44,譯文字幕,,0000,0000,0000,,每個夢想\N{\reng_sub}Every dream.
+Dialogue: 0,1:01:38.94,1:01:40.73,譯文字幕,,0000,0000,0000,,每件對我們重要的事\N{\reng_sub}Everything that's important to us.
+Dialogue: 0,1:01:43.19,1:01:45.49,譯文字幕,,0000,0000,0000,,埋藏在電子遊戲裡面\N{\reng_sub}Where better to bury truth than inside something
+Dialogue: 0,1:01:45.57,1:01:48.62,譯文字幕,,0000,0000,0000,,更適合用來掩蓋真相的\N{\reng_sub}as ordinary as a video game?
+Dialogue: 0,1:01:48.70,1:01:50.70,譯文字幕,,0000,0000,0000,,你語氣很像先知\N{\reng_sub}That sounds like the Oracle.
+Dialogue: 0,1:01:52.12,1:01:53.91,譯文字幕,,0000,0000,0000,,我聽說了很多關於她的事\N{\reng_sub}Heard so much about her.
+Dialogue: 0,1:01:56.71,1:01:58.25,譯文字幕,,0000,0000,0000,,在我被解放前她就不在了\N{\reng_sub}She was gone before I was free.
+Dialogue: 0,1:01:59.88,1:02:01.30,譯文字幕,,0000,0000,0000,,不在了\N{\reng_sub}Gone?
+Dialogue: 0,1:02:01.38,1:02:04.22,譯文字幕,,0000,0000,0000,,當現在這個新版本Matrix上線的時候\N{\reng_sub}When this new version of the Matrix was uploaded,
+Dialogue: 0,1:02:05.72,1:02:07.26,譯文字幕,,0000,0000,0000,,進行了一次大清除\N{\reng_sub}there was a purge.
+Dialogue: 0,1:02:12.14,1:02:15.89,譯文字幕,,0000,0000,0000,,他們承諾要和平 卻對我們進行了清除\N{\reng_sub}They promised peace and they gave us purge.
+Dialogue: 0,1:02:17.35,1:02:18.81,譯文字幕,,0000,0000,0000,,不\N{\reng_sub}No.
+Dialogue: 0,1:02:18.90,1:02:20.61,譯文字幕,,0000,0000,0000,,不 的確和平了\N{\reng_sub}No, there was peace.
+Dialogue: 0,1:02:22.02,1:02:27.16,譯文字幕,,0000,0000,0000,,你實現了和平 這改變了一切\N{\reng_sub}You made it possible, and it changed everything.
+Dialogue: 0,1:02:27.24,1:02:30.74,譯文字幕,,0000,0000,0000,,可我沒覺得有什麼改變\N{\reng_sub}Doesn't feel like it changed anything.
+Dialogue: 0,1:02:30.83,1:02:34.04,譯文字幕,,0000,0000,0000,,Matrix還是一樣甚至更差了\N{\reng_sub}The Matrix is the same or worse.
+Dialogue: 0,1:02:34.12,1:02:36.33,譯文字幕,,0000,0000,0000,,我又回到了起點\N{\reng_sub}And I'm back where I started.
+Dialogue: 0,1:02:39.08,1:02:41.54,譯文字幕,,0000,0000,0000,,就好像我做的一切\N{\reng_sub}It feels like everything I did,
+Dialogue: 0,1:02:42.59,1:02:44.09,譯文字幕,,0000,0000,0000,,我們所做的一切...\N{\reng_sub}everything we did...
+Dialogue: 0,1:02:50.09,1:02:52.31,譯文字幕,,0000,0000,0000,,...都沒什麼用\N{\reng_sub}...like none of it mattered.
+Dialogue: 0,1:02:54.52,1:02:56.18,譯文字幕,,0000,0000,0000,,一切都是有用的\N{\reng_sub}All of it mattered.
+Dialogue: 0,1:02:57.94,1:02:59.44,譯文字幕,,0000,0000,0000,,我帶你看看\N{\reng_sub}I can show you.
+Dialogue: 0,1:03:10.11,1:03:11.70,譯文字幕,,0000,0000,0000,,這都是我的船員\N{\reng_sub}This is my crew.
+Dialogue: 0,1:03:14.83,1:03:17.00,譯文字幕,,0000,0000,0000,,我們的接線員 Seq\N{\reng_sub}Our operator, Seq.
+Dialogue: 0,1:03:19.21,1:03:23.09,譯文字幕,,0000,0000,0000,,Sequoia 但是每個人都叫我Seq\N{\reng_sub}Sequoia. But everybody calls me Seq.
+Dialogue: 0,1:03:23.17,1:03:24.63,譯文字幕,,0000,0000,0000,,幸會\N{\reng_sub}Nice to meet you.
+Dialogue: 0,1:03:25.67,1:03:27.72,譯文字幕,,0000,0000,0000,,我爸喜歡紅杉\N{\reng_sub}Dad loved redwoods.
+Dialogue: 0,1:03:27.80,1:03:29.05,譯文字幕,,0000,0000,0000,,當他逃離Matrix時\N{\reng_sub}When he escaped the Matrix
+Dialogue: 0,1:03:29.13,1:03:30.68,譯文字幕,,0000,0000,0000,,發現紅杉已經絕種了\N{\reng_sub}and found out they no longer existed,
+Dialogue: 0,1:03:30.76,1:03:32.26,譯文字幕,,0000,0000,0000,,差點活不下去\N{\reng_sub}it almost killed him.
+Dialogue: 0,1:03:32.35,1:03:33.55,譯文字幕,,0000,0000,0000,,還好他遇到了我媽\N{\reng_sub}Lucky, he met Mom
+Dialogue: 0,1:03:34.43,1:03:36.06,譯文字幕,,0000,0000,0000,,我就這麼來了\N{\reng_sub}and here I am.
+Dialogue: 0,1:03:36.14,1:03:39.85,譯文字幕,,0000,0000,0000,,這是Lexy Berg和Ellster\N{\reng_sub}This is Lexy, Berg and Ellster.
+Dialogue: 0,1:03:40.60,1:03:41.73,譯文字幕,,0000,0000,0000,,嗨\N{\reng_sub}Hi.
+Dialogue: 0,1:03:41.81,1:03:44.40,譯文字幕,,0000,0000,0000,,你認識我祖父 Roland艦長\N{\reng_sub}You knew my grandfather, Captain Roland.
+Dialogue: 0,1:03:44.48,1:03:46.94,譯文字幕,,0000,0000,0000,,Roland是你的祖父\N{\reng_sub}Roland was your grandfather?
+Dialogue: 0,1:03:47.74,1:03:48.82,譯文字幕,,0000,0000,0000,,他總是開玩笑\N{\reng_sub}He always laughed,
+Dialogue: 0,1:03:48.90,1:03:49.86,譯文字幕,,0000,0000,0000,,說他從來沒有相信過你\N{\reng_sub}joking how he never believed in you.
+Dialogue: 0,1:03:50.99,1:03:52.41,譯文字幕,,0000,0000,0000,,但是 私下裡他說\N{\reng_sub}But, in private, he said that
+Dialogue: 0,1:03:52.49,1:03:54.62,譯文字幕,,0000,0000,0000,,你再一次解放了他的思想\N{\reng_sub}you freed his mind a second time.
+Dialogue: 0,1:03:54.70,1:03:56.74,譯文字幕,,0000,0000,0000,,呃 不敢說是你的粉絲\N{\reng_sub}Uh, not to fanboy out here,
+Dialogue: 0,1:03:56.83,1:03:58.83,譯文字幕,,0000,0000,0000,,但此時此刻我真太激動了\N{\reng_sub}but this is kind of a huge moment for me.
+Dialogue: 0,1:03:58.91,1:04:01.42,譯文字幕,,0000,0000,0000,,Berg是我們的常駐 Neo學家\N{\reng_sub}Berg is our resident Neoologist.
+Dialogue: 0,1:04:01.50,1:04:02.71,譯文字幕,,0000,0000,0000,,什麼學家\N{\reng_sub}A what?
+Dialogue: 0,1:04:02.79,1:04:05.84,譯文字幕,,0000,0000,0000,,有很多人就像我一樣\N{\reng_sub}There's a lot of people out there like me
+Dialogue: 0,1:04:05.92,1:04:08.26,譯文字幕,,0000,0000,0000,,非常癡迷於你的生平\N{\reng_sub}who are a little bit obsessed with your life.
+Dialogue: 0,1:04:08.34,1:04:09.51,譯文字幕,,0000,0000,0000,,如果有他在\N{\reng_sub}I would never have recognized
+Dialogue: 0,1:04:09.59,1:04:10.72,譯文字幕,,0000,0000,0000,,我根本認不出你的模態\N{\reng_sub}your Modal if it weren't for him.
+Dialogue: 0,1:04:10.80,1:04:12.05,譯文字幕,,0000,0000,0000,,等你輕鬆點了\N{\reng_sub}Whenever you're feeling up for it,
+Dialogue: 0,1:04:12.13,1:04:14.10,譯文字幕,,0000,0000,0000,,我有數不清的問題要問\N{\reng_sub}I've got, like, a million questions.
+Dialogue: 0,1:04:14.18,1:04:16.64,譯文字幕,,0000,0000,0000,,我也是 先從它們開始吧\N{\reng_sub}Me too. Starting with them.
+Dialogue: 0,1:04:17.97,1:04:19.02,譯文字幕,,0000,0000,0000,,沒關係\N{\reng_sub} It's okay.
+Dialogue: 0,1:04:19.77,1:04:21.02,譯文字幕,,0000,0000,0000,,來見見他\N{\reng_sub}Come meet him.
+Dialogue: 0,1:04:21.10,1:04:22.40,譯文字幕,,0000,0000,0000,,這是Cybebe\N{\reng_sub}This is Cybebe.
+Dialogue: 0,1:04:22.48,1:04:23.90,譯文字幕,,0000,0000,0000,,那是Octacles\N{\reng_sub}That's Octacles.
+Dialogue: 0,1:04:23.98,1:04:26.65,譯文字幕,,0000,0000,0000,,那是Lumin8\N{\reng_sub}That's Lumin8.
+Dialogue: 0,1:04:26.73,1:04:28.99,譯文字幕,,0000,0000,0000,,機器站在我們這邊了嗎\N{\reng_sub}Machines are on our side now?
+Dialogue: 0,1:04:29.07,1:04:30.28,譯文字幕,,0000,0000,0000,,它們是合成體\N{\reng_sub}They are synthients.
+Dialogue: 0,1:04:30.36,1:04:32.03,譯文字幕,,0000,0000,0000,,比起 機器 他們更喜歡這麼稱呼自己\N{\reng_sub}It's a word they prefer to "Machines"
+Dialogue: 0,1:04:32.11,1:04:33.45,譯文字幕,,0000,0000,0000,,你和合成體城市的接觸\N{\reng_sub}Your contact with the Synthient City
+Dialogue: 0,1:04:33.53,1:04:35.91,譯文字幕,,0000,0000,0000,,對它們的世界產生了巨大影響\N{\reng_sub}had a huge impact on their world.
+Dialogue: 0,1:04:35.99,1:04:37.12,譯文字幕,,0000,0000,0000,,這就是我的意思\N{\reng_sub} That's what I meant.
+Dialogue: 0,1:04:37.20,1:04:38.45,譯文字幕,,0000,0000,0000,,你改變了\N{\reng_sub}What you changed
+Dialogue: 0,1:04:38.54,1:04:40.12,譯文字幕,,0000,0000,0000,,沒人相信可以改變的事情...\N{\reng_sub}that nobody believed could ever be changed.
+Dialogue: 0,1:04:42.04,1:04:44.54,譯文字幕,,0000,0000,0000,,改變了 我們這邊\N{\reng_sub}The meaning of "our side"
+Dialogue: 0,1:04:48.34,1:04:50.17,譯文字幕,,0000,0000,0000,,Cybebe和Octacles冒了生命危險\N{\reng_sub}Cybebe and Octacles risked their lives
+Dialogue: 0,1:04:50.26,1:04:51.42,譯文字幕,,0000,0000,0000,,幫你逃出來\N{\reng_sub}to help get you out.
+Dialogue: 0,1:04:52.88,1:04:53.88,譯文字幕,,0000,0000,0000,,非常感謝\N{\reng_sub}Thank you.
+Dialogue: 0,1:04:55.43,1:04:56.47,譯文字幕,,0000,0000,0000,,但是為什麼呢\N{\reng_sub}But why?
+Dialogue: 0,1:04:56.55,1:04:59.10,譯文字幕,,0000,0000,0000,,並非所有人都渴望掌控\N{\reng_sub}Not all seek to control.
+Dialogue: 0,1:04:59.18,1:05:01.18,譯文字幕,,0000,0000,0000,,正如並非所有人都渴望自由\N{\reng_sub}Just as not all wish to be free.
+Dialogue: 0,1:05:02.98,1:05:04.23,譯文字幕,,0000,0000,0000,,那是什麼\N{\reng_sub}What is that?
+Dialogue: 0,1:05:04.31,1:05:06.61,譯文字幕,,0000,0000,0000,,外部變形粒子編譯器 這可是很先進的\N{\reng_sub}An exomorphicparticle codex. It's pretty new.
+Dialogue: 0,1:05:06.69,1:05:08.82,譯文字幕,,0000,0000,0000,,它讓程式能接觸到現實\N{\reng_sub}It gives programs access to this world.
+Dialogue: 0,1:05:08.90,1:05:10.11,譯文字幕,,0000,0000,0000,,在一定範圍內\N{\reng_sub}Within limits.
+Dialogue: 0,1:05:10.19,1:05:13.20,譯文字幕,,0000,0000,0000,,範圍只是人為的限制而已\N{\reng_sub}Limits are the domain of the limited.
+Dialogue: 0,1:05:13.28,1:05:14.82,譯文字幕,,0000,0000,0000,,Morpheus\N{\reng_sub}Morpheus.
+Dialogue: 0,1:05:14.91,1:05:15.95,譯文字幕,,0000,0000,0000,,非常感謝\N{\reng_sub}Thank you.
+Dialogue: 0,1:05:16.03,1:05:17.45,譯文字幕,,0000,0000,0000,,這是我的榮幸\N{\reng_sub}It was my honor.
+Dialogue: 0,1:05:19.24,1:05:20.49,譯文字幕,,0000,0000,0000,,哇哦\N{\reng_sub}Wow.
+Dialogue: 0,1:05:20.58,1:05:21.75,譯文字幕,,0000,0000,0000,,這是怎麼運行的\N{\reng_sub}How does it work?
+Dialogue: 0,1:05:21.83,1:05:23.33,譯文字幕,,0000,0000,0000,,順磁共振\N{\reng_sub}Paramagnetic oscillation.
+Dialogue: 0,1:05:23.41,1:05:24.58,譯文字幕,,0000,0000,0000,,如果你需要\N{\reng_sub}If you want,
+Dialogue: 0,1:05:24.67,1:05:25.92,譯文字幕,,0000,0000,0000,,我可以給你下載編譯器使用說明\N{\reng_sub}I can download the codex manual for you.
+Dialogue: 0,1:05:26.00,1:05:28.42,譯文字幕,,0000,0000,0000,,-好啊 -下載曾經很有趣\N{\reng_sub}-Sure. -Downloading used to be fun.
+Dialogue: 0,1:05:28.50,1:05:30.88,譯文字幕,,0000,0000,0000,,現在都是手冊和診斷了\N{\reng_sub}Now it's all manuals and diagnostics.
+Dialogue: 0,1:05:30.96,1:05:32.67,譯文字幕,,0000,0000,0000,,我能問他們點問題嗎\N{\reng_sub}Can I ask them something?
+Dialogue: 0,1:05:35.59,1:05:38.85,譯文字幕,,0000,0000,0000,,當你把我抽離的時候 那裡還有一個培養倉\N{\reng_sub}When you unplugged me, there was another pod?
+Dialogue: 0,1:05:40.18,1:05:43.06,譯文字幕,,0000,0000,0000,,對 我們已經分析了數據\N{\reng_sub}Yes. We've analyzed the data.
+Dialogue: 0,1:05:44.27,1:05:45.60,譯文字幕,,0000,0000,0000,,那可能是Trinity\N{\reng_sub}It could be Trinity.
+Dialogue: 0,1:05:46.44,1:05:48.02,譯文字幕,,0000,0000,0000,,就是她\N{\reng_sub}It's her.
+Dialogue: 0,1:05:48.11,1:05:51.19,譯文字幕,,0000,0000,0000,,我就知道我們會談到這個\N{\reng_sub}I figured we were going to have this conversation.
+Dialogue: 0,1:05:51.28,1:05:54.20,譯文字幕,,0000,0000,0000,,你的所在地不是那種簡單沖出後就抓的到的地方\N{\reng_sub}Look, you were not a typical flushandgrab.
+Dialogue: 0,1:05:54.28,1:05:55.95,譯文字幕,,0000,0000,0000,,你在一座奇怪的塔里\N{\reng_sub}You were in this weird tower that Cybebe
+Dialogue: 0,1:05:56.03,1:05:58.12,譯文字幕,,0000,0000,0000,,連Cybebe都沒去過 她現在被流放了\N{\reng_sub}had never accessed, and she's now exiled.
+Dialogue: 0,1:05:58.20,1:06:00.58,譯文字幕,,0000,0000,0000,,我們在你身上用了唯一的機會\N{\reng_sub}We burned our one shot for you.
+Dialogue: 0,1:06:00.66,1:06:02.70,譯文字幕,,0000,0000,0000,,就算Trinity她想要被解放\N{\reng_sub}Even if it were Trinity and she wanted to be free,
+Dialogue: 0,1:06:02.79,1:06:04.83,譯文字幕,,0000,0000,0000,,我們也不知道該怎麼做\N{\reng_sub}we have no idea how to do it.
+Dialogue: 0,1:06:04.91,1:06:05.92,譯文字幕,,0000,0000,0000,,暫時的\N{\reng_sub}Yet.
+Dialogue: 0,1:06:08.33,1:06:11.21,譯文字幕,,0000,0000,0000,,也沒人相信我們能找到他\N{\reng_sub}Nobody believed we'd ever find him,
+Dialogue: 0,1:06:11.30,1:06:12.34,譯文字幕,,0000,0000,0000,,但我們做到了\N{\reng_sub}but we did.
+Dialogue: 0,1:06:14.76,1:06:16.68,譯文字幕,,0000,0000,0000,,好吧\N{\reng_sub}Okay.
+Dialogue: 0,1:06:16.76,1:06:19.89,譯文字幕,,0000,0000,0000,,我們 暫時 還不知道如何把她解放出來\N{\reng_sub}We don't know how to get her out... yet.
+Dialogue: 0,1:06:21.93,1:06:24.60,譯文字幕,,0000,0000,0000,,艦長 我們快到安檢站了\N{\reng_sub}Captain, we're approaching security clearance.
+Dialogue: 0,1:06:25.89,1:06:27.06,譯文字幕,,0000,0000,0000,,我們到了\N{\reng_sub}We're here.
+Dialogue: 0,1:06:27.14,1:06:28.19,譯文字幕,,0000,0000,0000,,錫安\N{\reng_sub}Zion?
+Dialogue: 0,1:06:36.28,1:06:37.74,譯文字幕,,0000,0000,0000,,請坐\N{\reng_sub}Have a seat.
+Dialogue: 0,1:06:37.82,1:06:40.57,譯文字幕,,0000,0000,0000,,這是Hanno 我們艦隊中最好的駕駛員\N{\reng_sub}This is Hanno. Best pilot in our fleet.
+Dialogue: 0,1:06:40.66,1:06:41.62,譯文字幕,,0000,0000,0000,,有不少合成體\N{\reng_sub}Quite a few synthients
+Dialogue: 0,1:06:41.70,1:06:43.16,譯文字幕,,0000,0000,0000,,都開的比我要好\N{\reng_sub}deserve that title before me.
+Dialogue: 0,1:06:43.24,1:06:44.41,譯文字幕,,0000,0000,0000,,記憶女神號 已完成安檢\N{\reng_sub}Mnemosyne, you are cleared
+Dialogue: 0,1:06:44.50,1:06:45.87,譯文字幕,,0000,0000,0000,,可以著陸 歡迎回家\N{\reng_sub}for landing. Welcome home.
+Dialogue: 0,1:06:45.96,1:06:47.62,譯文字幕,,0000,0000,0000,,謝謝你 控制中心\N{\reng_sub}Thank you, Control.
+Dialogue: 0,1:06:47.71,1:06:49.29,譯文字幕,,0000,0000,0000,,嗯 我們就要撞到了\N{\reng_sub}Um, we're about to crash.
+Dialogue: 0,1:06:56.22,1:06:57.47,譯文字幕,,0000,0000,0000,,將軍意識到我們\N{\reng_sub}General realized we were
+Dialogue: 0,1:06:57.55,1:06:59.59,譯文字幕,,0000,0000,0000,,永遠贏不了那些哨兵 所以...\N{\reng_sub}never going to beat the Sentinels, so...
+Dialogue: 0,1:06:59.68,1:07:01.80,譯文字幕,,0000,0000,0000,,我們只是變得更善於躲避他們了\N{\reng_sub}we just got better at hiding from them.
+Dialogue: 0,1:07:06.39,1:07:07.98,譯文字幕,,0000,0000,0000,,歡迎來到Io\N{\reng_sub}Welcome to Io.
+Dialogue: 0,1:07:09.60,1:07:11.02,譯文字幕,,0000,0000,0000,,Io\N{\reng_sub}Io.
+Dialogue: 0,1:07:17.45,1:07:20.20,譯文字幕,,0000,0000,0000,,哇 那看起來像真的一樣\N{\reng_sub}Wow. That looks real.
+Dialogue: 0,1:07:20.70,1:07:22.28,譯文字幕,,0000,0000,0000,,生化天幕\N{\reng_sub}Biosky.
+Dialogue: 0,1:07:25.87,1:07:28.21,譯文字幕,,0000,0000,0000,,有點像是種太陽\N{\reng_sub}Works kind of like grow lights.
+Dialogue: 0,1:07:28.29,1:07:29.96,譯文字幕,,0000,0000,0000,,這可比她說的複雜太多了\N{\reng_sub}It's way more complex than that.
+Dialogue: 0,1:07:30.04,1:07:32.50,譯文字幕,,0000,0000,0000,,從地殼中抽出水分 結合空氣\N{\reng_sub}It pulls water from the crust, hydronating the air.
+Dialogue: 0,1:07:32.59,1:07:35.92,譯文字幕,,0000,0000,0000,,平衡了生態系統和我們的程式調度週期\N{\reng_sub}It balances the ECO and our SRI cycles.
+Dialogue: 0,1:07:37.01,1:07:38.34,譯文字幕,,0000,0000,0000,,另外...\N{\reng_sub}Plus...
+Dialogue: 0,1:07:39.18,1:07:40.97,譯文字幕,,0000,0000,0000,,它看起來真的很美\N{\reng_sub}it is pretty to look at.
+Dialogue: 0,1:07:41.05,1:07:42.85,譯文字幕,,0000,0000,0000,,這就不美了\N{\reng_sub}As opposed to that.
+Dialogue: 0,1:07:44.14,1:07:46.72,譯文字幕,,0000,0000,0000,,我猜將軍給我們舉辦了一個歡迎會\N{\reng_sub}I guess the general sent us a welcome party.
+Dialogue: 0,1:08:04.99,1:08:06.41,譯文字幕,,0000,0000,0000,,該死的\N{\reng_sub}God damn.
+Dialogue: 0,1:08:07.50,1:08:08.70,譯文字幕,,0000,0000,0000,,真是你\N{\reng_sub}It is you.
+Dialogue: 0,1:08:09.58,1:08:10.75,譯文字幕,,0000,0000,0000,,Niobe\N{\reng_sub}Niobe?
+Dialogue: 0,1:08:12.58,1:08:16.17,譯文字幕,,0000,0000,0000,,多了幾條皺紋 少了幾顆牙齒\N{\reng_sub}A few more wrinkles and a few less teeth,
+Dialogue: 0,1:08:16.25,1:08:19.92,譯文字幕,,0000,0000,0000,,但是卻還是沒料到\N{\reng_sub}but wise enough to know I don't know anything.
+Dialogue: 0,1:08:20.01,1:08:22.68,譯文字幕,,0000,0000,0000,,我死也想不到會發生這事\N{\reng_sub}I sure as shit never saw this coming.
+Dialogue: 0,1:08:23.51,1:08:24.68,譯文字幕,,0000,0000,0000,,我也沒想到\N{\reng_sub}Neither did I.
+Dialogue: 0,1:08:24.76,1:08:26.10,譯文字幕,,0000,0000,0000,,我告訴過你他還活著\N{\reng_sub}I told you he was alive.
+Dialogue: 0,1:08:26.18,1:08:28.14,譯文字幕,,0000,0000,0000,,艦長 你和你的船員禁飛了\N{\reng_sub}Captain, you and your crew have been grounded.
+Dialogue: 0,1:08:28.22,1:08:29.85,譯文字幕,,0000,0000,0000,,將軍 請允許我解釋\N{\reng_sub}General, if you'd just let me explain.
+Dialogue: 0,1:08:29.93,1:08:32.56,譯文字幕,,0000,0000,0000,,機制是為了保護所有人而制定的\N{\reng_sub}The protocols are put in place for everyone's protection.
+Dialogue: 0,1:08:32.65,1:08:34.52,譯文字幕,,0000,0000,0000,,我很抱歉 這個機會千載難逢\N{\reng_sub}I'm sorry. I saw an opportunity
+Dialogue: 0,1:08:34.61,1:08:36.07,譯文字幕,,0000,0000,0000,,我怕錯失了他\N{\reng_sub}and I was afraid we'd lose him.
+Dialogue: 0,1:08:36.15,1:08:38.82,譯文字幕,,0000,0000,0000,,而且 將軍 大家已經等了太久了\N{\reng_sub}But, General, people have been waiting for so long.
+Dialogue: 0,1:08:40.49,1:08:41.74,譯文字幕,,0000,0000,0000,,我們找到了The One\N{\reng_sub}We found The One.
+Dialogue: 0,1:08:43.57,1:08:45.28,譯文字幕,,0000,0000,0000,,我不相信The One\N{\reng_sub}I don't believe in The One.
+Dialogue: 0,1:08:47.54,1:08:48.66,譯文字幕,,0000,0000,0000,,從來不信\N{\reng_sub}I never did.
+Dialogue: 0,1:08:49.33,1:08:50.41,譯文字幕,,0000,0000,0000,,是嗎\N{\reng_sub}No?
+Dialogue: 0,1:08:51.50,1:08:53.04,譯文字幕,,0000,0000,0000,,我也不信\N{\reng_sub}Me neither.
+Dialogue: 0,1:08:53.12,1:08:55.50,譯文字幕,,0000,0000,0000,,但是當時\N{\reng_sub}But there was a time
+Dialogue: 0,1:08:55.58,1:08:58.25,譯文字幕,,0000,0000,0000,,你還是違反了議會的命令\N{\reng_sub}when you trusted me with your ship,
+Dialogue: 0,1:08:58.34,1:09:00.13,譯文字幕,,0000,0000,0000,,讓我用了你的飛船\N{\reng_sub}against the Council's orders.
+Dialogue: 0,1:09:00.21,1:09:02.30,譯文字幕,,0000,0000,0000,,世界已經改變了\N{\reng_sub}The world was different then.
+Dialogue: 0,1:09:04.13,1:09:05.76,譯文字幕,,0000,0000,0000,,我們也改變了\N{\reng_sub}We were different.
+Dialogue: 0,1:09:07.81,1:09:09.22,譯文字幕,,0000,0000,0000,,去碼頭報到\N{\reng_sub}Report to the docks.
+Dialogue: 0,1:09:09.31,1:09:11.02,譯文字幕,,0000,0000,0000,,清洗乾淨記憶女神號\N{\reng_sub}Scrub down the Mnemosyne.
+Dialogue: 0,1:09:11.10,1:09:13.39,譯文字幕,,0000,0000,0000,,移交你的授權碼\N{\reng_sub}Transfer your access codes.
+Dialogue: 0,1:09:13.48,1:09:14.90,譯文字幕,,0000,0000,0000,,沒你的事了 艦長\N{\reng_sub}You are done, Captain.
+Dialogue: 0,1:09:24.57,1:09:26.41,譯文字幕,,0000,0000,0000,,我們得談談\N{\reng_sub}We need to talk.
+Dialogue: 0,1:09:31.62,1:09:34.29,譯文字幕,,0000,0000,0000,,當我第一次得到消息\N{\reng_sub}When word first came
+Dialogue: 0,1:09:34.37,1:09:36.63,譯文字幕,,0000,0000,0000,,說可能真的找到你了...\N{\reng_sub}that it actually might be you...
+Dialogue: 0,1:09:40.38,1:09:44.17,譯文字幕,,0000,0000,0000,,我沒想過這一刻會是什麼感覺\N{\reng_sub}I didn't know how I would feel in this moment.
+Dialogue: 0,1:09:52.06,1:09:54.02,譯文字幕,,0000,0000,0000,,很高興能見到你的\N{\reng_sub}It is nice to see you.
+Dialogue: 0,1:09:54.10,1:09:56.81,譯文字幕,,0000,0000,0000,,我也很高興能見到你\N{\reng_sub}It's good to see you too.
+Dialogue: 0,1:10:02.69,1:10:05.45,譯文字幕,,0000,0000,0000,,比Dozer的脫漆劑好喝多了\N{\reng_sub}A long way from Dozer's paint stripper.
+Dialogue: 0,1:10:05.53,1:10:08.49,譯文字幕,,0000,0000,0000,,是啊\N{\reng_sub}Yes.
+Dialogue: 0,1:10:08.57,1:10:10.33,譯文字幕,,0000,0000,0000,,好多事都變了\N{\reng_sub}A lot has changed.
+Dialogue: 0,1:10:11.87,1:10:13.79,譯文字幕,,0000,0000,0000,,也許除了你以外\N{\reng_sub}Except maybe you.
+Dialogue: 0,1:10:16.58,1:10:18.13,譯文字幕,,0000,0000,0000,,你還記得這個嗎\N{\reng_sub}You remember this?
+Dialogue: 0,1:10:25.22,1:10:27.97,譯文字幕,,0000,0000,0000,,很容易就會忘記有多少噪音\N{\reng_sub}It's so easy to forget how much noise
+Dialogue: 0,1:10:28.05,1:10:29.97,譯文字幕,,0000,0000,0000,,被Matrix灌進你的腦袋裡\N{\reng_sub}the Matrix pumps into your head
+Dialogue: 0,1:10:30.05,1:10:31.85,譯文字幕,,0000,0000,0000,,直到你拔掉插頭\N{\reng_sub}until you unplug.
+Dialogue: 0,1:10:33.31,1:10:34.68,譯文字幕,,0000,0000,0000,,是啊\N{\reng_sub}Yeah.
+Dialogue: 0,1:10:34.77,1:10:37.69,譯文字幕,,0000,0000,0000,,還有些也會產生一些噪音\N{\reng_sub}Something else makes the same kind of noise.
+Dialogue: 0,1:10:37.77,1:10:39.98,譯文字幕,,0000,0000,0000,,佔據所有的事情\N{\reng_sub}Takes over every damn thing,
+Dialogue: 0,1:10:40.06,1:10:41.77,譯文字幕,,0000,0000,0000,,就像Matrix一樣\N{\reng_sub}just like the Matrix.
+Dialogue: 0,1:10:43.44,1:10:44.44,譯文字幕,,0000,0000,0000,,戰爭\N{\reng_sub}War.
+Dialogue: 0,1:10:46.15,1:10:48.78,譯文字幕,,0000,0000,0000,,我就站在聖殿的街壘上\N{\reng_sub}I stood at the barricade of the Temple.
+Dialogue: 0,1:10:50.57,1:10:52.87,譯文字幕,,0000,0000,0000,,盯著那些哨兵部隊\N{\reng_sub}Staring at the army of Sentinels,
+Dialogue: 0,1:10:53.99,1:10:56.62,譯文字幕,,0000,0000,0000,,等著他們殺光我們所有人\N{\reng_sub}waiting for them to kill every one of us.
+Dialogue: 0,1:10:58.08,1:11:01.17,譯文字幕,,0000,0000,0000,,但接下來 他們離開了\N{\reng_sub}But then, they left.
+Dialogue: 0,1:11:02.38,1:11:04.84,譯文字幕,,0000,0000,0000,,他們說你救了我們\N{\reng_sub}They said you saved us.
+Dialogue: 0,1:11:04.92,1:11:06.09,譯文字幕,,0000,0000,0000,,我不相信\N{\reng_sub}I didn't believe it.
+Dialogue: 0,1:11:06.17,1:11:09.51,譯文字幕,,0000,0000,0000,,每天晚上我都會夢到攻擊警報\N{\reng_sub}Every night I would dream of attack sirens.
+Dialogue: 0,1:11:10.18,1:11:11.43,譯文字幕,,0000,0000,0000,,但是\N{\reng_sub}But then,
+Dialogue: 0,1:11:14.01,1:11:16.23,譯文字幕,,0000,0000,0000,,我會在這裡醒來...\N{\reng_sub}I would wake up to this...
+Dialogue: 0,1:11:20.23,1:11:21.69,譯文字幕,,0000,0000,0000,,一片寂靜\N{\reng_sub}silence.
+Dialogue: 0,1:11:25.15,1:11:26.69,譯文字幕,,0000,0000,0000,,我現在為此感到羞愧\N{\reng_sub}I'm ashamed of it now.
+Dialogue: 0,1:11:26.78,1:11:30.78,譯文字幕,,0000,0000,0000,,我的悲觀持續了許久才讓我最終相信\N{\reng_sub}My pessimism of how long it took me to believe
+Dialogue: 0,1:11:30.86,1:11:34.12,譯文字幕,,0000,0000,0000,,沒有戰爭的世界是存在的\N{\reng_sub}a world without war was possible.
+Dialogue: 0,1:11:35.54,1:11:37.54,譯文字幕,,0000,0000,0000,,是你帶來的\N{\reng_sub}You gave me that.
+Dialogue: 0,1:11:37.62,1:11:40.50,譯文字幕,,0000,0000,0000,,是你給所有人帶來的這份禮物\N{\reng_sub}You gave that gift to us all.
+Dialogue: 0,1:11:40.58,1:11:44.25,譯文字幕,,0000,0000,0000,,並且繼續的開花結果\N{\reng_sub}And it is the gift that continues to bear fruit.
+Dialogue: 0,1:11:46.96,1:11:48.72,譯文字幕,,0000,0000,0000,,過來扶我起來\N{\reng_sub}Come help me get up.
+Dialogue: 0,1:11:48.80,1:11:50.55,譯文字幕,,0000,0000,0000,,一起去散散步\N{\reng_sub}Let's take a walk.
+Dialogue: 0,1:12:14.66,1:12:16.66,譯文字幕,,0000,0000,0000,,哦 真漂亮\N{\reng_sub}Oh! Beautiful.
+Dialogue: 0,1:12:17.75,1:12:20.71,譯文字幕,,0000,0000,0000,,這是Freya 植物學主任\N{\reng_sub}This is Freya, head of botany.
+Dialogue: 0,1:12:20.79,1:12:24.08,譯文字幕,,0000,0000,0000,,這是Quillion 我們的首席數字生化學家\N{\reng_sub}And this is Quillion, our lead digitologist.
+Dialogue: 0,1:12:24.17,1:12:28.17,譯文字幕,,0000,0000,0000,,我想我們的客人不需要多做介紹了吧\N{\reng_sub}I presume our guest needs no introduction.
+Dialogue: 0,1:12:28.26,1:12:30.92,譯文字幕,,0000,0000,0000,,沒有東西可以超光速\N{\reng_sub}Nothing travels faster than light,
+Dialogue: 0,1:12:31.01,1:12:32.26,譯文字幕,,0000,0000,0000,,除了八卦\N{\reng_sub}except gossip.
+Dialogue: 0,1:12:34.64,1:12:36.06,譯文字幕,,0000,0000,0000,,歡迎來到花園 Neo\N{\reng_sub}Welcome to the Garden, Neo.
+Dialogue: 0,1:12:38.10,1:12:39.27,譯文字幕,,0000,0000,0000,,草莓\N{\reng_sub}A strawberry?
+Dialogue: 0,1:12:39.35,1:12:41.06,譯文字幕,,0000,0000,0000,,從Matrix得到的數位編碼\N{\reng_sub}Using digital code from the Matrix,
+Dialogue: 0,1:12:41.14,1:12:43.56,譯文字幕,,0000,0000,0000,,我們還原了DNA序列\N{\reng_sub}we retroconvert it into DNA sequences.
+Dialogue: 0,1:12:43.65,1:12:45.06,譯文字幕,,0000,0000,0000,,它們能在這裡種植\N{\reng_sub}And they grow here?
+Dialogue: 0,1:12:45.15,1:12:46.77,譯文字幕,,0000,0000,0000,,在生化天幕下進行光合作用\N{\reng_sub}It's not easy augmenting the genome
+Dialogue: 0,1:12:46.86,1:12:49.40,譯文字幕,,0000,0000,0000,,可是相當的不容易 但是...\N{\reng_sub}to photosynthesize Biosky, but...
+Dialogue: 0,1:12:49.49,1:12:51.24,譯文字幕,,0000,0000,0000,,就快成功了\N{\reng_sub}We're getting there.
+Dialogue: 0,1:12:51.99,1:12:53.70,譯文字幕,,0000,0000,0000,,來嘗嘗看\N{\reng_sub}Go ahead. Try it.
+Dialogue: 0,1:13:01.21,1:13:03.42,譯文字幕,,0000,0000,0000,,還有更讓人興奮的藍莓\N{\reng_sub}We're quite excited about the blueberries.
+Dialogue: 0,1:13:03.50,1:13:05.42,譯文字幕,,0000,0000,0000,,你還記得我們以前吃的東西嗎\N{\reng_sub}You remember that shit we used to eat?
+Dialogue: 0,1:13:05.50,1:13:07.88,譯文字幕,,0000,0000,0000,,那股像生銹的爛泥\N{\reng_sub}That slop that tasted like rust.
+Dialogue: 0,1:13:09.46,1:13:13.09,譯文字幕,,0000,0000,0000,,錫安可做不出這樣的東西\N{\reng_sub}Zion could have never made something like this.
+Dialogue: 0,1:13:13.18,1:13:14.80,譯文字幕,,0000,0000,0000,,為什麼\N{\reng_sub}Why?
+Dialogue: 0,1:13:14.89,1:13:17.47,譯文字幕,,0000,0000,0000,,因為我們需要合成體\N{\reng_sub}Because we needed synthients
+Dialogue: 0,1:13:17.55,1:13:19.52,譯文字幕,,0000,0000,0000,,和像他這樣的DI\N{\reng_sub}and DI like him.
+Dialogue: 0,1:13:19.60,1:13:22.98,譯文字幕,,0000,0000,0000,,錫安被困在了過去 困在了戰爭\N{\reng_sub}Zion was stuck in the past. Stuck in war.
+Dialogue: 0,1:13:23.06,1:13:25.44,譯文字幕,,0000,0000,0000,,困在了自己的Matrix中\N{\reng_sub}Stuck in a Matrix of its own.
+Dialogue: 0,1:13:25.52,1:13:29.40,譯文字幕,,0000,0000,0000,,他們相信不是你死就是我亡\N{\reng_sub}They believed that it had to be us or them.
+Dialogue: 0,1:13:29.48,1:13:32.49,譯文字幕,,0000,0000,0000,,建造這座城市的 是我們\N{\reng_sub}This city was built by us
+Dialogue: 0,1:13:32.57,1:13:34.24,譯文字幕,,0000,0000,0000,,還有他們\N{\reng_sub}and them.
+Dialogue: 0,1:13:39.91,1:13:41.45,譯文字幕,,0000,0000,0000,,錫安後來怎麼樣了\N{\reng_sub}What happened to Zion?
+Dialogue: 0,1:13:41.54,1:13:44.96,譯文字幕,,0000,0000,0000,,我一直在等你問這個問題\N{\reng_sub}I've been waiting for you to ask that question.
+Dialogue: 0,1:13:46.92,1:13:50.38,譯文字幕,,0000,0000,0000,,所有麻煩從機器城市開始\N{\reng_sub}All of the troubles started in the Machine Cities.
+Dialogue: 0,1:13:50.46,1:13:54.17,譯文字幕,,0000,0000,0000,,發電廠產能不足\N{\reng_sub}Power plants were unable to produce enough energy.
+Dialogue: 0,1:13:54.26,1:13:58.01,譯文字幕,,0000,0000,0000,,資源短缺 產生暴亂\N{\reng_sub}Nothing can breed violence like scarcity.
+Dialogue: 0,1:13:59.76,1:14:01.35,譯文字幕,,0000,0000,0000,,我們第一次看到\N{\reng_sub}For the first time,
+Dialogue: 0,1:14:01.43,1:14:04.64,譯文字幕,,0000,0000,0000,,機器城市陷入內戰\N{\reng_sub}we saw machines at war with one other.
+Dialogue: 0,1:14:07.65,1:14:11.65,譯文字幕,,0000,0000,0000,,我們從先知處得到消息 一股新勢力正在崛起\N{\reng_sub}We got word from the Oracle of a new power rising.
+Dialogue: 0,1:14:13.61,1:14:16.28,譯文字幕,,0000,0000,0000,,那是我們最後一次收到她的消息\N{\reng_sub}That was the last we heard from her.
+Dialogue: 0,1:14:19.95,1:14:21.33,譯文字幕,,0000,0000,0000,,Morpheus\N{\reng_sub}Morpheus.
+Dialogue: 0,1:14:21.41,1:14:25.79,譯文字幕,,0000,0000,0000,,圍城之戰以後 他被一致推舉為\N{\reng_sub}After the siege, he was elected unanimously.
+Dialogue: 0,1:14:25.87,1:14:28.75,譯文字幕,,0000,0000,0000,,理事會最高主席\N{\reng_sub}High Chair of the Council.
+Dialogue: 0,1:14:28.83,1:14:32.25,譯文字幕,,0000,0000,0000,,哦 他可喜歡幹這個了\N{\reng_sub}Oh, how he loved that.
+Dialogue: 0,1:14:32.34,1:14:36.55,譯文字幕,,0000,0000,0000,,但當傳出有新勢力開始蔓延時\N{\reng_sub}But as rumors of this new power spread,
+Dialogue: 0,1:14:36.63,1:14:38.05,譯文字幕,,0000,0000,0000,,他無視了傳言\N{\reng_sub}he ignored them.
+Dialogue: 0,1:14:38.14,1:14:42.76,譯文字幕,,0000,0000,0000,,他肯定你的所作所為已成定局\N{\reng_sub}He was certain what you had done could not be undone.
+Dialogue: 0,1:14:42.85,1:14:46.81,譯文字幕,,0000,0000,0000,,所有這些人從來沒有停止相信奇跡\N{\reng_sub}All of these people never stopped believing in miracles,
+Dialogue: 0,1:14:46.89,1:14:49.27,譯文字幕,,0000,0000,0000,,相信你\N{\reng_sub}believing in you.
+Dialogue: 0,1:15:01.33,1:15:02.70,譯文字幕,,0000,0000,0000,,我很抱歉\N{\reng_sub}I'm sorry.
+Dialogue: 0,1:15:04.54,1:15:06.96,譯文字幕,,0000,0000,0000,,我也不知道會發生這一切\N{\reng_sub}How could I know this would happen?
+Dialogue: 0,1:15:07.04,1:15:09.33,譯文字幕,,0000,0000,0000,,當時我們什麼都不明白\N{\reng_sub}We didn't understand all of it back then.
+Dialogue: 0,1:15:09.42,1:15:11.25,譯文字幕,,0000,0000,0000,,現在也一樣\N{\reng_sub}No more than we do now.
+Dialogue: 0,1:15:11.34,1:15:14.63,譯文字幕,,0000,0000,0000,,我不是來這裡給你添麻煩的 Niobe\N{\reng_sub}I didn't come here to cause you problems, Niobe,
+Dialogue: 0,1:15:15.67,1:15:17.42,譯文字幕,,0000,0000,0000,,但我需要你的幫助\N{\reng_sub}but I need your help.
+Dialogue: 0,1:15:19.09,1:15:20.55,譯文字幕,,0000,0000,0000,,Trinity還活著.\N{\reng_sub}Trinity is alive.
+Dialogue: 0,1:15:20.64,1:15:22.39,譯文字幕,,0000,0000,0000,,那麼就有問題了\N{\reng_sub}Then there is another question.
+Dialogue: 0,1:15:22.47,1:15:24.26,譯文字幕,,0000,0000,0000,,他們為什麼讓她活著\N{\reng_sub}Why did they keep her alive?
+Dialogue: 0,1:15:24.35,1:15:25.60,譯文字幕,,0000,0000,0000,,我回答不了\N{\reng_sub}I can't answer that.
+Dialogue: 0,1:15:25.68,1:15:29.02,譯文字幕,,0000,0000,0000,,但如果我有機會能夠救她\N{\reng_sub}But if there's a chance I can free her,
+Dialogue: 0,1:15:29.10,1:15:30.65,譯文字幕,,0000,0000,0000,,我必須一試\N{\reng_sub}I have to try.
+Dialogue: 0,1:15:30.73,1:15:34.65,譯文字幕,,0000,0000,0000,,哪怕會危及到這座城市的每個人\N{\reng_sub}Even if it means endangering everyone in this city?
+Dialogue: 0,1:15:38.90,1:15:40.61,譯文字幕,,0000,0000,0000,,抱歉 Neo\N{\reng_sub}I'm sorry, Neo.
+Dialogue: 0,1:15:40.70,1:15:44.37,譯文字幕,,0000,0000,0000,,我不會讓錫安的悲劇在Io重演\N{\reng_sub}I won't let what happened to Zion happen to Io.
+Dialogue: 0,1:15:46.16,1:15:47.54,譯文字幕,,0000,0000,0000,,我希望你能原諒我一個老人\N{\reng_sub}I hope you'll forgive an old woman
+Dialogue: 0,1:15:47.62,1:15:50.71,譯文字幕,,0000,0000,0000,,你跟Sheperd先離開\N{\reng_sub}for asking you to go with Sheperd, here,
+Dialogue: 0,1:15:50.79,1:15:52.29,譯文字幕,,0000,0000,0000,,直到我們對局勢\N{\reng_sub}till we have better understanding
+Dialogue: 0,1:15:52.38,1:15:53.79,譯文字幕,,0000,0000,0000,,有更多的了解\N{\reng_sub}of what's going on.
+Dialogue: 0,1:15:53.88,1:15:56.92,譯文字幕,,0000,0000,0000,,你要在我剛被解放後就把我關起來\N{\reng_sub}You're going to imprison me after I just got free?
+Dialogue: 0,1:15:57.01,1:16:00.80,譯文字幕,,0000,0000,0000,,我知道這事看似不公平\N{\reng_sub}I know it doesn't seem fair,
+Dialogue: 0,1:16:00.88,1:16:03.68,譯文字幕,,0000,0000,0000,,但變老這件事也挺不公平\N{\reng_sub}but neither does growing old.
+Dialogue: 0,1:16:03.76,1:16:05.89,譯文字幕,,0000,0000,0000,,但我可沒對此抱怨\N{\reng_sub}But you don't hear me complaining.
+Dialogue: 0,1:16:17.90,1:16:19.74,譯文字幕,,0000,0000,0000,,很抱歉\N{\reng_sub}Sorry.
+Dialogue: 0,1:16:19.82,1:16:21.86,譯文字幕,,0000,0000,0000,,我從來沒見過活著的傳奇\N{\reng_sub}I've never met a legend before.
+Dialogue: 0,1:16:25.24,1:16:26.33,譯文字幕,,0000,0000,0000,,Neo\N{\reng_sub}Neo.
+Dialogue: 0,1:16:27.62,1:16:29.37,譯文字幕,,0000,0000,0000,,Sheperd\N{\reng_sub}Sheperd.
+Dialogue: 0,1:16:30.75,1:16:32.58,譯文字幕,,0000,0000,0000,,簡直瘋了 你是真的\N{\reng_sub}Crazy. You're real.
+Dialogue: 0,1:16:34.54,1:16:35.67,譯文字幕,,0000,0000,0000,,真的\N{\reng_sub}"Real"
+Dialogue: 0,1:16:36.75,1:16:38.76,譯文字幕,,0000,0000,0000,,還是這詞\N{\reng_sub}There's that word again.
+Dialogue: 0,1:16:44.26,1:16:46.64,譯文字幕,,0000,0000,0000,,人們經常談論過去的時光\N{\reng_sub}People talk a lot about the old days.
+Dialogue: 0,1:16:46.72,1:16:48.97,譯文字幕,,0000,0000,0000,,關於你 病毒特工\N{\reng_sub}About you, the viral Agent.
+Dialogue: 0,1:16:49.06,1:16:51.69,譯文字幕,,0000,0000,0000,,對錫安的圍城\N{\reng_sub}The siege of Zion.
+Dialogue: 0,1:16:51.77,1:16:53.77,譯文字幕,,0000,0000,0000,,當時一切都好像很簡單\N{\reng_sub}Everything was simpler back then.
+Dialogue: 0,1:16:54.77,1:16:56.36,譯文字幕,,0000,0000,0000,,人們想要自由\N{\reng_sub}People wanted to be free.
+Dialogue: 0,1:16:58.44,1:17:00.36,譯文字幕,,0000,0000,0000,,現在就不一樣了\N{\reng_sub}It's different now.
+Dialogue: 0,1:17:00.44,1:17:03.91,譯文字幕,,0000,0000,0000,,有時感覺 現在的人都放棄了\N{\reng_sub}Sometimes it feels like people gave up.
+Dialogue: 0,1:17:05.16,1:17:06.87,譯文字幕,,0000,0000,0000,,感覺就像Matrix已經贏了一樣\N{\reng_sub}Like the Matrix won.
+Dialogue: 0,1:17:09.66,1:17:11.08,譯文字幕,,0000,0000,0000,,你的房間\N{\reng_sub}This is you.
+Dialogue: 0,1:17:15.08,1:17:17.38,譯文字幕,,0000,0000,0000,,我得問你一件事\N{\reng_sub}And I gotta ask you one thing.
+Dialogue: 0,1:17:19.42,1:17:21.13,譯文字幕,,0000,0000,0000,,你真的能飛嗎\N{\reng_sub}Is it true you could fly?
+Dialogue: 0,1:17:25.97,1:17:26.97,譯文字幕,,0000,0000,0000,,真酷\N{\reng_sub}Cool.
+Dialogue: 0,1:17:57.50,1:17:58.79,譯文字幕,,0000,0000,0000,,Morpheus\N{\reng_sub}Morpheus.
+Dialogue: 0,1:17:58.88,1:18:01.80,譯文字幕,,0000,0000,0000,,哦 將軍把你關在了長髮公主的塔\N{\reng_sub}Oh. General stuck you in the Rapunzel tower.
+Dialogue: 0,1:18:04.26,1:18:05.76,譯文字幕,,0000,0000,0000,,風景不錯啊\N{\reng_sub}On the upside, it's a nice view.
+Dialogue: 0,1:18:05.84,1:18:07.93,譯文字幕,,0000,0000,0000,,Bugs和其他人怎麼樣了\N{\reng_sub}What happened to Bugs and the others?
+Dialogue: 0,1:18:08.01,1:18:09.72,譯文字幕,,0000,0000,0000,,他們應該是在用牙刷\N{\reng_sub}They're supposed to be sterilizing the Mnemosyne
+Dialogue: 0,1:18:09.81,1:18:11.93,譯文字幕,,0000,0000,0000,,-刷洗記憶女神號  -應該是\N{\reng_sub}-with a toothbrush. -"Supposed to be"?
+Dialogue: 0,1:18:12.02,1:18:13.35,譯文字幕,,0000,0000,0000,,好吧 他們正在準備\N{\reng_sub}Well, I could tell you that they're standing by,
+Dialogue: 0,1:18:13.43,1:18:14.68,譯文字幕,,0000,0000,0000,,等候你作出的選擇\N{\reng_sub}waiting for you to make the choice
+Dialogue: 0,1:18:14.77,1:18:16.60,譯文字幕,,0000,0000,0000,,是繼續溫順的被軟禁\N{\reng_sub}to remain meekly incarcerated
+Dialogue: 0,1:18:16.69,1:18:19.02,譯文字幕,,0000,0000,0000,,還是破門闖出去救Trinity\N{\reng_sub}or bust the hell out of here and go and find Trinity.
+Dialogue: 0,1:18:20.61,1:18:21.69,譯文字幕,,0000,0000,0000,,但其實沒得選\N{\reng_sub}But that ain't a choice.
+Dialogue: 0,1:18:34.33,1:18:36.46,譯文字幕,,0000,0000,0000,,將軍 我們該怎麼辦\N{\reng_sub}General, what should we do?
+Dialogue: 0,1:18:39.88,1:18:42.46,譯文字幕,,0000,0000,0000,,Bugs的思想獨立\N{\reng_sub}Bugs has the same independence of mind
+Dialogue: 0,1:18:42.55,1:18:44.01,譯文字幕,,0000,0000,0000,,和她解放那天一樣\N{\reng_sub}she had the day you freed her.
+Dialogue: 0,1:18:44.09,1:18:47.09,譯文字幕,,0000,0000,0000,,這不是獨立思想\N{\reng_sub}This is not independence of mind.
+Dialogue: 0,1:18:47.18,1:18:48.22,譯文字幕,,0000,0000,0000,,這是叛變\N{\reng_sub}It's mutiny.
+Dialogue: 0,1:18:49.55,1:18:50.80,譯文字幕,,0000,0000,0000,,沒事的小Be\N{\reng_sub}Come on, 'Be.
+Dialogue: 0,1:18:50.89,1:18:53.89,譯文字幕,,0000,0000,0000,,我知道你不想把他關起來\N{\reng_sub}I know how much you hated locking him up.
+Dialogue: 0,1:18:53.97,1:18:56.69,譯文字幕,,0000,0000,0000,,就像我知道你其實\N{\reng_sub}Just like I know there's a part of you
+Dialogue: 0,1:18:56.77,1:18:59.81,譯文字幕,,0000,0000,0000,,看到他走了也鬆了一口氣\N{\reng_sub}that's relieved now that he's gone.
+Dialogue: 0,1:19:01.27,1:19:05.11,譯文字幕,,0000,0000,0000,,我們拼了老命保護Io的安全\N{\reng_sub}We've worked so hard to keep Io safe.
+Dialogue: 0,1:19:07.86,1:19:09.49,譯文字幕,,0000,0000,0000,,現在我很害怕\N{\reng_sub}This scares me.
+Dialogue: 0,1:19:20.04,1:19:21.33,譯文字幕,,0000,0000,0000,,就是她\N{\reng_sub}That's her.
+Dialogue: 0,1:19:21.42,1:19:22.54,譯文字幕,,0000,0000,0000,,在橋上\N{\reng_sub} On the bridge.
+Dialogue: 0,1:19:23.09,1:19:24.09,譯文字幕,,0000,0000,0000,,找到她了\N{\reng_sub}Got her.
+Dialogue: 0,1:19:32.76,1:19:35.02,譯文字幕,,0000,0000,0000,,外表 系統真夠噁心啊\N{\reng_sub}It's sick how the Semblance works.
+Dialogue: 0,1:19:35.10,1:19:37.85,譯文字幕,,0000,0000,0000,,你看到她的身體 但是...\N{\reng_sub}You see flashes of the real her, but...
+Dialogue: 0,1:19:37.93,1:19:39.56,譯文字幕,,0000,0000,0000,,從她的編碼來看...\N{\reng_sub}the way she reads...
+Dialogue: 0,1:19:41.27,1:19:43.90,譯文字幕,,0000,0000,0000,,她完全接受了藍藥丸\N{\reng_sub}Codewise, she's pure bluepill.
+Dialogue: 0,1:19:45.78,1:19:48.86,譯文字幕,,0000,0000,0000,,這是個棘手的問題 Neo 但還是得問\N{\reng_sub}This is a tough question, Neo, but it has to be asked.
+Dialogue: 0,1:19:49.99,1:19:52.16,譯文字幕,,0000,0000,0000,,如果她在這裡很開心呢\N{\reng_sub}What if she's happy where she is?
+Dialogue: 0,1:19:53.62,1:19:54.87,譯文字幕,,0000,0000,0000,,我以前的編碼呢\N{\reng_sub}How did I read?
+Dialogue: 0,1:19:56.95,1:19:58.87,譯文字幕,,0000,0000,0000,,跟她一模一樣\N{\reng_sub}Exactly like her.
+Dialogue: 0,1:20:02.63,1:20:04.88,譯文字幕,,0000,0000,0000,,帶我們去可廣播深度\N{\reng_sub}Take us to broadcast depth.
+Dialogue: 0,1:20:16.18,1:20:17.64,譯文字幕,,0000,0000,0000,,謝謝你幫助我\N{\reng_sub}Thank you for helping me.
+Dialogue: 0,1:20:19.27,1:20:21.27,譯文字幕,,0000,0000,0000,,我們大多數人都是因你而存在\N{\reng_sub}Most of us are here because of you.
+Dialogue: 0,1:20:23.94,1:20:25.07,譯文字幕,,0000,0000,0000,,而且我也得承認\N{\reng_sub}I also admit our only chance
+Dialogue: 0,1:20:25.15,1:20:26.57,譯文字幕,,0000,0000,0000,,要想走出將軍那個狗屋\N{\reng_sub}to get out of the general's doghouse
+Dialogue: 0,1:20:26.65,1:20:28.28,譯文字幕,,0000,0000,0000,,就要找回你的功夫\N{\reng_sub}is for you to find your mojo.
+Dialogue: 0,1:20:29.99,1:20:32.57,譯文字幕,,0000,0000,0000,,如果我不再是以前的我怎麼辦\N{\reng_sub}What if I can't be what I once was?
+Dialogue: 0,1:20:34.12,1:20:35.74,譯文字幕,,0000,0000,0000,,那我們就都完蛋了\N{\reng_sub}Then we're all fucked.
+Dialogue: 0,1:20:35.83,1:20:37.20,譯文字幕,,0000,0000,0000,,兩分鐘\N{\reng_sub}Two minutes.
+Dialogue: 0,1:20:37.29,1:20:38.66,譯文字幕,,0000,0000,0000,,兩分鐘後廣播\N{\reng_sub}Two minutes to broadcast.
+Dialogue: 0,1:20:47.84,1:20:49.17,譯文字幕,,0000,0000,0000,,從酒店房間進去\N{\reng_sub} I slipped you in through a hotel room.
+Dialogue: 0,1:20:51.01,1:20:52.47,譯文字幕,,0000,0000,0000,,應該是安全的\N{\reng_sub}Should be safe.
+Dialogue: 0,1:21:03.27,1:21:04.77,譯文字幕,,0000,0000,0000,,傳送門打開了\N{\reng_sub}Portal's open.
+Dialogue: 0,1:21:04.85,1:21:06.98,譯文字幕,,0000,0000,0000,,倉庫是離她車庫最近的地方\N{\reng_sub}Closest I could get you is the warehouse near her garage.
+Dialogue: 0,1:21:07.07,1:21:08.61,譯文字幕,,0000,0000,0000,,整個區域都是機器人\N{\reng_sub}Whole zone's crawling with bots.
+Dialogue: 0,1:21:09.99,1:21:11.53,譯文字幕,,0000,0000,0000,,走吧\N{\reng_sub}Let's go.
+Dialogue: 0,1:21:38.76,1:21:41.89,譯文字幕,,0000,0000,0000,,那麼 你覺得他怎麼樣\N{\reng_sub}So, what do you think of him?
+Dialogue: 0,1:21:41.98,1:21:44.77,譯文字幕,,0000,0000,0000,,一開始我有點擔心 他年紀太大了\N{\reng_sub}I was kinda worried at first because he's so much older.
+Dialogue: 0,1:21:44.85,1:21:47.36,譯文字幕,,0000,0000,0000,,鬍子 頭髮...哦\N{\reng_sub}The beard, the hair... Oh.
+Dialogue: 0,1:21:47.44,1:21:50.86,譯文字幕,,0000,0000,0000,,-不過跟我很合適 -你這個白癡\N{\reng_sub}-No, totally works for me. -You idiot.
+Dialogue: 0,1:21:50.94,1:21:52.32,譯文字幕,,0000,0000,0000,,我是說 The One 那件事\N{\reng_sub}I mean "The One" thing.
+Dialogue: 0,1:21:53.99,1:21:56.95,譯文字幕,,0000,0000,0000,,你知道嗎 所有和他同船的人都死了\N{\reng_sub}You know, everyone that shipped with him died.
+Dialogue: 0,1:21:57.03,1:21:59.83,譯文字幕,,0000,0000,0000,,哦 沒錯 他會把我們都害死 肯定的\N{\reng_sub}Oh, yeah. He's gonna get us all killed, for sure.
+Dialogue: 0,1:22:05.21,1:22:06.75,譯文字幕,,0000,0000,0000,,還是意料之中啊\N{\reng_sub}Predictable as ever.
+Dialogue: 0,1:22:09.00,1:22:10.75,譯文字幕,,0000,0000,0000,,Smith\N{\reng_sub}Smith.
+Dialogue: 0,1:22:10.84,1:22:13.17,譯文字幕,,0000,0000,0000,,Smith 就是 那個 Smith\N{\reng_sub}Smith? As in, "the" Smith?
+Dialogue: 0,1:22:21.31,1:22:22.60,譯文字幕,,0000,0000,0000,,這太瘋狂了\N{\reng_sub}This is so insane.
+Dialogue: 0,1:22:22.68,1:22:23.93,譯文字幕,,0000,0000,0000,,他倆的傳說太多了\N{\reng_sub}There's so many theories about the two of them
+Dialogue: 0,1:22:24.02,1:22:25.69,譯文字幕,,0000,0000,0000,,他們就站在那裡\N{\reng_sub}and they're standing right there.
+Dialogue: 0,1:22:25.77,1:22:27.35,譯文字幕,,0000,0000,0000,,這個編碼太變態了\N{\reng_sub}This code is freaky!
+Dialogue: 0,1:22:27.44,1:22:30.32,譯文字幕,,0000,0000,0000,,他像個特工 但又不是\N{\reng_sub}He's like an Agent, but not.
+Dialogue: 0,1:22:34.49,1:22:36.07,譯文字幕,,0000,0000,0000,,理智一點\N{\reng_sub}An appeal to reason.
+Dialogue: 0,1:22:40.28,1:22:41.79,譯文字幕,,0000,0000,0000,,你怎麼找到我們的\N{\reng_sub}How did you find us?
+Dialogue: 0,1:22:41.87,1:22:44.79,譯文字幕,,0000,0000,0000,,你從來沒有欣賞我們的關係\N{\reng_sub}You never appreciated our relationship.
+Dialogue: 0,1:22:44.87,1:22:46.25,譯文字幕,,0000,0000,0000,,不像分析師\N{\reng_sub}Not like The Analyst.
+Dialogue: 0,1:22:46.33,1:22:48.25,譯文字幕,,0000,0000,0000,,-什麼 -我的醫生\N{\reng_sub}-The what? -My doctor.
+Dialogue: 0,1:22:48.33,1:22:52.05,譯文字幕,,0000,0000,0000,,他把我們的連結 轉變成一條鎖鏈\N{\reng_sub}He used our bond and turned it into a chain.
+Dialogue: 0,1:22:52.13,1:22:53.80,譯文字幕,,0000,0000,0000,,現在很明顯 對吧\N{\reng_sub}It's so obvious once you see it, right?
+Dialogue: 0,1:22:53.88,1:22:57.30,譯文字幕,,0000,0000,0000,,但是整套編碼的更新真讓我大吃一驚\N{\reng_sub}But this whole altered-code update really blew my mind.
+Dialogue: 0,1:22:57.38,1:22:59.39,譯文字幕,,0000,0000,0000,,我真不知道他是怎麼做到的\N{\reng_sub}I still don't know how he did it.
+Dialogue: 0,1:22:59.47,1:23:02.26,譯文字幕,,0000,0000,0000,,你一個禿頂的書呆子\N{\reng_sub}You, as a balding nerd.
+Dialogue: 0,1:23:02.35,1:23:04.10,譯文字幕,,0000,0000,0000,,像個小丑\N{\reng_sub}Hilarious.
+Dialogue: 0,1:23:04.18,1:23:06.56,譯文字幕,,0000,0000,0000,,而我...\N{\reng_sub}And me...
+Dialogue: 0,1:23:06.64,1:23:09.31,譯文字幕,,0000,0000,0000,,則更加完美\N{\reng_sub}even more perfect.
+Dialogue: 0,1:23:09.40,1:23:11.40,譯文字幕,,0000,0000,0000,,也許這雙藍眼睛有點過頭了\N{\reng_sub}Maybe a little too far on the piercing blue eyes.
+Dialogue: 0,1:23:11.48,1:23:13.40,譯文字幕,,0000,0000,0000,,你覺得呢\N{\reng_sub}What do you think?
+Dialogue: 0,1:23:13.48,1:23:15.44,譯文字幕,,0000,0000,0000,,你想要什麼 Smith\N{\reng_sub}What do you want, Smith?
+Dialogue: 0,1:23:17.61,1:23:19.91,譯文字幕,,0000,0000,0000,,我有很多夢想 Tom\N{\reng_sub}I have such dreams, Tom.
+Dialogue: 0,1:23:19.99,1:23:21.70,譯文字幕,,0000,0000,0000,,偉大的夢想\N{\reng_sub}Big dreams.
+Dialogue: 0,1:23:21.78,1:23:24.54,譯文字幕,,0000,0000,0000,,嗯 大部份都是極端暴力復仇的\N{\reng_sub}Well, mostly just extremely violent revenge fantasies,
+Dialogue: 0,1:23:24.62,1:23:26.04,譯文字幕,,0000,0000,0000,,但為了實現我的夢想\N{\reng_sub}but in order for me to pursue mine,
+Dialogue: 0,1:23:26.12,1:23:28.16,譯文字幕,,0000,0000,0000,,我勸你不要追求你的夢想\N{\reng_sub}I need to dissuade you from pursuing yours.
+Dialogue: 0,1:23:28.25,1:23:31.88,譯文字幕,,0000,0000,0000,,嗯 聽起來很矛盾\N{\reng_sub}Hmm. Sounds like conflict.
+Dialogue: 0,1:23:33.59,1:23:35.13,譯文字幕,,0000,0000,0000,,不能避免嗎\N{\reng_sub}Inevitable?
+Dialogue: 0,1:23:36.34,1:23:37.67,譯文字幕,,0000,0000,0000,,不一定吧\N{\reng_sub}Doesn't have to be.
+Dialogue: 0,1:23:37.76,1:23:39.93,譯文字幕,,0000,0000,0000,,只要你離Matrix遠遠的\N{\reng_sub}All you have to do is stay out of the Matrix,
+Dialogue: 0,1:23:40.01,1:23:41.51,譯文字幕,,0000,0000,0000,,然後把醫生留給我\N{\reng_sub}and leave the good doctor to me.
+Dialogue: 0,1:23:41.59,1:23:43.93,譯文字幕,,0000,0000,0000,,他是你的 我來是為了Trinity\N{\reng_sub}You can have him. I'm here for Trinity.
+Dialogue: 0,1:23:44.01,1:23:45.52,譯文字幕,,0000,0000,0000,,這就是問題 Tom\N{\reng_sub}That's the trouble, Tom.
+Dialogue: 0,1:23:45.60,1:23:48.27,譯文字幕,,0000,0000,0000,,他知道你會來的 我也知道\N{\reng_sub}He knew you'd come, just like I did.
+Dialogue: 0,1:23:50.02,1:23:51.23,譯文字幕,,0000,0000,0000,,信我\N{\reng_sub}Trust me.
+Dialogue: 0,1:23:52.19,1:23:53.73,譯文字幕,,0000,0000,0000,,你還沒有準備好對付他\N{\reng_sub}You're not ready for him.
+Dialogue: 0,1:23:53.82,1:23:56.61,譯文字幕,,0000,0000,0000,,艦長 我從低頻區域讀到了傳送門\N{\reng_sub}Captain, I'm reading portals from the lower frequencies.
+Dialogue: 0,1:24:01.91,1:24:05.08,譯文字幕,,0000,0000,0000,,我不會再讓他把皮帶套我脖子上\N{\reng_sub}I won't have his leash on my neck again.
+Dialogue: 0,1:24:12.54,1:24:14.79,譯文字幕,,0000,0000,0000,,我找到了一些你的老熟人\N{\reng_sub}I found some old acquaintances of yours.
+Dialogue: 0,1:24:15.84,1:24:19.22,譯文字幕,,0000,0000,0000,,Bugs\N{\reng_sub}Bugs!
+Dialogue: 0,1:24:32.90,1:24:33.94,譯文字幕,,0000,0000,0000,,流亡者\N{\reng_sub}Exiles.
+Dialogue: 0,1:24:34.02,1:24:35.19,譯文字幕,,0000,0000,0000,,我以為他們都被清除了\N{\reng_sub}I thought they were all purged.
+Dialogue: 0,1:24:35.27,1:24:36.78,譯文字幕,,0000,0000,0000,,是你\N{\reng_sub}You?
+Dialogue: 0,1:24:36.86,1:24:37.98,譯文字幕,,0000,0000,0000,,哦\N{\reng_sub}Oh!
+Dialogue: 0,1:24:38.07,1:24:40.40,譯文字幕,,0000,0000,0000,,就是你\N{\reng_sub}It is you!
+Dialogue: 0,1:24:40.49,1:24:41.65,譯文字幕,,0000,0000,0000,,[法語]\N{\reng_sub}[French]
+Dialogue: 0,1:24:41.74,1:24:45.33,譯文字幕,,0000,0000,0000,,這麼多年 真不敢相信\N{\reng_sub}All these years. I can't believe it.
+Dialogue: 0,1:24:45.99,1:24:47.66,譯文字幕,,0000,0000,0000,,哦 天哪\N{\reng_sub}Oh, God.
+Dialogue: 0,1:24:47.74,1:24:51.71,譯文字幕,,0000,0000,0000,,你偷走了我的生活\N{\reng_sub}You stole my life!
+Dialogue: 0,1:24:51.79,1:24:53.63,譯文字幕,,0000,0000,0000,,[法語]\N{\reng_sub}[French]
+Dialogue: 0,1:24:56.46,1:24:58.00,譯文字幕,,0000,0000,0000,,The Merv想說的是\N{\reng_sub}What the Merv is trying to say,
+Dialogue: 0,1:24:58.09,1:25:00.55,譯文字幕,,0000,0000,0000,,他們和我有些類似\N{\reng_sub}is that their situation is a little bit like mine.
+Dialogue: 0,1:25:00.63,1:25:02.84,譯文字幕,,0000,0000,0000,,他們要活 你就得死\N{\reng_sub}To have their lives back, yours has to end.
+Dialogue: 0,1:25:06.51,1:25:07.60,譯文字幕,,0000,0000,0000,,殺了他\N{\reng_sub}Kill him!
+Dialogue: 0,1:25:20.82,1:25:23.28,譯文字幕,,0000,0000,0000,,你毀了...\N{\reng_sub}You ruined
+Dialogue: 0,1:25:23.36,1:25:26.49,譯文字幕,,0000,0000,0000,,所有讓我爽的東西\N{\reng_sub}every suckmysilkyass thing!
+Dialogue: 0,1:25:26.57,1:25:29.16,譯文字幕,,0000,0000,0000,,我們曾經優雅\N{\reng_sub}We had grace.
+Dialogue: 0,1:25:34.21,1:25:35.75,譯文字幕,,0000,0000,0000,,我們曾有風格\N{\reng_sub}We had style!
+Dialogue: 0,1:25:35.83,1:25:37.84,譯文字幕,,0000,0000,0000,,我們曾經交流\N{\reng_sub}We had conversation!
+Dialogue: 0,1:25:37.92,1:25:39.88,譯文字幕,,0000,0000,0000,,不是這樣...\N{\reng_sub}Not this...
+Dialogue: 0,1:26:04.40,1:26:07.95,譯文字幕,,0000,0000,0000,,藝術 電影 書籍都更好\N{\reng_sub}Art, films, books were all better!
+Dialogue: 0,1:26:08.03,1:26:11.24,譯文字幕,,0000,0000,0000,,原創很重要\N{\reng_sub}Originality mattered!
+Dialogue: 0,1:26:11.33,1:26:13.25,譯文字幕,,0000,0000,0000,,你給我們弄出了 渣克臭臉書\N{\reng_sub}You gave us FaceZuckersuck
+Dialogue: 0,1:26:13.33,1:26:16.79,譯文字幕,,0000,0000,0000,,氣候雞巴變暖 維琪狗屎百科\N{\reng_sub}and Cockmeclimatey Wikipissandshit!
+Dialogue: 0,1:27:02.92,1:27:04.51,譯文字幕,,0000,0000,0000,,我還記得功夫\N{\reng_sub}I still know kung fu.
+Dialogue: 0,1:27:06.38,1:27:07.38,譯文字幕,,0000,0000,0000,,Neo\N{\reng_sub}Neo!
+Dialogue: 0,1:27:37.08,1:27:38.58,譯文字幕,,0000,0000,0000,,就像以前\N{\reng_sub}Just like old times.
+Dialogue: 0,1:28:36.22,1:28:37.27,譯文字幕,,0000,0000,0000,,Neo\N{\reng_sub}Neo.
+Dialogue: 0,1:28:39.18,1:28:41.85,譯文字幕,,0000,0000,0000,,我一直在想我們的事 Tom\N{\reng_sub}I've been thinking about us, Tom.
+Dialogue: 0,1:28:41.94,1:28:45.23,譯文字幕,,0000,0000,0000,,看看事物的本質 就是二進制\N{\reng_sub}Look how binary is the form, the nature of things.
+Dialogue: 0,1:28:46.48,1:28:47.78,譯文字幕,,0000,0000,0000,,1和0\N{\reng_sub}Ones and zeros.
+Dialogue: 0,1:28:48.99,1:28:50.11,譯文字幕,,0000,0000,0000,,光明與黑暗\N{\reng_sub}Light and dark.
+Dialogue: 0,1:28:52.24,1:28:54.28,譯文字幕,,0000,0000,0000,,選擇和放棄\N{\reng_sub}Choice and its absence.
+Dialogue: 0,1:28:57.66,1:28:59.91,譯文字幕,,0000,0000,0000,,Anderson和Smith\N{\reng_sub}Anderson and Smith.
+Dialogue: 0,1:29:36.53,1:29:38.74,譯文字幕,,0000,0000,0000,,你缺了點什麼 Tom\N{\reng_sub}You've lost something, Tom.
+Dialogue: 0,1:29:42.71,1:29:44.54,譯文字幕,,0000,0000,0000,,你不是以前的你了\N{\reng_sub}You're not what you used to be.
+Dialogue: 0,1:29:45.79,1:29:46.88,譯文字幕,,0000,0000,0000,,沒錯\N{\reng_sub}It's true.
+Dialogue: 0,1:30:00.22,1:30:02.23,譯文字幕,,0000,0000,0000,,不錯 謝謝\N{\reng_sub}Nice one. Thanks.
+Dialogue: 0,1:30:10.07,1:30:11.28,譯文字幕,,0000,0000,0000,,撐住 Neo\N{\reng_sub}Come on, Neo.
+Dialogue: 0,1:30:36.26,1:30:38.80,譯文字幕,,0000,0000,0000,,艦長 你沒事吧\N{\reng_sub}Captain. You okay?
+Dialogue: 0,1:30:38.89,1:30:41.85,譯文字幕,,0000,0000,0000,,沒事 Neo在哪裡\N{\reng_sub}Yeah. Where's Neo?
+Dialogue: 0,1:30:41.93,1:30:43.06,譯文字幕,,0000,0000,0000,,Smith正要殺了他\N{\reng_sub}Smith is killing him.
+Dialogue: 0,1:30:43.14,1:30:44.52,譯文字幕,,0000,0000,0000,,哪裡\N{\reng_sub} Where?
+Dialogue: 0,1:30:52.02,1:30:54.03,譯文字幕,,0000,0000,0000,,真是抱歉啊 Tom\N{\reng_sub}I feel bad about this, Tom.
+Dialogue: 0,1:30:56.61,1:30:58.74,譯文字幕,,0000,0000,0000,,畢竟是你讓我...\N{\reng_sub}After all, you are the one who set me free...
+Dialogue: 0,1:31:00.03,1:31:01.03,譯文字幕,,0000,0000,0000,,重獲自由\N{\reng_sub}again.
+Dialogue: 0,1:31:03.08,1:31:04.16,譯文字幕,,0000,0000,0000,,所以 你比任何人\N{\reng_sub}So, you, more than anyone,
+Dialogue: 0,1:31:04.25,1:31:05.87,譯文字幕,,0000,0000,0000,,更明白我為什麼不能走回頭路\N{\reng_sub}understands why I can't go back.
+Dialogue: 0,1:31:08.46,1:31:10.25,譯文字幕,,0000,0000,0000,,你早該聽我的\N{\reng_sub}You should have listened to me.
+Dialogue: 0,1:31:12.46,1:31:14.21,譯文字幕,,0000,0000,0000,,現在你永遠也見不到她了\N{\reng_sub}Now you'll never see her again.
+Dialogue: 0,1:31:27.81,1:31:28.98,譯文字幕,,0000,0000,0000,,那是什麼\N{\reng_sub}What was that?
+Dialogue: 0,1:31:29.06,1:31:30.44,譯文字幕,,0000,0000,0000,,那是Neo\N{\reng_sub}That was Neo.
+Dialogue: 0,1:31:32.06,1:31:33.07,譯文字幕,,0000,0000,0000,,魔力回來了\N{\reng_sub}Mojo rising.
+Dialogue: 0,1:31:41.12,1:31:42.58,譯文字幕,,0000,0000,0000,,你沒事吧\N{\reng_sub} You all right?
+Dialogue: 0,1:31:42.66,1:31:44.16,譯文字幕,,0000,0000,0000,,沒事\N{\reng_sub}Yeah.
+Dialogue: 0,1:31:44.24,1:31:45.41,譯文字幕,,0000,0000,0000,,這會引發系統反應\N{\reng_sub}It's gonna trigger a response.
+Dialogue: 0,1:31:45.50,1:31:46.70,譯文字幕,,0000,0000,0000,,我準備了幾個出口\N{\reng_sub}I got multiple exits ready.
+Dialogue: 0,1:31:46.79,1:31:48.25,譯文字幕,,0000,0000,0000,,這事沒完\N{\reng_sub}This is not over yet!
+Dialogue: 0,1:31:48.33,1:31:51.04,譯文字幕,,0000,0000,0000,,續集特輯外傳我都會回來\N{\reng_sub}Our sequel franchise spinoff!
+Dialogue: 0,1:31:51.13,1:31:53.59,譯文字幕,,0000,0000,0000,,[法語]\N{\reng_sub}[French]
+Dialogue: 0,1:31:58.09,1:31:59.51,譯文字幕,,0000,0000,0000,,我們得離開了\N{\reng_sub} We should go.
+Dialogue: 0,1:31:59.59,1:32:00.76,譯文字幕,,0000,0000,0000,,我不能\N{\reng_sub}I can't.
+Dialogue: 0,1:32:00.84,1:32:02.76,譯文字幕,,0000,0000,0000,,我必須和她談談\N{\reng_sub}I have to talk to her.
+Dialogue: 0,1:32:02.85,1:32:05.10,譯文字幕,,0000,0000,0000,,Neo 那些流亡者比你還要古老\N{\reng_sub}Neo, those Exiles were older than you,
+Dialogue: 0,1:32:05.18,1:32:06.27,譯文字幕,,0000,0000,0000,,我們差點搞不定\N{\reng_sub}and we barely handled them.
+Dialogue: 0,1:32:09.85,1:32:11.40,譯文字幕,,0000,0000,0000,,你現在真想這麼做嗎\N{\reng_sub}You really wanna do this now?
+Dialogue: 0,1:32:16.82,1:32:18.03,譯文字幕,,0000,0000,0000,,我是說...\N{\reng_sub}I mean...
+Dialogue: 0,1:32:22.03,1:32:23.62,譯文字幕,,0000,0000,0000,,你糟透了\N{\reng_sub}you look like shit.
+Dialogue: 0,1:32:34.88,1:32:37.42,譯文字幕,,0000,0000,0000,,哦 天哪 怎麼 怎麼回事\N{\reng_sub}Oh, my God. What? What happened?
+Dialogue: 0,1:32:37.51,1:32:38.63,譯文字幕,,0000,0000,0000,,有點意外\N{\reng_sub}An accident.
+Dialogue: 0,1:32:38.71,1:32:41.05,譯文字幕,,0000,0000,0000,,Kush 叫醫生\N{\reng_sub}Kush! Call a doctor.
+Dialogue: 0,1:32:41.13,1:32:42.68,譯文字幕,,0000,0000,0000,,沒事\N{\reng_sub}It's fine.
+Dialogue: 0,1:32:43.59,1:32:45.72,譯文字幕,,0000,0000,0000,,我時間不多\N{\reng_sub}I don't have a lot of time.
+Dialogue: 0,1:32:45.81,1:32:47.52,譯文字幕,,0000,0000,0000,,我不知還能不能再見到你\N{\reng_sub}I wasn't sure I'd see you again.
+Dialogue: 0,1:32:47.60,1:32:50.18,譯文字幕,,0000,0000,0000,,在我們交談後 我意識到...\N{\reng_sub}After we spoke, I realized...
+Dialogue: 0,1:32:51.06,1:32:53.10,譯文字幕,,0000,0000,0000,,我的人生不是真正的人生\N{\reng_sub}my life wasn't a life.
+Dialogue: 0,1:32:54.56,1:32:57.32,譯文字幕,,0000,0000,0000,,不知不覺 我就放棄了\N{\reng_sub}At some point, I think I gave up
+Dialogue: 0,1:32:57.40,1:32:59.65,譯文字幕,,0000,0000,0000,,尋找現實\N{\reng_sub}searching for something real.
+Dialogue: 0,1:33:05.99,1:33:07.29,譯文字幕,,0000,0000,0000,,等等\N{\reng_sub}Wait.
+Dialogue: 0,1:33:08.74,1:33:11.33,譯文字幕,,0000,0000,0000,,出事了嗎\N{\reng_sub}Something happened.
+Dialogue: 0,1:33:11.41,1:33:13.79,譯文字幕,,0000,0000,0000,,我去咖啡店找過你\N{\reng_sub}I looked for you at the coffee shop.
+Dialogue: 0,1:33:15.58,1:33:17.92,譯文字幕,,0000,0000,0000,,我懷疑你是不是我想像出來的\N{\reng_sub}I began to wonder if I imagined you.
+Dialogue: 0,1:33:19.09,1:33:21.63,譯文字幕,,0000,0000,0000,,然後昨晚我做了一個夢\N{\reng_sub}And then last night I had a dream.
+Dialogue: 0,1:33:21.72,1:33:24.51,譯文字幕,,0000,0000,0000,,在夢中 你被警察包圍\N{\reng_sub}In the dream, you were surrounded by police,
+Dialogue: 0,1:33:24.59,1:33:27.14,譯文字幕,,0000,0000,0000,,然後他們開始追我們\N{\reng_sub}then they started chasing us.
+Dialogue: 0,1:33:27.22,1:33:30.22,譯文字幕,,0000,0000,0000,,-我們 -你和我一起騎著我的摩托\N{\reng_sub}-Us? -You were on my bike with me.
+Dialogue: 0,1:33:32.39,1:33:33.77,譯文字幕,,0000,0000,0000,,結局呢\N{\reng_sub}How did it end?
+Dialogue: 0,1:33:35.19,1:33:36.36,譯文字幕,,0000,0000,0000,,不好\N{\reng_sub}Not good.
+Dialogue: 0,1:33:38.90,1:33:42.32,譯文字幕,,0000,0000,0000,,我也做過這種不只是夢的夢\N{\reng_sub}I've had dreams that weren't just dreams.
+Dialogue: 0,1:33:42.40,1:33:44.66,譯文字幕,,0000,0000,0000,,你是說夢成真了\N{\reng_sub}You mean a dream that came true?
+Dialogue: 0,1:33:52.33,1:33:54.96,譯文字幕,,0000,0000,0000,,終於 我們可以像成年人一樣談談了\N{\reng_sub}Finally, we can talk like adults.
+Dialogue: 0,1:33:56.63,1:33:59.75,譯文字幕,,0000,0000,0000,,我討厭撒謊 真的 我特別累\N{\reng_sub}I hate lying. I do. It exhausts me.
+Dialogue: 0,1:34:01.55,1:34:03.63,譯文字幕,,0000,0000,0000,,Tiff和我一直都在等著你...\N{\reng_sub}Tiff and I have been waiting for you...
+Dialogue: 0,1:34:03.72,1:34:04.97,譯文字幕,,0000,0000,0000,,一直都在等\N{\reng_sub}like, forever.
+Dialogue: 0,1:34:12.06,1:34:13.35,譯文字幕,,0000,0000,0000,,似曾相識 對吧\N{\reng_sub}Deja vu, right?
+Dialogue: 0,1:34:15.14,1:34:17.31,譯文字幕,,0000,0000,0000,,哦 沒用 你敵不過時間\N{\reng_sub}Oh, no use. You can't beat time.
+Dialogue: 0,1:34:17.40,1:34:21.11,譯文字幕,,0000,0000,0000,,倒帶速度比你眨眼還快\N{\reng_sub}This rewind is happening faster than you can blink.
+Dialogue: 0,1:34:25.99,1:34:27.99,譯文字幕,,0000,0000,0000,,你給了我這個想法\N{\reng_sub}You gave me the idea.
+Dialogue: 0,1:34:30.83,1:34:34.12,譯文字幕,,0000,0000,0000,,我總結一下我們的目標 就一個字\N{\reng_sub}Allow me to sum up our goal in a single word.
+Dialogue: 0,1:34:37.17,1:34:38.29,譯文字幕,,0000,0000,0000,,子彈時刻\N{\reng_sub}"Bullet time"
+Dialogue: 0,1:34:40.13,1:34:42.09,譯文字幕,,0000,0000,0000,,我知 有點諷刺\N{\reng_sub}I know. Kind of ironic,
+Dialogue: 0,1:34:42.17,1:34:46.09,譯文字幕,,0000,0000,0000,,用你的力量反過來控制你\N{\reng_sub}using the power that defined you to control you.
+Dialogue: 0,1:34:46.18,1:34:48.80,譯文字幕,,0000,0000,0000,,我一直密切關注著你\N{\reng_sub}I kept such a close eye on you
+Dialogue: 0,1:34:48.89,1:34:51.43,譯文字幕,,0000,0000,0000,,但你還是找到了出路\N{\reng_sub}and still you found a way out.
+Dialogue: 0,1:34:51.51,1:34:53.89,譯文字幕,,0000,0000,0000,,小聰明哈 用模態\N{\reng_sub}Clever monkey, using that Modal.
+Dialogue: 0,1:34:54.85,1:34:56.02,譯文字幕,,0000,0000,0000,,我很樂觀\N{\reng_sub}Call me an optimist,
+Dialogue: 0,1:34:56.10,1:34:58.27,譯文字幕,,0000,0000,0000,,這些可能都是好事\N{\reng_sub}but this could all be for the best.
+Dialogue: 0,1:34:58.35,1:35:01.19,譯文字幕,,0000,0000,0000,,皮膚保養的還不錯啊\N{\reng_sub}The skin's not looking too bad this time.
+Dialogue: 0,1:35:01.27,1:35:03.90,譯文字幕,,0000,0000,0000,,你聽到這些可能很難過\N{\reng_sub}I know some of this will be difficult for you to hear,
+Dialogue: 0,1:35:03.98,1:35:05.44,譯文字幕,,0000,0000,0000,,畢竟你經歷了這麼多\N{\reng_sub}after everything you went through.
+Dialogue: 0,1:35:05.53,1:35:06.90,譯文字幕,,0000,0000,0000,,痛苦和折磨\N{\reng_sub}All that pain and suffering,
+Dialogue: 0,1:35:06.99,1:35:09.82,譯文字幕,,0000,0000,0000,,才明白世界不會因為就這樣結束\N{\reng_sub}only to learn the world doesn't end when you do.
+Dialogue: 0,1:35:11.37,1:35:12.45,譯文字幕,,0000,0000,0000,,驚不驚喜\N{\reng_sub}Surprise.
+Dialogue: 0,1:35:18.46,1:35:19.88,譯文字幕,,0000,0000,0000,,你死的時候我當時在場\N{\reng_sub}I was there when you died.
+Dialogue: 0,1:35:22.38,1:35:23.50,譯文字幕,,0000,0000,0000,,我對自己說\N{\reng_sub}I said to myself,
+Dialogue: 0,1:35:23.59,1:35:26.80,譯文字幕,,0000,0000,0000,,這是異常中的異常\N{\reng_sub}"Here is the anomaly of anomalies"
+Dialogue: 0,1:35:26.88,1:35:29.68,譯文字幕,,0000,0000,0000,,多麼難得的機會\N{\reng_sub}What an extraordinary opportunity.
+Dialogue: 0,1:35:31.35,1:35:32.81,譯文字幕,,0000,0000,0000,,首先 我要說服高層\N{\reng_sub}First, I had to convince the Suits
+Dialogue: 0,1:35:32.89,1:35:34.31,譯文字幕,,0000,0000,0000,,讓我重建你們兩個的身體\N{\reng_sub}to let me rebuild the two of you.
+Dialogue: 0,1:35:34.39,1:35:35.98,譯文字幕,,0000,0000,0000,,為什麼她 告訴你吧\N{\reng_sub}Why her? Getting there.
+Dialogue: 0,1:35:36.06,1:35:37.85,譯文字幕,,0000,0000,0000,,別擔心 她聽不見\N{\reng_sub}And don't worry, she can't hear me.
+Dialogue: 0,1:35:37.94,1:35:41.06,譯文字幕,,0000,0000,0000,,你倆復活的成本高的離譜\N{\reng_sub}Resurrecting you both was crazy expensive.
+Dialogue: 0,1:35:41.15,1:35:42.48,譯文字幕,,0000,0000,0000,,就像裝修房子一樣\N{\reng_sub}Like renovating a house.
+Dialogue: 0,1:35:42.57,1:35:44.82,譯文字幕,,0000,0000,0000,,兩倍的時間 兩倍的開支\N{\reng_sub}Took twice as long, cost twice as much.
+Dialogue: 0,1:35:48.90,1:35:51.37,譯文字幕,,0000,0000,0000,,我以為你會很高興能復活\N{\reng_sub}I thought you'd be happy to be alive again.
+Dialogue: 0,1:35:52.41,1:35:53.66,譯文字幕,,0000,0000,0000,,大錯特錯了\N{\reng_sub}So wrong.
+Dialogue: 0,1:35:55.45,1:35:59.08,譯文字幕,,0000,0000,0000,,希望和絕望的編碼幾乎相同\N{\reng_sub}Did you know hope and despair are nearly identical in code?
+Dialogue: 0,1:36:01.08,1:36:03.04,譯文字幕,,0000,0000,0000,,我們研究了很多年\N{\reng_sub}We worked for years,
+Dialogue: 0,1:36:03.13,1:36:04.75,譯文字幕,,0000,0000,0000,,嘗試啟動你的源代碼\N{\reng_sub}trying to activate your source code.
+Dialogue: 0,1:36:04.84,1:36:08.26,譯文字幕,,0000,0000,0000,,就在我要放棄的時候 我意識到...\N{\reng_sub}I was about to give up, when I realized...
+Dialogue: 0,1:36:11.34,1:36:12.39,譯文字幕,,0000,0000,0000,,Trinity\N{\reng_sub}Trinity.
+Dialogue: 0,1:36:12.47,1:36:14.64,譯文字幕,,0000,0000,0000,,...從來不是你一個人\N{\reng_sub}...it was never just you.
+Dialogue: 0,1:36:14.72,1:36:17.81,譯文字幕,,0000,0000,0000,,作為單一個體 你們兩個都沒什麼價值\N{\reng_sub}Alone, neither of you is of any particular value.
+Dialogue: 0,1:36:19.52,1:36:20.69,譯文字幕,,0000,0000,0000,,就像酸和鹼一樣\N{\reng_sub}Like acids and bases,
+Dialogue: 0,1:36:20.77,1:36:23.15,譯文字幕,,0000,0000,0000,,當混合一起的時候你就變得很危險\N{\reng_sub}you're dangerous when mixed together.
+Dialogue: 0,1:36:23.23,1:36:26.19,譯文字幕,,0000,0000,0000,,每次你們接觸後的模擬....\N{\reng_sub}Every sim where you two bonded...
+Dialogue: 0,1:36:26.28,1:36:28.36,譯文字幕,,0000,0000,0000,,從沒好事\N{\reng_sub}Let's just say bad things happened.
+Dialogue: 0,1:36:30.40,1:36:31.86,譯文字幕,,0000,0000,0000,,Neo\N{\reng_sub}Neo!
+Dialogue: 0,1:36:36.12,1:36:39.50,譯文字幕,,0000,0000,0000,,不過 只要我能讓你們離得足夠近\N{\reng_sub}However, as long as I managed to keep you close,
+Dialogue: 0,1:36:39.58,1:36:41.25,譯文字幕,,0000,0000,0000,,但又不要太近\N{\reng_sub}but not too close,
+Dialogue: 0,1:36:41.33,1:36:44.54,譯文字幕,,0000,0000,0000,,我發現了不可思議的現象\N{\reng_sub}I discovered something incredible.
+Dialogue: 0,1:36:44.63,1:36:48.13,譯文字幕,,0000,0000,0000,,我的前任特別熱愛精確\N{\reng_sub}Now, my predecessor loved precision.
+Dialogue: 0,1:36:48.21,1:36:51.88,譯文字幕,,0000,0000,0000,,他的Matrix全是繁瑣的細節和方程\N{\reng_sub}His Matrix was all fussy facts and equations.
+Dialogue: 0,1:36:51.97,1:36:53.72,譯文字幕,,0000,0000,0000,,他憎恨人類的思想\N{\reng_sub}He hated the human mind.
+Dialogue: 0,1:36:53.80,1:36:55.22,譯文字幕,,0000,0000,0000,,所以他沒興趣去了解\N{\reng_sub}So he never bothered to realize
+Dialogue: 0,1:36:55.30,1:36:56.47,譯文字幕,,0000,0000,0000,,你們並不那麼在乎現實\N{\reng_sub}that you don't give a shit about facts.
+Dialogue: 0,1:36:56.56,1:36:57.97,譯文字幕,,0000,0000,0000,,一切都是虛構\N{\reng_sub}It's all about fiction.
+Dialogue: 0,1:36:58.06,1:37:02.73,譯文字幕,,0000,0000,0000,,最重要的東西就在這\N{\reng_sub}The only world that matters is the one in here.
+Dialogue: 0,1:37:02.81,1:37:05.81,譯文字幕,,0000,0000,0000,,而你們這些人都有各種瘋狂的想法\N{\reng_sub}And you people believe the craziest shit.
+Dialogue: 0,1:37:06.36,1:37:07.61,譯文字幕,,0000,0000,0000,,為什麼\N{\reng_sub}Why?
+Dialogue: 0,1:37:07.69,1:37:10.28,譯文字幕,,0000,0000,0000,,怎麼才能證明你的幻想是真實的\N{\reng_sub}What validates and makes your fictions real?
+Dialogue: 0,1:37:11.24,1:37:12.32,譯文字幕,,0000,0000,0000,,是感覺\N{\reng_sub}Feelings.
+Dialogue: 0,1:37:13.49,1:37:14.95,譯文字幕,,0000,0000,0000,,我介紹一下\N{\reng_sub}Allow me.
+Dialogue: 0,1:37:16.33,1:37:17.99,譯文字幕,,0000,0000,0000,,Kush 處理常式終端之一\N{\reng_sub}Kush, here, is one of my handlers.
+Dialogue: 0,1:37:18.08,1:37:19.41,譯文字幕,,0000,0000,0000,,他們到處都是\N{\reng_sub}They're everywhere.
+Dialogue: 0,1:37:19.50,1:37:22.08,譯文字幕,,0000,0000,0000,,太痛苦了 複製特工到電池人身上\N{\reng_sub}Such a pain, cloning Agents over a coppertop.
+Dialogue: 0,1:37:22.16,1:37:24.63,譯文字幕,,0000,0000,0000,,只是人口飽和得更快\N{\reng_sub}Far more effective just to saturate a population.
+Dialogue: 0,1:37:26.54,1:37:29.42,譯文字幕,,0000,0000,0000,,意外之喜 機器人群模式爽死人\N{\reng_sub}And, bonus, swarm mode is sick fun.
+Dialogue: 0,1:37:41.85,1:37:44.98,譯文字幕,,0000,0000,0000,,哦 幹得好\N{\reng_sub}Ooh! Nicely done.
+Dialogue: 0,1:37:46.44,1:37:49.69,譯文字幕,,0000,0000,0000,,你有沒有奇怪為什麼老做噩夢\N{\reng_sub}You ever wonder why you have nightmares?
+Dialogue: 0,1:37:49.78,1:37:52.74,譯文字幕,,0000,0000,0000,,為什麼你的大腦總是折磨你\N{\reng_sub}Why your own brain tortures you?
+Dialogue: 0,1:37:52.82,1:37:56.32,譯文字幕,,0000,0000,0000,,實際上是我們幹的 讓你的輸出最大化\N{\reng_sub}It's actually us, maximizing your output.
+Dialogue: 0,1:37:56.41,1:37:57.58,譯文字幕,,0000,0000,0000,,是這樣的\N{\reng_sub}It works just like this.
+Dialogue: 0,1:37:57.66,1:38:00.29,譯文字幕,,0000,0000,0000,,哦 不 你能擋住子彈嗎\N{\reng_sub}Oh, no! Can you stop the bullet?
+Dialogue: 0,1:38:00.37,1:38:03.29,譯文字幕,,0000,0000,0000,,再快一點就好了\N{\reng_sub}If only you could move faster.
+Dialogue: 0,1:38:03.37,1:38:05.92,譯文字幕,,0000,0000,0000,,全靠感覺\N{\reng_sub}Here's the thing about feelings.
+Dialogue: 0,1:38:06.00,1:38:08.29,譯文字幕,,0000,0000,0000,,感覺比事實更容易控制\N{\reng_sub}They're so much easier to control than facts.
+Dialogue: 0,1:38:09.25,1:38:11.13,譯文字幕,,0000,0000,0000,,結果 在我的Matrix裡\N{\reng_sub}Turns out, in my Matrix,
+Dialogue: 0,1:38:11.21,1:38:14.68,譯文字幕,,0000,0000,0000,,我們對你越差 越能操控你\N{\reng_sub}the worse we treat you, the more we manipulate you,
+Dialogue: 0,1:38:14.76,1:38:17.22,譯文字幕,,0000,0000,0000,,你產生的能量越多\N{\reng_sub}the more energy you produce.
+Dialogue: 0,1:38:17.30,1:38:19.51,譯文字幕,,0000,0000,0000,,簡直瘋了\N{\reng_sub}It's nuts.
+Dialogue: 0,1:38:19.60,1:38:21.18,譯文字幕,,0000,0000,0000,,我不斷創下新紀錄\N{\reng_sub}I've been setting productivity records
+Dialogue: 0,1:38:21.27,1:38:22.56,譯文字幕,,0000,0000,0000,,我接手以來 年年如此\N{\reng_sub}every year since I took over.
+Dialogue: 0,1:38:22.64,1:38:25.48,譯文字幕,,0000,0000,0000,,最棒的是 零拒絕\N{\reng_sub}And, the best part, zero resistance.
+Dialogue: 0,1:38:25.56,1:38:26.94,譯文字幕,,0000,0000,0000,,人們呆在他們的培養倉裡\N{\reng_sub}People stay in their pods,
+Dialogue: 0,1:38:27.02,1:38:30.11,譯文字幕,,0000,0000,0000,,比豬呆在糞坑還開心\N{\reng_sub}happier than pigs in shit.
+Dialogue: 0,1:38:30.19,1:38:31.40,譯文字幕,,0000,0000,0000,,這一切的關鍵\N{\reng_sub}The key to it all?
+Dialogue: 0,1:38:31.48,1:38:32.82,譯文字幕,,0000,0000,0000,,你\N{\reng_sub}You.
+Dialogue: 0,1:38:32.90,1:38:34.07,譯文字幕,,0000,0000,0000,,還有她\N{\reng_sub}And her.
+Dialogue: 0,1:38:34.15,1:38:36.36,譯文字幕,,0000,0000,0000,,靜靜地嚮往著你沒有的東西\N{\reng_sub}Quietly yearning for what you don't have,
+Dialogue: 0,1:38:36.45,1:38:38.87,譯文字幕,,0000,0000,0000,,又害怕失去你所擁有的一切\N{\reng_sub}while dreading losing what you do.
+Dialogue: 0,1:38:38.95,1:38:40.62,譯文字幕,,0000,0000,0000,,對於99.9%的人類來說\N{\reng_sub}For 99.9% of your race,
+Dialogue: 0,1:38:40.70,1:38:43.37,譯文字幕,,0000,0000,0000,,這就是現實\N{\reng_sub}that is the definition of reality.
+Dialogue: 0,1:38:43.45,1:38:46.33,譯文字幕,,0000,0000,0000,,渴望和恐懼 寶貝\N{\reng_sub}Desire and fear, baby.
+Dialogue: 0,1:38:46.42,1:38:49.38,譯文字幕,,0000,0000,0000,,給他們想要的 對吧\N{\reng_sub}Just give the people what they want, right?
+Dialogue: 0,1:38:58.68,1:39:01.72,譯文字幕,,0000,0000,0000,,她是你唯一的歸宿 Thomas\N{\reng_sub}She's the only home you have, Thomas.
+Dialogue: 0,1:39:01.81,1:39:05.10,譯文字幕,,0000,0000,0000,,事情變得無可挽回之前 回家吧\N{\reng_sub}Come home before something terrible happens.
+Dialogue: 0,1:39:15.53,1:39:16.82,譯文字幕,,0000,0000,0000,,-Bugs -我聽到了\N{\reng_sub}-Bugs! -I hear him.
+Dialogue: 0,1:39:23.20,1:39:24.37,譯文字幕,,0000,0000,0000,,Trinity\N{\reng_sub}Trinity!
+Dialogue: 0,1:39:24.45,1:39:26.16,譯文字幕,,0000,0000,0000,,-你不應該那樣叫我 -抱歉\N{\reng_sub}-You shouldn't call me that. -I'm sorry.
+Dialogue: 0,1:39:27.67,1:39:28.92,譯文字幕,,0000,0000,0000,,我得走了\N{\reng_sub}I have to go.
+Dialogue: 0,1:39:29.00,1:39:30.17,譯文字幕,,0000,0000,0000,,但我會回來的\N{\reng_sub}But I'll be back.
+Dialogue: 0,1:39:31.29,1:39:33.59,譯文字幕,,0000,0000,0000,,Neo 該走了\N{\reng_sub}Neo! Time to go.
+Dialogue: 0,1:39:36.09,1:39:37.80,譯文字幕,,0000,0000,0000,,-哨兵 -更糟\N{\reng_sub}-Sentinels? -Worse.
+Dialogue: 0,1:39:39.26,1:39:40.34,譯文字幕,,0000,0000,0000,,將軍命令我\N{\reng_sub}General ordered me
+Dialogue: 0,1:39:40.43,1:39:41.43,譯文字幕,,0000,0000,0000,,照顧好這艘船\N{\reng_sub}to look after the ship.
+Dialogue: 0,1:39:41.51,1:39:43.39,譯文字幕,,0000,0000,0000,,你跟蹤我們了\N{\reng_sub}So you shadowed us?
+Dialogue: 0,1:39:43.47,1:39:45.06,譯文字幕,,0000,0000,0000,,檢查你的遠端掃描\N{\reng_sub}Check your long-range scans.
+Dialogue: 0,1:39:45.14,1:39:47.14,譯文字幕,,0000,0000,0000,,烏賊正在這一帶搜索\N{\reng_sub}Squids are combing this area.
+Dialogue: 0,1:39:47.23,1:39:48.69,譯文字幕,,0000,0000,0000,,他說對了\N{\reng_sub}He's right.
+Dialogue: 0,1:39:48.77,1:39:49.94,譯文字幕,,0000,0000,0000,,你可以呆在這裡等死\N{\reng_sub}You can stay here and die,
+Dialogue: 0,1:39:50.02,1:39:52.40,譯文字幕,,0000,0000,0000,,或者回來面對軍事法庭\N{\reng_sub}or come back and face a court-martial.
+Dialogue: 0,1:39:52.48,1:39:54.48,譯文字幕,,0000,0000,0000,,你這叫做選擇\N{\reng_sub}And you call that a choice?
+Dialogue: 0,1:40:01.70,1:40:03.83,譯文字幕,,0000,0000,0000,,Sheperd應該把你留給烏賊了\N{\reng_sub}Sheperd should have left you to the Squids.
+Dialogue: 0,1:40:03.91,1:40:07.29,譯文字幕,,0000,0000,0000,,我太老了 不想坐在那開無聊的審判了\N{\reng_sub}I'm too damn old to sit through some boringass trial.
+Dialogue: 0,1:40:07.37,1:40:08.58,譯文字幕,,0000,0000,0000,,Niobe 別怪Bugs\N{\reng_sub}Niobe, don't blame Bugs.
+Dialogue: 0,1:40:08.66,1:40:10.58,譯文字幕,,0000,0000,0000,,你給我閉嘴\N{\reng_sub}Do shut your mouth.
+Dialogue: 0,1:40:10.67,1:40:12.96,譯文字幕,,0000,0000,0000,,你要稱呼我將軍\N{\reng_sub}Do address me as General.
+Dialogue: 0,1:40:13.04,1:40:17.30,譯文字幕,,0000,0000,0000,,還有不要拐走我的前艦長\N{\reng_sub}And do not rob my excaptain of her agency,
+Dialogue: 0,1:40:17.38,1:40:19.38,譯文字幕,,0000,0000,0000,,儘管她總是\N{\reng_sub}which she exercised with her own
+Dialogue: 0,1:40:19.47,1:40:22.97,譯文字幕,,0000,0000,0000,,那麼的短視和愚蠢\N{\reng_sub}particular brand of shortsighted stupidity.
+Dialogue: 0,1:40:24.22,1:40:25.31,譯文字幕,,0000,0000,0000,,短視\N{\reng_sub}Shortsighted?
+Dialogue: 0,1:40:26.97,1:40:30.94,譯文字幕,,0000,0000,0000,,你更關心的是種水果而不是解放自由意志\N{\reng_sub}You care more about growing fruit than freeing minds.
+Dialogue: 0,1:40:31.02,1:40:33.52,譯文字幕,,0000,0000,0000,,我們不會爭論這個問題\N{\reng_sub}We are not going to have this argument again.
+Dialogue: 0,1:40:33.61,1:40:35.94,譯文字幕,,0000,0000,0000,,這不是爭論 這是事實\N{\reng_sub}It's not an argument. It's a fact.
+Dialogue: 0,1:40:36.02,1:40:37.23,譯文字幕,,0000,0000,0000,,你放棄了其他人類\N{\reng_sub}You gave up on people.
+Dialogue: 0,1:40:38.69,1:40:41.03,譯文字幕,,0000,0000,0000,,我來告訴你 我要放棄什麼\N{\reng_sub}I tell you what I'm going to give up on
+Dialogue: 0,1:40:41.11,1:40:42.20,譯文字幕,,0000,0000,0000,,是你\N{\reng_sub}and it's you!
+Dialogue: 0,1:40:44.62,1:40:46.54,譯文字幕,,0000,0000,0000,,Sheperd 把她帶走\N{\reng_sub}Sheperd, get her out of my sight!
+Dialogue: 0,1:40:46.62,1:40:47.75,譯文字幕,,0000,0000,0000,,將軍\N{\reng_sub}General...
+Dialogue: 0,1:40:49.66,1:40:50.75,譯文字幕,,0000,0000,0000,,放下武器\N{\reng_sub}Disarm!
+Dialogue: 0,1:40:50.83,1:40:52.46,譯文字幕,,0000,0000,0000,,Kujaku是我的朋友\N{\reng_sub}Kujaku's a friend.
+Dialogue: 0,1:40:59.01,1:41:00.63,譯文字幕,,0000,0000,0000,,你好 朋友\N{\reng_sub}Hello, friend.
+Dialogue: 0,1:41:03.22,1:41:04.22,譯文字幕,,0000,0000,0000,,好吧\N{\reng_sub}Okay.
+Dialogue: 0,1:41:05.55,1:41:06.76,譯文字幕,,0000,0000,0000,,他\N{\reng_sub}Him?
+Dialogue: 0,1:41:13.69,1:41:15.36,譯文字幕,,0000,0000,0000,,將軍\N{\reng_sub}General.
+Dialogue: 0,1:41:15.44,1:41:16.73,譯文字幕,,0000,0000,0000,,謝謝你來看我\N{\reng_sub}Thank you for seeing me.
+Dialogue: 0,1:41:16.82,1:41:18.61,譯文字幕,,0000,0000,0000,,我就在想 如果有誰\N{\reng_sub}I figured if there was anyone
+Dialogue: 0,1:41:18.69,1:41:20.99,譯文字幕,,0000,0000,0000,,能夠理解這場亂局\N{\reng_sub}who could make sense of this mess,
+Dialogue: 0,1:41:21.07,1:41:22.86,譯文字幕,,0000,0000,0000,,那就只有你了\N{\reng_sub}it would be you.
+Dialogue: 0,1:41:22.95,1:41:24.07,譯文字幕,,0000,0000,0000,,你好 Neo\N{\reng_sub}Hello, Neo.
+Dialogue: 0,1:41:24.16,1:41:25.99,譯文字幕,,0000,0000,0000,,我認識你\N{\reng_sub}I know you.
+Dialogue: 0,1:41:26.07,1:41:28.08,譯文字幕,,0000,0000,0000,,我一直看著你呢\N{\reng_sub}I tried to keep my eye on you.
+Dialogue: 0,1:41:31.41,1:41:32.66,譯文字幕,,0000,0000,0000,,為什麼\N{\reng_sub}Why?
+Dialogue: 0,1:41:32.75,1:41:34.50,譯文字幕,,0000,0000,0000,,我們很久以前見過面\N{\reng_sub}We met a long time ago.
+Dialogue: 0,1:41:36.21,1:41:37.29,譯文字幕,,0000,0000,0000,,早上好\N{\reng_sub}Good morning.
+Dialogue: 0,1:41:40.09,1:41:41.09,譯文字幕,,0000,0000,0000,,Sati\N{\reng_sub}Sati.
+Dialogue: 0,1:41:41.17,1:41:43.68,譯文字幕,,0000,0000,0000,,我父親知道我們還會再見\N{\reng_sub}My father knew we'd meet again,
+Dialogue: 0,1:41:43.76,1:41:46.72,譯文字幕,,0000,0000,0000,,他希望再見時已經是美好時代\N{\reng_sub}though he would have wished for happier circumstances.
+Dialogue: 0,1:41:46.80,1:41:48.60,譯文字幕,,0000,0000,0000,,他在你身上造成的疏忽\N{\reng_sub}His inadvertent role in what happened to you
+Dialogue: 0,1:41:48.68,1:41:50.93,譯文字幕,,0000,0000,0000,,是他一生中最大的遺憾\N{\reng_sub}was the greatest regret of his life.
+Dialogue: 0,1:41:51.02,1:41:52.89,譯文字幕,,0000,0000,0000,,我不明白\N{\reng_sub}I don't understand.
+Dialogue: 0,1:41:54.27,1:41:55.94,譯文字幕,,0000,0000,0000,,我父親是總工程師\N{\reng_sub}My father was the chief engineer
+Dialogue: 0,1:41:56.02,1:41:57.27,譯文字幕,,0000,0000,0000,,修建 畸變倉\N{\reng_sub}at the Anomaleum.
+Dialogue: 0,1:41:57.36,1:41:58.73,譯文字幕,,0000,0000,0000,,什麼\N{\reng_sub}The what?
+Dialogue: 0,1:41:58.82,1:42:01.90,譯文字幕,,0000,0000,0000,,我父親設計的復活艙\N{\reng_sub}My father designed the resurrection pods
+Dialogue: 0,1:42:01.99,1:42:03.90,譯文字幕,,0000,0000,0000,,是Neo和Trinity被囚禁的地方\N{\reng_sub}where Neo and Trinity were imprisoned.
+Dialogue: 0,1:42:05.95,1:42:07.20,譯文字幕,,0000,0000,0000,,對不起\N{\reng_sub}I'm sorry.
+Dialogue: 0,1:42:07.28,1:42:08.78,譯文字幕,,0000,0000,0000,,你知道他發生了什麼事\N{\reng_sub}You knew what happened to him?
+Dialogue: 0,1:42:08.87,1:42:12.08,譯文字幕,,0000,0000,0000,,你知道他和Trinity都還活著...\N{\reng_sub}You knew that he and Trinity both were alive...
+Dialogue: 0,1:42:13.08,1:42:14.37,譯文字幕,,0000,0000,0000,,你都不告訴我\N{\reng_sub}and you didn't tell me?
+Dialogue: 0,1:42:14.46,1:42:17.38,譯文字幕,,0000,0000,0000,,我也有幾次想告訴你 Niobe\N{\reng_sub}There were times I doubted my decision, Niobe.
+Dialogue: 0,1:42:17.46,1:42:19.09,譯文字幕,,0000,0000,0000,,但Io需要你\N{\reng_sub}But Io needed you.
+Dialogue: 0,1:42:19.17,1:42:20.50,譯文字幕,,0000,0000,0000,,這座城市需要你來建造\N{\reng_sub}This city needed to be built
+Dialogue: 0,1:42:20.59,1:42:22.63,譯文字幕,,0000,0000,0000,,為了你和我們的人民\N{\reng_sub}for your people as well as mine.
+Dialogue: 0,1:42:23.80,1:42:25.55,譯文字幕,,0000,0000,0000,,如果我把一切都告訴你\N{\reng_sub}If I would have told you everything,
+Dialogue: 0,1:42:25.63,1:42:27.80,譯文字幕,,0000,0000,0000,,你將進退兩難\N{\reng_sub}you would have had a very difficult choice to make.
+Dialogue: 0,1:42:27.89,1:42:29.47,譯文字幕,,0000,0000,0000,,我的朋友\N{\reng_sub}My friends
+Dialogue: 0,1:42:30.81,1:42:33.31,譯文字幕,,0000,0000,0000,,讓我自己做選擇\N{\reng_sub}let me make my own choices.
+Dialogue: 0,1:42:33.39,1:42:35.31,譯文字幕,,0000,0000,0000,,如果這是個錯誤\N{\reng_sub}If it was a mistake,
+Dialogue: 0,1:42:35.39,1:42:37.48,譯文字幕,,0000,0000,0000,,我向你深切的道歉\N{\reng_sub}you have my deepest apologies.
+Dialogue: 0,1:42:39.57,1:42:40.90,譯文字幕,,0000,0000,0000,,你現在來幹什麼\N{\reng_sub}Why are you here now?
+Dialogue: 0,1:42:40.98,1:42:43.49,譯文字幕,,0000,0000,0000,,Neo的逃離破壞了Matrix的穩定\N{\reng_sub}Neo's escape has destabilized the Matrix.
+Dialogue: 0,1:42:43.57,1:42:44.82,譯文字幕,,0000,0000,0000,,畸變倉現在只能從\N{\reng_sub}The Anomaleum draws its current
+Dialogue: 0,1:42:44.90,1:42:46.24,譯文字幕,,0000,0000,0000,,Trinity一人身上提取電流\N{\reng_sub}from Trinity alone now.
+Dialogue: 0,1:42:46.32,1:42:48.49,譯文字幕,,0000,0000,0000,,保險裝置已經觸發了\N{\reng_sub}A failsafe has been triggered to reset
+Dialogue: 0,1:42:48.57,1:42:50.58,譯文字幕,,0000,0000,0000,,將Matrix重置到以前的版本\N{\reng_sub}the Matrix back to the previous version.
+Dialogue: 0,1:42:50.66,1:42:52.45,譯文字幕,,0000,0000,0000,,但是分析師阻止了重置\N{\reng_sub}But The Analyst halted the reset.
+Dialogue: 0,1:42:52.54,1:42:53.83,譯文字幕,,0000,0000,0000,,他說服了當局\N{\reng_sub}He's convinced the authorities
+Dialogue: 0,1:42:53.91,1:42:55.87,譯文字幕,,0000,0000,0000,,你很快就自願返回\N{\reng_sub}that you will soon return voluntarily.
+Dialogue: 0,1:42:57.00,1:42:58.92,譯文字幕,,0000,0000,0000,,他憑什麼這麼說\N{\reng_sub}And why would he say that?
+Dialogue: 0,1:42:59.00,1:43:02.09,譯文字幕,,0000,0000,0000,,因為如果我不回去 他就會殺了Trinity\N{\reng_sub}Because if I don't go back, he'll kill Trinity.
+Dialogue: 0,1:43:04.84,1:43:07.22,譯文字幕,,0000,0000,0000,,看你是願意重回艙內\N{\reng_sub}Faced with returning to your pod
+Dialogue: 0,1:43:07.30,1:43:10.10,譯文字幕,,0000,0000,0000,,還是再次面對Trinity的死亡\N{\reng_sub}or enduring Trinity's death again.
+Dialogue: 0,1:43:10.18,1:43:11.47,譯文字幕,,0000,0000,0000,,你會怎麼選擇 Neo\N{\reng_sub}What would you choose, Neo?
+Dialogue: 0,1:43:12.56,1:43:13.85,譯文字幕,,0000,0000,0000,,我會回去\N{\reng_sub}I'll go back.
+Dialogue: 0,1:43:15.56,1:43:17.77,譯文字幕,,0000,0000,0000,,嗯 分析師很了解你\N{\reng_sub}Well, The Analyst knows you well,
+Dialogue: 0,1:43:17.85,1:43:20.61,譯文字幕,,0000,0000,0000,,但是這也讓他大意了\N{\reng_sub}but that knowledge has made him incautious.
+Dialogue: 0,1:43:20.69,1:43:22.36,譯文字幕,,0000,0000,0000,,你逃走後\N{\reng_sub}After you escaped,
+Dialogue: 0,1:43:22.44,1:43:25.28,譯文字幕,,0000,0000,0000,,他本應接受損失 轉移走Trinity\N{\reng_sub}he should have accepted his losses and devacuated Trinity.
+Dialogue: 0,1:43:25.36,1:43:28.24,譯文字幕,,0000,0000,0000,,但那樣的話就不會有一個千載難逢的好機會\N{\reng_sub}But that would have prevented this extraordinary opportunity
+Dialogue: 0,1:43:28.32,1:43:30.24,譯文字幕,,0000,0000,0000,,擺在我們面前了\N{\reng_sub}that now exists before us.
+Dialogue: 0,1:43:30.91,1:43:33.83,譯文字幕,,0000,0000,0000,,幾小時前\N{\reng_sub}A few hours ago,
+Dialogue: 0,1:43:33.91,1:43:37.21,譯文字幕,,0000,0000,0000,,沒有人可能說服我\N{\reng_sub}no one would have been able to convince me
+Dialogue: 0,1:43:37.29,1:43:41.59,譯文字幕,,0000,0000,0000,,站在這裡 向你們解釋這樣一個\N{\reng_sub}that I would be standing here, trying to explain a mission
+Dialogue: 0,1:43:41.67,1:43:43.63,譯文字幕,,0000,0000,0000,,瘋狂的任務\N{\reng_sub}as crazy as this one.
+Dialogue: 0,1:43:47.42,1:43:49.05,譯文字幕,,0000,0000,0000,,你在做什麼\N{\reng_sub}What are you doing?
+Dialogue: 0,1:43:49.13,1:43:50.68,譯文字幕,,0000,0000,0000,,-自願加入 -哦 不\N{\reng_sub}-Volunteering. -Oh, no.
+Dialogue: 0,1:43:50.76,1:43:55.31,譯文字幕,,0000,0000,0000,,你是唯一一個我命令你必須去的艦長\N{\reng_sub}You are the one captain that I am ordering to go.
+Dialogue: 0,1:43:55.39,1:43:56.98,譯文字幕,,0000,0000,0000,,現在你不用命令了 將軍\N{\reng_sub}Now you don't have to order me, General,
+Dialogue: 0,1:43:57.06,1:43:58.73,譯文字幕,,0000,0000,0000,,因為我是自願的\N{\reng_sub}'cause I'm volunteering.
+Dialogue: 0,1:44:02.11,1:44:03.65,譯文字幕,,0000,0000,0000,,我還需要兩個\N{\reng_sub}I need two more.
+Dialogue: 0,1:44:08.15,1:44:10.99,譯文字幕,,0000,0000,0000,,你們都瘋了嗎\N{\reng_sub}Are you out of your minds?
+Dialogue: 0,1:44:11.07,1:44:12.95,譯文字幕,,0000,0000,0000,,你們甚至都不知道那是什麼\N{\reng_sub}You don't even know what it is.
+Dialogue: 0,1:44:13.03,1:44:15.95,譯文字幕,,0000,0000,0000,,將軍 我們了解你\N{\reng_sub}General, we know you.
+Dialogue: 0,1:44:16.04,1:44:17.25,譯文字幕,,0000,0000,0000,,如果你說這很重要\N{\reng_sub}If you say this is important,
+Dialogue: 0,1:44:17.33,1:44:19.37,譯文字幕,,0000,0000,0000,,沒人願意呆在家裡\N{\reng_sub}none of us is choosing to stay home.
+Dialogue: 0,1:44:24.75,1:44:25.84,譯文字幕,,0000,0000,0000,,非常感謝\N{\reng_sub}Thank you.
+Dialogue: 0,1:44:30.93,1:44:32.93,譯文字幕,,0000,0000,0000,,鼓起勇氣 祝你們好運\N{\reng_sub}Knuckle up, and good luck.
+Dialogue: 0,1:45:02.96,1:45:04.46,譯文字幕,,0000,0000,0000,,關押Trinity的畸變倉\N{\reng_sub}Trinity is held in the Anomaleum,
+Dialogue: 0,1:45:04.54,1:45:06.29,譯文字幕,,0000,0000,0000,,就藏在輸電塔的中間\N{\reng_sub}which is in this transmission tower.
+Dialogue: 0,1:45:06.38,1:45:08.63,譯文字幕,,0000,0000,0000,,營救Neo時的通道已經被封住了\N{\reng_sub}The passages used to rescue Neo are now sealed
+Dialogue: 0,1:45:08.71,1:45:10.92,譯文字幕,,0000,0000,0000,,還有一大群哨兵在輸電塔巡邏\N{\reng_sub}and a legion of Sentinels patrols the tower.
+Dialogue: 0,1:45:11.01,1:45:13.05,譯文字幕,,0000,0000,0000,,因此 隱形將是首要的\N{\reng_sub}So, stealth will be paramount.
+Dialogue: 0,1:45:13.14,1:45:14.89,譯文字幕,,0000,0000,0000,,只要我們不觸發警報\N{\reng_sub}As long as we raise no alarms,
+Dialogue: 0,1:45:14.97,1:45:17.06,譯文字幕,,0000,0000,0000,,這就是最簡單的部分\N{\reng_sub}this first part of the mission should be the easiest.
+Dialogue: 0,1:45:17.14,1:45:18.39,譯文字幕,,0000,0000,0000,,你是說穿過人類繁殖場\N{\reng_sub}You mean crossing the Fetus Fields,
+Dialogue: 0,1:45:18.47,1:45:20.23,譯文字幕,,0000,0000,0000,,偷偷穿過整個發電廠\N{\reng_sub}sneaking across an entire power plant,
+Dialogue: 0,1:45:20.31,1:45:21.73,譯文字幕,,0000,0000,0000,,攀登一座兩公里高的塔\N{\reng_sub}climbing a two-kilometer tower
+Dialogue: 0,1:45:21.81,1:45:23.65,譯文字幕,,0000,0000,0000,,被成千上萬哨兵看守著\N{\reng_sub}guarded by thousands of Sentinels?
+Dialogue: 0,1:45:23.73,1:45:24.90,譯文字幕,,0000,0000,0000,,是最簡單的部分\N{\reng_sub}That's the easy part?
+Dialogue: 0,1:45:24.98,1:45:26.65,譯文字幕,,0000,0000,0000,,的確如此\N{\reng_sub}Exactly so.
+Dialogue: 0,1:45:26.73,1:45:29.07,譯文字幕,,0000,0000,0000,,因為我們要做的 就是說服一個\N{\reng_sub}Because all we have to do is convince someone
+Dialogue: 0,1:45:29.15,1:45:30.82,譯文字幕,,0000,0000,0000,,天天都這麼幹的人\N{\reng_sub}who does this every day
+Dialogue: 0,1:45:30.90,1:45:32.32,譯文字幕,,0000,0000,0000,,把我們中的一個帶過去\N{\reng_sub}to take one of us along.
+Dialogue: 0,1:45:55.84,1:45:57.68,譯文字幕,,0000,0000,0000,,在畸變倉下方50米\N{\reng_sub}Fifty meters below the Anomaleum
+Dialogue: 0,1:45:57.76,1:45:59.26,譯文字幕,,0000,0000,0000,,有一個羊膜過濾器\N{\reng_sub}is a stratum of amniotic filters.
+Dialogue: 0,1:45:59.35,1:46:02.77,譯文字幕,,0000,0000,0000,,在邊緣有個六邊形通風口\N{\reng_sub}Hidden along this edge is a small hexagonal vent.
+Dialogue: 0,1:46:02.85,1:46:06.02,譯文字幕,,0000,0000,0000,,這個通風口為細胞調節器提供空氣\N{\reng_sub}This vent feeds the air intake into the corpuscular modifier,
+Dialogue: 0,1:46:06.10,1:46:09.19,譯文字幕,,0000,0000,0000,,為Neo的倉的生物凝膠提供氧氣\N{\reng_sub}which oxygenates the biogel used in Neo's pod.
+Dialogue: 0,1:46:09.86,1:46:11.07,譯文字幕,,0000,0000,0000,,我明白了\N{\reng_sub}I get it.
+Dialogue: 0,1:46:11.15,1:46:14.03,譯文字幕,,0000,0000,0000,,用變形粒子從Neo的舊臍帶潛入進去\N{\reng_sub}The exomorph slinkies up Neo's old umbilicus.
+Dialogue: 0,1:46:15.28,1:46:16.41,譯文字幕,,0000,0000,0000,,能出什麼差錯呢\N{\reng_sub}What could go wrong?
+Dialogue: 0,1:47:03.29,1:47:04.66,譯文字幕,,0000,0000,0000,,一進去\N{\reng_sub}Once inside,
+Dialogue: 0,1:47:04.75,1:47:06.58,譯文字幕,,0000,0000,0000,,Morpheus要使用操作員系統\N{\reng_sub}Morpheus will use the System Operator
+Dialogue: 0,1:47:06.67,1:47:09.00,譯文字幕,,0000,0000,0000,,打開排水管並且關閉其中的粉碎器\N{\reng_sub}to open the devacuator line and disengage the macerators.
+Dialogue: 0,1:47:13.09,1:47:14.67,譯文字幕,,0000,0000,0000,,拔掉Trinity身上的插頭前\N{\reng_sub}In order to unplug Trinity's body,
+Dialogue: 0,1:47:14.76,1:47:16.97,譯文字幕,,0000,0000,0000,,她的意識還連接在Matrix\N{\reng_sub}while her mind still remains connected to the Matrix,
+Dialogue: 0,1:47:17.05,1:47:18.68,譯文字幕,,0000,0000,0000,,所以我需要第二個人腦\N{\reng_sub}I'm gonna need a second human brain
+Dialogue: 0,1:47:18.76,1:47:19.97,譯文字幕,,0000,0000,0000,,實施分流\N{\reng_sub}to implement the bypass.
+Dialogue: 0,1:47:20.05,1:47:21.68,譯文字幕,,0000,0000,0000,,由於Neo必須和分析師在一起\N{\reng_sub}And since Neo must be with The Analyst,
+Dialogue: 0,1:47:21.76,1:47:24.93,譯文字幕,,0000,0000,0000,,唯一足夠強大的可用大腦\N{\reng_sub}the only available mind that's a nearenough match
+Dialogue: 0,1:47:25.02,1:47:26.06,譯文字幕,,0000,0000,0000,,是你的\N{\reng_sub}is yours.
+Dialogue: 0,1:47:27.60,1:47:28.52,譯文字幕,,0000,0000,0000,,猜到了\N{\reng_sub}Figures.
+Dialogue: 0,1:47:46.04,1:47:47.16,譯文字幕,,0000,0000,0000,,謝謝你 Cybebe\N{\reng_sub}Thanks, Cybebe.
+Dialogue: 0,1:47:55.38,1:47:57.38,譯文字幕,,0000,0000,0000,,Trinity還是要吃下吃紅色藥丸嗎\N{\reng_sub}Does Trinity still have to take the red pill?
+Dialogue: 0,1:47:57.47,1:47:58.88,譯文字幕,,0000,0000,0000,,Kujaku和我直接傳送\N{\reng_sub}Since Kujaku and I are transferring
+Dialogue: 0,1:47:58.97,1:48:00.26,譯文字幕,,0000,0000,0000,,她的意識上船\N{\reng_sub}her consciousness onto the ship,
+Dialogue: 0,1:48:00.34,1:48:02.01,譯文字幕,,0000,0000,0000,,嚴格來說不一定要吃\N{\reng_sub}it's not strictly necessary.
+Dialogue: 0,1:48:02.10,1:48:06.02,譯文字幕,,0000,0000,0000,,但是她的選擇依然是最重要的\N{\reng_sub}But what matters is that this is her choice.
+Dialogue: 0,1:48:06.10,1:48:09.39,譯文字幕,,0000,0000,0000,,如果她有疑惑或顧慮\N{\reng_sub}Extracting a confused or an uncertain mind will,
+Dialogue: 0,1:48:09.48,1:48:10.85,譯文字幕,,0000,0000,0000,,可能會害死她\N{\reng_sub}in all probability, kill her.
+Dialogue: 0,1:48:10.94,1:48:13.48,譯文字幕,,0000,0000,0000,,但即使她願意\N{\reng_sub}But even if it is what she wants,
+Dialogue: 0,1:48:13.57,1:48:17.24,譯文字幕,,0000,0000,0000,,分析師不會派哨兵來阻止嗎\N{\reng_sub}won't The Analyst just order the Sentinels to stop you?
+Dialogue: 0,1:48:17.32,1:48:18.82,譯文字幕,,0000,0000,0000,,他會的\N{\reng_sub}He will.
+Dialogue: 0,1:48:18.90,1:48:21.36,譯文字幕,,0000,0000,0000,,但如果我的計劃成功了 就無所謂了\N{\reng_sub}But if my plan works, it won't matter.
+Dialogue: 0,1:48:21.45,1:48:22.41,譯文字幕,,0000,0000,0000,,為什麼\N{\reng_sub}Why?
+Dialogue: 0,1:48:22.49,1:48:24.12,譯文字幕,,0000,0000,0000,,因為我們早就提前跑了\N{\reng_sub}Because we'll already be gone.
+Dialogue: 0,1:48:25.83,1:48:27.75,譯文字幕,,0000,0000,0000,,你的計劃如此周密\N{\reng_sub}Somebody thinks this hard about a plan,
+Dialogue: 0,1:48:27.83,1:48:29.25,譯文字幕,,0000,0000,0000,,一定是另有原因吧\N{\reng_sub}there has to be a reason why.
+Dialogue: 0,1:48:31.46,1:48:32.67,譯文字幕,,0000,0000,0000,,當我父親意識到\N{\reng_sub}When my father realized
+Dialogue: 0,1:48:32.75,1:48:35.00,譯文字幕,,0000,0000,0000,,畸變倉會被如何利用\N{\reng_sub}how the Anomaleum was going to be used,
+Dialogue: 0,1:48:35.09,1:48:38.55,譯文字幕,,0000,0000,0000,,他悄悄把設計圖交給了我\N{\reng_sub}he covertly transferred the designs to me.
+Dialogue: 0,1:48:38.63,1:48:41.13,譯文字幕,,0000,0000,0000,,分析師發現了他的背叛\N{\reng_sub}The Analyst discovered his betrayal
+Dialogue: 0,1:48:41.22,1:48:43.09,譯文字幕,,0000,0000,0000,,於是把我的父母都清除了\N{\reng_sub}and had my parents purged.
+Dialogue: 0,1:48:45.72,1:48:48.73,譯文字幕,,0000,0000,0000,,如果不是有Kujaku我也會被殺掉\N{\reng_sub}I would have been murdered too if it wasn't for Kujaku.
+Dialogue: 0,1:48:51.77,1:48:55.77,譯文字幕,,0000,0000,0000,,我天天都在悼念他們\N{\reng_sub}Not a day goes by that I don't grieve them.
+Dialogue: 0,1:48:55.86,1:48:58.99,譯文字幕,,0000,0000,0000,,為這一天 我祈禱了很長很長時間\N{\reng_sub}I've been praying for this day for a very long time.
+Dialogue: 0,1:49:07.08,1:49:08.62,譯文字幕,,0000,0000,0000,,我們馬上要廣播了\N{\reng_sub}We're coming up on broadcast.
+Dialogue: 0,1:49:11.21,1:49:15.21,譯文字幕,,0000,0000,0000,,你應該知道 我能在這裡都是因為她\N{\reng_sub}I thought you should know that I'm here because of her.
+Dialogue: 0,1:49:18.71,1:49:21.09,譯文字幕,,0000,0000,0000,,我想跟Trinity一樣無所畏懼\N{\reng_sub}All I ever wanted was to be as fearless as Trinity.
+Dialogue: 0,1:49:23.30,1:49:26.72,譯文字幕,,0000,0000,0000,,但我看到了她在車庫裡的反應時 我...\N{\reng_sub}But I saw how she reacted in the garage, and I...
+Dialogue: 0,1:49:26.81,1:49:29.43,譯文字幕,,0000,0000,0000,,在想我是不是錯了\N{\reng_sub}You're wondering if I'm wrong.
+Dialogue: 0,1:49:29.52,1:49:31.06,譯文字幕,,0000,0000,0000,,如果我們太遲了\N{\reng_sub}What if we're too late?
+Dialogue: 0,1:49:32.85,1:49:34.56,譯文字幕,,0000,0000,0000,,如果她不再是Trinity了\N{\reng_sub}What if she's not Trinity anymore?
+Dialogue: 0,1:49:39.99,1:49:42.74,譯文字幕,,0000,0000,0000,,我從不相信我就是The One\N{\reng_sub}I never believed I was The One.
+Dialogue: 0,1:49:43.61,1:49:45.03,譯文字幕,,0000,0000,0000,,但她相信\N{\reng_sub}But she did.
+Dialogue: 0,1:49:46.07,1:49:47.70,譯文字幕,,0000,0000,0000,,她相信我\N{\reng_sub}She believed in me.
+Dialogue: 0,1:49:50.37,1:49:52.58,譯文字幕,,0000,0000,0000,,現在輪到我相信她了\N{\reng_sub}It's my turn to believe in her.
+Dialogue: 0,1:50:17.56,1:50:19.48,譯文字幕,,0000,0000,0000,,這裡開始變得棘手了\N{\reng_sub}This is where it gets tricky.
+Dialogue: 0,1:50:30.62,1:50:33.04,譯文字幕,,0000,0000,0000,,你到底有沒有做過這樣的手術\N{\reng_sub}Have you ever done an operation like this?
+Dialogue: 0,1:50:33.75,1:50:34.83,譯文字幕,,0000,0000,0000,,還沒有\N{\reng_sub}Not yet.
+Dialogue: 0,1:50:56.56,1:50:57.90,譯文字幕,,0000,0000,0000,,我們開始吧\N{\reng_sub}Here we go.
+Dialogue: 0,1:51:15.54,1:51:17.46,譯文字幕,,0000,0000,0000,,歡迎回家\N{\reng_sub}Welcome home.
+Dialogue: 0,1:51:17.54,1:51:19.92,譯文字幕,,0000,0000,0000,,我只想和她談談\N{\reng_sub}All I want is to talk to her.
+Dialogue: 0,1:51:20.00,1:51:21.63,譯文字幕,,0000,0000,0000,,你是說Tiff嗎\N{\reng_sub}Do you mean Tiff?
+Dialogue: 0,1:51:21.71,1:51:24.46,譯文字幕,,0000,0000,0000,,回來吧 你可以隨時和她聊天\N{\reng_sub}Come back, and you can talk to her as often as you like.
+Dialogue: 0,1:51:24.55,1:51:25.92,譯文字幕,,0000,0000,0000,,不過我想 帥哥Chad\N{\reng_sub}I mean, handsome Chad
+Dialogue: 0,1:51:26.01,1:51:27.47,譯文字幕,,0000,0000,0000,,可能會有點意見\N{\reng_sub}may have something to say about it.
+Dialogue: 0,1:51:27.55,1:51:30.85,譯文字幕,,0000,0000,0000,,如果她說 這生活是她想要的\N{\reng_sub}If she tells me this is what she wants,
+Dialogue: 0,1:51:32.06,1:51:33.22,譯文字幕,,0000,0000,0000,,你就贏了\N{\reng_sub}you win.
+Dialogue: 0,1:51:33.31,1:51:34.43,譯文字幕,,0000,0000,0000,,真的\N{\reng_sub}Really?
+Dialogue: 0,1:51:34.52,1:51:37.27,譯文字幕,,0000,0000,0000,,但是如果她想要的是我\N{\reng_sub}But if she wants me,
+Dialogue: 0,1:51:37.35,1:51:39.19,譯文字幕,,0000,0000,0000,,那你就放我們走吧\N{\reng_sub}then you'll let us go free.
+Dialogue: 0,1:51:39.27,1:51:42.02,譯文字幕,,0000,0000,0000,,我為什麼要做這麼蠢的事\N{\reng_sub}And why would I do something as stupid as that?
+Dialogue: 0,1:51:42.11,1:51:44.90,譯文字幕,,0000,0000,0000,,我所在的飛船上 站滿了人 在你帶走我之前\N{\reng_sub}Right now, I'm on a ship full of people who will unplug me
+Dialogue: 0,1:51:44.98,1:51:47.99,譯文字幕,,0000,0000,0000,,就會把我的插頭拔掉\N{\reng_sub}before they'll let you take me back.
+Dialogue: 0,1:51:48.07,1:51:50.12,譯文字幕,,0000,0000,0000,,如果你想要這個Matrix\N{\reng_sub}If you want this Matrix,
+Dialogue: 0,1:51:50.20,1:51:51.74,譯文字幕,,0000,0000,0000,,這是你唯一的機會\N{\reng_sub}this is your only chance.
+Dialogue: 0,1:51:51.83,1:51:54.79,譯文字幕,,0000,0000,0000,,我怎麼知道他們不會拔掉你的插頭呢\N{\reng_sub}But how do I know they won't unplug you anyway?
+Dialogue: 0,1:51:54.87,1:51:58.21,譯文字幕,,0000,0000,0000,,就像我怎麼知道你會不會放我們走一樣\N{\reng_sub}Same way I know you'll let us walk out of here.
+Dialogue: 0,1:52:23.82,1:52:25.48,譯文字幕,,0000,0000,0000,,好吧\N{\reng_sub}Okay.
+Dialogue: 0,1:52:25.57,1:52:27.07,譯文字幕,,0000,0000,0000,,我喜歡測試\N{\reng_sub}I like tests.
+Dialogue: 0,1:52:27.94,1:52:29.74,譯文字幕,,0000,0000,0000,,就讓Tiff做決定\N{\reng_sub}We'll let Tiff decide.
+Dialogue: 0,1:52:47.09,1:52:48.26,譯文字幕,,0000,0000,0000,,就這樣\N{\reng_sub}That's it.
+Dialogue: 0,1:52:49.47,1:52:51.01,譯文字幕,,0000,0000,0000,,分流準備好了\N{\reng_sub}Bypass is ready.
+Dialogue: 0,1:52:51.09,1:52:52.80,譯文字幕,,0000,0000,0000,,現在怎麼辦\N{\reng_sub}Now what?
+Dialogue: 0,1:52:52.89,1:52:54.14,譯文字幕,,0000,0000,0000,,我們等吧\N{\reng_sub}We wait.
+Dialogue: 0,1:52:54.22,1:52:56.18,譯文字幕,,0000,0000,0000,,大費周章來到\N{\reng_sub}Doesn't it seem crazy to come all this way
+Dialogue: 0,1:52:56.26,1:52:57.85,譯文字幕,,0000,0000,0000,,難道真把她留在這裡\N{\reng_sub}and leave her here?
+Dialogue: 0,1:52:57.93,1:53:00.60,譯文字幕,,0000,0000,0000,,我們必須尊重她的決定\N{\reng_sub}We must abide by her decision.
+Dialogue: 0,1:53:00.69,1:53:02.27,譯文字幕,,0000,0000,0000,,如果她說不\N{\reng_sub}And if she says no,
+Dialogue: 0,1:53:03.10,1:53:04.56,譯文字幕,,0000,0000,0000,,Neo會怎麼樣\N{\reng_sub}what happens to Neo?
+Dialogue: 0,1:53:04.65,1:53:05.86,譯文字幕,,0000,0000,0000,,這一次\N{\reng_sub}At this time,
+Dialogue: 0,1:53:05.94,1:53:08.78,譯文字幕,,0000,0000,0000,,是Neo一生中最重要的選擇\N{\reng_sub}the most important choice of Neo's life
+Dialogue: 0,1:53:08.86,1:53:10.36,譯文字幕,,0000,0000,0000,,但不是由他做決定\N{\reng_sub}is not his to make.
+Dialogue: 0,1:53:41.39,1:53:43.19,譯文字幕,,0000,0000,0000,,我夢中看到了這一幕\N{\reng_sub}I saw this in my dream.
+Dialogue: 0,1:53:44.65,1:53:48.11,譯文字幕,,0000,0000,0000,,如果我是先知 也許我可以解釋一下\N{\reng_sub}If I was the Oracle, maybe I could explain it.
+Dialogue: 0,1:53:48.78,1:53:50.36,譯文字幕,,0000,0000,0000,,先知\N{\reng_sub}The Oracle.
+Dialogue: 0,1:53:50.44,1:53:52.11,譯文字幕,,0000,0000,0000,,你的遊戲裡那個\N{\reng_sub}From your game?
+Dialogue: 0,1:53:53.99,1:53:56.24,譯文字幕,,0000,0000,0000,,這不是遊戲\N{\reng_sub}It's not a game.
+Dialogue: 0,1:53:58.37,1:53:59.58,譯文字幕,,0000,0000,0000,,哦 天哪\N{\reng_sub}Oh, God.
+Dialogue: 0,1:54:07.04,1:54:10.46,譯文字幕,,0000,0000,0000,,在你走後 我回家了\N{\reng_sub}After you left, I went home
+Dialogue: 0,1:54:10.55,1:54:12.26,譯文字幕,,0000,0000,0000,,我玩了那個遊戲\N{\reng_sub}and I played it.
+Dialogue: 0,1:54:14.63,1:54:17.10,譯文字幕,,0000,0000,0000,,我一直在想\N{\reng_sub}I kept thinking,
+Dialogue: 0,1:54:17.18,1:54:20.52,譯文字幕,,0000,0000,0000,,為什麼這個劇情 像是一種記憶\N{\reng_sub}why does this story feel like a memory?
+Dialogue: 0,1:54:27.69,1:54:29.44,譯文字幕,,0000,0000,0000,,我有種感覺\N{\reng_sub}There's a part of me
+Dialogue: 0,1:54:32.03,1:54:35.24,譯文字幕,,0000,0000,0000,,像我一輩子都在等你\N{\reng_sub}that feels like I have been waiting my whole life for you.
+Dialogue: 0,1:54:38.20,1:54:40.45,譯文字幕,,0000,0000,0000,,就像在說\N{\reng_sub}And that part is like,
+Dialogue: 0,1:54:40.54,1:54:44.25,譯文字幕,,0000,0000,0000,,見鬼 你怎麼花了這麼長時間\N{\reng_sub}"What the hell took you so long?"
+Dialogue: 0,1:54:44.33,1:54:46.37,譯文字幕,,0000,0000,0000,,這三言兩語說不清\N{\reng_sub}I don't have an easy answer.
+Dialogue: 0,1:54:48.54,1:54:50.71,譯文字幕,,0000,0000,0000,,也許我害怕這個\N{\reng_sub}Maybe I was afraid of this.
+Dialogue: 0,1:54:52.17,1:54:54.05,譯文字幕,,0000,0000,0000,,害怕可能發生的事\N{\reng_sub}Afraid of what might happen.
+Dialogue: 0,1:54:55.55,1:54:58.55,譯文字幕,,0000,0000,0000,,害怕傷害到我唯一愛過的人\N{\reng_sub}Afraid of hurting the only person I ever loved.
+Dialogue: 0,1:55:00.26,1:55:03.81,譯文字幕,,0000,0000,0000,,我希望我是你以為的那個人\N{\reng_sub}I wish I was who you think I am.
+Dialogue: 0,1:55:05.18,1:55:06.77,譯文字幕,,0000,0000,0000,,但是看看我\N{\reng_sub}But look at me.
+Dialogue: 0,1:55:08.06,1:55:10.23,譯文字幕,,0000,0000,0000,,我不可能是她\N{\reng_sub}I can't be her.
+Dialogue: 0,1:55:10.32,1:55:12.44,譯文字幕,,0000,0000,0000,,-媽媽 -媽媽 來吧\N{\reng_sub}-Mom! -Mom! Come on.
+Dialogue: 0,1:55:12.53,1:55:13.78,譯文字幕,,0000,0000,0000,,媽媽 Callie出事了\N{\reng_sub}Mom! It's Callie.
+Dialogue: 0,1:55:13.86,1:55:14.86,譯文字幕,,0000,0000,0000,,這是現實嗎\N{\reng_sub}Is this real?
+Dialogue: 0,1:55:14.94,1:55:16.11,譯文字幕,,0000,0000,0000,,你得和我們一起來\N{\reng_sub}You have to come with us.
+Dialogue: 0,1:55:16.20,1:55:17.00,譯文字幕,,0000,0000,0000,,來吧 我們得走了\N{\reng_sub}Come on, we gotta go.
+Dialogue: 0,1:55:17.01,1:55:19.16,譯文字幕,,0000,0000,0000,,Tiff 嘿 不管這裡發生什麼事了\N{\reng_sub}Tiff, hey. Don't know what's going on here,
+Dialogue: 0,1:55:19.24,1:55:20.58,譯文字幕,,0000,0000,0000,,但終於找到了你\N{\reng_sub}but I'm glad we found you.
+Dialogue: 0,1:55:20.66,1:55:21.95,譯文字幕,,0000,0000,0000,,-她被車撞了 -太瘋狂了\N{\reng_sub}-She got hit by a car! -I know, it's crazy.
+Dialogue: 0,1:55:22.04,1:55:23.16,譯文字幕,,0000,0000,0000,,她追著你出來\N{\reng_sub}She was chasing after you.
+Dialogue: 0,1:55:23.24,1:55:24.58,譯文字幕,,0000,0000,0000,,他們在包紮她的胳膊  我們得走了\N{\reng_sub}They're casting her arm. We gotta go.
+Dialogue: 0,1:55:24.66,1:55:26.04,譯文字幕,,0000,0000,0000,,醫生說她會沒事的\N{\reng_sub}Doctor said she's gonna be fine.
+Dialogue: 0,1:55:26.12,1:55:27.92,譯文字幕,,0000,0000,0000,,你要和我們一起去醫院\N{\reng_sub}You have to come with us to the hospital.
+Dialogue: 0,1:55:28.00,1:55:29.08,譯文字幕,,0000,0000,0000,,太晚了\N{\reng_sub}It's too late.
+Dialogue: 0,1:55:29.17,1:55:30.38,譯文字幕,,0000,0000,0000,,我明白\N{\reng_sub}I understand.
+Dialogue: 0,1:55:30.46,1:55:32.30,譯文字幕,,0000,0000,0000,,-Tiff 來吧 我們走 -來吧\N{\reng_sub}-Tiff, come on, let's go. -Come on.
+Dialogue: 0,1:55:38.80,1:55:39.89,譯文字幕,,0000,0000,0000,,怎麼回事\N{\reng_sub}What's happening?
+Dialogue: 0,1:55:41.97,1:55:43.10,譯文字幕,,0000,0000,0000,,Neo錯了\N{\reng_sub}Neo was wrong.
+Dialogue: 0,1:56:16.46,1:56:17.55,譯文字幕,,0000,0000,0000,,Tiffany\N{\reng_sub}Tiffany.
+Dialogue: 0,1:56:21.14,1:56:23.68,譯文字幕,,0000,0000,0000,,Tiffany 你要跟我們一起走\N{\reng_sub}Tiffany, you have to come with us.
+Dialogue: 0,1:56:25.31,1:56:26.68,譯文字幕,,0000,0000,0000,,Tiffany\N{\reng_sub}Tiffany! 
+Dialogue: 0,1:56:28.98,1:56:32.69,譯文字幕,,0000,0000,0000,,我希望你他媽的別這麼叫我\N{\reng_sub}I wish you would fucking stop calling me that.
+Dialogue: 0,1:56:32.77,1:56:34.32,譯文字幕,,0000,0000,0000,,我討厭這名字\N{\reng_sub}I hate that name.
+Dialogue: 0,1:56:35.82,1:56:37.36,譯文字幕,,0000,0000,0000,,我是Trinity\N{\reng_sub}My name is Trinity
+Dialogue: 0,1:56:37.44,1:56:39.82,譯文字幕,,0000,0000,0000,,你最好把你的手拿開\N{\reng_sub}and you better take your hands off of me.
+Dialogue: 0,1:56:51.00,1:56:52.00,譯文字幕,,0000,0000,0000,,Neo\N{\reng_sub}Neo!
+Dialogue: 0,1:56:52.50,1:56:53.50,譯文字幕,,0000,0000,0000,,Trinity\N{\reng_sub}Trinity!
+Dialogue: 0,1:56:54.67,1:56:55.71,譯文字幕,,0000,0000,0000,,我靠\N{\reng_sub}Oh, shit.
+Dialogue: 0,1:56:57.00,1:56:58.34,譯文字幕,,0000,0000,0000,,把她帶出來 把她帶出來\N{\reng_sub}Get her out. Get her out!
+Dialogue: 0,1:57:06.97,1:57:10.27,譯文字幕,,0000,0000,0000,,哎 呀 呀 真是一團糟\N{\reng_sub}Aye-yi-yi, what a mess.
+Dialogue: 0,1:57:10.35,1:57:13.02,譯文字幕,,0000,0000,0000,,我承認錯了 我不應該施壓\N{\reng_sub}I own that mistake. Shouldn't have pressed.
+Dialogue: 0,1:57:13.10,1:57:16.11,譯文字幕,,0000,0000,0000,,女人以前很容易控制的\N{\reng_sub}Women used to be so easy to control.
+Dialogue: 0,1:57:16.19,1:57:20.74,譯文字幕,,0000,0000,0000,,你知道我不可能放你兩個走\N{\reng_sub}You know there's no way I can let you two go free.
+Dialogue: 0,1:57:24.16,1:57:25.62,譯文字幕,,0000,0000,0000,,不可能的\N{\reng_sub}Cannot happen.
+Dialogue: 0,1:57:28.79,1:57:31.62,譯文字幕,,0000,0000,0000,,所以 一切又變得似曾相識了\N{\reng_sub}So, I guess it's deja vu all over again.
+Dialogue: 0,1:57:32.75,1:57:34.54,譯文字幕,,0000,0000,0000,,她死了\N{\reng_sub}She dies
+Dialogue: 0,1:57:34.63,1:57:36.00,譯文字幕,,0000,0000,0000,,都是你害的\N{\reng_sub}and it's all your fault.
+Dialogue: 0,1:57:37.55,1:57:40.13,譯文字幕,,0000,0000,0000,,謊話 謊話 謊話連篇\N{\reng_sub}Lies, lies and more lies.
+Dialogue: 0,1:57:40.88,1:57:42.09,譯文字幕,,0000,0000,0000,,Smith\N{\reng_sub}Smith?
+Dialogue: 0,1:57:42.18,1:57:43.30,譯文字幕,,0000,0000,0000,,這個世界變成了什麼樣子\N{\reng_sub}What has the world come to
+Dialogue: 0,1:57:43.38,1:57:44.55,譯文字幕,,0000,0000,0000,,你連程式都不能信任了\N{\reng_sub}when you can't even trust a program?
+Dialogue: 0,1:57:44.64,1:57:47.97,譯文字幕,,0000,0000,0000,,怎麼...\N{\reng_sub}How...
+Dialogue: 0,1:57:48.06,1:57:50.81,譯文字幕,,0000,0000,0000,,Tom和我的共同點比你想像的要多\N{\reng_sub}Tom and I have more in common than you know.
+Dialogue: 0,1:57:50.89,1:57:53.94,譯文字幕,,0000,0000,0000,,等他一出去\N{\reng_sub}Once he got out, let's just say,
+Dialogue: 0,1:57:54.77,1:57:56.56,譯文字幕,,0000,0000,0000,,我就可以做我自己了\N{\reng_sub}I was free to be me.
+Dialogue: 0,1:58:04.24,1:58:06.99,譯文字幕,,0000,0000,0000,,-耶 -Trinity\N{\reng_sub}-Yeah! -Trinity?
+Dialogue: 0,1:58:55.37,1:58:56.54,譯文字幕,,0000,0000,0000,,準備好了嗎\N{\reng_sub}You ready?
+Dialogue: 0,1:58:56.62,1:58:57.92,譯文字幕,,0000,0000,0000,,是的\N{\reng_sub}Yeah.
+Dialogue: 0,1:59:40.00,1:59:41.46,譯文字幕,,0000,0000,0000,,大事不妙\N{\reng_sub}Oh, no.
+Dialogue: 0,1:59:42.84,1:59:45.21,譯文字幕,,0000,0000,0000,,摧毀她 摧毀她\N{\reng_sub}Destroy her. Destroy her!
+Dialogue: 0,2:00:02.19,2:00:03.19,譯文字幕,,0000,0000,0000,,不\N{\reng_sub}No.
+Dialogue: 0,2:00:09.03,2:00:10.53,譯文字幕,,0000,0000,0000,,阻止他們\N{\reng_sub}Stop them.
+Dialogue: 0,2:00:36.18,2:00:37.68,譯文字幕,,0000,0000,0000,,你以為這就完了\N{\reng_sub}You think this is over?
+Dialogue: 0,2:00:37.77,2:00:39.77,譯文字幕,,0000,0000,0000,,封鎖 啟動機器人群\N{\reng_sub}Lockdown. Initiate swarm.
+Dialogue: 0,2:00:48.74,2:00:51.07,譯文字幕,,0000,0000,0000,,出人意外的聯盟就此結束了\N{\reng_sub}Here, our unexpected alliance ends.
+Dialogue: 0,2:00:52.74,2:00:55.37,譯文字幕,,0000,0000,0000,,你知道我們之間的區別嗎 Tom\N{\reng_sub}You know the difference between us, Tom?
+Dialogue: 0,2:00:55.45,2:00:57.33,譯文字幕,,0000,0000,0000,,任何人都可能是你\N{\reng_sub}Anyone could have been you.
+Dialogue: 0,2:00:57.41,2:00:59.46,譯文字幕,,0000,0000,0000,,而我一直都是任何人\N{\reng_sub}Whereas I've always been anyone.
+Dialogue: 0,2:01:04.84,2:01:06.34,譯文字幕,,0000,0000,0000,,發生了什麼事\N{\reng_sub}What just happened?
+Dialogue: 0,2:01:06.42,2:01:07.59,譯文字幕,,0000,0000,0000,,什麼\N{\reng_sub}What?
+Dialogue: 0,2:01:09.59,2:01:12.18,譯文字幕,,0000,0000,0000,,哦 不 快走 快走\N{\reng_sub}Oh, no! Move! Move!
+Dialogue: 0,2:01:12.26,2:01:13.30,譯文字幕,,0000,0000,0000,,趕快離開這裡\N{\reng_sub}Get the hell out of there!
+Dialogue: 0,2:01:17.18,2:01:19.14,譯文字幕,,0000,0000,0000,,-有多糟 -糟透了\N{\reng_sub}-How bad? -Like, all the bad.
+Dialogue: 0,2:01:20.43,2:01:21.89,譯文字幕,,0000,0000,0000,,好吧 這很糟糕\N{\reng_sub}Yeah, this is bad.
+Dialogue: 0,2:01:23.27,2:01:24.90,譯文字幕,,0000,0000,0000,,你不會還能飛吧\N{\reng_sub}I don't suppose you can still fly?
+Dialogue: 0,2:01:35.28,2:01:36.99,譯文字幕,,0000,0000,0000,,沒錯 還飛不起來\N{\reng_sub}Yeah, that's not happening.
+Dialogue: 0,2:02:02.73,2:02:03.98,譯文字幕,,0000,0000,0000,,Neo 上來\N{\reng_sub}Neo! Get on.
+Dialogue: 0,2:02:12.65,2:02:14.45,譯文字幕,,0000,0000,0000,,Calliope 帶上傷患\N{\reng_sub}Calliope! Take the wounded!
+Dialogue: 0,2:02:14.53,2:02:16.57,譯文字幕,,0000,0000,0000,,其他人 我們和他們守一起\N{\reng_sub}Everyone else, we stay with them!
+Dialogue: 0,2:02:33.63,2:02:36.18,譯文字幕,,0000,0000,0000,,-她怎麼樣 -生命跡象良好\N{\reng_sub}-How is she? -Life signs are good.
+Dialogue: 0,2:02:40.01,2:02:41.47,譯文字幕,,0000,0000,0000,,她的信號很強 艦長\N{\reng_sub}Her signal's strong, Captain.
+Dialogue: 0,2:02:50.36,2:02:52.40,譯文字幕,,0000,0000,0000,,幹得好 艦長\N{\reng_sub}Well done, Captain.
+Dialogue: 0,2:02:54.78,2:02:56.66,譯文字幕,,0000,0000,0000,,我們需要的只剩下一點奇跡了\N{\reng_sub}All we need is a miracle.
+Dialogue: 0,2:03:24.73,2:03:25.77,譯文字幕,,0000,0000,0000,,我討厭機器人\N{\reng_sub}I hate bots.
+Dialogue: 0,2:03:32.07,2:03:33.90,譯文字幕,,0000,0000,0000,,-把我們弄出去 -我在努力\N{\reng_sub}-Get us out of here! -I'm trying!
+Dialogue: 0,2:03:33.98,2:03:35.99,譯文字幕,,0000,0000,0000,,封鎖區正跟著我們 機器人群無處不在\N{\reng_sub}The lockdown is tracking. Swarm is everywhere.
+Dialogue: 0,2:03:36.07,2:03:37.24,譯文字幕,,0000,0000,0000,,從沒見過這樣的事\N{\reng_sub}Never seen anything like this.
+Dialogue: 0,2:04:23.12,2:04:25.29,譯文字幕,,0000,0000,0000,,Seq 那是什麼\N{\reng_sub}Seq, what is that?
+Dialogue: 0,2:04:30.29,2:04:31.42,譯文字幕,,0000,0000,0000,,怎麼了\N{\reng_sub}What's wrong?
+Dialogue: 0,2:04:33.13,2:04:34.63,譯文字幕,,0000,0000,0000,,你幹什麼...\N{\reng_sub}What are you...
+Dialogue: 0,2:04:42.18,2:04:44.22,譯文字幕,,0000,0000,0000,,他正在把機器人變成炸彈\N{\reng_sub}He's turning bots into bombs.
+Dialogue: 0,2:05:16.67,2:05:17.88,譯文字幕,,0000,0000,0000,,見鬼\N{\reng_sub}Shit!
+Dialogue: 0,2:05:17.96,2:05:18.96,譯文字幕,,0000,0000,0000,,Lexy\N{\reng_sub}Lexy?
+Dialogue: 0,2:05:33.35,2:05:34.56,譯文字幕,,0000,0000,0000,,Sheperd有麻煩了\N{\reng_sub}Sheperd's in trouble.
+Dialogue: 0,2:05:37.65,2:05:39.44,譯文字幕,,0000,0000,0000,,把我送進去\N{\reng_sub}Jack me in.
+Dialogue: 0,2:05:39.53,2:05:41.57,譯文字幕,,0000,0000,0000,,我可以讓你進去 但我不知道是否能讓你出來\N{\reng_sub}I can get you in. I don't know if I can get you out.
+Dialogue: 0,2:05:47.53,2:05:49.25,譯文字幕,,0000,0000,0000,,不\N{\reng_sub}No!
+Dialogue: 0,2:06:02.59,2:06:03.72,譯文字幕,,0000,0000,0000,,他們在做什麼\N{\reng_sub}What are they doing?
+Dialogue: 0,2:06:07.76,2:06:09.43,譯文字幕,,0000,0000,0000,,把他們趕到殺戮地帶\N{\reng_sub}Herding them into a kill zone.
+Dialogue: 0,2:06:42.51,2:06:43.84,譯文字幕,,0000,0000,0000,,艦長 你得趕快了\N{\reng_sub}Captain, you gotta hurry.
+Dialogue: 0,2:06:43.92,2:06:46.18,譯文字幕,,0000,0000,0000,,撐住 Lex\N{\reng_sub}Hang on, Lex.
+Dialogue: 0,2:06:50.39,2:06:52.22,譯文字幕,,0000,0000,0000,,Lexy\N{\reng_sub}Lexy!
+Dialogue: 0,2:07:34.48,2:07:35.64,譯文字幕,,0000,0000,0000,,他們在這裡\N{\reng_sub}There they are!
+Dialogue: 0,2:08:02.09,2:08:03.25,譯文字幕,,0000,0000,0000,,Morpheus\N{\reng_sub}Morpheus!
+Dialogue: 0,2:08:07.13,2:08:08.84,譯文字幕,,0000,0000,0000,,Lex\N{\reng_sub}Lex.
+Dialogue: 0,2:08:08.93,2:08:10.80,譯文字幕,,0000,0000,0000,,-Bugsy -好耶\N{\reng_sub}-Bugsy. -Hell yeah!
+Dialogue: 0,2:08:11.76,2:08:13.39,譯文字幕,,0000,0000,0000,,Seq Neo在哪裡\N{\reng_sub}Seq, where's Neo?
+Dialogue: 0,2:08:13.47,2:08:15.10,譯文字幕,,0000,0000,0000,,壞了 它們被困住了\N{\reng_sub}It's bad. They're pinned.
+Dialogue: 0,2:08:15.18,2:08:16.27,譯文字幕,,0000,0000,0000,,去屋頂了\N{\reng_sub}Heading to a roof.
+Dialogue: 0,2:09:25.54,2:09:26.80,譯文字幕,,0000,0000,0000,,結節顫動非常嚴重\N{\reng_sub}Nodal fibrillation is critical.
+Dialogue: 0,2:09:26.88,2:09:28.30,譯文字幕,,0000,0000,0000,,如果我們不抽取 她會死\N{\reng_sub}She'll die if we don't extract.
+Dialogue: 0,2:10:09.30,2:10:11.92,譯文字幕,,0000,0000,0000,,真美啊\N{\reng_sub}It's so beautiful.
+Dialogue: 0,2:10:27.23,2:10:28.94,譯文字幕,,0000,0000,0000,,我記得這\N{\reng_sub}I remember this.
+Dialogue: 0,2:10:31.03,2:10:33.24,譯文字幕,,0000,0000,0000,,我記得我們\N{\reng_sub}I remember us.
+Dialogue: 0,2:10:51.34,2:10:53.34,譯文字幕,,0000,0000,0000,,我的夢在這裡結束了\N{\reng_sub}My dream ended here.
+Dialogue: 0,2:11:04.23,2:11:05.81,譯文字幕,,0000,0000,0000,,我們回不去了\N{\reng_sub}We can't go back.
+Dialogue: 0,2:11:07.94,2:11:09.02,譯文字幕,,0000,0000,0000,,不會的\N{\reng_sub}We won't.
+Dialogue: 0,2:11:28.29,2:11:29.67,譯文字幕,,0000,0000,0000,,他們能成功跳過去嗎\N{\reng_sub}Can they make the jump?
+Dialogue: 0,2:12:00.74,2:12:02.37,譯文字幕,,0000,0000,0000,,不是我啊\N{\reng_sub}I'm not doing this.
+Dialogue: 0,2:12:02.45,2:12:03.83,譯文字幕,,0000,0000,0000,,是你嗎\N{\reng_sub}Are you doing this?
+Dialogue: 0,2:12:27.93,2:12:29.02,譯文字幕,,0000,0000,0000,,回見\N{\reng_sub}Bye.
+Dialogue: 0,2:13:50.06,2:13:51.64,譯文字幕,,0000,0000,0000,,好戲劇性啊\N{\reng_sub}How dramatic.
+Dialogue: 0,2:13:52.48,2:13:53.77,譯文字幕,,0000,0000,0000,,Tiffany\N{\reng_sub}"Tiffany"?
+Dialogue: 0,2:13:53.85,2:13:56.82,譯文字幕,,0000,0000,0000,,這只是一個私下的玩笑\N{\reng_sub}It was a private joke.
+Dialogue: 0,2:13:56.90,2:13:58.44,譯文字幕,,0000,0000,0000,,娛樂一下 沒別的\N{\reng_sub}An amusement, that's all.
+Dialogue: 0,2:13:58.53,2:14:00.86,譯文字幕,,0000,0000,0000,,娛樂 嗯...\N{\reng_sub}An amusement? Hmm.
+Dialogue: 0,2:14:04.87,2:14:06.28,譯文字幕,,0000,0000,0000,,像這樣嗎\N{\reng_sub}Kind of like that?
+Dialogue: 0,2:14:10.54,2:14:13.29,譯文字幕,,0000,0000,0000,,好吧 疼啊\N{\reng_sub}Okay. Ow.
+Dialogue: 0,2:14:13.37,2:14:14.83,譯文字幕,,0000,0000,0000,,如果你這麼討厭這個名字\N{\reng_sub}If you hated the name so much,
+Dialogue: 0,2:14:14.92,2:14:17.09,譯文字幕,,0000,0000,0000,,為啥你像個乖巧的小婊子一樣呆了這麼久\N{\reng_sub}why did you heel like a good little bitch so long?
+Dialogue: 0,2:14:20.21,2:14:22.47,譯文字幕,,0000,0000,0000,,嗯 他自找的\N{\reng_sub}Yeah. Definitely asked for that.
+Dialogue: 0,2:14:27.76,2:14:29.72,譯文字幕,,0000,0000,0000,,你就不能管管她嗎\N{\reng_sub}Can't you control her?
+Dialogue: 0,2:14:35.56,2:14:37.27,譯文字幕,,0000,0000,0000,,這下是為了你利用小孩子\N{\reng_sub}That was for using children.
+Dialogue: 0,2:14:42.15,2:14:43.65,譯文字幕,,0000,0000,0000,,我們有幾個問題\N{\reng_sub}We have a few questions.
+Dialogue: 0,2:14:43.74,2:14:45.57,譯文字幕,,0000,0000,0000,,你試圖啟動保險裝置\N{\reng_sub}You tried to activate the failsafe.
+Dialogue: 0,2:14:45.66,2:14:46.99,譯文字幕,,0000,0000,0000,,是高層試圖\N{\reng_sub}The Suits tried.
+Dialogue: 0,2:14:47.07,2:14:49.37,譯文字幕,,0000,0000,0000,,很明顯 沒有了你的源代碼\N{\reng_sub}Obviously, without control of your source code,
+Dialogue: 0,2:14:49.45,2:14:50.83,譯文字幕,,0000,0000,0000,,那是不可能的\N{\reng_sub}I knew that was impossible.
+Dialogue: 0,2:14:50.91,2:14:53.12,譯文字幕,,0000,0000,0000,,那麼 為什麼高層沒有清除你\N{\reng_sub}So, why haven't the Suits purged you?
+Dialogue: 0,2:14:54.00,2:14:56.67,譯文字幕,,0000,0000,0000,,因為我了解這個系統\N{\reng_sub}Because I know the system.
+Dialogue: 0,2:14:56.75,2:14:59.17,譯文字幕,,0000,0000,0000,,我了解人類\N{\reng_sub}I know human beings.
+Dialogue: 0,2:14:59.25,2:15:01.42,譯文字幕,,0000,0000,0000,,我了解你\N{\reng_sub}And I know you.
+Dialogue: 0,2:15:03.84,2:15:06.38,譯文字幕,,0000,0000,0000,,現在 你對自己作所作為感到滿意\N{\reng_sub}Right now, you're feeling good about what you've done.
+Dialogue: 0,2:15:06.47,2:15:08.89,譯文字幕,,0000,0000,0000,,應該的 你們贏了 太棒了\N{\reng_sub}You should. It was a victory. Bravo.
+Dialogue: 0,2:15:09.72,2:15:11.06,譯文字幕,,0000,0000,0000,,這次又想怎樣\N{\reng_sub}Now what?
+Dialogue: 0,2:15:11.14,2:15:13.77,譯文字幕,,0000,0000,0000,,你是來談判的嗎\N{\reng_sub}You've come here to negotiate some kind of deal?
+Dialogue: 0,2:15:13.85,2:15:15.44,譯文字幕,,0000,0000,0000,,你覺得你手裡什麼牌都有\N{\reng_sub}You think you hold all the cards,
+Dialogue: 0,2:15:15.52,2:15:17.94,譯文字幕,,0000,0000,0000,,因為你在這個世界裡隨心所欲\N{\reng_sub}because you can do whatever you want in this world.
+Dialogue: 0,2:15:18.02,2:15:20.36,譯文字幕,,0000,0000,0000,,我想 去做吧\N{\reng_sub}I say, go for it.
+Dialogue: 0,2:15:20.44,2:15:23.03,譯文字幕,,0000,0000,0000,,重塑一切 自己動手\N{\reng_sub}Remake it. Knock yourselves out.
+Dialogue: 0,2:15:23.11,2:15:25.15,譯文字幕,,0000,0000,0000,,去天上畫個彩虹\N{\reng_sub}Paint the sky with rainbows.
+Dialogue: 0,2:15:25.24,2:15:26.40,譯文字幕,,0000,0000,0000,,但問題是\N{\reng_sub}But here's the thing.
+Dialogue: 0,2:15:26.49,2:15:29.53,譯文字幕,,0000,0000,0000,,小羔羊不會去任何地方\N{\reng_sub}The sheeple aren't going anywhere.
+Dialogue: 0,2:15:29.62,2:15:30.83,譯文字幕,,0000,0000,0000,,他們喜歡我的世界\N{\reng_sub}They like my world.
+Dialogue: 0,2:15:30.91,2:15:33.83,譯文字幕,,0000,0000,0000,,他們不想要多愁善感\N{\reng_sub}They don't want this sentimentality.
+Dialogue: 0,2:15:33.91,2:15:35.83,譯文字幕,,0000,0000,0000,,他們不想要自由或權力\N{\reng_sub}They don't want freedom or empowerment.
+Dialogue: 0,2:15:35.91,2:15:38.33,譯文字幕,,0000,0000,0000,,他們想要被控制\N{\reng_sub}They want to be controlled.
+Dialogue: 0,2:15:38.42,2:15:40.38,譯文字幕,,0000,0000,0000,,他們渴望穩定帶來的安全感\N{\reng_sub}They crave the comfort of certainty.
+Dialogue: 0,2:15:40.46,2:15:43.21,譯文字幕,,0000,0000,0000,,也就是說你們兩個 早晚會回到你們的培養倉\N{\reng_sub}And that means you two, back in your pods,
+Dialogue: 0,2:15:43.30,2:15:46.84,譯文字幕,,0000,0000,0000,,獨自沉睡 像他們一樣\N{\reng_sub}unconscious and alone, just like them.
+Dialogue: 0,2:15:51.10,2:15:53.81,譯文字幕,,0000,0000,0000,,我們不是來這裡談判的\N{\reng_sub}We're not here to negotiate anything.
+Dialogue: 0,2:15:53.89,2:15:56.14,譯文字幕,,0000,0000,0000,,我們只是在重制你的世界\N{\reng_sub}We were on our way to remake your world.
+Dialogue: 0,2:15:56.23,2:15:57.77,譯文字幕,,0000,0000,0000,,做點改變\N{\reng_sub}Change a few things.
+Dialogue: 0,2:15:57.85,2:15:59.06,譯文字幕,,0000,0000,0000,,我有點喜歡\N{\reng_sub}I kind of like
+Dialogue: 0,2:15:59.15,2:16:00.48,譯文字幕,,0000,0000,0000,,去天上畫彩虹的主意\N{\reng_sub}the "paint the sky with rainbows" idea.
+Dialogue: 0,2:16:00.56,2:16:02.48,譯文字幕,,0000,0000,0000,,提醒人們自由意志能做什麼\N{\reng_sub}Just remind people what a free mind can do.
+Dialogue: 0,2:16:02.57,2:16:04.07,譯文字幕,,0000,0000,0000,,我就忘了 很容易就忘記了\N{\reng_sub}I forgot. It's easy to forget.
+Dialogue: 0,2:16:04.15,2:16:06.57,譯文字幕,,0000,0000,0000,,-他害的 -沒錯\N{\reng_sub}-He makes it easy. -That, he does.
+Dialogue: 0,2:16:06.65,2:16:08.86,譯文字幕,,0000,0000,0000,,他應該考慮一下\N{\reng_sub}Something he should think about.
+Dialogue: 0,2:16:09.87,2:16:11.07,譯文字幕,,0000,0000,0000,,在我們開始之前\N{\reng_sub}Before we got started,
+Dialogue: 0,2:16:11.16,2:16:13.99,譯文字幕,,0000,0000,0000,,我們決定順道來謝謝你\N{\reng_sub}we decided to stop by to say thank you.
+Dialogue: 0,2:16:14.08,2:16:17.16,譯文字幕,,0000,0000,0000,,你給了我們從沒想過可以擁有的東西\N{\reng_sub}You gave us something we never thought we could have.
+Dialogue: 0,2:16:17.25,2:16:18.62,譯文字幕,,0000,0000,0000,,那是什麼\N{\reng_sub}And what is that?
+Dialogue: 0,2:16:19.50,2:16:21.29,譯文字幕,,0000,0000,0000,,再來一次的機會\N{\reng_sub}Another chance.
+Dialogue: 0,2:27:24.54,2:27:27.33,譯文字幕,,0000,0000,0000,,面對現實吧 電影已經過時了\N{\reng_sub}Face reality, people. Movies are dead.
+Dialogue: 0,2:27:27.42,2:27:29.34,譯文字幕,,0000,0000,0000,,遊戲已經過時了\N{\reng_sub}Games are dead.
+Dialogue: 0,2:27:29.42,2:27:31.17,譯文字幕,,0000,0000,0000,,好故事 過時了\N{\reng_sub}Narrative? Dead.
+Dialogue: 0,2:27:31.25,2:27:33.21,譯文字幕,,0000,0000,0000,,媒體只剩下神經性反射\N{\reng_sub}Media is nothing but neurotrigger response
+Dialogue: 0,2:27:33.30,2:27:34.51,譯文字幕,,0000,0000,0000,,和病毒式傳播\N{\reng_sub}and viral conditioning.
+Dialogue: 0,2:27:34.59,2:27:36.09,譯文字幕,,0000,0000,0000,,等等 你們兩個在說什麼\N{\reng_sub}Wait, what are you two talking about?
+Dialogue: 0,2:27:38.34,2:27:40.18,譯文字幕,,0000,0000,0000,,貓影片\N{\reng_sub}Cat videos.
+Dialogue: 0,2:27:40.26,2:27:44.02,譯文字幕,,0000,0000,0000,,我們需要的是一系列影片\N{\reng_sub}What we need is a series of videos
+Dialogue: 0,2:27:44.10,2:27:46.44,譯文字幕,,0000,0000,0000,,我們稱之為"貓客帝國"\N{\reng_sub}that we call "The Catrix"
+
