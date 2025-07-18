@@ -1,0 +1,158 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: Arial, "Microsoft JhengHei", sans-serif;
+  background: #f9f9f9;
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+.git-mobile-br {
+  display: none;
+}
+.git-container {
+  background: #fff;
+  max-width: 830px;
+  margin: 0 auto 10px auto;
+  padding: 10px 18px 20px 18px;
+  border-radius: 14px;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.08);
+  position: relative;
+  font-size: 1rem;
+}
+.git-h2 {
+  color: #006699;
+  text-align: center;
+  font-size: 1.45rem;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+.git-section-title {
+  margin-top: 1.6rem;
+  color: #006699;
+  font-size: 1.09rem;
+  border-left: 4px solid #8dc2e6;
+  padding: 9px;
+  font-weight: bold;
+  background: #edf8fd;
+  margin-bottom: 0.3rem;
+}
+.git-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #f6fbff;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+.git-th, .git-td {
+  border: 1px solid #cde2f2;
+  padding: 10px 5px;
+  text-align: center;
+}
+.git-th {
+  background: #daf0fc;
+  color: #003e5d;
+  font-weight: bold;
+}
+.git-ul {
+  list-style: none;
+  padding-left: 1.2rem;
+  margin: 0.5rem 0 0.7rem 0;
+}
+.git-li {
+  text-align: left;
+  line-height: 1.7;
+  margin: 0.1rem 0;
+}
+.git-highlight {
+  color: #db1f33;
+  font-weight: bold;
+}
+.git-green {
+  color: #388e3c;
+  font-weight: bold;
+}
+.git-tips {
+  background: #eaf6ff;
+  border-left: 4px solid #90caf9;
+  padding: 10px 18px;
+  margin-top: 1.5rem;
+  font-size: 1rem;
+}
+.git-icon {
+  font-size: 1.6rem;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+.git-img-icon {
+  vertical-align: middle;
+  margin: 5px 0;
+  margin-right: 5px;
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+  display: inline-block;
+}
+.git-tick-icon {
+  vertical-align: text-top;
+  margin-right: 4px;
+  width: 1rem;
+  height: 1rem;
+  object-fit: contain;
+  display: inline-block;
+}
+.git-top-nav a {
+  color: #1976d2;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: 2rem;
+  transition: background 0.2s;
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  z-index: 999;
+  box-shadow: 0 0px 14px rgba(0,0,0,0.2);
+}
+.git-top-nav a:hover {
+  background: #e3f2fd;
+  color: #0d47a1;
+}
+@media (max-width: 600px) {
+  .git-container {
+    padding: 8px 2vw 12px 2vw;
+    margin: 10px 5px;
+  }
+  .git-table, .git-th, .git-td {
+    font-size: 0.96rem;
+    padding: 7px 2px;
+  }
+  .git-h2 {
+    font-size: 1.2rem;
+  }
+  .git-section-title {
+    font-size: 1rem;
+  }
+  .git-icon {
+    font-size: 1.2rem;
+  }
+  .git-img-icon {
+    width: 1.3rem;
+    height: 1.3rem;
+  }
+  .git-rain-icon {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+  .git-top-nav a {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.4rem;
+  }
+  .git-mobile-br {
+    display: block;
+    height: 0;
+  }
+}
