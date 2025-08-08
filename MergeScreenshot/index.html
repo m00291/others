@@ -1,0 +1,1799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vertical Screenshot Merger</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="ico.png">
+  <style>
+    :root {
+      --app-max-w: 1200px;
+      --left-w: 430px;
+      --preview-h: 630px;
+      --accent: #c2d5ff;
+      --drag-border: #2563eb;
+      --muted: #e5e7eb;
+      --text: #111827;
+      --text-2: #374151;
+      --ok: #16a34a;
+      --warn: #d97706;
+      --err: #dc2626;
+      --chip: #eef2ff;
+      --chip-text: #3730a3;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .06), 0 2px 8px rgba(0, 0, 0, .06);
+      /* Ink ripple */
+      --ink-color: rgba(0, 0, 0, 0.25);
+      --ink-expand-duration: 320ms;
+      --ink-fade-duration: 220ms;
+    }
+    * {
+      box-sizing: border-box
+    }
+    #ico {
+      height: 20px;
+      margin-right: 5px;
+    }
+    html,
+    body {
+      height: 100%
+    }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text);
+      background: #fff;
+      user-select: none !important;
+      -webkit-user-select: none !important;
+      tap-highlight-color: transparent !important;
+      -webkit-tap-highlight-color: transparent !important;
+    }
+    header {
+      border-bottom: 1px solid var(--muted);
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .bar {
+      max-width: var(--app-max-w);
+      margin: 0 auto;
+      padding: 12px 16px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand {
+      display: flex;
+      font-weight: 700;
+      letter-spacing: .2px
+    }
+    .wrap {
+      max-width: var(--app-max-w);
+      margin: 0 auto;
+      display: flex;
+      gap: 16px;
+      padding: 12px
+    }
+    .left {
+      width: var(--left-w);
+      flex: 0 0 var(--left-w);
+    }
+    .right {
+      flex: 1;
+      min-width: 0;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid var(--muted);
+      border-radius: 10px;
+      padding: 12px;
+      box-shadow: var(--shadow);
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    .drop {
+      border: 2px dashed #cbd5e1;
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+      color: var(--text-2);
+      cursor: pointer;
+      transition: border-color .2s, background .2s;
+    }
+    .drop.dragover {
+      border-color: var(--accent);
+      background: #eff6ff
+    }
+    .drop input {
+      display: none
+    }
+    .hint {
+      font-size: 12px;
+      color: #6b7280
+    }
+    .controls {
+      display: grid;
+      grid-template-columns: 1fr 2fr 2fr;
+      gap: 8px;
+      margin-top: 12px
+    }
+    button {
+      appearance: none;
+      border: 1px solid var(--muted);
+      background: #fff;
+      border-radius: 8px;
+      padding: 10px 10px;
+      cursor: pointer;
+      font-weight: 600;
+      color: #2b2930;
+      transition: background-color .15s, border-color .15s, box-shadow .15s, color .15s;
+    }
+    button.primary {
+      background: var(--accent);
+      border-color: var(--accent)
+    }
+    button#resetBtn {
+      background-color: #ffc6c6;
+    }
+    button#exportBtn {
+      background-color: #aff5b2;
+    }
+    button:disabled {
+      opacity: .4;
+      cursor: not-allowed;
+    }
+    .row {
+      display: flex;
+      gap: 8px;
+      align-items: center
+    }
+    .meta_button_row {
+      display: flex;
+      gap: 6px;
+      align-items: center
+    }
+    .param {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-top: 8px
+    }
+    .param label {
+      font-size: 12px;
+      color: #4b5563
+    }
+    .param input[type=range] {
+      width: 100%
+    }
+    .param input[type=number] {
+      width: 100%;
+      padding: 6px 8px;
+      border: 1px solid var(--muted);
+      border-radius: 6px
+    }
+    .footer_tip {
+      padding: 4px 0 0 10px;
+      max-height: 2em;
+      font-size: 12px;
+      color: #6b7280;
+      display: none;
+      transition: max-height .5s ease-in-out;
+    }
+    .arrow_row {
+      display: flex;
+      display: none;
+      justify-content: center;
+      border-radius: 0 0 10px 10px;
+      padding: 5px 0 19px;
+      margin: 0 -12px;
+      /* Make it the ink container targetable and tappable */
+      position: relative;
+      overflow: hidden;
+      touch-action: manipulation;
+      cursor: pointer;
+    }
+    .arrow::before,
+    .arrow::after {
+      content: "";
+      position: absolute;
+      width: 10px;
+      opacity: 0;
+      aspect-ratio: 1;
+      border-right: 2px solid #888;
+      border-bottom: 2px solid #888;
+      transition: opacity 1s ease;
+    }
+    .arrow::before {
+      transform: translateY(3.5px) rotate(225deg);
+    }
+    .arrow::after {
+      transform: translateY(-3.5px) rotate(45deg);
+    }
+    .arrow_expanded::before {
+      opacity: 1;
+    }
+    .arrow_collapsed::after {
+      opacity: 1;
+    }
+    .list {
+      margin-top: 12px;
+      max-height: 400px;
+      overflow: auto;
+      padding: 8px;
+      border: 1px dashed var(--muted);
+      border-radius: 8px;
+      background: #f3f4f6;
+      transition: max-height .5s ease-in-out, padding .8s ease-in-out;
+    }
+    .list_collapsed {
+      max-height: 0 !important;
+      padding: 0 8px;
+      overflow: hidden;
+    }
+    .item {
+      display: grid;
+      grid-template-columns: 22px 1fr 4fr;
+      gap: 8px;
+      align-items: center;
+      background: #fff;
+      border: 1px solid var(--muted);
+      border-radius: 8px;
+      padding: 6px;
+      margin-bottom: 8px;
+      user-select: none;
+      cursor: grab;
+    }
+    .thumb {
+      width: 56px;
+      height: 56px;
+      border-radius: 6px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .thumb img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain
+    }
+    .meta {
+      display: flex;
+      gap: 3px;
+      flex-direction: column
+    }
+    .meta_button_row button {
+      width: 100%;
+      white-space: nowrap;
+    }
+    .name {
+      word-break: break-all;
+    }
+    .small {
+      font-size: 12px;
+    }
+    .dragHandle {
+      font-size: 18px;
+      padding: 0 6px;
+      color: #64748b;
+    }
+    .item .actions {
+      display: flex;
+      gap: 6px
+    }
+    body.is-sorting,
+    body.is-sorting * {
+      cursor: not-allowed !important;
+    }
+    body.is-sorting #list,
+    body.is-sorting #list * {
+      cursor: grabbing !important;
+    }
+    .chip {
+      font-size: 11px;
+      padding: 2px 6px;
+      border-radius: 999px;
+      background: var(--chip);
+      color: var(--chip-text);
+      border: 1px solid #c7d2fe;
+      white-space: nowrap;
+    }
+    /* SortableJS visuals */
+    .sortable-ghost {
+      background: linear-gradient(90deg, #5ba5ff 50%, transparent 50%), linear-gradient(90deg, #5ba5ff 50%, transparent 50%), linear-gradient(0deg, #5ba5ff 50%, transparent 50%), linear-gradient(0deg, #5ba5ff 50%, transparent 50%);
+      background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+      background-size: 15px 2px, 15px 2px, 2px 15px, 2px 15px;
+      background-position: left top, right bottom, left bottom, right top;
+      animation: border-dance 0.8s infinite linear;
+    }
+    @keyframes border-dance {
+      100% {
+        background-position: left 15px top, right 15px bottom, left bottom 15px, right top 15px;
+      }
+    }
+    .sortable-ghost * {
+      background: #0000;
+    }
+    .sortable-chosen {
+      cursor: grabbing;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, .12);
+    }
+    .sortable-drag {
+      box-shadow: 0 10px 24px rgba(0, 0, 0, .18);
+    }
+    .sortable-fallback {
+      display: none;
+    }
+    .sortable-animate {
+      transition: transform 150ms ease;
+    }
+    .previewCard {
+      display: flex;
+      flex-direction: column
+    }
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 10px;
+      border-bottom: 1px solid var(--muted);
+      align-items: center
+    }
+    .toolbar .sp {
+      flex: 1
+    }
+    .previewWrap {
+      position: relative;
+      height: var(--preview-h);
+      background: #f8fafc;
+      overflow: hidden;
+    }
+    .previewScrollContent {
+      position: relative;
+      width: 0;
+      height: 0;
+      margin: 0 auto;
+    }
+    .previewInner {
+      position: relative;
+      transform-origin: top left;
+    }
+    canvas {
+      display: block
+    }
+    .diagOverlay {
+      position: absolute;
+      inset: 0;
+      pointer-events: none
+    }
+    .legend {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      font-size: 12px;
+      color: #6b7280;
+      padding: 8px 10px
+    }
+    .swatch {
+      width: 12px;
+      height: 12px;
+      border-radius: 2px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 4px
+    }
+    .sw-overlap {
+      background: #22c55e55;
+      outline: 1px solid #22c55e
+    }
+    .sw-seam {
+      background: #ef444455;
+      outline: 1px solid #ef4444
+    }
+    .sw-scrollbar {
+      background: #0ea5e955;
+      outline: 1px dashed #0ea5e9
+    }
+    .diagList {
+      padding: 8px 10px;
+      border-top: 1px solid var(--muted);
+      background: #fff;
+      font-size: 12px;
+      color: #374151;
+      max-height: 120px;
+      overflow: auto
+    }
+    .diagRow {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      padding: 6px 0;
+      border-bottom: 1px dashed #e5e7eb
+    }
+    .diagRow:last-child {
+      border-bottom: none
+    }
+    .conf.ok {
+      color: var(--ok)
+    }
+    .conf.warn {
+      color: var(--warn)
+    }
+    .conf.err {
+      color: var(--err)
+    }
+    .grow {
+      flex: 1
+    }
+    .tip {
+      font-size: 12px;
+      color: #6b7280;
+      text-align: right;
+    }
+    .right .card {
+      overflow: hidden
+    }
+    .sr {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0)
+    }
+    body.dragover-global {
+      outline: 3px dashed var(--drag-border);
+      outline-offset: -8px;
+      background: #eff6ff;
+    }
+    #leftDropZone.dragover {
+      outline: 2px dashed var(--drag-border);
+      outline-offset: -6px;
+      background: #eff6ff;
+    }
+    .zoomGroup button.active {
+      background: #e0e7ff;
+      border-color: #818cf8;
+      color: #312e81;
+      box-shadow: 0 0 0 2px rgba(129, 140, 248, 0.25) inset;
+    }
+    .zoomSliderGroup {
+      display: flex;
+      align-items: center;
+      flex: 1 1 260px;
+    }
+    .zoomSliderGroup input[type=range] {
+      flex: 1 1 auto;
+      height: 28px;
+      accent-color: #6366f1;
+    }
+    .zoomPct {
+      min-width: 45px;
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      color: #374151;
+      font-weight: 600;
+    }
+    .previewWrap.can-pan {
+      cursor: grab;
+    }
+    .previewWrap.panning {
+      cursor: grabbing;
+    }
+    .ink {
+      position: absolute;
+      pointer-events: none;
+      width: 20px;
+      height: 20px;
+      left: var(--left);
+      top: var(--top);
+      border-radius: 50%;
+      background: var(--ink-color);
+      opacity: 0;
+      transform: scale(0);
+      transform-origin: center center;
+      will-change: transform, opacity;
+    }
+    .ink--expand {
+      animation: ink-expand var(--ink-expand-duration) ease-out forwards;
+    }
+    .ink--fade {
+      transition: opacity var(--ink-fade-duration) ease-out;
+    }
+    @keyframes ink-expand {
+      0% {
+        transform: scale(0);
+        opacity: 0;
+      }
+      40% {
+        opacity: 0.22;
+      }
+      100% {
+        transform: scale(var(--scale));
+        opacity: 0.28;
+      }
+    }
+    @media (max-width: 900px) {
+      :root {
+        --left-w: 100%;
+      }
+      .wrap {
+        flex-direction: column;
+      }
+      .left {
+        width: 100%;
+        flex-basis: auto;
+      }
+      .bar {
+        padding: 5px;
+      }
+      .bar .tip {
+        font-size: 9px;
+        width: 132px;
+      }
+      .card {
+        padding-bottom: 0;
+      }
+      .drop {
+        padding: 5px;
+      }
+      .list {
+        max-height: 300px;
+      }
+      .item {
+        grid-template-columns: 8px 1fr 4fr;
+      }
+      .dragHandle {
+        padding: 0;
+      }
+      .arrow_row {
+        display: flex;
+      }
+      .meta_button_row {
+        gap: 3px;
+      }
+      .meta_button_row button {
+        padding: 5px;
+        font-size: 12px;
+      }
+      .legend {
+        gap: 3px;
+        font-size: 10px;
+      }
+      .swatch {
+        margin-right: 0;
+      }
+      .tip {
+        font-size: 10px;
+      }
+    }
+    @media (max-width: 400px) {
+      .brand {
+        font-weight: 600;
+        font-size: 12px;
+      }
+      #ico {
+        height: 16px;
+        margin-right: 2px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="bar">
+      <div class="brand"><img id="ico" src="ico.png">Vertical Screenshot Merger</div>
+      <div class="tip">Drop BMP/PNG/JPEG/WebP screenshots.</div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="left">
+      <div class="card" id="leftDropZone" aria-label="Drop images anywhere in this panel except the list area">
+        <div id="drop" class="drop" tabindex="0" aria-label="Drop images here or browse">
+          <div style="font-weight:600; margin-bottom:6px">Drag & drop screenshots</div>
+          <div class="hint">or click to browse</div>
+          <input id="fileInput" type="file" accept=".bmp,.png,.jpg,.jpeg,.webp,image/bmp,image/png,image/jpeg,image/webp" multiple />
+        </div>
+
+        <div class="controls">
+          <button id="resetBtn">Reset</button>
+          <button id="mergeBtn" class="primary" disabled>Merge</button>
+          <button id="exportBtn" disabled>Export (JPEG)</button>
+        </div>
+
+        <div class="param">
+          <label>Minimum overlap percentage (hard cutoff)
+            <span id="minOverlapVal" class="chip">2</span>
+          </label>
+          <input id="minOverlap" type="range" min="10" max="80" step="1" value="20" />
+        </div>
+
+        <div class="param">
+          <label>Scrollbar ignore width (px)
+            <span id="scrollbarVal" class="chip">6</span>
+          </label>
+          <input id="scrollbar" type="range" min="0" max="40" step="1" value="6" />
+        </div>
+
+        <div class="param">
+          <label>Confidence threshold for merge
+            <span id="confVal" class="chip">0.75</span>
+          </label>
+          <input id="confThr" type="range" min="0.6" max="0.9" step="0.01" value="0.75" />
+        </div>
+
+        <div class="list" id="list" aria-label="Image list (drag to reorder)"></div>
+        <div class="footer_tip" id="footer_tip">Drag to reorder</div>
+        <div class="arrow_row" id="arrow_row"><span class="arrow arrow_expanded" id="arrow"></span></div>
+      </div>
+    </div>
+
+    <div class="right" id="rightPane">
+      <div class="card previewCard" id="previewCard">
+        <div class="toolbar">
+          <div class="zoomSliderGroup" aria-label="Zoom controls">
+            <label for="zoomSlider" class="sr">Zoom</label>
+            <input id="zoomSlider" type="range" min="5" max="800" step="1" value="100" />
+            <div id="zoomPct" class="zoomPct">100%</div>
+          </div>
+
+          <div class="row zoomGroup" style="gap:6px">
+            <button id="fitWidthBtn" data-zoom="fit-width">Fit width</button>
+            <button id="fitContentBtn" data-zoom="fit-content">Fit content</button>
+            <button id="zoom100Btn" data-zoom="100">100%</button>
+          </div>
+          <div class="sp"></div>
+          <div id="status" class="chip">Idle</div>
+        </div>
+        <div class="legend">
+          <span class="swatch sw-overlap"></span>Overlap zones
+          <span class="swatch sw-seam"></span>Seam line
+          <span class="swatch sw-scrollbar"></span>Ignored scrollbar
+          <div class="sp"></div>
+          <span id="dimInfo" class="tip">Output: -</span>
+        </div>
+        <div class="previewWrap" id="previewWrap">
+          <div id="previewScrollContent" class="previewScrollContent">
+            <div id="previewInner" class="previewInner">
+              <canvas id="previewCanvas"></canvas>
+              <canvas id="diagnosticCanvas" class="diagOverlay"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="diagList" id="diagList" aria-live="polite">
+          Diagnostics will appear here after merging.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <template id="itemTpl">
+    <div class="item">
+      <div class="dragHandle" title="Drag to reorder">⋮⋮</div>
+      <div class="thumb"><img alt=""></div>
+      <div class="meta">
+        <div class="row" style="justify-content:space-between">
+          <div class="name small"></div>
+          <span class="chip dims">-</span>
+        </div>
+        <div class="meta_button_row">
+          <button class="cropTopBtn" title="Crop top">Crop top</button>
+          <button class="cropBottomBtn" title="Crop bottom">Crop bottom</button>
+          <button class="delBtn" title="Remove">Delete</button>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <script type="module">
+    import Sortable from 'https://cdn.jsdelivr.net/npm/sortablejs@1.15.6/modular/sortable.esm.js';
+
+    // Shared state
+    const state = {
+      images: [],
+      diagnostics: [],
+      merged: null,
+      previewScale: 1,
+      zoomMode: 'fit-content', // 'fit-content'|'fit-width'|'100'|'custom'
+      params: {
+        minOverlapPct: 20,
+        scrollbarIgnore: 6,
+        confThr: 0.75
+      }
+    };
+
+    // Elements
+    const leftDropZone = document.getElementById('leftDropZone');
+    const drop = document.getElementById('drop');
+    const fileInput = document.getElementById('fileInput');
+    const listEl = document.getElementById('list');
+    const previewCard = document.getElementById('previewCard');
+
+    const mergeBtn = document.getElementById('mergeBtn');
+    const exportBtn = document.getElementById('exportBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    const statusEl = document.getElementById('status');
+    const diagList = document.getElementById('diagList');
+    const footer_tip = document.getElementById('footer_tip');
+    const arrow_row = document.getElementById('arrow_row');
+    const arrow = document.getElementById('arrow');
+
+    const minOverlap = document.getElementById('minOverlap');
+    const scrollbar = document.getElementById('scrollbar');
+    const confThr = document.getElementById('confThr');
+
+    const minOverlapVal = document.getElementById('minOverlapVal');
+    const scrollbarVal = document.getElementById('scrollbarVal');
+    const confVal = document.getElementById('confVal');
+
+    const previewWrap = document.getElementById('previewWrap');
+    const previewScrollContent = document.getElementById('previewScrollContent');
+    const previewInner = document.getElementById('previewInner');
+    const previewCanvas = document.getElementById('previewCanvas');
+    const diagCanvas = document.getElementById('diagnosticCanvas');
+    const dimInfo = document.getElementById('dimInfo');
+
+    // New zoom UI elements
+    const zoomSlider = document.getElementById('zoomSlider');
+    const zoomPct = document.getElementById('zoomPct');
+    const fitWidthBtn = document.getElementById('fitWidthBtn');
+    const fitContentBtn = document.getElementById('fitContentBtn');
+    const zoom100Btn = document.getElementById('zoom100Btn');
+
+    // Utility
+    const nextId = (()=>{let i=1; return ()=>i++;})();
+    function setStatus(text){ statusEl.textContent = text; }
+    function fmtBytes(b){ if(!b && b!==0) return '-'; const u=['B','KB','MB','GB']; let i=0; let n=b; while(n>=1024 && i<u.length-1){n/=1024;i++;} return n.toFixed(1)+' '+u[i]; }
+
+    // File chooser
+    drop.addEventListener('click', ()=> fileInput.click());
+    fileInput.addEventListener('change', async ()=>{ if(fileInput.files.length){ await addFiles([...fileInput.files]); fileInput.value=''; } });
+
+    // DnD helpers (for global file drop)
+    function isDragWithFiles(e){
+      const dt = e.dataTransfer;
+      if(!dt) return false;
+      if(dt.types && dt.types.includes && dt.types.includes('Files')) return true;
+      if(dt.items) return [...dt.items].some(it=> it.kind==='file');
+      return false;
+    }
+    function filesFromDataTransfer(dt){
+      return [...dt.files].filter(f => /image\/(bmp|png|jpe?g|webp)/i.test(f.type) || /\.(bmp|png|jpe?g|jpg|webp)$/i.test(f.name));
+    }
+    function pointInside(el, x, y){
+      if(!el) return false;
+      const r = el.getBoundingClientRect();
+      return x >= r.left && x <= r.right && y >= r.top && y <= r.bottom;
+    }
+    function overExcludedAreas(x, y){
+      return pointInside(listEl, x, y) || pointInside(previewCard, x, y);
+    }
+
+    // Global document-level DnD for file drops (not reordering)
+    function onDocDragOver(e){
+      if(!isDragWithFiles(e)) return;
+      const {clientX:x, clientY:y} = e;
+      if(overExcludedAreas(x,y)){
+        document.body.classList.remove('dragover-global');
+        leftDropZone.classList.remove('dragover');
+        e.preventDefault();
+        return;
+      }
+      e.preventDefault();
+      document.body.classList.add('dragover-global');
+      if(pointInside(leftDropZone, x, y)) leftDropZone.classList.add('dragover'); else leftDropZone.classList.remove('dragover');
+    }
+    function onDocDragLeave(e){
+      if(e.relatedTarget === null){
+        document.body.classList.remove('dragover-global');
+        leftDropZone.classList.remove('dragover');
+      }
+    }
+    function onDocDrop(e){
+      if(!isDragWithFiles(e)) return;
+      const {clientX:x, clientY:y} = e;
+      if(overExcludedAreas(x,y)) return;
+      e.preventDefault();
+      document.body.classList.remove('dragover-global');
+      leftDropZone.classList.remove('dragover');
+      const files = filesFromDataTransfer(e.dataTransfer);
+      if(files.length) {
+        addFiles(files);
+      }
+    }
+    document.addEventListener('dragover', onDocDragOver);
+    document.addEventListener('dragleave', onDocDragLeave);
+    document.addEventListener('drop', onDocDrop);
+
+    // Left zone highlight only
+    leftDropZone.addEventListener('dragover', (e)=>{
+      if(!isDragWithFiles(e)) return;
+      if(listEl.contains(e.target)) return;
+      e.preventDefault();
+      leftDropZone.classList.add('dragover');
+    });
+    leftDropZone.addEventListener('dragleave', ()=> leftDropZone.classList.remove('dragover'));
+
+    // Stop propagation from list/preview for external file DnD
+    ['dragover','dragleave','drop','dragenter'].forEach(ev=>{
+      listEl.addEventListener(ev, (e)=>{
+        e.stopPropagation();
+        if(isDragWithFiles(e)) e.preventDefault();
+        document.body.classList.remove('dragover-global');
+        leftDropZone.classList.remove('dragover');
+      });
+      previewCard.addEventListener(ev, (e)=>{
+        e.stopPropagation();
+        if(isDragWithFiles(e)) e.preventDefault();
+        document.body.classList.remove('dragover-global');
+        leftDropZone.classList.remove('dragover');
+      });
+    });
+
+    async function addFiles(files){
+      if(!files || files.length===0) return;
+      setStatus('Loading images...');
+      const items = [];
+      for (const file of files){
+        try{
+          const bmp = await createImageBitmap(file, {colorSpaceConversion:'none', premultiplyAlpha:'none'});
+          const tw = 56, th = 56;
+          const scale = Math.min(tw/bmp.width, th/bmp.height);
+          const w = Math.max(1, Math.round(bmp.width*scale));
+          const h = Math.max(1, Math.round(bmp.height*scale));
+          const off = new OffscreenCanvas(w, h);
+          const ctx = off.getContext('2d', {alpha:false});
+          ctx.drawImage(bmp, 0, 0, w, h);
+          const thumbBlob = await off.convertToBlob({type:'image/png'});
+          const thumbUrl = URL.createObjectURL(thumbBlob);
+
+          items.push({
+            id: nextId(), name: file.name, file, bitmap: bmp,
+            width: bmp.width, height: bmp.height, cropTop:0, cropBottom:0, thumbDataUrl: thumbUrl
+          });
+        }catch(err){
+          console.error(err);
+        }
+      }
+      state.images.push(...items);
+      renderList();
+      setStatus('Ready');
+      mergeBtn.disabled = state.images.length < 2;
+      footer_tip.style.display = 'block';
+    }
+
+    // List rendering
+    function renderList(){
+      listEl.innerHTML = '';
+      state.images.forEach((img)=>{
+        const tpl = document.getElementById('itemTpl');
+        const node = tpl.content.firstElementChild.cloneNode(true);
+        node.dataset.id = String(img.id);
+        node.querySelector('.thumb img').src = img.thumbDataUrl;
+        node.querySelector('.name').textContent = img.name;
+        node.querySelector('.dims').textContent = `${img.width}×${img.height} px`;
+
+        // Prevent dragging by buttons from starting a drag
+        node.querySelectorAll('button').forEach(btn=>{
+          btn.addEventListener('mousedown', e=> e.stopPropagation());
+          btn.addEventListener('touchstart', e=> e.stopPropagation(), {passive: true});
+          btn.addEventListener('dragstart', e=> e.preventDefault());
+        });
+
+        const delBtn = node.querySelector('.delBtn');
+        delBtn.addEventListener('click', ()=>{
+          try{ URL.revokeObjectURL(img.thumbDataUrl); }catch{}
+          state.images = state.images.filter(it=>it.id!==img.id);
+          renderList();
+          mergeBtn.disabled = state.images.length < 2;
+          if (state.images.length < 1) footer_tip.style.display = 'none';
+        });
+
+        node.querySelector('.cropTopBtn').addEventListener('click', ()=> promptCrop(img,'top'));
+        node.querySelector('.cropBottomBtn').addEventListener('click', ()=> promptCrop(img,'bottom'));
+        listEl.appendChild(node);
+      });
+
+      // Re-init Sortable after rendering to keep bindings fresh
+      initSortable();
+    }
+
+    function promptCrop(img, side){
+      const val = prompt(`Crop ${side} pixels for ${img.name} (current top=${img.cropTop}, bottom=${img.cropBottom})`, side==='top'? img.cropTop : img.cropBottom);
+      if(val===null) return;
+      const n = Math.max(0, Math.min(img.height-1, parseInt(val,10) || 0));
+      if(side==='top') img.cropTop = n; else img.cropBottom = n;
+      renderList();
+    }
+
+    // Parameters
+    minOverlap.addEventListener('input', ()=>{ state.params.minOverlapPct = parseInt(minOverlap.value,10); minOverlapVal.textContent = `${state.params.minOverlapPct}%`; });
+    scrollbar.addEventListener('input', ()=>{ state.params.scrollbarIgnore = parseInt(scrollbar.value,10); scrollbarVal.textContent = `${state.params.scrollbarIgnore}`; drawDiagnostics(); });
+    confThr.addEventListener('input', ()=>{ state.params.confThr = parseFloat(confThr.value); confVal.textContent = state.params.confThr.toFixed(2); });
+
+    // Core image logic
+    function createCanvas(w,h){ const c = new OffscreenCanvas(Math.max(1,Math.floor(w)), Math.max(1,Math.floor(h))); return c; }
+    function drawBitmapToCanvas(bitmap, targetW, sx=0, sy=0, sw=bitmap.width, sh=bitmap.height){
+      const scale = targetW / bitmap.width;
+      const c = createCanvas(targetW, Math.round(sh*scale));
+      const ctx = c.getContext('2d', {alpha:false});
+      ctx.drawImage(bitmap, sx, sy, sw, sh, 0, 0, targetW, Math.round(sh*scale));
+      return c;
+    }
+    function getGrayArrayFromCanvas(offscreen){
+      const w = offscreen.width, h = offscreen.height;
+      const ctx = offscreen.getContext('2d', {alpha:false});
+      const data = ctx.getImageData(0,0,w,h).data;
+      const out = new Float32Array(w*h);
+      for(let i=0,j=0;i<data.length;i+=4,j++){
+        out[j] = (0.299*data[i] + 0.587*data[i+1] + 0.114*data[i+2]) / 255;
+      }
+      return {arr: out, width: w, height: h};
+    }
+    function gradientMagnitude(grayArr, w, h){
+      const out = new Float32Array(w*h);
+      for(let y=0;y<h;y++){
+        for(let x=0;x<w;x++){
+          const xm1 = Math.max(0,x-1), xp1 = Math.min(w-1,x+1);
+          const ym1 = Math.max(0,y-1), yp1 = Math.min(h-1,y+1);
+          const a00 = grayArr[ym1*w + xm1], a01 = grayArr[ym1*w + x], a02 = grayArr[ym1*w + xp1];
+          const a10 = grayArr[y*w + xm1],   a11 = grayArr[y*w + x],   a12 = grayArr[y*w + xp1];
+          const a20 = grayArr[yp1*w + xm1], a21 = grayArr[yp1*w + x], a22 = grayArr[yp1*w + xp1];
+          const gx = (a02 + 2*a12 + a22) - (a00 + 2*a10 + a20);
+          const gy = (a20 + 2*a21 + a22) - (a00 + 2*a01 + a02);
+          out[y*w + x] = Math.hypot(gx, gy);
+        }
+      }
+      return out;
+    }
+    function computeColumnMask(gA, gB, w, h){
+      const colDiff = new Float32Array(w);
+      for(let x=0;x<w;x++){
+        let sum=0;
+        for(let y=0;y<h;y++){
+          const idx = y*w + x;
+          sum += Math.abs(gA[idx] - gB[idx]);
+        }
+        colDiff[x] = sum / h;
+      }
+      const arr = Array.from(colDiff);
+      const sorted = arr.slice().sort((a,b)=>a-b);
+      const median = sorted[Math.floor(sorted.length/2)] || 0;
+      const absThresh = median + 0.02;
+      const mask = new Uint8Array(w);
+      for(let x=0;x<w;x++){
+        mask[x] = (colDiff[x] <= (median * 3 + 1e-9) && colDiff[x] <= (absThresh * 4)) ? 1 : 0;
+      }
+      const kept = mask.reduce((a,b)=>a+b,0);
+      if(kept < w*0.5){ for(let x=0;x<w;x++) mask[x] = 1; }
+      return mask;
+    }
+    function findBestOverlapNCC(gA, gB, w, h, minS, maxS, maskCols){
+      let bestS = minS, bestScore = -Infinity, secondBest = -Infinity;
+      const cols = [];
+      for(let x=0;x<w;x++) if(maskCols[x]) cols.push(x);
+      if(cols.length === 0){ for(let x=0;x<w;x++) cols.push(x); }
+      for(let s = minS; s <= maxS; s++){
+        let dot = 0, sA = 0, sB = 0;
+        const startA = h - s;
+        for(let row=0; row<s; row++){
+          const baseA = (startA + row) * w;
+          const baseB = row * w;
+          for(const x of cols){
+            const a = gA[baseA + x], b = gB[baseB + x];
+            dot += a*b; sA += a*a; sB += b*b;
+          }
+        }
+        const denom = Math.sqrt(sA * sB) + 1e-12;
+        const ncc = dot / denom;
+        if(ncc > bestScore){ secondBest = bestScore; bestScore = ncc; bestS = s; }
+        else if(ncc > secondBest){ secondBest = ncc; }
+      }
+      return {bestS, bestScore, secondBest};
+    }
+    function stitchCanvasesWithOverlaps(canvases, overlapsPx){
+      const width = canvases[0].width;
+      let finalHeight = canvases[0].height;
+      for(let i=1;i<canvases.length;i++){
+        finalHeight += Math.max(0, canvases[i].height - (overlapsPx[i-1] || 0));
+      }
+      const out = createCanvas(width, finalHeight);
+      const oc = out.getContext('2d', {alpha:false});
+
+      let yOffset = 0;
+      for(let i=0;i<canvases.length;i++){
+        const c = canvases[i];
+        if(i === 0){
+          oc.drawImage(c, 0, 0);
+          yOffset += c.height;
+        } else {
+          const ov = Math.max(0, overlapsPx[i-1] || 0);
+          const nonOverlapSrcY = ov;
+          const nonOverlapHeight = c.height - nonOverlapSrcY;
+          const dstYForNonOverlap = yOffset;
+          if(nonOverlapHeight > 0){
+            oc.drawImage(c, 0, nonOverlapSrcY, c.width, nonOverlapHeight, 0, dstYForNonOverlap, c.width, nonOverlapHeight);
+          }
+          yOffset = dstYForNonOverlap + Math.max(0, nonOverlapHeight);
+        }
+      }
+      return out;
+    }
+
+    // Add worker initialization at the top of the script
+    const worker = new Worker('worker.js');
+
+    function computeGradientAsync(grayArr, w, h) {
+      return new Promise((resolve) => {
+        worker.onmessage = (e) => {
+          if (e.data.type === 'gradientResult') {
+            resolve(e.data.result);
+          }
+        };
+        worker.postMessage({ type: 'gradient', grayArr, w, h }, [grayArr.buffer]);
+      });
+    }
+
+    function searchOverlapAsync(gradA, gradB, w, h, minS, maxS, maskCols, pairIndex, totalPairs) {
+      return new Promise((resolve) => {
+        worker.onmessage = (e) => {
+          if (e.data.type === 'overlapProgress') {
+            setStatus(`Detecting overlaps for pair ${pairIndex+1}/${totalPairs}: ${e.data.percent}%`);
+          } else if (e.data.type === 'overlapResult') {
+            resolve(e.data.result);
+          }
+        };
+        worker.postMessage({ type: 'overlap', gradA, gradB, w, h, minS, maxS, maskCols }, [gradA.buffer, gradB.buffer, maskCols.buffer]);
+      });
+    }
+
+    // Actions
+    mergeBtn.addEventListener('click', doMerge);
+    resetBtn.addEventListener('click', resetAll);
+    exportBtn.addEventListener('click', exportJPEG);
+
+    async function doMerge(){
+      if(state.images.length < 2) return;
+      setStatus('Preparing data...');
+      state.diagnostics = [];
+      diagList.innerHTML = '';
+      mergeBtn.disabled = true;
+      exportBtn.disabled = true;
+      previewCanvas.width = 1; previewCanvas.height = 1;
+      diagCanvas.width = 1; diagCanvas.height = 1;
+      previewWrap.style.overflowX = 'hidden';
+      previewWrap.style.overflowY = 'hidden';
+      dimInfo.textContent = 'Output: -';
+      await new Promise(requestAnimationFrame);
+      await new Promise(requestAnimationFrame);
+
+      const width = state.images[0].width;
+      if (!state.images.every(im=>im.width===width)){
+        alert('All screenshots must have exactly the same width.');
+        setStatus('Width mismatch');
+        mergeBtn.disabled = false;
+        return;
+      }
+
+      const canvases = [];
+      for(const im of state.images){
+        const cropTop = im.cropTop|0, cropBottom = im.cropBottom|0;
+        const sh = im.height - cropTop - cropBottom;
+        if(sh <= 0){ alert('Invalid crop resulting in empty image'); mergeBtn.disabled = false; return; }
+        const c = drawBitmapToCanvas(im.bitmap, width, 0, cropTop, width, sh);
+        canvases.push(c);
+      }
+
+      setStatus('Detecting overlaps...');
+      const overlapsPx = [];
+      const perPairDiag = [];
+      const totalPairs = canvases.length - 1;
+      for(let i=0;i<totalPairs;i++){
+        const A = canvases[i], B = canvases[i+1];
+        const w = A.width;
+        const maxOverlapPxPossible = Math.min(A.height, B.height);
+
+        const minPercent = Math.max(1, Math.min(95, state.params.minOverlapPct || 30));
+        const maxPercent = Math.max(minPercent, Math.min(95, Math.round(100 * (maxOverlapPxPossible / B.height))));
+
+        const minOvPx = Math.max(4, Math.round(B.height * (minPercent/100)));
+        const maxOvPx = Math.min(maxOverlapPxPossible, Math.round(B.height * (maxPercent/100)));
+        if(maxOvPx < 4){
+          overlapsPx.push(0);
+          perPairDiag.push({pair:i, overlapPx:0, overlapPct:0, score:0, ambiguous:true});
+          continue;
+        }
+
+        const maxOv = maxOvPx;
+        const cAwin = createCanvas(w, maxOv);
+        const ctxA = cAwin.getContext('2d', {alpha:false});
+        ctxA.drawImage(A, 0, A.height - maxOv, w, maxOv, 0, 0, w, maxOv);
+
+        const cBwin = createCanvas(w, maxOv);
+        const ctxB = cBwin.getContext('2d', {alpha:false});
+        ctxB.drawImage(B, 0, 0, w, maxOv, 0, 0, w, maxOv);
+
+        const gA = getGrayArrayFromCanvas(cAwin);
+        const gB = getGrayArrayFromCanvas(cBwin);
+        const gradA = await computeGradientAsync(gA.arr, gA.width, gA.height);
+        const gradB = await computeGradientAsync(gB.arr, gB.width, gB.height);
+
+        const ignoreRightPx = Math.min(w-1, Math.max(0, parseInt(state.params.scrollbarIgnore,10) || 0));
+        const maskCols = new Uint8Array(w);
+        for(let x=0;x<w;x++){ maskCols[x] = (x >= w - ignoreRightPx) ? 0 : 1; }
+
+        const overlayMask = computeColumnMask(gradA, gradB, w, gA.height);
+        for(let x=0;x<w;x++) maskCols[x] = maskCols[x] & overlayMask[x];
+
+        const minS = Math.max(4, Math.round(minOvPx));
+        const maxS = Math.max(minS, Math.round(maxOvPx));
+
+        const match = await searchOverlapAsync(gradA, gradB, w, gA.height, minS, maxS, maskCols, i, totalPairs);
+        const bestPx = Math.round(match.bestS);
+        const bestPercent = Math.round(10000 * (bestPx / B.height)) / 100.0;
+        const ambiguous = (match.bestScore < state.params.confThr) || (Math.abs(match.bestScore - (match.secondBest ?? -1)) < 0.035);
+
+        overlapsPx.push(bestPx);
+        perPairDiag.push({
+          pair: i+1,
+          overlapPx: bestPx,
+          overlapPct: bestPercent,
+          score: Math.round(match.bestScore*10000)/10000,
+          secondBest: Math.round((match.secondBest??0)*10000)/10000,
+          ambiguous
+        });
+      }
+
+      setStatus('Compositing...');
+      const stitched = stitchCanvasesWithOverlaps(canvases, overlapsPx);
+      setStatus('Compositing:convertToBlob: width:' + stitched.width + ', height:' + stitched.height + ', size:' + stitched.width * stitched.height);
+      console.log('width:' + stitched.width + ', height:' + stitched.height + ', size:' + stitched.width * stitched.height);
+      const blob = await stitched.convertToBlob({type:'image/jpeg', quality:1.0});
+      const blobUrl = URL.createObjectURL(blob);
+      state.merged = {width: stitched.width, height: stitched.height, blobUrl};
+      setStatus('Compositing:updatePreviewFromBlob...');
+      await updatePreviewFromBlob(blob);
+      setStatus('Merged');
+
+      // Diagnostics
+      state.diagnostics = perPairDiag.map(d => ({
+        pair: d.pair - 1 >= 0 ? d.pair - 1 : 0,
+        score: d.score,
+        ok: !d.ambiguous && (d.score >= state.params.confThr),
+        minOverlapPct: state.params.minOverlapPct,
+        overlapH: d.overlapPx,
+        usableH: d.overlapPx,
+        localShift: 0,
+        headerNext: 0,
+        footerPrev: 0,
+        headerScore: 0,
+        footerScore: 0
+      }));
+      renderDiagnostics();
+
+      mergeBtn.disabled = false;
+      exportBtn.disabled = false;
+      drawDiagnosticsFromOverlaps(overlapsPx);
+    }
+
+    function renderDiagnostics(){
+      if(state.diagnostics.length===0){
+        diagList.textContent = 'Diagnostics will appear here after merging.';
+        return;
+      }
+      diagList.innerHTML = '';
+      state.diagnostics.forEach((d,i)=>{
+        const row = document.createElement('div');
+        row.className = 'diagRow';
+        const confClass = d.ok ? 'ok' : (d.score>0.5 ? 'warn' : 'err');
+        row.innerHTML = `
+          <div>#${i+1}</div>
+          <div class="grow">score <strong class="conf ${confClass}">${d.score.toFixed(3)}</strong>,
+            overlap ${d.overlapH}px, usable ${d.usableH}px,
+            headerNext ${d.headerNext}px (s=${(d.headerScore||0).toFixed(2)}), footerPrev ${d.footerPrev}px (s=${(d.footerScore||0).toFixed(2)}),
+            shift ${d.localShift}px
+          </div>
+        `;
+        diagList.appendChild(row);
+      });
+    }
+
+    // Preview rendering and zoom
+    async function updatePreviewFromBlob(blob){
+      setStatus('updatePreviewFromBlob: createImageBitmap');
+      const bmp = await createImageBitmap(blob);
+      setStatus('updatePreviewFromBlob: createImageBitmap done');
+      previewCanvas.width = bmp.width;
+      previewCanvas.height = bmp.height;
+      const ctx = previewCanvas.getContext('2d', {alpha:false});
+      ctx.drawImage(bmp, 0, 0);
+      diagCanvas.width = bmp.width;
+      diagCanvas.height = bmp.height;
+
+      previewInner.style.width = bmp.width + 'px';
+      previewInner.style.height = bmp.height + 'px';
+
+      dimInfo.textContent = `Output: ${bmp.width}×${bmp.height} px (${fmtBytes(blob.size)})`;
+      applyZoom(state.zoomMode);
+    }
+
+    const zoomButtons = [fitWidthBtn, fitContentBtn, zoom100Btn];
+    function setActiveZoomButton(mode){
+      zoomButtons.forEach(btn => btn.classList.remove('active'));
+      if(mode === 'fit-width') fitWidthBtn.classList.add('active');
+      else if(mode === 'fit-content') fitContentBtn.classList.add('active');
+      else if(mode === '100') zoom100Btn.classList.add('active');
+    }
+
+    function hasPreviewImage(){
+      return !!state.merged && previewCanvas.width > 1 && previewCanvas.height > 1;
+    }
+
+    function applyOverflowPerAxis(w, h){
+      const vw = Math.max(1, previewWrap.clientWidth);
+      const vh = Math.max(1, previewWrap.clientHeight);
+      const scaledW = w * state.previewScale;
+      const scaledH = h * state.previewScale;
+
+      const fitsHoriz = scaledW <= vw + 0.5;
+      const fitsVert  = scaledH <= vh + 0.5;
+
+      previewWrap.style.overflowX = fitsHoriz ? 'hidden' : 'auto';
+      previewWrap.style.overflowY = fitsVert  ? 'hidden' : 'auto';
+
+      updatePanAffordance();
+    }
+
+    function updateZoomUIFromScale(){
+      const pct = Math.round(state.previewScale * 100);
+      zoomPct.textContent = `${pct}%`;
+      zoomSlider.value = String(Math.max(zoomSlider.min, Math.min(zoomSlider.max, pct)));
+    }
+
+    function applyZoom(mode){
+      if(!hasPreviewImage()){
+        setActiveZoomButton(mode);
+        updateZoomUIFromScale();
+        updatePanAffordance();
+        return;
+      }
+
+      state.zoomMode = mode;
+
+      const vw0 = Math.max(1, previewWrap.clientWidth);
+      const vh0 = Math.max(1, previewWrap.clientHeight);
+      const w = Math.max(1, previewCanvas.width);
+      const h = Math.max(1, previewCanvas.height);
+
+      function applyScale(scale){
+        const s = Math.max(0.05, Math.min(8, scale));
+        state.previewScale = s;
+        const scaledW = w * s;
+        const scaledH = h * s;
+        previewScrollContent.style.width = `${scaledW}px`;
+        previewScrollContent.style.height = `${scaledH}px`;
+        previewInner.style.transform = `scale(${s})`;
+        updateZoomUIFromScale();
+        applyOverflowPerAxis(w, h);
+        return s;
+      }
+
+      let targetScale;
+      if(mode === 'fit-width'){
+        targetScale = vw0 / w;
+        applyScale(targetScale);
+        const vw1 = Math.max(1, previewWrap.clientWidth);
+        const newScale = vw1 / w;
+        if(Math.abs(newScale - targetScale) > 0.0005){
+          targetScale = newScale;
+          applyScale(targetScale);
+        }
+      } else if(mode === 'fit-content'){
+        targetScale = Math.min(vw0 / w, vh0 / h, 1);
+        applyScale(targetScale);
+      } else if(mode === '100'){
+        targetScale = 1;
+        applyScale(targetScale);
+      } else {
+        applyScale(state.previewScale);
+      }
+
+      setActiveZoomButton(mode);
+      updateZoomUIFromScale();
+      applyOverflowPerAxis(w, h);
+    }
+
+    // Slider interactions
+    let sliderChanging = false;
+    zoomSlider.addEventListener('input', ()=>{
+      sliderChanging = true;
+      const pct = parseInt(zoomSlider.value, 10) || 100;
+      zoomPct.textContent = `${pct}%`;
+      state.previewScale = Math.max(0.05, Math.min(8, pct / 100));
+      state.zoomMode = 'custom';
+      applyZoom('custom');
+      sliderChanging = false;
+    });
+
+    // Preset buttons
+    fitWidthBtn.addEventListener('click', ()=> applyZoom('fit-width'));
+    fitContentBtn.addEventListener('click', ()=> applyZoom('fit-content'));
+    zoom100Btn.addEventListener('click', ()=> applyZoom('100'));
+
+    window.addEventListener('resize', ()=>{
+      applyZoom(state.zoomMode);
+    });
+
+    // Draw diagnostics overlays using overlap array
+    function drawDiagnosticsFromOverlaps(overlaps){
+      const ctx = diagCanvas.getContext('2d');
+      ctx.clearRect(0,0,diagCanvas.width, diagCanvas.height);
+      if(!state.merged) return;
+      const width = state.merged.width;
+      const height = state.merged.height;
+
+      const sb = state.params.scrollbarIgnore|0;
+      if(sb>0){
+        ctx.fillStyle = 'rgba(14,165,233,0.3)';
+        ctx.fillRect(width - sb, 0, sb, height);
+        ctx.strokeStyle = 'rgba(14,165,233,0.9)';
+        ctx.setLineDash([6,4]);
+        ctx.strokeRect(width - sb + 0.5, 0.5, sb-1, height-1);
+        ctx.setLineDash([]);
+      }
+
+      let y = 0;
+      for(let i=0;i<state.images.length;i++){
+        const im = state.images[i];
+        const hEff = im.height - (im.cropTop|0) - (im.cropBottom|0);
+
+        if(i>0){
+          const ov = overlaps[i-1] || 0;
+          const seamY = y;
+          ctx.strokeStyle = 'rgba(239,68,68,0.9)';
+          ctx.beginPath(); ctx.moveTo(0, seamY + 0.5); ctx.lineTo(width, seamY + 0.5); ctx.stroke();
+          const overlapTop = seamY - ov;
+          if(overlapTop >= 0){
+            ctx.fillStyle = 'rgba(34,197,94,0.33)';
+            ctx.fillRect(0, overlapTop, width, ov);
+            ctx.strokeStyle = 'rgba(34,197,94,0.9)';
+            ctx.strokeRect(0.5, overlapTop + 0.5, width-1, ov-1);
+          }
+        }
+        if(i === 0) y += hEff; else y += (hEff - (overlaps[i-1] || 0));
+      }
+    }
+
+    function drawDiagnostics(){
+      const ctx = diagCanvas.getContext('2d');
+      ctx.clearRect(0,0,diagCanvas.width, diagCanvas.height);
+      if(!state.merged) return;
+      const width = state.merged.width;
+      const height = state.merged.height;
+      const sb = state.params.scrollbarIgnore|0;
+      if(sb>0){
+        ctx.fillStyle = 'rgba(14,165,233,0.3)';
+        ctx.fillRect(width - sb, 0, sb, height);
+        ctx.strokeStyle = 'rgba(14,165,233,0.9)';
+        ctx.setLineDash([6,4]);
+        ctx.strokeRect(width - sb + 0.5, 0.5, sb-1, height-1);
+        ctx.setLineDash([]);
+      }
+    }
+
+    async function exportJPEG(){
+      if(!state.merged){ alert('Nothing to export'); return; }
+      setStatus('Exporting JPEG...');
+      const a = document.createElement('a');
+      a.href = state.merged.blobUrl;
+      a.download = 'merged.jpg';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setStatus('Exported');
+    }
+
+    function resetAll(){
+      state.images.forEach(im=>{ try{ URL.revokeObjectURL(im.thumbDataUrl);}catch{} });
+      if(state.merged?.blobUrl){ try{ URL.revokeObjectURL(state.merged.blobUrl);}catch{} }
+      state.images = [];
+      state.diagnostics = [];
+      state.merged = null;
+      previewCanvas.width = 1; previewCanvas.height = 1;
+      diagCanvas.width = 1; diagCanvas.height = 1;
+
+      previewInner.style.width = '1px';
+      previewInner.style.height = '1px';
+      previewInner.style.transform = 'scale(1)';
+      previewScrollContent.style.width = '0px';
+      previewScrollContent.style.height = '0px';
+
+      previewWrap.style.overflowX = 'hidden';
+      previewWrap.style.overflowY = 'hidden';
+
+      diagList.textContent = 'Diagnostics will appear here after merging.';
+      dimInfo.textContent = 'Output: -';
+      setStatus('Idle');
+      mergeBtn.disabled = true;
+      exportBtn.disabled = true;
+      footer_tip.style.display = 'none';
+      renderList();
+      state.previewScale = 1;
+      updateZoomUIFromScale();
+      applyZoom('fit-content');
+    }
+
+    // Drag-to-pan for preview
+    let isPanning = false;
+    let panStartX = 0, panStartY = 0;
+    let scrollStartLeft = 0, scrollStartTop = 0;
+
+    function canPanNow(){
+      const canX = previewWrap.scrollWidth > previewWrap.clientWidth + 1;
+      const canY = previewWrap.scrollHeight > previewWrap.clientHeight + 1;
+      return canX || canY;
+    }
+
+    function updatePanAffordance(){
+      if (canPanNow()){
+        previewWrap.classList.add('can-pan');
+      } else {
+        previewWrap.classList.remove('can-pan');
+        previewWrap.classList.remove('panning');
+      }
+    }
+
+    function onPanStart(e){
+      if(!canPanNow()) return;
+      e.preventDefault();
+
+      isPanning = true;
+      previewWrap.classList.add('panning');
+
+      const isTouch = e.type === 'touchstart';
+      const point = isTouch ? e.touches[0] : e;
+      panStartX = point.clientX;
+      panStartY = point.clientY;
+      scrollStartLeft = previewWrap.scrollLeft;
+      scrollStartTop = previewWrap.scrollTop;
+
+      window.addEventListener(isTouch ? 'touchmove' : 'mousemove', onPanMove, { passive: false });
+      window.addEventListener(isTouch ? 'touchend' : 'mouseup', onPanEnd, { passive: false, once: true });
+      if(isTouch){
+        window.addEventListener('touchcancel', onPanEnd, { passive: false, once: true });
+      }
+    }
+
+    function onPanMove(e){
+      if(!isPanning) return;
+      const isTouch = e.type === 'touchmove';
+      const point = isTouch ? e.touches[0] : e;
+      e.preventDefault();
+
+      const dx = point.clientX - panStartX;
+      const dy = point.clientY - panStartY;
+
+      previewWrap.scrollLeft = clamp(scrollStartLeft - dx, 0, previewWrap.scrollWidth - previewWrap.clientWidth);
+      previewWrap.scrollTop  = clamp(scrollStartTop  - dy, 0, previewWrap.scrollHeight - previewWrap.clientHeight);
+    }
+
+    function onPanEnd(){
+      isPanning = false;
+      previewWrap.classList.remove('panning');
+      updatePanAffordance();
+      window.removeEventListener('mousemove', onPanMove);
+      window.removeEventListener('mouseup', onPanEnd);
+      window.removeEventListener('touchmove', onPanMove);
+      window.removeEventListener('touchend', onPanEnd);
+      window.removeEventListener('touchcancel', onPanEnd);
+    }
+
+    function clamp(v, min, max){ return Math.max(min, Math.min(max, v)); }
+
+    previewWrap.addEventListener('mousedown', onPanStart);
+    previewWrap.addEventListener('touchstart', onPanStart, { passive: false });
+
+    previewWrap.addEventListener('scroll', updatePanAffordance);
+
+    // Wheel step helpers
+    function addWheelStep(input, options){
+      const {step=1, precision=0, onAfter=null} = options || {};
+      const handler = (e)=>{
+        e.preventDefault();
+
+        const min = parseFloat(input.min ?? '0');
+        const max = parseFloat(input.max ?? '100');
+        const current = parseFloat(input.value);
+        const delta = e.deltaY > 0 ? -step : step; // natural: wheel up -> increase
+        let next = current + delta;
+
+        const base = min;
+        const snapped = Math.round((next - base) / step) * step + base;
+        next = Math.min(max, Math.max(min, snapped));
+
+        input.value = precision > 0 ? next.toFixed(precision) : String(next);
+
+        input.dispatchEvent(new Event('input', {bubbles: true}));
+        if(typeof onAfter === 'function') onAfter(next);
+      };
+
+      input.addEventListener('wheel', handler, {passive: false});
+    }
+
+    // Attach wheel handlers
+    addWheelStep(zoomSlider, {
+      step: 5,
+      precision: 0,
+      onAfter: (val)=>{
+        const pct = parseInt(zoomSlider.value, 10) || 100;
+        zoomPct.textContent = `${pct}%`;
+        state.previewScale = Math.max(0.05, Math.min(8, pct / 100));
+        state.zoomMode = 'custom';
+        applyZoom('custom');
+      }
+    });
+    addWheelStep(minOverlap, {
+      step: 1,
+      precision: 0,
+      onAfter: ()=>{
+        state.params.minOverlapPct = parseInt(minOverlap.value, 10);
+        minOverlapVal.textContent = `${state.params.minOverlapPct}%`;
+      }
+    });
+    addWheelStep(scrollbar, {
+      step: 1,
+      precision: 0,
+      onAfter: ()=>{
+        state.params.scrollbarIgnore = parseInt(scrollbar.value, 10);
+        scrollbarVal.textContent = `${state.params.scrollbarIgnore}`;
+        drawDiagnostics();
+      }
+    });
+    addWheelStep(confThr, {
+      step: 0.01,
+      precision: 2,
+      onAfter: ()=>{
+        state.params.confThr = parseFloat(confThr.value);
+        confVal.textContent = state.params.confThr.toFixed(2);
+      }
+    });
+
+    // Mouse wheel zoom on preview (cursor-centered)
+    previewWrap.addEventListener('wheel', (e) => {
+      if (!hasPreviewImage()) return; // allow default page scroll when no image
+      e.preventDefault();
+
+      const stepPct = 5;
+      const dir = e.deltaY < 0 ? 1 : -1;
+
+      const currentScale = state.previewScale;
+      const currentPct = Math.round(currentScale * 100);
+      const minPct = parseInt(zoomSlider.min, 10) || 5;
+      const maxPct = parseInt(zoomSlider.max, 10) || 800;
+
+      const nextPct = clamp(currentPct + dir * stepPct, minPct, maxPct);
+      const nextScale = nextPct / 100;
+
+      if (Math.abs(nextScale - currentScale) < 1e-6) return;
+
+      const wrapRect = previewWrap.getBoundingClientRect();
+      const pointerX = e.clientX - wrapRect.left + previewWrap.scrollLeft;
+      const pointerY = e.clientY - wrapRect.top + previewWrap.scrollTop;
+
+      const imgX = pointerX / currentScale;
+      const imgY = pointerY / currentScale;
+
+      zoomSlider.value = String(nextPct);
+      zoomPct.textContent = `${nextPct}%`;
+      state.previewScale = Math.max(0.05, Math.min(8, nextScale));
+      state.zoomMode = 'custom';
+      applyZoom('custom');
+
+      const newPointerX = imgX * state.previewScale;
+      const newPointerY = imgY * state.previewScale;
+
+      const targetScrollLeft = newPointerX - (e.clientX - wrapRect.left);
+      const targetScrollTop  = newPointerY - (e.clientY - wrapRect.top);
+
+      const maxScrollLeft = previewWrap.scrollWidth - previewWrap.clientWidth;
+      const maxScrollTop  = previewWrap.scrollHeight - previewWrap.clientHeight;
+      previewWrap.scrollLeft = clamp(targetScrollLeft, 0, Math.max(0, maxScrollLeft));
+      previewWrap.scrollTop  = clamp(targetScrollTop, 0, Math.max(0, maxScrollTop));
+    }, { passive: false });
+
+    let isCollapsed = false;
+    function collapse() {
+      listEl.classList.add('list_collapsed');
+      footer_tip.classList.add('list_collapsed');
+      arrow.classList.remove('arrow_expanded');
+      setTimeout(() => {
+        arrow.classList.add('arrow_collapsed');
+        arrow.classList.remove('arrow_expanded');
+      }, 350);
+      isCollapsed = true;
+    }
+
+    function expand() {
+      listEl.classList.remove('list_collapsed');
+      footer_tip.classList.remove('list_collapsed');
+      arrow.classList.remove('arrow_collapsed');
+      setTimeout(() => {
+        arrow.classList.add('arrow_expanded');
+        arrow.classList.remove('arrow_collapsed');
+      }, 350);
+      isCollapsed = false;
+    }
+
+    arrow_row.addEventListener('pointerup', () => {
+      if (isCollapsed) {
+        expand();
+      } else {
+        collapse();
+      }
+    });
+
+    // -----------------------
+    // SortableJS integration
+    // -----------------------
+    let sortableInstance = null;
+
+    function initSortable(){
+      if (sortableInstance) {
+        sortableInstance.destroy();
+        sortableInstance = null;
+      }
+      sortableInstance = new Sortable(listEl, {
+        animation: 200,
+        easing: 'cubic-bezier(0.2, 0, 0, 1)',
+        ghostClass: 'sortable-ghost',
+        chosenClass: 'sortable-chosen',
+        dragClass: 'sortable-drag',
+        forceFallback: true,
+        fallbackOnBody: true,
+        scroll: true,
+        scrollSensitivity: 50,
+        scrollSpeed: 5,
+        onStart: (evt) => {
+          document.body.classList.add('is-sorting');
+        },
+        onEnd: (evt) => {
+          document.body.classList.remove('is-sorting');
+          
+          const { oldIndex, newIndex } = evt;
+          if (oldIndex == null || newIndex == null || oldIndex === newIndex) return;
+
+          // Reorder state.images
+          const moved = state.images.splice(oldIndex, 1)[0];
+          state.images.splice(newIndex, 0, moved);
+
+          // Re-render to sync any bindings (buttons etc.)
+          renderList();
+        }
+      });
+    }
+
+    // -----------------------
+    // Ink ripple for arrow_row
+    // -----------------------
+    (function setupInkOnArrowRow(){
+      const block = arrow_row; // use arrow_row as the ink surface
+
+      function getLocalPoint(el, clientX, clientY) {
+        const rect = el.getBoundingClientRect();
+        return {
+          x: clientX - rect.left,
+          y: clientY - rect.top,
+          w: rect.width,
+          h: rect.height
+        };
+      }
+
+      function maxDistanceToCorner(x, y, w, h) {
+        const dTL = Math.hypot(x, y);
+        const dTR = Math.hypot(w - x, y);
+        const dBR = Math.hypot(w - x, h - y);
+        const dBL = Math.hypot(x, h - y);
+        return Math.max(dTL, dTR, dBR, dBL);
+      }
+
+      function startInk(e) {
+        if (e.button !== undefined && e.button !== 0) return;
+
+        const point = e;
+        const { x, y, w, h } = getLocalPoint(block, point.clientX, point.clientY);
+
+        // Remove previous ink if any
+        const old = block.querySelector('.ink');
+        if (old) old.remove();
+
+        const ink = document.createElement('div');
+        ink.className = 'ink';
+        ink.style.setProperty('--left', (x - 10) + 'px');
+        ink.style.setProperty('--top', (y - 10) + 'px');
+
+        // Scale so final diameter reaches the farthest corner
+        const maxR = maxDistanceToCorner(x, y, w, h);
+        const scale = (maxR * 2) / 20; // base size 20px
+        ink.style.setProperty('--scale', String(scale));
+
+        block.appendChild(ink);
+
+        let releasedEarly = false;
+        let expandEnded = false;
+
+        // Start the fill/grow animation next frame
+        requestAnimationFrame(() => {
+          ink.classList.add('ink--expand');
+        });
+
+        function onRelease(ev) {
+          if (ev.pointerId !== undefined && ev.pointerId !== e.pointerId) return;
+          releasedEarly = true;
+          tryFade();
+          cleanupEvents();
+        }
+
+        function onExpandEnd() {
+          expandEnded = true;
+          tryFade();
+          ink.removeEventListener('animationend', onExpandEnd);
+        }
+
+        function tryFade() {
+          if (expandEnded && releasedEarly) {
+            const cs = getComputedStyle(ink);
+            const currentOpacity = parseFloat(cs.opacity) || 0;
+            const currentTransform = cs.transform === 'none' ? 'scale(' + (scale || 1) + ')' : cs.transform;
+
+            ink.style.animation = 'none';
+            ink.classList.remove('ink--expand');
+
+            ink.style.transform = currentTransform;
+            ink.style.opacity = String(currentOpacity);
+
+            // Force reflow
+            ink.offsetHeight;
+
+            ink.classList.add('ink--fade');
+            requestAnimationFrame(() => {
+              ink.style.opacity = '0';
+            });
+
+            const onEnd = () => { ink.remove(); };
+            ink.addEventListener('transitionend', onEnd, { once: true });
+            ink.addEventListener('transitioncancel', onEnd, { once: true });
+          }
+        }
+
+        function cleanupEvents() {
+          window.removeEventListener('pointerup', onRelease);
+          window.removeEventListener('pointerleave', onRelease);
+          window.removeEventListener('pointercancel', onRelease);
+        }
+
+        window.addEventListener('pointerup', onRelease, { passive: true });
+        window.addEventListener('pointerleave', onRelease, { passive: true });
+        window.addEventListener('pointercancel', onRelease, { passive: true });
+
+        ink.addEventListener('animationend', onExpandEnd);
+      }
+
+      block.addEventListener('pointerdown', startInk, { passive: true });
+    })();
+
+    // Initialize
+    (function init(){
+      minOverlapVal.textContent = `${state.params.minOverlapPct}%`;
+      scrollbarVal.textContent = `${state.params.scrollbarIgnore}`;
+      confVal.textContent = state.params.confThr.toFixed(2);
+      previewCanvas.width = 1; previewCanvas.height = 1;
+      diagCanvas.width = 1; diagCanvas.height = 1;
+      updateZoomUIFromScale();
+      applyZoom('fit-content');
+      updatePanAffordance();
+      initSortable();
+    })();
+  </script>
+</body>
+</html>
