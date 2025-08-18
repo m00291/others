@@ -1,0 +1,169 @@
+﻿
+
+// convert MKV to MP4 by just changing the containers
+ffmpeg -i 1.mkv -codec copy 1.mp4
+
+// combine video + audio mp4 + aac (or re-encode m4a)
+ffmpeg -i 1.mp4 -i 1.m4a -c:v copy -c:a aac output.mp4
+ffmpeg -i 1.mp4 -i 1.aac -c:v copy -c:a aac output.mp4
+
+// re-encode video to mp4(H264/AAC)
+ffmpeg -i 1.m2ts -vcodec libx264 -b:v 5000k -bufsize 5000k -acodec aac 1.mp4
+ffmpeg -i 1.m2ts -vcodec libx264 -b:v 5000k -bufsize 5000k -acodec aac -max_muxing_queue_size 1024 1.mp4
+ffmpeg -i 1.m2ts -vcodec libx264 -b:v 5000k -bufsize 5000k -acodec aac -max_muxing_queue_size 9999 1.mp4
+
+// To set the video bitrate of the output file
+ffmpeg -i v1.mp4 -b:v 5000k -bufsize 5000k v2.mp4
+
+//The first -ss seeks fast to (approximately) 8min0sec, and then the second -ss seeks accurately to 9min0sec, and the -t 00:01:00 takes out a 1min0sec clip.
+ffmpeg -ss 00:08:00 -i input.mp4 -ss 00:01:00 -t 00:01:00 -c copy output.mp4
+
+// cut from 0
+ffmpeg -i 1.wma -t 90 -c copy 2.wma
+ffmpeg -i 1.mp4 -to 02:15:27 -c copy 2.mp4
+
+// cut from 10s to end
+ffmpeg -i 1.mp4 -ss 00:01:32.000 -c copy 2.mp4
+ffmpeg -i 1.mp3 -ss 00:00:10.000 -c copy 2.mp3
+
+// extract audio
+ffmpeg -i TT.wmv -vn -acodec copy 123.wma
+
+// convert to mp3
+ffmpeg -i 123.aac -acodec libmp3lame audio.mp3
+
+// output bitrate mp3
+ffmpeg -i 1.mp3 -codec:a libmp3lame -b:a 128k 2.mp3
+ffmpeg -i input.mp3 -codec:a libmp3lame -qscale:a 2 output.mp3
+-V 0	245	220-260	-q:a 0 (NB this is VBR from 22 to 26 KB/s)
+-V 1	225	190-250	-q:a 1
+-V 2	190	170-210	-q:a 2
+-V 3	175	150-195	-q:a 3
+-V 4	165	140-185	-q:a 4
+-V 5	130	120-150	-q:a 5
+-V 6	115	100-130	-q:a 6
+-V 7	100	80-120	-q:a 7
+-V 8	85	70-105	-q:a 8
+-V 9	65	45-85	-q:a 9
+
+// reverse video
+ffmpeg -i inputfile.mp4 -vf reverse reversed.mp4
+
+// resize resolution
+ffmpeg -i 1.mp4 -vf scale=1920:1080 -c:a copy 1_output.mp4
+ffmpeg -i 1.mp4 -vf scale=1920:-1 -c:a copy 1_output.mp4
+ffmpeg -i 1.mp4 -vf scale=-1:1080 -c:a copy 1_output.mp4
+ffmpeg -i input.mp4 -vf scale=iw*2:ih output.mp4
+ffmpeg -i input.mp4 -vf "scale=iw/2:ih/2" output.mp4
+// high quality crf=18
+ffmpeg -i input.mp4 -vf scale=1920:1080 -preset slow -crf 18 output.mp4
+
+// rotate video
+ffmpeg -i 1.mp4 -vf "transpose=1" 2.mp4
+ffmpeg -i 1.mp4 -vf "transpose=2,transpose=2" 2.mp4
+0 = 90CounterCLockwise and Vertical Flip (default)
+1 = 90Clockwise
+2 = 90CounterClockwise
+3 = 90Clockwise and Vertical Flip
+Use -vf "transpose=2,transpose=2" for 180 degrees.
+
+//combine video
+https://trac.ffmpeg.org/wiki/Concatenate
+1. no encode: concat
+(echo file '1.mp4' & echo file '2.mp4' )>list.txt
+ffmpeg -safe 0 -f concat -i list.txt -c copy output.mp4
+ffmpeg -safe 0 -f concat -i 100.txt -c copy output.mp4
+
+mylist.txt
+file '/path/to/file1'
+file '/path/to/file2'
+file '/path/to/file3'
+
+ffmpeg -f concat -safe 0 -i mylist.txt -c copy output.mp4
+
+2. re-encode: [0:v][0:a] 0th video , three files (n=3)
+ffmpeg -i file1.mp4 -i file2.mp4 -i file3.mp4 -filter_complex "[0:v] [0:a] [1:v] [1:a] [2:v] [2:a] concat=n=3:v=1:a=1 [vv] [aa]" -map "[vv]" -map "[aa]" mergedVideo.mp4
+
+3. intermediate file
+ffmpeg -i "concat:input1.ts|input2.ts|input3.ts" -c copy output.ts
+or mp4
+ffmpeg -i input1.mp4 -c copy -bsf:v h264_mp4toannexb -f mpegts intermediate1.ts
+ffmpeg -i input2.mp4 -c copy -bsf:v h264_mp4toannexb -f mpegts intermediate2.ts
+ffmpeg -i "concat:intermediate1.ts|intermediate2.ts" -c copy -bsf:a aac_adtstoasc output.mp4
+
+//The filter works by changing the presentation timestamp (PTS) of each video frame. For example, if there are two succesive frames shown at timestamps 1 and 2, and you want to speed up the video, those timestamps need to become 0.5 and 1, respectively. Thus, we have to multiply them by 0.5.
+//Note that this method will drop frames to achieve the desired speed. You can avoid dropped frames by specifying a higher output frame rate than the input. For example, to go from an input of 4 FPS to one that is sped up to 4x that (16 FPS):
+ffmpeg -i input.mp4 -r 16 -filter:v "setpts=0.25*PTS" output.mp4
+
+
+//To slow down your video, you have to use a multiplier greater than 1:
+ffmpeg -i input.mkv -filter:v "setpts=2.0*PTS" output.mkv
+
+// Remove Audio by using the -an flag.
+ffmpeg -i 2.mp4 -c copy -an out.mp4
+
+// speed up video and audio
+ffmpeg -i MVI_0170.mp4 -filter_complex "[0:v]setpts=0.1*PTS[v];[0:a]atempo=10.0[a]" -map "[v]" -map "[a]" output.mp4
+
+// speed up video only (double speed)
+ffmpeg -i 2.mp4 -filter:v "setpts=0.5*PTS" output.mp4
+
+// .m3u8
+ffmpeg -i "https://www.7b75/index.m3u8" -c copy media.mp4
+
+// crop video
+ffmpeg -i in.mp4 -filter:v "crop=out_w:out_h:x:y" out.mp4
+Where the options are as follows:
+out_w is the width of the output rectangle
+out_h is the height of the output rectangle
+x and y specify the top left corner of the output rectangle
+To crop a 80×60 section, starting from position (200, 100):
+ffmpeg -i in.mp4 -filter:v "crop=80:60:200:100" -c:a copy out.mp4
+
+// Soft-subs
+ffmpeg -i input.mkv -i subtitles.ass -codec copy -map 0 -map 1 output.mkv
+
+// hard-subs
+ffmpeg -i 1.mp4 -vf subtitles=1.srt 2.mp4
+ffmpeg -i 1.mp4 -vf "ass=1.ass" 2.mp4
+
+// delay video by 3.84 seconds
+ffmpeg -i 1.mp4 -itsoffset 3.84 -i 1.mp4 -map 1:v -map 0:a -c copy 2.mp4
+
+//delay audio by 3.84 seconds
+ffmpeg -i 1.mp4 -itsoffset 3.84 -i 1.mp4 -map 0:v -map 1:a -c copy 2.mp4
+
+
+=========== loop image to video========================
+// single image
+ffmpeg -loop 1 -i 1.jpg -t 30 output.mp4
+
+========================================================
+===========  image  ====================================
+
+// extract frame
+ffmpeg -ss 00:01:05 -i 1.mp4 -vframes 1 1.jpg
+
+// change canvas size
+// pad width height is output size
+// x y is starting position
+// color is background
+ffmpeg -i cover.jpg -vf "pad=width=1920:height=1080:x=240:y=0:color=black" cover2.jpg
+
+
+// video preview
+// n = frame
+ffmpeg -ss 00:00:10 -i 1.mp4 -vf "select=not(mod(n\,1000)),scale=320:240,tile=3x12" out.png
+// t = time
+ffmpeg -ss 00:00:10 -i 1.mp4 -vf "select=not(mod(t\,floor(%duration%/18))),scale=960:540,tile=3x6" out.png
+
+ffprobe -i 1.mp4 -v quiet -show_entries format=duration -hide_banner -of default=noprint_wrappers=1:nokey=1
+
+for /F "delims=" %i in ('ffprobe -i 1.mp4 -v quiet -show_entries format^=duration -hide_banner -of default^=noprint_wrappers^=1:nokey^=1 2^>^&1') do set "duration=%i"
+echo %duration%
+
+for /f %i in ('ffprobe -i 1.mp4 -v quiet -show_entries format^=duration -hide_banner -of default^=noprint_wrappers^=1:nokey^=1') do set duration=%i
+
+ffmpeg -ss 00:00:10 -i 1.mp4 -vf "select=not(mod(t\,floor(%duration%/18))),scale=960:540,tile=3x6" out.png
+
+
