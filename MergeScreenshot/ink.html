@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ink Fill</title>
+<style>
+  :root {
+    --ink-color: rgba(0, 0, 0, 0.25);
+    --ink-expand-duration: 320ms;
+    --ink-fade-duration: 220ms;
+  }
+
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    background: #f6f7fb;
+    color: #222;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    tap-highlight-color: transparent !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+
+  .container {
+    width: min(92vw, 720px);
+    padding: 24px;
+  }
+
+  .title {
+    margin: 0 0 16px 0;
+    font-weight: 600;
+    font-size: 1.05rem;
+  }
+
+  .block {
+    position: relative;
+    height: 260px;
+    border-radius: 12px;
+    border: 1px solid #d9d9e0;
+    background: #ffffff;
+    overflow: hidden;
+    box-shadow:
+      0 1px 2px rgba(0,0,0,0.04),
+      0 3px 8px rgba(0,0,0,0.06);
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    touch-action: manipulation;
+  }
+
+  .hint {
+    color: #61616a;
+    font-size: 0.95rem;
+    text-align: center;
+    padding: 0 12px;
+  }
+
+  .ink {
+    position: absolute;
+    pointer-events: none;
+    width: 20px;
+    height: 20px;
+    left: var(--left);
+    top: var(--top);
+    border-radius: 50%;
+    background: var(--ink-color);
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: center center;
+    will-change: transform, opacity;
+  }
+
+  .ink--expand {
+    animation: ink-expand var(--ink-expand-duration) ease-out forwards;
+  }
+
+  .ink--fade {
+    transition: opacity var(--ink-fade-duration) ease-out;
+  }
+
+  @keyframes ink-expand {
+    0%   { transform: scale(0);   opacity: 0;    }
+    40%  { opacity: 0.22; }
+    100% { transform: scale(var(--scale)); opacity: 0.28; }
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Press to fill grey, release to fade to white</h1>
+    <div id="block" class="block" aria-label="Interactive block">
+      <div class="hint">Press and hold anywhere inside</div>
+    </div>
+  </div>
+
+<script>
+(function () {
+  const block = document.getElementById('block');
+
+  function getLocalPoint(el, clientX, clientY) {
+    const rect = el.getBoundingClientRect();
+    return {
+      x: clientX - rect.left,
+      y: clientY - rect.top,
+      w: rect.width,
+      h: rect.height
+    };
+  }
+
+  function maxDistanceToCorner(x, y, w, h) {
+    const dTL = Math.hypot(x, y);
+    const dTR = Math.hypot(w - x, y);
+    const dBR = Math.hypot(w - x, h - y);
+    const dBL = Math.hypot(x, h - y);
+    return Math.max(dTL, dTR, dBR, dBL);
+  }
+
+  function startInk(e) {
+    // Only respond to primary pointer (ignore right-click, etc)
+    if (e.button !== undefined && e.button !== 0) return;
+
+    const point = e;
+    const { x, y, w, h } = getLocalPoint(block, point.clientX, point.clientY);
+
+    // Remove previous ink if any
+    const old = block.querySelector('.ink');
+    if (old) old.remove();
+
+    const ink = document.createElement('div');
+    ink.className = 'ink';
+    ink.style.setProperty('--left', (x - 10) + 'px');
+    ink.style.setProperty('--top', (y - 10) + 'px');
+
+    // Scale so final diameter reaches the farthest corner
+    const maxR = maxDistanceToCorner(x, y, w, h);
+    const scale = (maxR * 2) / 20; // base size 20px
+    ink.style.setProperty('--scale', String(scale));
+
+    block.appendChild(ink);
+
+    let releasedEarly = false;
+    let expandEnded = false;
+
+    // Start the fill/grow animation next frame
+    requestAnimationFrame(() => {
+      ink.classList.add('ink--expand');
+    });
+
+    // Called when release or leave happens
+    function onRelease(ev) {
+      // Only respond to the same pointer
+      if (ev.pointerId !== undefined && ev.pointerId !== e.pointerId) return;
+      releasedEarly = true;
+      tryFade();
+      cleanupEvents();
+    }
+
+    // Called when expand animation ends
+    function onExpandEnd() {
+      expandEnded = true;
+      tryFade();
+      ink.removeEventListener('animationend', onExpandEnd);
+    }
+
+    // Only fade when both: expand animation ended, and user released
+    function tryFade() {
+      if (expandEnded && releasedEarly) {
+        // Stop any running animation and lock current visual state
+        const cs = getComputedStyle(ink);
+        const currentOpacity = parseFloat(cs.opacity) || 0;
+
+        // Freeze transform at its current matrix so we can fade only opacity
+        const currentTransform = cs.transform === 'none' ? 'scale(' + (scale || 1) + ')' : cs.transform;
+
+        // Clear animations
+        ink.style.animation = 'none';
+        ink.classList.remove('ink--expand');
+
+        // Apply the frozen state
+        ink.style.transform = currentTransform;
+        ink.style.opacity = String(currentOpacity);
+
+        // Force reflow to ensure the above styles are applied
+        ink.offsetHeight;
+
+        ink.classList.add('ink--fade');
+        // Now setting opacity to 0 will transition
+        requestAnimationFrame(() => {
+          ink.style.opacity = '0';
+        });
+
+        // Cleanup when transition ends
+        const onEnd = () => {
+          ink.remove();
+        };
+        ink.addEventListener('transitionend', onEnd, { once: true });
+        ink.addEventListener('transitioncancel', onEnd, { once: true });
+      }
+    }
+
+    function cleanupEvents() {
+      window.removeEventListener('pointerup', onRelease);
+      window.removeEventListener('pointerleave', onRelease);
+      window.removeEventListener('pointercancel', onRelease);
+    }
+
+    window.addEventListener('pointerup', onRelease, { passive: true });
+    window.addEventListener('pointerleave', onRelease, { passive: true });
+    window.addEventListener('pointercancel', onRelease, { passive: true });
+
+    // Listen for animation end
+    ink.addEventListener('animationend', onExpandEnd);
+  }
+
+  block.addEventListener('pointerdown', startInk, { passive: true });
+})();
+</script>
+</body>
+</html>
