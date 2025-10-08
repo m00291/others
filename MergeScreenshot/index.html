@@ -185,7 +185,8 @@
       display: none;
       justify-content: center;
       border-radius: 0 0 10px 10px;
-      padding: 5px 0 19px;
+      height: 24px;
+      padding-top: 5px;
       margin: 0 -12px;
       /* Make it the ink container targetable and tappable */
       position: relative;
@@ -216,8 +217,44 @@
     .arrow_collapsed::after {
       opacity: 1;
     }
+    .arrow_row_rv {
+      display: flex;
+      display: none;
+      justify-content: center;
+      height: 24px;
+      padding: 8px 0 5px;
+      margin: 0 -12px;
+      /* Make it the ink container targetable and tappable */
+      position: relative;
+      overflow: hidden;
+      touch-action: manipulation;
+      cursor: pointer;
+    }
+    .arrow_rv::before,
+    .arrow_rv::after {
+      content: "";
+      position: absolute;
+      width: 10px;
+      opacity: 0;
+      aspect-ratio: 1;
+      border-right: 2px solid #888;
+      border-bottom: 2px solid #888;
+      transition: opacity 1s ease;
+    }
+    .arrow_rv::before {
+      transform: translateY(-3.5px) rotate(45deg);
+    }
+    .arrow_rv::after {
+      transform: translateY(3.5px) rotate(225deg);
+    }
+    .arrow_expanded_rv::before {
+      opacity: 1;
+    }
+    .arrow_collapsed_rv::after {
+      opacity: 1;
+    }
     .list {
-      margin-top: 12px;
+      //margin-top: 12px;
       max-height: 400px;
       overflow: auto;
       padding: 8px;
@@ -549,6 +586,9 @@
       .arrow_row {
         display: flex;
       }
+      .arrow_row_rv {
+        display: flex;
+      }
       .meta_button_row {
         gap: 3px;
       }
@@ -623,6 +663,7 @@
           <input id="confThr" type="range" min="0.6" max="0.9" step="0.01" value="0.75" />
         </div>
 
+        <div class="arrow_row_rv" id="arrow_row_rv"><span class="arrow_rv arrow_expanded_rv" id="arrow_rv"></span></div>
         <div class="list" id="list" aria-label="Image list (drag to reorder)"></div>
         <div class="footer_tip" id="footer_tip">Drag to reorder</div>
         <div class="arrow_row" id="arrow_row"><span class="arrow arrow_expanded" id="arrow"></span></div>
@@ -718,6 +759,8 @@
     const footer_tip = document.getElementById('footer_tip');
     const arrow_row = document.getElementById('arrow_row');
     const arrow = document.getElementById('arrow');
+    const arrow_row_rv = document.getElementById('arrow_row_rv');
+    const arrow_rv = document.getElementById('arrow_rv');
 
     const minOverlap = document.getElementById('minOverlap');
     const scrollbar = document.getElementById('scrollbar');
@@ -1607,9 +1650,12 @@
       listEl.classList.add('list_collapsed');
       footer_tip.classList.add('list_collapsed');
       arrow.classList.remove('arrow_expanded');
+      arrow_rv.classList.remove('arrow_expanded_rv');
       setTimeout(() => {
         arrow.classList.add('arrow_collapsed');
         arrow.classList.remove('arrow_expanded');
+        arrow_rv.classList.add('arrow_collapsed_rv');
+        arrow_rv.classList.remove('arrow_expanded_rv');
       }, 350);
       isCollapsed = true;
     }
@@ -1618,14 +1664,25 @@
       listEl.classList.remove('list_collapsed');
       footer_tip.classList.remove('list_collapsed');
       arrow.classList.remove('arrow_collapsed');
+      arrow_rv.classList.remove('arrow_collapsed_rv');
       setTimeout(() => {
         arrow.classList.add('arrow_expanded');
         arrow.classList.remove('arrow_collapsed');
+        arrow_rv.classList.add('arrow_expanded_rv');
+        arrow_rv.classList.remove('arrow_collapsed_rv');
       }, 350);
       isCollapsed = false;
     }
 
     arrow_row.addEventListener('pointerup', () => {
+      if (isCollapsed) {
+        expand();
+      } else {
+        collapse();
+      }
+    });
+
+    arrow_row_rv.addEventListener('pointerup', () => {
       if (isCollapsed) {
         expand();
       } else {
@@ -1678,6 +1735,7 @@
     // -----------------------
     (function setupInkOnArrowRow(){
       const block = arrow_row; // use arrow_row as the ink surface
+      const block_rv = arrow_row_rv;
 
       function getLocalPoint(el, clientX, clientY) {
         const rect = el.getBoundingClientRect();
@@ -1697,14 +1755,14 @@
         return Math.max(dTL, dTR, dBR, dBL);
       }
 
-      function startInk(e) {
+      function startInk(e, ref_block) {
         if (e.button !== undefined && e.button !== 0) return;
 
         const point = e;
-        const { x, y, w, h } = getLocalPoint(block, point.clientX, point.clientY);
+        const { x, y, w, h } = getLocalPoint(ref_block, point.clientX, point.clientY);
 
         // Remove previous ink if any
-        const old = block.querySelector('.ink');
+        const old = ref_block.querySelector('.ink');
         if (old) old.remove();
 
         const ink = document.createElement('div');
@@ -1717,7 +1775,7 @@
         const scale = (maxR * 2) / 20; // base size 20px
         ink.style.setProperty('--scale', String(scale));
 
-        block.appendChild(ink);
+        ref_block.appendChild(ink);
 
         let releasedEarly = false;
         let expandEnded = false;
@@ -1779,7 +1837,8 @@
         ink.addEventListener('animationend', onExpandEnd);
       }
 
-      block.addEventListener('pointerdown', startInk, { passive: true });
+      block.addEventListener('pointerdown', (e) => startInk(e, block), { passive: true });
+      block_rv.addEventListener('pointerdown', (e) => startInk(e, block_rv), { passive: true });
     })();
 
     // Initialize
