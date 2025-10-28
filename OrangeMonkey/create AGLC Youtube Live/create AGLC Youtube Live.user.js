@@ -280,12 +280,10 @@
       }
     }
   }
-  
-  // Initial run
-  SelectTemplate();
 
   // Observe URL changes
   setInterval(() => {
+    //console.log('checking');
     if (location.href !== lastUrl) {
       lastUrl = location.href;
       if (location.href.includes('/channel/UC2LOYen89PZP3y36uYY4v7A/livestreaming')) {
