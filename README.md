@@ -64,6 +64,15 @@ git config --global user.email "user@example.com"
 <br>
 <br>
 <br>
+Reset Merge History
+
+```
+git reset --hard <commit_before_merge_hash>
+```
+```
+git push origin --force
+```
+
 <br>
 <br>
 <br>
