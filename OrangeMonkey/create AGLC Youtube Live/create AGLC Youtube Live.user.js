@@ -10,7 +10,7 @@
   function SelectTemplate() {
     console.log('start');
 
-    const targetText = '路德會永恩堂 崇拜 2025年?月?日 上午11時正';
+    const targetText = '路德會永恩堂 崇拜 2026年?月?日 上午11時正';
     const dialogSelector = 'tp-yt-paper-dialog[style-target="host"].style-scope.ytls-popup-container';
 
     // Helper function to check if an element is visible
@@ -104,7 +104,7 @@
     // Watch for the #textbox div after the click
     function updateTitle() {
       const textboxSelector = 'div#textbox.style-scope.ytcp-social-suggestions-textbox';
-      const targetTextPattern = /^路德會永恩堂 崇拜 2025年\?月\?日 上午11時正$/;
+      const targetTextPattern = /^路德會永恩堂 崇拜 2026年\?月\?日 上午11時正$/;
 
       function updateIfMatch(textbox) {
         if (textbox && targetTextPattern.test(textbox.textContent.trim())) {
