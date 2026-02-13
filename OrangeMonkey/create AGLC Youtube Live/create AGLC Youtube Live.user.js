@@ -8,7 +8,7 @@
   let lastUrl = location.href;
   
   function SelectTemplate() {
-    console.log('start');
+    console.log('start-dev');
 
     const targetText = '路德會永恩堂 崇拜 2026年?月?日 上午11時正';
     const dialogSelector = 'tp-yt-paper-dialog[style-target="host"].style-scope.ytls-popup-container';
@@ -103,7 +103,10 @@
 
     // Watch for the #textbox div after the click
     function updateTitle() {
-      const textboxSelector = 'div#textbox.style-scope.ytcp-social-suggestions-textbox';
+      const textboxSelector0 = 'div#textbox.style-scope.ytcp-social-suggestions-textbox';
+      const textboxSelector2 = 'div#textbox.style-scope.ytcp-social-suggestions-textbox[aria-disabled="false"][aria-required="true"]';
+      const containerSelector = 'ytcp-social-suggestion-input.fill-height.style-scope.ytcp-social-suggestions-textbox';
+    const createSelector = 'tp-yt-paper-dialog[style-target="host"].style-scope.ytls-broadcast-create-dialog';
       const targetTextPattern = /^路德會永恩堂 崇拜 2026年\?月\?日 上午11時正$/;
 
       function updateIfMatch(textbox) {
@@ -139,20 +142,27 @@
       }
 
       // Try to find the textbox immediately
-      let textbox = document.querySelector(textboxSelector);
+      let textbox = document.querySelector(createSelector);
+      console.log('Looking for textbox immediately:', textbox, 'with selector:', createSelector);
       if (textbox) {
+        console.log('Textbox found immediately:', textbox);
         observeAndUpdate(textbox);
       } else {
-        // If not found, observe the body for it being added
+      // If not found, observe the body for it being added
+      console.log('Textbox not found immediately, setting up observer for:', createSelector);
         const bodyObserver = new MutationObserver((mutations, obs) => {
           for (const mutation of mutations) {
-            for (const node of mutation.addedNodes) {
-              if (node.nodeType === 1 && node.matches && node.matches(textboxSelector)) {
-                obs.disconnect();
-                observeAndUpdate(node);
-                return;
+            //if (mutation.type === 'childList') {
+              for (const node of mutation.addedNodes) {
+                  console.log('Textbox not appeared:', node);
+                if (node.nodeType === 1 && node.matches && node.matches(createSelector)) {
+                  console.log('Textbox appeared:', node);
+                  obs.disconnect();
+                  observeAndUpdate(node);
+                  return;
+                }
               }
-            }
+            //}
           }
         });
         bodyObserver.observe(document.body, { childList: true, subtree: true });
