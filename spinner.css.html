@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="mobile.css">
+  <link rel="stylesheet" href="spinner.css">
+  <style>
+    textarea {
+      width: min(80%, 400px);
+      height: 30%;
+      touch-action: pan-y;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    button {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. Spinner visible immediately on page start -->
+  <div id="loading-overlay" class="js-loading-overlay active">
+    <div class="spinner"></div>
+  </div>
+
+  <h2>Test Loading Overlay</h2>
+  <div><button id="trigger-btn">Test 2 Seconds</button></div>
+  <p></p>
+  <div><button id="fetch-btn">fetch</button></div>
+  <div>Result</div>
+  <textarea readonly id="result-textarea" cols="50" rows="10"></textarea>
+
+  <script>
+    // 2. Construct Spinner
+    const overlayElement = document.getElementById('loading-overlay');
+
+    const Spinner = {
+      show: () => {
+        overlayElement.classList.add('active');
+      },
+      hide: () => {
+        overlayElement.classList.remove('active');
+      }
+    };
+  </script>
+
+  <script>
+    // 3. Hide Spinner automatically once the full page is done loading
+    window.addEventListener('load', () => {
+      setTimeout(Spinner.hide,1000);
+    });
+  </script>
+
+  <script>
+    async function handleDataFetch() {
+      Spinner.show();
+      let data;
+
+      try {
+        const response = await fetch('https://raw.githubusercontent.com/m00291/others/refs/heads/main/sudoku/manifest.json');
+        data = await response.json();
+        document.getElementById('result-textarea').value = JSON.stringify(data, null, 2);
+      } catch (err) {
+        console.error(err);
+      } finally {
+        Spinner.hide();
+      }
+    }
+
+    document.getElementById('trigger-btn').addEventListener('click', async () => {
+      Spinner.show();
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      Spinner.hide();
+    });
+
+    document.getElementById('fetch-btn').addEventListener('click', async () => { handleDataFetch(); });
+  </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+body:has(.js-loading-overlay.active) {
+  overflow: hidden;
+}
+.js-loading-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.js-loading-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+.js-loading-overlay .spinner {
+  box-sizing: border-box;
+  width: 40px;
+  height: 40px;
+  border: 4px solid #334155;
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: js-spinner-spin 1s linear infinite;
+}
+@keyframes js-spinner-spin { 
+  to { transform: rotate(360deg); } 
+}
