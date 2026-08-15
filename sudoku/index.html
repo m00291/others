@@ -236,13 +236,6 @@
       font-weight: bold;
       transform: scale(160%);
     }
-    .controls {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 20px;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
     button {
       padding: 8px 16px;
       background-color: #4CAF50;
@@ -260,17 +253,58 @@
       background-color: #cccccc;
       cursor: not-allowed;
     }
-    .control-grid {
+    .bottom-grid {
       display: flex;
+      justify-content: space-evenly;
       gap: 2px;
+    }
+    .bottom-grid > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .left-control, .right-control {
+      flex: 1;
+    }
+    .mode-toggle {
+      position: relative;
+    }
+    .mode-toggle::before {
+      content: "";
+      position: absolute;
+      left: var(--indicator-left);
+      top: var(--indicator-top);
+      width: var(--indicator-width);
+      height: var(--indicator-height);
+      background: #4caf4fbb;
+      border-radius: 4px;
+      transition: top 0.25s ease, left 0.25s ease, width 0.25s ease, height 0.25s ease;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .mode-toggle button {
+      position: relative;
+      background-color: unset;
+      padding: 15px 15px;
+    }
+    .mode-toggle button svg {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+    }
+    .controls button {
+      background-color: unset;
+      padding: 15px 8px;
     }
     .number-pad {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 3px;
       margin: 0 auto;
-      width: 100%;
-      max-width: 270px;
+      min-width: 270px;
     }
     .number-pad button {
       display: flex;
@@ -314,27 +348,6 @@
       justify-content: center;
       align-items: center;
     }
-    .mode-toggle {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      margin-bottom: 8px;
-    }
-    .mode-toggle button svg {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 30px;
-      height: 30px;
-    }
-    .mode-toggle button {
-      background-color: unset;
-      padding: 5px 20px;
-    }
-    .mode-toggle button.active {
-      background-color: #0b7dda;
-      font-weight: bold;
-    }
     .difficulty-selector, .timer {
       margin-bottom: 15px;
       text-align: center;
@@ -361,6 +374,9 @@
     @media (max-width: 480px) {
       body {
         padding: 0px;
+      }
+      .mode-toggle button {
+        padding: 15px 8px;
       }
     }
   </style>
@@ -429,20 +445,14 @@
       <button id="new-game">新遊戲</button>
     </div>
     
-    <div class="timer">時間: <span id="timer">00:00</span></div>
-    
-    <div class="controls">
-      <span id="firework"></span>
-      <button id="hint">提示</button>
-      <button id="solve">解答</button>
-    </div>
+    <div class="timer">時間: <span id="timer">00:00</span><span id="firework"></span></div>
     
     <div class="status-message" id="play-message"></div>
     
     <div class="sudoku-grid" id="play-grid"></div>
     
-    <div class="control-grid">
-      <div class="mode-toggle">
+    <div class="bottom-grid">
+      <div class="mode-toggle left-control">
         <button id="normal-mode" class="active">
           <svg width="200px" height="200px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M14.3601 4.07866L15.2869 3.15178C16.8226 1.61607 19.3125 1.61607 20.8482 3.15178C22.3839 4.68748 22.3839 7.17735 20.8482 8.71306L19.9213 9.63993M14.3601 4.07866C14.3601 4.07866 14.4759 6.04828 16.2138 7.78618C17.9517 9.52407 19.9213 9.63993 19.9213 9.63993M14.3601 4.07866L5.83882 12.5999C5.26166 13.1771 4.97308 13.4656 4.7249 13.7838C4.43213 14.1592 4.18114 14.5653 3.97634 14.995C3.80273 15.3593 3.67368 15.7465 3.41556 16.5208L2.32181 19.8021M19.9213 9.63993L11.4001 18.1612C10.8229 18.7383 10.5344 19.0269 10.2162 19.2751C9.84082 19.5679 9.43469 19.8189 9.00498 20.0237C8.6407 20.1973 8.25352 20.3263 7.47918 20.5844L4.19792 21.6782M4.19792 21.6782L3.39584 21.9456C3.01478 22.0726 2.59466 21.9734 2.31063 21.6894C2.0266 21.4053 1.92743 20.9852 2.05445 20.6042L2.32181 19.8021M4.19792 21.6782L2.32181 19.8021" stroke="#1C274C" stroke-width="1.5"/>
@@ -456,55 +466,64 @@
           </svg>
         </button>
       </div>
-      
-      <div class="number-pad">
-        <button data-num="1">1</button>
-        <button data-num="2">2</button>
-        <button data-num="3">3</button>
-        <button data-num="4">4</button>
-        <button data-num="5">5</button>
-        <button data-num="6">6</button>
-        <button data-num="7">7</button>
-        <button data-num="8">8</button>
-        <button data-num="9">9</button>
-        <button id="erase">
-          <svg fill="#000000" width="200px" height="200px" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
-            <path d="M35.62,12a2.82,2.82,0,0,0-.84-2L27.49,2.65a2.9,2.9,0,0,0-4,0L2.83,23.28a2.84,2.84,0,0,0,0,4L7.53,32H3a1,1,0,0,0,0,2H28a1,1,0,0,0,0-2H16.74l18-18A2.82,2.82,0,0,0,35.62,12ZM13.91,32H10.36L4.25,25.89a.84.84,0,0,1,0-1.19l5.51-5.52,8.49,8.48ZM33.37,12.54,19.66,26.25l-8.48-8.49,13.7-13.7a.86.86,0,0,1,1.19,0l7.3,7.29a.86.86,0,0,1,.25.6A.82.82,0,0,1,33.37,12.54Z"/>
-          </svg>
-        </button>
-        <button id="clear-all">↺</button>
+      <div class="mid-control">
+        <div class="number-pad">
+          <button data-num="1">1</button>
+          <button data-num="2">2</button>
+          <button data-num="3">3</button>
+          <button data-num="4">4</button>
+          <button data-num="5">5</button>
+          <button data-num="6">6</button>
+          <button data-num="7">7</button>
+          <button data-num="8">8</button>
+          <button data-num="9">9</button>
+          <button id="erase">
+            <svg fill="#000000" width="200px" height="200px" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+              <path d="M35.62,12a2.82,2.82,0,0,0-.84-2L27.49,2.65a2.9,2.9,0,0,0-4,0L2.83,23.28a2.84,2.84,0,0,0,0,4L7.53,32H3a1,1,0,0,0,0,2H28a1,1,0,0,0,0-2H16.74l18-18A2.82,2.82,0,0,0,35.62,12ZM13.91,32H10.36L4.25,25.89a.84.84,0,0,1,0-1.19l5.51-5.52,8.49,8.48ZM33.37,12.54,19.66,26.25l-8.48-8.49,13.7-13.7a.86.86,0,0,1,1.19,0l7.3,7.29a.86.86,0,0,1,.25.6A.82.82,0,0,1,33.37,12.54Z"/>
+            </svg>
+          </button>
+          <button id="clear-all">↺</button>
+        </div>
+      </div>
+      <div class="controls right-control">
+        <button id="hint">提示</button>
+        <button id="solve">解答</button>
       </div>
     </div>
   </div>
   
   <div id="create-tab" class="tab-content">
-    <div class="controls">
-      <button id="clear-grid">清空格子</button>
-      <button id="save-puzzle">儲存</button>
-    </div>
     
     <div class="status-message" id="create-message"></div>
     
     <div class="sudoku-grid" id="create-grid"></div>
     
-    <div class="control-grid">
-      <div class="number-pad" id="create-number-pad">
-        <button data-num="1">1</button>
-        <button data-num="2">2</button>
-        <button data-num="3">3</button>
-        <button data-num="4">4</button>
-        <button data-num="5">5</button>
-        <button data-num="6">6</button>
-        <button data-num="7">7</button>
-        <button data-num="8">8</button>
-        <button data-num="9">9</button>
-        <button id="create-erase">
-          <svg fill="#000000" width="200px" height="200px" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
-            <path d="M35.62,12a2.82,2.82,0,0,0-.84-2L27.49,2.65a2.9,2.9,0,0,0-4,0L2.83,23.28a2.84,2.84,0,0,0,0,4L7.53,32H3a1,1,0,0,0,0,2H28a1,1,0,0,0,0-2H16.74l18-18A2.82,2.82,0,0,0,35.62,12ZM13.91,32H10.36L4.25,25.89a.84.84,0,0,1,0-1.19l5.51-5.52,8.49,8.48ZM33.37,12.54,19.66,26.25l-8.48-8.49,13.7-13.7a.86.86,0,0,1,1.19,0l7.3,7.29a.86.86,0,0,1,.25.6A.82.82,0,0,1,33.37,12.54Z"></path>
-          </svg>
-        </button>
-        <button></button>
-        <button id="batch">字串輸入</button>
+    <div class="bottom-grid">
+      <div class="left-control">
+      </div>
+      <div class="mid-control">
+        <div class="number-pad" id="create-number-pad">
+          <button data-num="1">1</button>
+          <button data-num="2">2</button>
+          <button data-num="3">3</button>
+          <button data-num="4">4</button>
+          <button data-num="5">5</button>
+          <button data-num="6">6</button>
+          <button data-num="7">7</button>
+          <button data-num="8">8</button>
+          <button data-num="9">9</button>
+          <button id="create-erase">
+            <svg fill="#000000" width="200px" height="200px" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+              <path d="M35.62,12a2.82,2.82,0,0,0-.84-2L27.49,2.65a2.9,2.9,0,0,0-4,0L2.83,23.28a2.84,2.84,0,0,0,0,4L7.53,32H3a1,1,0,0,0,0,2H28a1,1,0,0,0,0-2H16.74l18-18A2.82,2.82,0,0,0,35.62,12ZM13.91,32H10.36L4.25,25.89a.84.84,0,0,1,0-1.19l5.51-5.52,8.49,8.48ZM33.37,12.54,19.66,26.25l-8.48-8.49,13.7-13.7a.86.86,0,0,1,1.19,0l7.3,7.29a.86.86,0,0,1,.25.6A.82.82,0,0,1,33.37,12.54Z"></path>
+            </svg>
+          </button>
+          <button></button>
+          <button id="batch">字串輸入</button>
+        </div>
+      </div>
+      <div class="controls right-control">
+        <button id="clear-grid">清空格子</button>
+        <button id="save-puzzle">儲存</button>
       </div>
     </div>
   </div>
@@ -534,10 +553,22 @@
     };
 
     // 初始化遊戲
+    function updateModeToggleIndicator() {
+      document.querySelectorAll('.mode-toggle button.active').forEach(e => {
+        const root = document.documentElement;
+        root.style.setProperty('--indicator-left', `${e.offsetLeft}px`);
+        root.style.setProperty('--indicator-top', `${e.offsetTop}px`);
+        root.style.setProperty('--indicator-width', `${e.offsetWidth}px`);
+        root.style.setProperty('--indicator-height', `${e.offsetHeight}px`);
+      });
+    }
+
     function initializeGame() {
       createSudokuGrid(elements.playGrid, 'play');
       createSudokuGrid(elements.createGrid, 'create');
       attachEventListeners();
+      updateModeToggleIndicator();
+      window.addEventListener('resize', updateModeToggleIndicator);
       generateNewPuzzle('hard');
     }
 
@@ -655,12 +686,14 @@
         document.getElementById('normal-mode').classList.add('active');
         document.getElementById('notes-mode').classList.remove('active');
         gameState.playMode = 'normal';
+        updateModeToggleIndicator();
       });
       
       document.getElementById('notes-mode').addEventListener('click', () => {
         document.getElementById('notes-mode').classList.add('active');
         document.getElementById('normal-mode').classList.remove('active');
         gameState.playMode = 'notes';
+        updateModeToggleIndicator();
       });
 
       // 數字鍵盤
