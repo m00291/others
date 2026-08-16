@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=contain">
+  <meta name="format-detection" content="telephone=no">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      touch-action: pan-y;
+      user-select: none;
+      -webkit-user-select: none;
+      font-family: -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+    }
+    body {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #ddd;
+    }
+    .btn {
+      margin: 5px;
+    }
+    .tab-content {
+      display: none;
+      background-color: #f3e4c7;
+      padding: 8px 2px;
+      border-radius: 0 0 5px 5px;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .notes {
+      position: absolute;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      width: 100%;
+      height: 100%;
+      font-size: 10px;
+      color: #666;
+    }
+    .note {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      transform: scale(160%);
+    }
+    button {
+      padding: 8px 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .bottom-grid {
+      display: flex;
+      justify-content: space-evenly;
+      gap: 2px;
+    }
+    .bottom-grid > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .left-control, .right-control {
+      flex: 1;
+    }
+
+    .toggle-wrapper {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    .toggle-wrapper::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 50%;
+      background: #4caf4fbb;
+      border-radius: 4px;
+      transition: transform 0.25s ease;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .toggle-wrapper:has(#notes-mode.active)::before {
+      transform: translateY(100%);
+    }
+    .mode-toggle {
+      position: relative;
+    }
+    .mode-toggle button {
+      position: relative;
+      background-color: unset;
+      padding: 15px 15px;
+      tap-highlight-color: transparent !important;
+      -webkit-tap-highlight-color: transparent !important;
+    }
+    .mode-toggle button svg {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+    }
+    .controls button {
+      background-color: unset;
+      padding: 0;
+    }
+    .controls button svg {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+    }
+    .number-pad {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+      margin: 0 auto;
+      min-width: 270px;
+    }
+    .number-pad button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 27px;
+      font-weight: bold;
+      padding: 5px;
+      color: #3a4b3f;
+      border: solid 1px #777;
+      background-color: unset;
+    }
+    .number-pad button:nth-child(10) {
+      background-color: #8ba2a7;
+    }
+    .number-pad button svg {
+      width: 25px;
+      height: 25px;
+      opacity: 0.6;
+    }
+    .number-pad button:nth-child(11) {
+      grid-column: span 2;
+      background-color: #8ba2a7;
+    }
+  </style>
+</head>
+<body>
+  <div id="play-tab" class="tab-content active">
+    <div class="bottom-grid">
+      <div class="mode-toggle left-control">
+        <div class="toggle-wrapper">
+        <button id="normal-mode" class="active">
+          <img src="pen.svg" alt="Normal">
+        </button>
+        <button id="notes-mode">
+          <img src="notes.svg" alt="Notes">
+        </button>
+        </div>
+      </div>
+      <div class="mid-control">
+        <div class="number-pad">
+          <button data-num="1">1</button>
+          <button data-num="2">2</button>
+          <button data-num="3">3</button>
+          <button data-num="4">4</button>
+          <button data-num="5">5</button>
+          <button data-num="6">6</button>
+          <button data-num="7">7</button>
+          <button data-num="8">8</button>
+          <button data-num="9">9</button>
+          <button id="erase">
+            <img src="eraser.svg" alt="Erase">
+          </button>
+          <button id="clear-all">↺</button>
+        </div>
+      </div>
+      <div class="controls right-control">
+      </div>
+    </div>
+  </div>
+
+  <script>
+      document.getElementById('normal-mode').addEventListener('click', () => {
+        document.getElementById('normal-mode').classList.add('active');
+        document.getElementById('notes-mode').classList.remove('active');
+      });
+      
+      document.getElementById('notes-mode').addEventListener('click', () => {
+        document.getElementById('notes-mode').classList.add('active');
+        document.getElementById('normal-mode').classList.remove('active');
+      });
+  </script>
+</body>
+</html>
