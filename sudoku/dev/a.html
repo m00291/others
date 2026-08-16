@@ -22,13 +22,8 @@
       margin: 5px;
     }
     .tab-content {
-      display: none;
       background-color: #f3e4c7;
-      padding: 8px 2px;
       border-radius: 0 0 5px 5px;
-    }
-    .tab-content.active {
-      display: block;
     }
     .notes {
       position: absolute;
@@ -150,9 +145,49 @@
       grid-column: span 2;
       background-color: #8ba2a7;
     }
+    .status-message {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%); 
+      z-index: 9999;
+
+      background-color: #323232;
+      color: #ffffff;
+      padding: 12px 24px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      font-family: sans-serif;
+      font-size: 14px;
+      text-align: center;
+      
+      opacity: 0;
+      pointer-events: none;
+      animation: popUpToast 3s ease-in-out forwards;
+    }
+
+    @keyframes popUpToast {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, 20px);
+      }
+      15% {
+        opacity: 1;
+        transform: translate(-50%, 0);
+      }
+      85% {
+        opacity: 1;
+        transform: translate(-50%, 0);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(-50%, 20px);
+      }
+    }
   </style>
 </head>
 <body>
+  <div class="status-message" id="play-message">在 7行7列 填入 6</div>
   <div id="play-tab" class="tab-content active">
     <div class="bottom-grid">
       <div class="mode-toggle left-control">
