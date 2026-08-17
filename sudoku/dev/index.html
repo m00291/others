@@ -12,7 +12,7 @@
 
   <title>數獨</title>
   <style>
-    //.sudoku-grid, .bottom-grid { display: none !important; }
+    .sudoku-grid, .bottom-grid { display: none !important; }
     * {
       box-sizing: border-box;
       touch-action: pan-y;
@@ -523,6 +523,7 @@
     @media (max-width: 480px) {
       body {
         padding: 0px;
+        padding-bottom: env(safe-area-inset-bottom, 0px);
         background-color: #f3e4c7;
       }
       .tabs {
@@ -1650,6 +1651,9 @@
           collapse();
         }
       }
+    });
+    document.addEventListener('DOMContentLoaded', () => { 
+      console.log(window.innerHeight);
     });
   </script>
 </body>
