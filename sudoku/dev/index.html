@@ -12,7 +12,7 @@
 
   <title>數獨</title>
   <style>
-    .sudoku-grid, .bottom-grid { display: none !important; }
+    //.sudoku-grid, .bottom-grid { display: none !important; }
     * {
       box-sizing: border-box;
       touch-action: pan-y;
@@ -41,11 +41,11 @@
     .modal.active {
       display: flex;
       flex-wrap: wrap;
-      align-content: flex-end;
+      align-items: center;
+      justify-content: center;
     }
     .modal-content {
       background-color: #f3e4c7;
-      margin: 15% auto; 
       padding: 20px;
       border: 1px solid #888;
       border-radius: 5px;
@@ -322,7 +322,7 @@
       height: 30px;
     }
     .controls .button {
-      background-color: unset;
+      background-color: #f3e4c7;
       padding: 0;
     }
     .controls .button img {
@@ -348,7 +348,9 @@
       padding: 5px;
       color: #3a4b3f;
       border: solid 1px #777;
-      background-color: unset;
+      background-color: #f3e4c7;
+      tap-highlight-color: transparent !important;
+      -webkit-tap-highlight-color: transparent !important;
     }
     .number-pad .button:nth-child(10) {
       background-color: #8ba2a7;
@@ -378,21 +380,21 @@
       align-items: center;
     }
     #clear-all img {
-      opacity: 0.7;
+      opacity: 0.6;
     }
-    .top-bar, .timer {
+    .top-bar {
       margin-bottom: 15px;
-      max-height: 400px;
+      max-height: 80px;
       width: 100%;
       padding: 8px 0;
       background-color: #f3e4c7;
       text-align: center;
-      transition: max-height .5s ease-in-out, padding .8s ease-in-out, color 5s linear;
+      transition: transform .5s ease-in-out, max-height .5s ease-in-out, padding 1s ease-in-out;
     }
     .top_collapsed {
       max-height: 0 !important;
       padding: 0;
-      color: transparent;
+      transform: translateY(-100%) scaleY(0);
       overflow: hidden;
     }
     .top-bar select {
@@ -424,7 +426,7 @@
       flex-direction: column;
     }
     .top-control.button {
-      background-color: unset;
+      background-color: #f3e4c7;
       padding: 2px;
       box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
     }
@@ -534,6 +536,7 @@
         top: 0;
         left: 0;
         z-index: 2;
+        background-color: #f3e4c7;
         width: 100%;
       }
       .top-bar, .timer {
@@ -1611,10 +1614,8 @@
   <script>
     let isCollapsed = false;
     let topEl = document.getElementById('top-bar');
-    let timerEl = document.getElementById('timer');
     function collapse() {
       topEl.classList.add('top_collapsed');
-      timerEl.classList.add('top_collapsed');
       arrow.classList.remove('arrow_expanded');
       setTimeout(() => {
         arrow.classList.add('arrow_collapsed');
@@ -1625,7 +1626,6 @@
 
     function expand() {
       topEl.classList.remove('top_collapsed');
-      timerEl.classList.remove('top_collapsed');
       arrow.classList.remove('arrow_collapsed');
       setTimeout(() => {
         arrow.classList.add('arrow_expanded');
