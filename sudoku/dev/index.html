@@ -12,6 +12,7 @@
 
   <title>數獨</title>
   <style>
+    //.sudoku-grid, .bottom-grid { display: none !important; }
     * {
       box-sizing: border-box;
       touch-action: pan-y;
@@ -51,6 +52,9 @@
       width: 80%; 
       max-width: 400px;
       text-align: center;
+    }
+    .modal-content .button {
+      margin: 5px;
     }
     .sudokuInputmodal {
       display: none;
@@ -104,7 +108,7 @@
       color: #666;
       touch-action: pan-x;
     }
-    .sudokuInputmodal-content > button {
+    .sudokuInputmodal-content > .button {
       display: block;
     }
     .sudokuInputmodal-content > #submiterror {
@@ -239,8 +243,8 @@
       font-weight: bold;
       transform: scale(160%);
     }
-    button {
-      padding: 8px 16px;
+    .button {
+      padding: 5px 16px;
       background-color: #4CAF50;
       color: white;
       border: none;
@@ -249,10 +253,10 @@
       font-size: 20px;
       font-weight: bold;
     }
-    button:active {
+    .button:active {
       filter: brightness(0.8);
     }
-    button:disabled {
+    .button:disabled {
       background-color: #cccccc;
       cursor: not-allowed;
     }
@@ -270,6 +274,7 @@
       flex: 1;
     }
     .right-control {
+      padding-top: 10px;
       gap: 1rem;
     }
     .toggle-wrapper {
@@ -296,34 +301,36 @@
     .mode-toggle {
       position: relative;
     }
-    .mode-toggle button {
+    .mode-toggle .button {
       position: relative;
       background-color: unset;
       padding: 15px 15px;
       tap-highlight-color: transparent !important;
       -webkit-tap-highlight-color: transparent !important;
     }
-    button span {
+    .button span {
       font-size: 12px;
       color: #333;
+      display: flex;
+      justify-content: center;
     }
-    .mode-toggle button img {
+    .mode-toggle .button img {
       display: flex;
       align-items: center;
       justify-content: center;
       width: 30px;
       height: 30px;
     }
-    .controls button {
+    .controls .button {
       background-color: unset;
       padding: 0;
     }
-    .controls button img {
+    .controls .button img {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 50px;
-      height: 50px;
+      width: 40px;
+      height: 40px;
     }
     .number-pad {
       display: grid;
@@ -332,7 +339,7 @@
       margin: 0 auto;
       min-width: 270px;
     }
-    .number-pad button {
+    .number-pad .button {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -343,19 +350,15 @@
       border: solid 1px #777;
       background-color: unset;
     }
-    .number-pad button:nth-child(10) {
+    .number-pad .button:nth-child(10) {
       background-color: #8ba2a7;
     }
-    .number-pad button img {
+    .number-pad .button img {
       width: 25px;
       height: 25px;
       opacity: 0.6;
     }
-    .number-pad button:nth-child(11) {
-      grid-column: span 2;
-      background-color: #8ba2a7;
-    }
-    #create-number-pad button:nth-child(11) {
+    #create-number-pad .button:nth-child(11) {
       grid-column: span 1;
       opacity: 0;
       cursor: unset;
@@ -374,7 +377,10 @@
       justify-content: center;
       align-items: center;
     }
-    .difficulty-selector, .timer {
+    #clear-all img {
+      opacity: 0.7;
+    }
+    .top-bar, .timer {
       margin-bottom: 15px;
       max-height: 400px;
       width: 100%;
@@ -383,25 +389,51 @@
       text-align: center;
       transition: max-height .5s ease-in-out, padding .8s ease-in-out, color .8s ease-in-out;
     }
-    .list_collapsed {
+    .top_collapsed {
       max-height: 0 !important;
       padding: 0;
       color: transparent;
       overflow: hidden;
     }
-    .difficulty-selector button {
-      max-height: 37px;
-      padding: 2px 16px;
-    }
-    .difficulty-selector select {
+    .top-bar select {
       padding: 8px;
       border-radius: 4px;
       border: 1px solid #ccc;
       font-size: 16px;
     }
+    .top-menu {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      gap: 2px;
+    }
+    .top-menu-left {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+    }
+    .top-menu-right {
+      display: flex;
+      gap: 10px;
+      margin-right: 10px;
+    }
+    .top-control {
+      display: flex;
+      flex-direction: column;
+    }
+    .top-control.button {
+      background-color: unset;
+      padding: 2px;
+      box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+    }
+    .top-control img {
+      height: 30px;
+    }
     .status-message {
       position: fixed;
-      bottom: 300px;
+      bottom: 20px;
       left: 50%;
       width: max-content;
       transform: translateX(-50%); 
@@ -502,9 +534,13 @@
         z-index: 2;
         width: 100%;
       }
-      .difficulty-selector, .timer {
+      .top-bar, .timer {
         margin-bottom: 0px;
         padding-bottom: 0px;
+      }
+      .top-menu-right {
+        gap: 2px;
+        margin-right: 2px;
       }
       .timer {
         margin-top: 0px;
@@ -512,14 +548,11 @@
       .arrow_row {
         display: flex;
       }
-      .mode-toggle button {
+      .mode-toggle .button {
         padding: 15px 8px;
       }
       .sudoku-grid {
         margin-top: 32px;
-      }
-      .status-message {
-        bottom: 20px;
       }
     }
   </style>
@@ -528,8 +561,8 @@
   <div id="myModal" class="modal">
     <div class="modal-content">
       <p>全部清除？</p>
-      <button id="confirm-clear" class="btn">確定</button>
-      <button id="cancel-clear" class="btn">取消</button>
+      <span class="button" id="confirm-clear">確定</span>
+      <span class="button" id="cancel-clear">取消</span>
     </div>
   </div>
   <div id="sudokuInputmodal" class="sudokuInputmodal">
@@ -565,7 +598,7 @@
           </div>
         </div>
       </div>
-      <button id="submitInput">提交</button>
+      <div class="button" id="submitInput">提交</div>
       <div id="submiterror">error</div>
     </div>
   </div>
@@ -575,18 +608,36 @@
   </div>
   
   <div id="play-tab" class="tab-content active">
-    <div class="mobile-slide-down-bar">
-      <div id="difficulty-selector" class="difficulty-selector">
-        <label for="difficulty">難度: </label>
-        <select id="difficulty">
-          <option value="easy">簡單</option>
-          <option value="medium">中等</option>
-          <option value="hard" selected="selected">困難</option>
-          <option value="very-hard">非常困難</option>
-          <option value="insane">地獄</option>
-          <option value="inhuman">上限(17提示)</option>
-        </select>
-        <button id="new-game">新遊戲</button>
+    <div id="mobile-slide-down-bar" class="mobile-slide-down-bar">
+      <div id="top-bar" class="top-bar">
+        <div class="top-menu">
+          <div class="top-menu-left">
+            <label for="difficulty">難度: </label>
+            <select id="difficulty">
+              <option value="easy">簡單</option>
+              <option value="medium">中等</option>
+              <option value="hard" selected="selected">困難</option>
+              <option value="very-hard">非常困難</option>
+              <option value="insane">地獄</option>
+              <option value="inhuman">上限(17提示)</option>
+            </select>
+            <div class="button" id="new-game">新遊戲</div>
+          </div>
+          <div class="top-menu-right">
+            <div class="top-control button" id="clear-all">
+              <img src="reset.svg" alt="Reset">
+              <span>清空</span>
+            </div>
+            <div class="top-control button" id="solve">
+              <img src="bulb.svg" alt="Solve">
+              <span>答案</span>
+            </div>
+            <div class="top-control button custom-puzzle-button">
+              <img src="app.svg" alt="Custom">
+              <span>自訂</span>
+            </div>
+          </div>
+        </div>
         <div id="timer" class="timer">時間: <span id="timer">00:00</span></div>
       </div>
       <div class="arrow_row" id="arrow_row">
@@ -603,42 +654,37 @@
     <div class="bottom-grid">
       <div class="mode-toggle left-control">
         <div class="toggle-wrapper">
-          <button id="normal-mode" class="active">
+          <div class="button" id="normal-mode" class="active">
             <img src="pen.svg" alt="Normal">
             <span>填寫</span>
-          </button>
-          <button id="notes-mode">
+          </div>
+          <div class="button" id="notes-mode">
             <img src="notes.svg" alt="Notes">
             <span>筆記</span>
-          </button>
+          </div>
         </div>
       </div>
       <div class="mid-control">
         <div class="number-pad">
-          <button data-num="1">1</button>
-          <button data-num="2">2</button>
-          <button data-num="3">3</button>
-          <button data-num="4">4</button>
-          <button data-num="5">5</button>
-          <button data-num="6">6</button>
-          <button data-num="7">7</button>
-          <button data-num="8">8</button>
-          <button data-num="9">9</button>
-          <button id="erase">
+          <div class="button" data-num="1">1</div>
+          <div class="button" data-num="2">2</div>
+          <div class="button" data-num="3">3</div>
+          <div class="button" data-num="4">4</div>
+          <div class="button" data-num="5">5</div>
+          <div class="button" data-num="6">6</div>
+          <div class="button" data-num="7">7</div>
+          <div class="button" data-num="8">8</div>
+          <div class="button" data-num="9">9</div>
+          <div class="button" id="erase">
             <img src="eraser.svg" alt="Erase">
-          </button>
-          <button id="clear-all">↺</button>
+          </div>
         </div>
       </div>
       <div class="controls right-control">
-        <button id="hint">
+        <div class="button" id="hint">
           <img src="hints.svg" alt="Hint">
           <span>提示</span>
-        </button>
-        <button id="solve">
-          <img src="question.svg" alt="Solve">
-          <span>答案</span>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -654,25 +700,25 @@
       </div>
       <div class="mid-control">
         <div class="number-pad" id="create-number-pad">
-          <button data-num="1">1</button>
-          <button data-num="2">2</button>
-          <button data-num="3">3</button>
-          <button data-num="4">4</button>
-          <button data-num="5">5</button>
-          <button data-num="6">6</button>
-          <button data-num="7">7</button>
-          <button data-num="8">8</button>
-          <button data-num="9">9</button>
-          <button id="create-erase">
+          <div class="button" data-num="1">1</div>
+          <div class="button" data-num="2">2</div>
+          <div class="button" data-num="3">3</div>
+          <div class="button" data-num="4">4</div>
+          <div class="button" data-num="5">5</div>
+          <div class="button" data-num="6">6</div>
+          <div class="button" data-num="7">7</div>
+          <div class="button" data-num="8">8</div>
+          <div class="button" data-num="9">9</div>
+          <div class="button" id="create-erase">
             <img src="eraser.svg" alt="Erase">
-          </button>
-          <button></button>
-          <button id="batch">字串輸入</button>
+          </div>
+          <div class="button"></div>
+          <div class="button" id="batch">字串輸入</div>
         </div>
       </div>
       <div class="controls right-control">
-        <button id="clear-grid">清空格子</button>
-        <button id="save-puzzle">儲存</button>
+        <div class="button" id="clear-grid">清空格子</div>
+        <div class="button" id="save-puzzle">儲存</div>
       </div>
     </div>
   </div>
@@ -845,7 +891,7 @@
       });
 
       // 數字鍵盤
-      document.querySelectorAll('.number-pad button[data-num]').forEach(button => {
+      document.querySelectorAll('.number-pad .button[data-num]').forEach(button => {
         button.addEventListener('click', () => {
           if (gameState.selectedCell) {
             const value = button.dataset.num;
@@ -1562,11 +1608,11 @@
   </script>
   <script>
     let isCollapsed = false;
-    let listEl = document.getElementById('difficulty-selector');
+    let topEl = document.getElementById('top-bar');
     let timerEl = document.getElementById('timer');
     function collapse() {
-      listEl.classList.add('list_collapsed');
-      timerEl.classList.add('list_collapsed');
+      topEl.classList.add('top_collapsed');
+      timerEl.classList.add('top_collapsed');
       arrow.classList.remove('arrow_expanded');
       setTimeout(() => {
         arrow.classList.add('arrow_collapsed');
@@ -1576,8 +1622,8 @@
     }
 
     function expand() {
-      listEl.classList.remove('list_collapsed');
-      timerEl.classList.remove('list_collapsed');
+      topEl.classList.remove('top_collapsed');
+      timerEl.classList.remove('top_collapsed');
       arrow.classList.remove('arrow_collapsed');
       setTimeout(() => {
         arrow.classList.add('arrow_expanded');
@@ -1591,6 +1637,16 @@
         expand();
       } else {
         collapse();
+      }
+    });
+
+    // hide mobile-slide-down-bar when clicking outside of it when it is mobile view
+    document.addEventListener('click', (event) => {
+      const mobileSlideDownBar = document.getElementById('mobile-slide-down-bar');
+      if (window.innerWidth <= 768) { // Check if it's a mobile view
+        if (!mobileSlideDownBar.contains(event.target) && !arrow_row.contains(event.target)) {
+          collapse();
+        }
       }
     });
   </script>
